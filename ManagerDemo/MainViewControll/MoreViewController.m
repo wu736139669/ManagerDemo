@@ -1,18 +1,18 @@
 //
-//  ProductListViewController.m
+//  MoreViewController.m
 //  ManagerDemo
 //
 //  Created by xmfish on 14-8-8.
 //  Copyright (c) 2014年 ash. All rights reserved.
 //
 
-#import "ProductListViewController.h"
+#import "MoreViewController.h"
 
-@interface ProductListViewController ()
+@interface MoreViewController ()
 
 @end
 
-@implementation ProductListViewController
+@implementation MoreViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationItem setTitle:@"第二页"];
+    [self.navigationItem setTitle:@"第三页"];
 }
 
 - (void)didReceiveMemoryWarning

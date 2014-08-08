@@ -7,7 +7,10 @@
 //
 
 #import "MainViewController.h"
-
+#import "HomeViewController.h"
+#import "ProductListViewController.h"
+#import "MyViewController.h"
+#import "MoreViewController.h"
 @interface MainViewController ()
 
 @end
