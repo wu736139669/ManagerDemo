@@ -21,6 +21,8 @@
 		A9AF6C0E19947DD10076C0EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9AF6BF019947DD00076C0EE /* UIKit.framework */; };
 		A9AF6C1619947DD10076C0EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6C1419947DD10076C0EE /* InfoPlist.strings */; };
 		A9AF6C1819947DD10076C0EE /* ManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C1719947DD10076C0EE /* ManagerDemoTests.m */; };
+		A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C2C199483520076C0EE /* MainViewController.m */; };
+		A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6C2D199483520076C0EE /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		A9AF6C1319947DD10076C0EE /* ManagerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ManagerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		A9AF6C1519947DD10076C0EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9AF6C1719947DD10076C0EE /* ManagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerDemoTests.m; sourceTree = "<group>"; };
+		A9AF6C2B199483520076C0EE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A9AF6C2C199483520076C0EE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		A9AF6C2D199483520076C0EE /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 		A9AF6BF219947DD00076C0EE /* ManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A9AF6C2A199483470076C0EE /* MainViewControll */,
 				A9AF6BFB19947DD00076C0EE /* AppDelegate.h */,
 				A9AF6BFC19947DD00076C0EE /* AppDelegate.m */,
 				A9AF6BFE19947DD00076C0EE /* Main.storyboard */,
@@ -150,6 +156,16 @@
 				A9AF6C1419947DD10076C0EE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9AF6C2A199483470076C0EE /* MainViewControll */ = {
+			isa = PBXGroup;
+			children = (
+				A9AF6C2B199483520076C0EE /* MainViewController.h */,
+				A9AF6C2C199483520076C0EE /* MainViewController.m */,
+				A9AF6C2D199483520076C0EE /* MainViewController.xib */,
+			);
+			path = MainViewControll;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +247,7 @@
 				A9AF6C0519947DD00076C0EE /* Images.xcassets in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C0019947DD00076C0EE /* Main.storyboard in Resources */,
+				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +269,7 @@
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A9AF6BFD19947DD00076C0EE /* AppDelegate.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
+				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +478,7 @@
 				A9AF6C1D19947DD10076C0EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9AF6C1E19947DD10076C0EE /* Build configuration list for PBXNativeTarget "ManagerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +487,7 @@
 				A9AF6C2019947DD10076C0EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
