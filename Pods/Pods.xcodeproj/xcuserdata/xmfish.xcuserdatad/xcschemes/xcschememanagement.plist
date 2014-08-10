@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-STableViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3837BE211A384AE99444E233</key>
+		<key>17B5BBDE2AA74AD6927C83F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B7AA494BBEC494094999B8B</key>
+		<key>38D164B9D376486896BEE85B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A07D5FAD8E342C9995FEEA9</key>
+		<key>3C6F44C462904A05B04525A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0C28A1B940D40379ABD25B4</key>
+		<key>70559D8DCB484E5C9855BDEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D667DD83988D470A910B259E</key>
+		<key>8701DEFE19E54FDAA8ACF9CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E71D8A314753406BA2F332D4</key>
+		<key>B4B317D35E3D4D3BB5DF69BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F045554C5E934EA4B3506A68</key>
+		<key>EB2288CEDF154A2ABD7A59B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC20D0D069A0453EA4D3572D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

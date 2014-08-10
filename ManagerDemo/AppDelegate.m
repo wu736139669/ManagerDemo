@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    MainViewController* mainViewController = [[MainViewController alloc] init];
+    self.window.rootViewController = mainViewController;
     return YES;
 }
 							

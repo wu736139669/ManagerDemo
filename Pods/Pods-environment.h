@@ -66,3 +66,9 @@
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 1
 
+// STableViewController
+#define COCOAPODS_POD_AVAILABLE_STableViewController
+#define COCOAPODS_VERSION_MAJOR_STableViewController 0
+#define COCOAPODS_VERSION_MINOR_STableViewController 0
+#define COCOAPODS_VERSION_PATCH_STableViewController 1
+
