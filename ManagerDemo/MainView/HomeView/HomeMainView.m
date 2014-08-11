@@ -52,6 +52,7 @@
     data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     percentString = [[NSAttributedString alloc] initWithHTMLData:data documentAttributes:NULL];
     _expectLabel.attributedString = percentString;
+    
     //时间
     htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">限<span  style=\"font-size:13px; color:red;\">%d</span>个月<span  style=\"font-size:13px; color:red;\">%d</span>起</span>",15,50];
     data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
