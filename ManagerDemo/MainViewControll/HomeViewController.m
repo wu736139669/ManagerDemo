@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "MJRefresh.h"
 #import "HomeAdView.h"
+#import "HomeMainView.h"
 @interface HomeViewController ()
 
 @end
@@ -77,11 +78,23 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 2;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    CGFloat height = 0.0;
+    switch (indexPath.row) {
+        case 0:
+            height = 160.0;
+            break;
+            case 1:
+            height = 280.0;
+            break;
+        default:
+            break;
+    }
+    return height;
+    
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -89,8 +102,25 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:homeViewCell];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeViewCell];
-        HomeAdView* homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 120)];
-        [cell addSubview:homeAdView];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        switch (indexPath.row) {
+            case 0:{
+                HomeAdView* homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+                [cell addSubview:homeAdView];
+            }
+                break;
+            case 1:{
+                NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
+
+                HomeMainView* homeMainView = (HomeMainView*)[nib objectAtIndex:0];
+                CGRect frame = homeMainView.frame;
+                frame.origin.x = 20;
+                homeMainView.frame = frame;
+                [cell addSubview:homeMainView];
+            }
+            default:
+                break;
+        }
     }
 
     return cell;
