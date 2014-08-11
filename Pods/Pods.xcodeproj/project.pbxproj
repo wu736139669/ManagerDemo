@@ -557,7 +557,6 @@
 		8EA00141040D4EAE882380B8 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
 		8EB19EB4E668402BB81ECC44 /* DTLinkButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTLinkButton.h; path = Core/Source/DTLinkButton.h; sourceTree = "<group>"; };
 		920D5FBB85D44EBA9873C796 /* DTHTMLParserNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTHTMLParserNode.h; path = Core/Source/DTHTMLParserNode.h; sourceTree = "<group>"; };
-		93660BA51A8B4F45998C5EE7 /* Pods-STableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STableViewController.xcconfig"; sourceTree = "<group>"; };
 		93D40CC95B694BFDA4842316 /* SBJson4StreamParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamParser.h; path = src/main/objc/SBJson4StreamParser.h; sourceTree = "<group>"; };
 		9414B11F47754C0288111BDE /* NSCoder+DTCompatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCoder+DTCompatibility.m"; path = "Core/Source/NSCoder+DTCompatibility.m"; sourceTree = "<group>"; };
 		9525CD321638473BA03A3480 /* NSString+HTML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Core/Source/NSString+HTML.h"; sourceTree = "<group>"; };
@@ -926,7 +925,6 @@
 		5CC5D5F31C6A4CD1A63505E0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				93660BA51A8B4F45998C5EE7 /* Pods-STableViewController.xcconfig */,
 				D65F225F89BB443D83EAB23C /* Pods-STableViewController-Private.xcconfig */,
 				5CAAAA8FADD249C1B86F1289 /* Pods-STableViewController-dummy.m */,
 				0E90F4640CDA480791C1FC0D /* Pods-STableViewController-prefix.pch */,
