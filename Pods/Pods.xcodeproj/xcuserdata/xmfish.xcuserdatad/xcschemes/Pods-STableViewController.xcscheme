@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D163F49869D40ADA1B25DF2"
+               BlueprintIdentifier = "E672A4298C864CD8AEB3D108"
                BuildableName = "libPods-STableViewController.a"
                BlueprintName = "Pods-STableViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
