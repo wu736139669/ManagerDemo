@@ -1,0 +1,39 @@
+PODS:
+  - DTCoreText (1.6.13):
+    - DTFoundation/Core (~> 1.7.1)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.1)
+    - DTFoundation/DTHTMLParser (~> 1.7.1)
+    - DTFoundation/UIKit (~> 1.7.1)
+  - DTFoundation/Core (1.7.2)
+  - DTFoundation/DTAnimatedGIF (1.7.2)
+  - DTFoundation/DTHTMLParser (1.7.2):
+    - DTFoundation/Core
+  - DTFoundation/UIKit (1.7.2):
+    - DTFoundation/Core
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
+  - Reachability (3.1.1)
+  - SBJson (4.0.1)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.7.1)
+  - STableViewController (0.0.1)
+
+DEPENDENCIES:
+  - DTCoreText
+  - MKNetworkKit
+  - Reachability
+  - SBJson
+  - SDWebImage
+  - STableViewController
+
+SPEC CHECKSUMS:
+  DTCoreText: 84eb8ba2e70448fdd9d837540e371f9f587b65ba
+  DTFoundation: 126729614911ae7dbab3dcc1c078f189943bee66
+  MKNetworkKit: 83e6296a8d42e98a71880424a889773654846d74
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
+  SBJson: d71212c078abf4679d54b0d0565260c474e46235
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  STableViewController: 05ffb07dc9260f8795ab72f56f8c511a158a23b9
+
+COCOAPODS: 0.33.1
