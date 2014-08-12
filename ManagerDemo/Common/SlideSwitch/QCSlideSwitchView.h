@@ -121,5 +121,13 @@
  */
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number;
 
+/*!
+ * @method 滑动tab
+ * @abstract
+ * @discussion
+ * @param tab索引
+ * @result
+ */
+- (void)slideSwitchView:(QCSlideSwitchView *)view didScrollTab:(NSUInteger)number;
 @end
 

@@ -59,8 +59,14 @@
     self.currentProgress = 0.0f;
     self.lastProgress = 0.0f;
     self.animated = YES;
-    self.progressColor = [UIColor blueColor];
-    self.wrapperColor = self.progressColor;
+    
+    if (self.progressColor == nil) {
+        self.progressColor = [UIColor blueColor];
+    }
+    if (self.wrapperColor == nil) {
+        self.wrapperColor = self.progressColor;
+    }
+    
     self.duration = 0.5;
     self.progressArcWidth = 3.0f;
     self.wrapperArcWidth = 1.f;

@@ -132,7 +132,6 @@ static const NSUInteger kTagOfRightSideButton = 999;
         UIViewController *vc = [self.slideSwitchViewDelegate slideSwitchView:self viewOfTab:i];
         [_viewArray addObject:vc];
         [_rootScrollView addSubview:vc.view];
-        NSLog(@"%@",[vc.view class]);
     }
     [self createNameButtons];
     
@@ -312,6 +311,10 @@ static const NSUInteger kTagOfRightSideButton = 999;
         int tag = (int)scrollView.contentOffset.x/self.bounds.size.width +100;
         UIButton *button = (UIButton *)[_topScrollView viewWithTag:tag];
         [self selectNameButton:button];
+        if (self.slideSwitchViewDelegate
+            && [self.slideSwitchViewDelegate respondsToSelector:@selector(slideSwitchView:didScrollTab:)]) {
+            [self.slideSwitchViewDelegate slideSwitchView:self didScrollTab:tag-100];
+        }
     }
 }
 

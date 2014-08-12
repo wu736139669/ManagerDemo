@@ -80,14 +80,10 @@
 
 }
 
-//- (void)slideSwitchView:(QCSlideSwitchView *)view panLeftEdge:(UIPanGestureRecognizer *)panParam
-//{
-//    QCViewController *drawerController = (QCViewController *)self.navigationController.mm_drawerController;
-//    [drawerController panGestureCallback:panParam];
-//}
 
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number
 {
+    DLog(@"%ld",number);
 }
 
 

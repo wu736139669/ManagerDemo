@@ -7,7 +7,7 @@
 //
 
 #import "FundListViewController.h"
-
+#import "TriangleView.h"
 @interface FundListViewController ()
 
 @end
@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    TriangleView* view = [[TriangleView alloc] initWithFrame:CGRectMake(20, 100, 200, 200)];
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning

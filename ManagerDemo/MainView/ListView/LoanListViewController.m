@@ -8,6 +8,7 @@
 
 #import "LoanListViewController.h"
 #import "AdjustableUILable.h"
+#import "LoanListCell.h"
 @interface LoanListViewController ()
 
 @end
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [_tableView setSectionIndexBackgroundColor:[UIColor blackColor]];
 }
 
 #pragma mark UITableViewDelegate
@@ -34,26 +36,27 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 30;
+    return 10;
 }
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGFloat height = 100.0;
-//    return height;
-//    
-//}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 108.0;
+    return height;
+    
+}
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static  NSString *homeViewCell = @"HomeViewCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:homeViewCell];
+    static  NSString *loanListCell = @"LoanListCell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeViewCell];
-//        AdjustableUILable* label = [[AdjustableUILable alloc] initWithFrame:cell.frame];
-//        label.text = @"nihao";
-//        label.characterSpacing = 14.0;
-//        [cell addSubview:label];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:loanListCell];
+        NSArray *LoanListCellObjects = [[NSBundle mainBundle] loadNibNamed:@"LoanListCell" owner:self options:nil];
+        cell = [LoanListCellObjects objectAtIndex:0];
+
     }
-    cell.textLabel.text = [NSString stringWithFormat:@" 第 %d 行",indexPath.row];
+    [(LoanListCell*)cell setPercent:40];
+    NSString* htmlStr = @"<span style=\"font-size:12px;text-align:center; color:green; \">限</span>12个月";
+    [(LoanListCell*)cell setTimeWithString:htmlStr];
     return cell;
 }
 
