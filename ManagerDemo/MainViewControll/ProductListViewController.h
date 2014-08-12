@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QCSlideSwitchView.h"
 
-@interface ProductListViewController : UIViewController
+@interface ProductListViewController : UIViewController<QCSlideSwitchViewDelegate>
+@property (weak, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 
 @end

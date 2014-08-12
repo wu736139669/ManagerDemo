@@ -7,7 +7,9 @@
 //
 
 #import "ProductListViewController.h"
-
+#import "LoanListViewController.h"
+#import "FundListViewController.h"
+#import "OtherListViewController.h"
 @interface ProductListViewController ()
 
 @end
@@ -27,8 +29,67 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [ManagerUtil SetSubViewExternNone:self];
+    
+    self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
+    self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"bb0b15"];
+    self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
+                                        stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
     [self.navigationItem setTitle:@"第二页"];
+    [self.slideSwitchView buildUI];
 }
+
+#pragma mark - 滑动tab视图代理方法
+
+
+- (NSUInteger)numberOfTab:(QCSlideSwitchView *)view
+{
+    // you can set the best you can do it ;
+    return 3;
+}
+
+- (UIViewController *)slideSwitchView:(QCSlideSwitchView *)view viewOfTab:(NSUInteger)number
+{
+
+    UIViewController* viewController = nil;
+    switch (number) {
+        case 0:
+        {
+            viewController = [[LoanListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+            viewController.title = @"列表1";
+            
+        }
+            break;
+        case 1:
+        {
+            viewController = [[FundListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+            viewController.title = @"列表2";
+        }
+            break;
+        case 2:
+        {
+            viewController = [[OtherListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+            viewController.title = @"列表3";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return viewController;
+
+}
+
+//- (void)slideSwitchView:(QCSlideSwitchView *)view panLeftEdge:(UIPanGestureRecognizer *)panParam
+//{
+//    QCViewController *drawerController = (QCViewController *)self.navigationController.mm_drawerController;
+//    [drawerController panGestureCallback:panParam];
+//}
+
+- (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number
+{
+}
+
 
 - (void)didReceiveMemoryWarning
 {

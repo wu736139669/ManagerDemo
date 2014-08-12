@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>BD180650-671D-4DC0-85EF-9B8B6B9AD3E9</string>
+	<string>D7A72B7F-6544-436C-AC15-3ED04A1E562D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ManagerDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FE8FD704-2A85-446E-AF6F-C3A6A13AE046</key>
+		<key>5D1CB91A-A1C1-4E78-A0B9-241ABADAAC43</key>
 		<string>https://bitbucket.org/imwanmei/daidaitong-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ManagerDemo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FE8FD704-2A85-446E-AF6F-C3A6A13AE046</key>
+		<key>5D1CB91A-A1C1-4E78-A0B9-241ABADAAC43</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FE8FD704-2A85-446E-AF6F-C3A6A13AE046</string>
+	<string>5D1CB91A-A1C1-4E78-A0B9-241ABADAAC43</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FE8FD704-2A85-446E-AF6F-C3A6A13AE046</string>
+			<string>5D1CB91A-A1C1-4E78-A0B9-241ABADAAC43</string>
 			<key>IDESourceControlWCCName</key>
 			<string>daidaitong-ios</string>
 		</dict>

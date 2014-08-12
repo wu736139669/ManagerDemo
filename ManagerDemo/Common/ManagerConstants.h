@@ -13,6 +13,8 @@
  *  系统版本
  */
 #define IOS_VERSION     ( [[UIDevice currentDevice].systemVersion floatValue] )
+#define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+#define DEVICE_IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.height == 568)
 /**
  *  获取当前window宽高
  */

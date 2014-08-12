@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		63816045C89E43DD9F96396F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B3792862C24377B1ACD469 /* libPods.a */; };
+		A93F87741999AA8300875287 /* ManagerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87731999AA8300875287 /* ManagerUtil.m */; };
+		A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */; };
+		A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877F1999B92800875287 /* QCSlideSwitchView.m */; };
+		A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */; };
+		A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87C91999E62000875287 /* AdjustableUILable.m */; };
+		A93F8800199A077F00875287 /* FundListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87F5199A077F00875287 /* FundListViewController.m */; };
+		A93F8801199A077F00875287 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87F7199A077F00875287 /* ListViewController.m */; };
+		A93F8802199A077F00875287 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93F87F8199A077F00875287 /* ListViewController.xib */; };
+		A93F8803199A077F00875287 /* LoanListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FA199A077F00875287 /* LoanListCell.m */; };
+		A93F8804199A077F00875287 /* LoanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93F87FB199A077F00875287 /* LoanListCell.xib */; };
+		A93F8805199A077F00875287 /* LoanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FD199A077F00875287 /* LoanListViewController.m */; };
+		A93F8806199A077F00875287 /* OtherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FF199A077F00875287 /* OtherListViewController.m */; };
 		A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA3259199702DB000BE4FB /* Images.xcassets */; };
 		A9AA326019970335000BE4FB /* HomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325D19970335000BE4FB /* HomeAdView.m */; };
 		A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325F19970335000BE4FB /* ImagePlayerView.m */; };
@@ -95,6 +107,27 @@
 
 /* Begin PBXFileReference section */
 		5730F11CFCAA47EB9D024FB8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A93F87721999AA8300875287 /* ManagerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUtil.h; sourceTree = "<group>"; };
+		A93F87731999AA8300875287 /* ManagerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUtil.m; sourceTree = "<group>"; };
+		A93F877A1999AC9900875287 /* MBProgressHUD+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Util.h"; sourceTree = "<group>"; };
+		A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Util.m"; sourceTree = "<group>"; };
+		A93F877E1999B92800875287 /* QCSlideSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCSlideSwitchView.h; sourceTree = "<group>"; };
+		A93F877F1999B92800875287 /* QCSlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCSlideSwitchView.m; sourceTree = "<group>"; };
+		A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_line_and_shadow@2x.png"; sourceTree = "<group>"; };
+		A93F87C81999E62000875287 /* AdjustableUILable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdjustableUILable.h; sourceTree = "<group>"; };
+		A93F87C91999E62000875287 /* AdjustableUILable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdjustableUILable.m; sourceTree = "<group>"; };
+		A93F87F4199A077F00875287 /* FundListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListViewController.h; sourceTree = "<group>"; };
+		A93F87F5199A077F00875287 /* FundListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundListViewController.m; sourceTree = "<group>"; };
+		A93F87F6199A077F00875287 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		A93F87F7199A077F00875287 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		A93F87F8199A077F00875287 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		A93F87F9199A077F00875287 /* LoanListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanListCell.h; sourceTree = "<group>"; };
+		A93F87FA199A077F00875287 /* LoanListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanListCell.m; sourceTree = "<group>"; };
+		A93F87FB199A077F00875287 /* LoanListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoanListCell.xib; sourceTree = "<group>"; };
+		A93F87FC199A077F00875287 /* LoanListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanListViewController.h; sourceTree = "<group>"; };
+		A93F87FD199A077F00875287 /* LoanListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanListViewController.m; sourceTree = "<group>"; };
+		A93F87FE199A077F00875287 /* OtherListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherListViewController.h; sourceTree = "<group>"; };
+		A93F87FF199A077F00875287 /* OtherListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherListViewController.m; sourceTree = "<group>"; };
 		A9AA3259199702DB000BE4FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9AA325C19970335000BE4FB /* HomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeAdView.h; sourceTree = "<group>"; };
 		A9AA325D19970335000BE4FB /* HomeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeAdView.m; sourceTree = "<group>"; };
@@ -219,6 +252,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A93F87751999AB4400875287 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A93F877A1999AC9900875287 /* MBProgressHUD+Util.h */,
+				A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		A93F877D1999B91600875287 /* SlideSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				A93F877E1999B92800875287 /* QCSlideSwitchView.h */,
+				A93F877F1999B92800875287 /* QCSlideSwitchView.m */,
+			);
+			path = SlideSwitch;
+			sourceTree = "<group>";
+		};
+		A93F87C71999E4DA00875287 /* AttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				A93F87C81999E62000875287 /* AdjustableUILable.h */,
+				A93F87C91999E62000875287 /* AdjustableUILable.m */,
+			);
+			path = AttributedString;
+			sourceTree = "<group>";
+		};
+		A9A660B31999180000E9D166 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				A93F87F4199A077F00875287 /* FundListViewController.h */,
+				A93F87F5199A077F00875287 /* FundListViewController.m */,
+				A93F87F6199A077F00875287 /* ListViewController.h */,
+				A93F87F7199A077F00875287 /* ListViewController.m */,
+				A93F87F8199A077F00875287 /* ListViewController.xib */,
+				A93F87F9199A077F00875287 /* LoanListCell.h */,
+				A93F87FA199A077F00875287 /* LoanListCell.m */,
+				A93F87FB199A077F00875287 /* LoanListCell.xib */,
+				A93F87FC199A077F00875287 /* LoanListViewController.h */,
+				A93F87FD199A077F00875287 /* LoanListViewController.m */,
+				A93F87FE199A077F00875287 /* OtherListViewController.h */,
+				A93F87FF199A077F00875287 /* OtherListViewController.m */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
 		A9AA325B19970304000BE4FB /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,9 +416,14 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A93F87C71999E4DA00875287 /* AttributedString */,
+				A93F877D1999B91600875287 /* SlideSwitch */,
+				A93F87751999AB4400875287 /* MBProgressHUD */,
 				A9EAA05319988C55001A872A /* MRCircularProgressView */,
 				A9AF6C7E1994C5700076C0EE /* MJRefresh */,
 				A9AF6C4B19949B7B0076C0EE /* ManagerConstants.h */,
+				A93F87721999AA8300875287 /* ManagerUtil.h */,
+				A93F87731999AA8300875287 /* ManagerUtil.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -347,6 +431,7 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */,
 				A9EAA051199879CC001A872A /* pie_chart_center.png */,
 				A9EAA04B1998787B001A872A /* hk_home_center__cycle@2x.png */,
 				A9EAA04C1998787B001A872A /* hk_home_center_bg@2x.png */,
@@ -413,6 +498,7 @@
 		A9AF6C971994C97F0076C0EE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				A9A660B31999180000E9D166 /* ListView */,
 				A9AA325B19970304000BE4FB /* HomeView */,
 			);
 			path = MainView;
@@ -507,6 +593,8 @@
 			files = (
 				A9AF6C43199498C40076C0EE /* MyViewController.xib in Resources */,
 				A9EAA04719986DC3001A872A /* fund_cell_label_bg_green@2x.png in Resources */,
+				A93F8802199A077F00875287 /* ListViewController.xib in Resources */,
+				A93F8804199A077F00875287 /* LoanListCell.xib in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
@@ -532,6 +620,7 @@
 				A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */,
 				A9AF6C6519949CD30076C0EE /* icon_dock_service@2x.png in Resources */,
 				A9AF6CA01994D0210076C0EE /* ad1@2x.png in Resources */,
+				A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
@@ -602,14 +691,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93F8801199A077F00875287 /* ListViewController.m in Sources */,
 				A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */,
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
+				A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */,
+				A93F8803199A077F00875287 /* LoanListCell.m in Sources */,
 				A9AA326019970335000BE4FB /* HomeAdView.m in Sources */,
 				A9AF6C3D199486CA0076C0EE /* ProductListViewController.m in Sources */,
+				A93F87741999AA8300875287 /* ManagerUtil.m in Sources */,
 				A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */,
 				A9AF6C47199498D10076C0EE /* MoreViewController.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
+				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
@@ -617,8 +711,12 @@
 				A9AF6C911994C5700076C0EE /* MJRefreshConst.m in Sources */,
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
+				A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */,
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,
+				A93F8800199A077F00875287 /* FundListViewController.m in Sources */,
+				A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,
+				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);

@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationItem setTitle:@"第三页"];
+    [ManagerUtil SetSubViewExternNone:self];
 }
 
 - (void)didReceiveMemoryWarning

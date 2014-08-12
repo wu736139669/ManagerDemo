@@ -7,7 +7,7 @@
 //
 
 #import "HomeMainView.h"
-
+#import "MBProgressHUD+Util.h"
 @implementation HomeMainView
 {
     CGFloat progressPercent;
@@ -72,6 +72,7 @@
     
 }
 - (IBAction)sureBtnClick:(id)sender {
+    [MBProgressHUD errorHudWithView:self label:@"点我没用" hidesAfter:1.0];
     DLog(@"确认");
 }
 

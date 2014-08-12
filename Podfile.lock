@@ -10,6 +10,7 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.2):
     - DTFoundation/Core
+  - MBProgressHUD (0.8)
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
   - Reachability (3.1.1)
@@ -21,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - DTCoreText
+  - MBProgressHUD
   - MKNetworkKit
   - Reachability
   - SBJson
@@ -30,6 +32,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   DTCoreText: 84eb8ba2e70448fdd9d837540e371f9f587b65ba
   DTFoundation: 126729614911ae7dbab3dcc1c078f189943bee66
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
   MKNetworkKit: 83e6296a8d42e98a71880424a889773654846d74
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   SBJson: d71212c078abf4679d54b0d0565260c474e46235

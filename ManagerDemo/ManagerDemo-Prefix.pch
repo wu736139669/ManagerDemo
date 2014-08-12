@@ -17,4 +17,6 @@
     #import "MKNetworkKit.h"
     #import "DTCoreText.h"
     #import "STableViewController.h"
+    #import "MBProgressHUD.h"
+    #import "ManagerUtil.h"
 #endif
