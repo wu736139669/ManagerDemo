@@ -10,7 +10,8 @@
 #import "AdjustableUILable.h"
 #import "LoanListCell.h"
 @interface LoanListViewController ()
-
+{
+}
 @end
 
 @implementation LoanListViewController
@@ -28,14 +29,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self headerBeginRefreshing];
 }
-
+#pragma mark MJRefreshDelegate
+-(void)headerRereshing
+{
+    _count = 10;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        [self headerEndRefreshing];
+    });
+}
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

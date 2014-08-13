@@ -11,9 +11,12 @@
 @interface ListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     __weak UITableView* _tableView;
+    NSInteger _count;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (assign, nonatomic)NSInteger count;
 - (void)headerRereshing;
 - (void)footerRereshing;
+- (void)headerBeginRefreshing;
+- (void)headerEndRefreshing;
 @end

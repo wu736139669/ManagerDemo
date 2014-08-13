@@ -42,7 +42,7 @@
 }
 -(void)setLowestPriceWtihCount:(NSInteger)price
 {
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" color:break; \">%ld</span>元起",price];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" color:black; \">%ld</span>元起",price];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentRight],DTDefaultTextAlignment,[UIColor grayColor],DTDefaultTextColor, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];

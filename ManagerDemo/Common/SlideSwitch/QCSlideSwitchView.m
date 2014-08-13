@@ -29,12 +29,16 @@ static const NSUInteger kTagOfRightSideButton = 999;
     _topScrollView.showsVerticalScrollIndicator = NO;
     _topScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     //底部的线
+//    UIView* lineView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView, 320, 3)];
+//    lineView.alpha = 0.3;
+//    [lineView setBackgroundColor:[UIColor blackColor]];
+//    [_topScrollView addSubview:lineView]
     [_topScrollView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, kHeightOfTopScrollView, 320, 1)]];
     [self addSubview:_topScrollView];
     _userSelectedChannelID = 100;
     
     //创建主滚动视图
-    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView, self.bounds.size.width, self.bounds.size.height - kHeightOfTopScrollView)];
+    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView+1, self.bounds.size.width, self.bounds.size.height - kHeightOfTopScrollView)];
     _rootScrollView.delegate = self;
     _rootScrollView.pagingEnabled = YES;
     _rootScrollView.userInteractionEnabled = YES;

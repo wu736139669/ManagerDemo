@@ -32,7 +32,7 @@
     self.tableView.dataSource = self;
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-
+    
 }
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
@@ -50,7 +50,6 @@
 
 - (void)footerRereshing
 {
-    
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
@@ -59,6 +58,14 @@
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
         [self.tableView footerEndRefreshing];
     });
+}
+- (void)headerBeginRefreshing
+{
+    [self.tableView headerBeginRefreshing];
+}
+-(void)headerEndRefreshing
+{
+    [self.tableView headerEndRefreshing];
 }
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
