@@ -53,12 +53,13 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static  NSString *loanListCell = @"LoanListCell";
+    static  NSString *loanListCell = @"FundListCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:loanListCell];
-        NSArray *LoanListCellObjects = [[NSBundle mainBundle] loadNibNamed:@"FundListCell" owner:self options:nil];
-        cell = [LoanListCellObjects objectAtIndex:0];
+        
+        UINib *nib = [UINib nibWithNibName:@"FundListCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:loanListCell];
+        cell = (FundListCell *)[tableView dequeueReusableCellWithIdentifier:loanListCell];
         
     }
     [((FundListCell*)cell).totalLabel setText:@"已经有6783234人"];

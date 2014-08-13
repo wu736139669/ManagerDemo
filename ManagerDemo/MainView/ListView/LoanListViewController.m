@@ -59,9 +59,9 @@
     static  NSString *loanListCell = @"LoanListCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:loanListCell];
-        NSArray *LoanListCellObjects = [[NSBundle mainBundle] loadNibNamed:@"LoanListCell" owner:self options:nil];
-        cell = [LoanListCellObjects objectAtIndex:0];
+        UINib *nib = [UINib nibWithNibName:@"LoanListCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:loanListCell];
+        cell = (LoanListCell *)[tableView dequeueReusableCellWithIdentifier:loanListCell];
 
     }
     [(LoanListCell*)cell setPercent:40];
