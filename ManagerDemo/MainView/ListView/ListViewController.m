@@ -67,6 +67,12 @@
 {
     [self.tableView headerEndRefreshing];
 }
+-(void)firstRefresh
+{
+    if (_count <= 0) {
+        [self headerBeginRefreshing];
+    }
+}
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

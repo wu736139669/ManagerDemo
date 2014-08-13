@@ -19,4 +19,5 @@
 - (void)footerRereshing;
 - (void)headerBeginRefreshing;
 - (void)headerEndRefreshing;
+- (void)firstRefresh;
 @end
