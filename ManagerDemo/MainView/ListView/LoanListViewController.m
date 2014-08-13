@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [_tableView setSectionIndexBackgroundColor:[UIColor blackColor]];
 }
 
 #pragma mark UITableViewDelegate
@@ -55,7 +54,7 @@
 
     }
     [(LoanListCell*)cell setPercent:40];
-    NSString* htmlStr = @"<span style=\"font-size:12px;text-align:center; color:green; \">限</span>12个月";
+    NSString* htmlStr = @"<span style=\"text-align:center; color:green;\">限</span>12个月";
     [(LoanListCell*)cell setTimeWithString:htmlStr];
     return cell;
 }

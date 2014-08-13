@@ -9,5 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface FundListCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numProfitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *typeImg;
 
+@property (weak, nonatomic) IBOutlet DTAttributedLabel *buyTypeDtLabel;
+@property (weak, nonatomic) IBOutlet DTAttributedLabel *lowestPriceDtLabel;
+
+
+-(void)setBuyTypeWithString:(NSString*)htmlStr;
+-(void)setLowestPriceWtihCount:(NSInteger)price;
 @end

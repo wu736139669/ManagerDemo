@@ -7,7 +7,7 @@
 //
 
 #import "FundListViewController.h"
-#import "TriangleView.h"
+#import "FundListCell.h"
 @interface FundListViewController ()
 
 @end
@@ -27,10 +27,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    TriangleView* view = [[TriangleView alloc] initWithFrame:CGRectMake(20, 100, 200, 200)];
-    [self.view addSubview:view];
 }
-
+#pragma mark UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 108.0;
+    return height;
+    
+}
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static  NSString *loanListCell = @"LoanListCell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:loanListCell];
+        NSArray *LoanListCellObjects = [[NSBundle mainBundle] loadNibNamed:@"FundListCell" owner:self options:nil];
+        cell = [LoanListCellObjects objectAtIndex:0];
+        
+    }
+    return cell;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
