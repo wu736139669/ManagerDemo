@@ -20,4 +20,9 @@
  */
 #define ScreenWidth           [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight          [[UIScreen mainScreen] bounds].size.height
+
+/**
+ * 系统字体
+ */
+#define Font_Black(fontsize) [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontsize];
 #endif

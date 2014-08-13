@@ -83,6 +83,9 @@
 		A9AF6CA41994D0660076C0EE /* ad2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA11994D0660076C0EE /* ad2@2x.png */; };
 		A9AF6CA51994D0660076C0EE /* ad3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA21994D0660076C0EE /* ad3@2x.png */; };
 		A9AF6CA61994D0660076C0EE /* ad4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA31994D0660076C0EE /* ad4@2x.png */; };
+		A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */; };
+		A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */; };
+		A9C69448199BC1F500B2CECE /* gray_select_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69447199BC1F500B2CECE /* gray_select_arrow.png */; };
 		A9EAA035199857F5001A872A /* HomeMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAA034199857F5001A872A /* HomeMainView.m */; };
 		A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EAA03F19985EDE001A872A /* HomeMainView.xib */; };
 		A9EAA04519986DC3001A872A /* fund_cell_label_bg_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EAA04119986DC3001A872A /* fund_cell_label_bg_blue@2x.png */; };
@@ -217,6 +220,10 @@
 		A9AF6CA11994D0660076C0EE /* ad2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad2@2x.png"; sourceTree = "<group>"; };
 		A9AF6CA21994D0660076C0EE /* ad3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad3@2x.png"; sourceTree = "<group>"; };
 		A9AF6CA31994D0660076C0EE /* ad4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad4@2x.png"; sourceTree = "<group>"; };
+		A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_person_take_image@2x.png"; sourceTree = "<group>"; };
+		A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalProfitCellView.h; sourceTree = "<group>"; };
+		A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalProfitCellView.m; sourceTree = "<group>"; };
+		A9C69447199BC1F500B2CECE /* gray_select_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_select_arrow.png; sourceTree = "<group>"; };
 		A9EAA033199857F5001A872A /* HomeMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMainView.h; sourceTree = "<group>"; };
 		A9EAA034199857F5001A872A /* HomeMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMainView.m; sourceTree = "<group>"; };
 		A9EAA03F19985EDE001A872A /* HomeMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMainView.xib; sourceTree = "<group>"; };
@@ -452,6 +459,8 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9C69447199BC1F500B2CECE /* gray_select_arrow.png */,
+				A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */,
 				A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */,
 				A9EAA051199879CC001A872A /* pie_chart_center.png */,
 				A9EAA04B1998787B001A872A /* hk_home_center__cycle@2x.png */,
@@ -519,10 +528,20 @@
 		A9AF6C971994C97F0076C0EE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				A9C69443199BBE9500B2CECE /* MyView */,
 				A9A660B31999180000E9D166 /* ListView */,
 				A9AA325B19970304000BE4FB /* HomeView */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		A9C69443199BBE9500B2CECE /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */,
+				A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */,
+			);
+			path = MyView;
 			sourceTree = "<group>";
 		};
 		A9EAA05319988C55001A872A /* MRCircularProgressView */ = {
@@ -616,6 +635,7 @@
 				A9EAA04719986DC3001A872A /* fund_cell_label_bg_green@2x.png in Resources */,
 				A93F8802199A077F00875287 /* ListViewController.xib in Resources */,
 				A93F8804199A077F00875287 /* LoanListCell.xib in Resources */,
+				A9C69448199BC1F500B2CECE /* gray_select_arrow.png in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
@@ -647,6 +667,7 @@
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
+				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
 				A9EAA04619986DC3001A872A /* fund_cell_label_bg_gray@2x.png in Resources */,
@@ -736,6 +757,7 @@
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
 				A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */,
+				A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */,
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,
 				A93F8800199A077F00875287 /* FundListViewController.m in Sources */,
 				A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */,
