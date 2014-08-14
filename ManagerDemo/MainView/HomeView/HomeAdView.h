@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ImagePlayerView.h"
-@interface HomeAdView : UIView<ImagePlayerViewDelegate>
-
+#import "HDScrollview.h"
+@interface HomeAdView : UIView<HDScrollviewDelegate,UIScrollViewDelegate>
+{
+    HDScrollview* _scrollview;
+}
 @end

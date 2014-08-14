@@ -7,7 +7,7 @@
 //
 
 #import "HomeAdView.h"
-
+#import "HDScrollview.h"
 @implementation HomeAdView
 
 - (id)initWithFrame:(CGRect)frame
@@ -16,12 +16,24 @@
     if (self) {
         // Initialization code
     }
-    ImagePlayerView* imagePlayerView = [[ImagePlayerView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-    imagePlayerView.autoScroll = YES;
-    imagePlayerView.scrollInterval = 5;
-    [imagePlayerView setPageControlPosition:ICPageControlPosition_BottomCenter];
-    [imagePlayerView initWithCount:3 delegate:self];
-    [self addSubview:imagePlayerView];
+    NSArray *imageArray=@[[UIImage imageNamed:@"ad1"],[UIImage imageNamed:@"ad2"],[UIImage imageNamed:@"ad3"],[UIImage imageNamed:@"ad4"]];
+    NSMutableArray* imageViewArray = [[NSMutableArray alloc] init];
+    for (int i=0; i<imageArray.count; i++) {
+        UIImageView *imageview=[[UIImageView alloc]init];
+        imageview.image=[imageArray objectAtIndex:i];
+        imageview.contentMode=UIViewContentModeScaleAspectFit;
+        [imageViewArray addObject:imageview];
+    }
+    _scrollview=[[HDScrollview alloc]initLoopScrollWithFrame:frame withImageView:imageViewArray];
+    _scrollview.delegate=self;
+    _scrollview.HDdelegate=self;
+    [self addSubview:_scrollview];
+    _scrollview.pagecontrol.frame=CGRectMake(0, _scrollview.pagecontrol.frame.origin.y+_scrollview.frame.size.height-10, 320, 10);
+    _scrollview.pagecontrol.currentcolor=[UIColor blackColor];
+    _scrollview.pagecontrol.othercolor=[UIColor whiteColor];
+    _scrollview.pagecontrol.currentPage=0;
+    [_scrollview setScrollInterval:5];
+    [self addSubview:_scrollview.pagecontrol];
     return self;
 }
 
@@ -33,12 +45,22 @@
     // Drawing code
 }
 */
-#pragma mark ImagePlayerViewDelegate
--(void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index{
-    
-    [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ad%ld",index+1]]];
+
+#pragma mark ==========UIScrollViewDelegate============
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    [_scrollview HDscrollViewDidScroll];
 }
--(void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index{
-    
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView
+{
+    [_scrollview HDscrollViewDidEndDecelerating];
+}
+-(void)TapView:(int)index
+{
+    DLog(@"点击了第%d个页面",index);
+    //下面可以根据自己的需求操作
+    //Example
+
 }
 @end
