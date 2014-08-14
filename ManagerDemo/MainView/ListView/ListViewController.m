@@ -30,6 +30,8 @@
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView setUserInteractionEnabled:YES];
+    self.tableView.allowsSelection = YES;
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     

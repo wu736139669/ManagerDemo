@@ -7,7 +7,6 @@
 //
 
 #import "MyTotalProfitCellView.h"
-
 @implementation MyTotalProfitCellView
 
 - (id)initWithFrame:(CGRect)frame
@@ -70,7 +69,29 @@
     [_profitMoneyLabel setFont:[UIFont systemFontOfSize:25.0]];
     _profitMoneyLabel.text = @"0.0";
     [self addSubview:_profitMoneyLabel];
+    
+    //左边按钮。
+    UIButton* leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.backgroundColor = [UIColor clearColor];
+    leftBtn.frame = CGRectMake(0, 0, size.width/2, size.height);
+    [leftBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:Touch_BackGroudColor withFrame:leftBtn.frame] forState:UIControlStateHighlighted];
+    [leftBtn addTarget:self action:@selector(leftBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:leftBtn];
+    //左边按钮。
+    UIButton* rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.backgroundColor = [UIColor clearColor];
+    rightBtn.frame = CGRectMake(size.width/2, 0, size.width/2, size.height);
+    [rightBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:Touch_BackGroudColor withFrame:rightBtn.frame] forState:UIControlStateHighlighted];
+    [rightBtn addTarget:self action:@selector(leftBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:rightBtn];
 }
 
-
+-(void)leftBtnClick:(id)sender
+{
+    [MBProgressHUD checkHudWithView:self label:@"点我没用" hidesAfter:1.0];
+}
+-(void)rightBtnClick:(id)sender
+{
+    [MBProgressHUD checkHudWithView:self label:@"点我没用" hidesAfter:1.0];
+}
 @end

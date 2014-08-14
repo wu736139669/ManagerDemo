@@ -31,6 +31,7 @@
     [ManagerUtil SetSubViewExternNone:self];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.allowsSelection = YES;
 //    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
 //    [_tableView style] = UITableViewStyleGrouped;
     
@@ -170,8 +171,10 @@
             logoutBtn.frame = CGRectMake(0, 0, 280, 44);
             [logoutBtn setTitle:@"点我你就赢了" forState:UIControlStateNormal];
             [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
             logoutBtn.backgroundColor = [UIColor colorWithRed:200.0 green:0.0 blue:0.0 alpha:1.0];
-            [logoutBtn.layer setCornerRadius:0.0]; //设置矩形四个圆角半径
+            [logoutBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:Touch_BackGroudColor withFrame:logoutBtn.frame] forState:UIControlStateHighlighted];
+            [logoutBtn.layer setCornerRadius:5.0]; //设置矩形四个圆角半径
             [cell addSubview:logoutBtn];
             cell.backgroundColor = [UIColor clearColor];
         }
@@ -179,9 +182,18 @@
         default:
             break;
     }
+    UIView* selectedBackgroudView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
+    CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
+    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
+    cell.selectedBackgroundView = selectedBackgroudView;
+    
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

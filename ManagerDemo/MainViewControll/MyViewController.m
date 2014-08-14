@@ -40,10 +40,10 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.allowsSelection = YES;
     [_tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    
 
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
     
 }
 #pragma mark MJRefreshDelegate
@@ -168,10 +168,13 @@
             break;
     }
 
-    
+    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
 {

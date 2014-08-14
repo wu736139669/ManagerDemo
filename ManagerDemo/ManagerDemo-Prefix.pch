@@ -19,4 +19,5 @@
     #import "STableViewController.h"
     #import "MBProgressHUD.h"
     #import "ManagerUtil.h"
+    #import "MBProgressHUD+Util.h"
 #endif

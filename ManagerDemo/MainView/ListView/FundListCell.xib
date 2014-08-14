@@ -69,7 +69,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.29999999999999999" contentMode="scaleToFill" restorationIdentifier="FundListCell" id="rlA-Zw-HRE">
-                        <rect key="frame" x="0.0" y="106" width="320" height="1"/>
+                        <rect key="frame" x="0.0" y="107" width="320" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

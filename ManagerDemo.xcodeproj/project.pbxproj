@@ -23,6 +23,8 @@
 		A93F8806199A077F00875287 /* OtherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FF199A077F00875287 /* OtherListViewController.m */; };
 		A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */; };
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
+		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
+		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
 		A988A900199A751500EB10AA /* FundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FF199A751500EB10AA /* FundListCell.m */; };
 		A988A902199A755300EB10AA /* FundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A988A901199A755300EB10AA /* FundListCell.xib */; };
@@ -150,6 +152,10 @@
 		A94FE51C199C9C3C00626DE5 /* MoveSocialCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveSocialCellView.h; sourceTree = "<group>"; };
 		A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveSocialCellView.m; sourceTree = "<group>"; };
 		A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveSocialCellView.xib; sourceTree = "<group>"; };
+		A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
+		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
+		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		A988A8FA199A50D900EB10AA /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
 		A988A8FB199A50D900EB10AA /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 		A988A8FE199A751500EB10AA /* FundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListCell.h; sourceTree = "<group>"; };
@@ -329,6 +335,17 @@
 			path = MoveView;
 			sourceTree = "<group>";
 		};
+		A96F2A79199D007700608237 /* UIButtonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */,
+				A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */,
+				A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */,
+				A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */,
+			);
+			path = UIButtonUtil;
+			sourceTree = "<group>";
+		};
 		A988A8F9199A50B600EB10AA /* UIViewShape */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +495,7 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A96F2A79199D007700608237 /* UIButtonUtil */,
 				A988A8F9199A50B600EB10AA /* UIViewShape */,
 				A93F87C71999E4DA00875287 /* AttributedString */,
 				A93F877D1999B91600875287 /* SlideSwitch */,
@@ -803,7 +821,9 @@
 				A9AF6C3D199486CA0076C0EE /* ProductListViewController.m in Sources */,
 				A93F87741999AA8300875287 /* ManagerUtil.m in Sources */,
 				A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */,
+				A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */,
 				A9AF6C47199498D10076C0EE /* MoreViewController.m in Sources */,
+				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
 				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,

@@ -25,4 +25,9 @@
  * 系统字体
  */
 #define Font_Black(fontsize) [UIFont fontWithName:@"HelveticaNeue-Bold" size:fontsize];
+
+/**
+ *      点击的背景颜色
+ */
+#define Touch_BackGroudColor [UIColor colorWithWhite:0.5 alpha:0.1]
 #endif

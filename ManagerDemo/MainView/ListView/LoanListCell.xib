@@ -90,6 +90,6 @@
     </objects>
     <resources>
         <image name="fund_cell_label_bg_blue.png" width="38" height="40"/>
-        <image name="pie_chart_center.png" width="235" height="235"/>
+        <image name="pie_chart_center.png" width="117" height="117"/>
     </resources>
 </document>

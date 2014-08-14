@@ -28,4 +28,8 @@
  *
  */
 +(UIView*)lineWithColor:(UIColor*)color withAlpha:(CGFloat)alpha withFrame:(CGRect)frame;
+
++(UIView*)selectBackgroudViewWithFrame:(CGRect)frame;
+
++ (UIImage *) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
 @end

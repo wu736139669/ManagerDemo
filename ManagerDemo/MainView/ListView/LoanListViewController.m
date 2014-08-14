@@ -30,6 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self headerBeginRefreshing];
+    
 }
 #pragma mark MJRefreshDelegate
 -(void)headerRereshing
@@ -58,18 +59,23 @@
 {
     static  NSString *loanListCell = @"LoanListCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
-    if (cell == nil) {
+        if (cell == nil) {
         UINib *nib = [UINib nibWithNibName:@"LoanListCell" bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:loanListCell];
         cell = (LoanListCell *)[tableView dequeueReusableCellWithIdentifier:loanListCell];
 
     }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleDefault];
     [(LoanListCell*)cell setPercent:40];
     NSString* htmlStr = @"<span style=\"text-align:center; color:green;\">限</span>12个月";
     [(LoanListCell*)cell setTimeWithString:htmlStr];
+    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

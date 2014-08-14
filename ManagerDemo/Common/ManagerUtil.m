@@ -67,4 +67,20 @@
     [lineView setBackgroundColor:color];
     return lineView;
 }
++(UIView*)selectBackgroudViewWithFrame:(CGRect)frame
+{
+    UIView* selectBackgroudView = [[UIView alloc] initWithFrame:frame];
+    selectBackgroudView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
+    return selectBackgroudView;
+}
++ (UIImage *) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame{
+    CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
 @end
