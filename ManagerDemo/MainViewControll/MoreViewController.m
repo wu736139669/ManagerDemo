@@ -7,7 +7,7 @@
 //
 
 #import "MoreViewController.h"
-
+#import "MoveSocialCellView.h"
 @interface MoreViewController ()
 
 @end
@@ -31,6 +31,7 @@
     [ManagerUtil SetSubViewExternNone:self];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+//    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
 //    [_tableView style] = UITableViewStyleGrouped;
     
 }
@@ -41,6 +42,23 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    switch (section) {
+        case 0:
+            return 3;
+            break;
+        case 1:
+            return 1;
+            break;
+        case 2:
+            return 2;
+            break;
+        case 3:
+            return 1;
+            break;
+            
+        default:
+            break;
+    }
     return 3;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -53,14 +71,114 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 1) {
+        return 120.0;
+    }
     return 44.0;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-    
-    
+    switch (indexPath.section) {
+        case 0:
+        {
+            //两边的线
+            CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
+            cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+            switch (indexPath.row) {
+
+                case 0:
+                {
+                    cell.textLabel.text = @"活动中心";
+                    cell.imageView.image = [UIImage imageNamed:@"more_icon_1"];
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+                }
+                    break;
+                case 1:
+                {
+                    cell.textLabel.text = @"消息中心";
+                    cell.imageView.image = [UIImage imageNamed:@"more_icon_2"];
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                }
+                    break;
+                case 2:
+                {
+                    cell.textLabel.text = @"帮助中心";
+                    cell.imageView.image = [UIImage imageNamed:@"more_icon_3"];
+                    cell.detailTextLabel.text = @"有什么我能帮助你的嘛？";
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.detailTextLabel.textColor = [UIColor grayColor];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+        case 1:
+        {
+            
+            NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"MoveSocialCellView" owner:self options:nil];
+            MoveSocialCellView* moveSocialCellView = [nib objectAtIndex:0];
+            [cell addSubview:moveSocialCellView];
+            //两边的线
+            CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
+        }
+            break;
+        case 2:
+        {
+            //两边的线
+            CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
+            [cell addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
+            cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+            switch (indexPath.row) {
+                case 0:
+                {
+                    cell.textLabel.text = @"活动中心";
+                    cell.imageView.image = [UIImage imageNamed:@"more_icon_7"];
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.detailTextLabel.textColor = [UIColor grayColor];
+                    cell.detailTextLabel.text = @"有什么我能帮助你的嘛？";
+                    
+                }
+                    break;
+                case 1:
+                {
+                    cell.textLabel.text = @"帮助中心";
+                    cell.imageView.image = [UIImage imageNamed:@"more_icon_8"];
+                    
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+        case 3:
+        {
+            UIButton* logoutBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+            logoutBtn.backgroundColor = [UIColor clearColor];
+            logoutBtn.frame = CGRectMake(0, 0, 280, 44);
+            [logoutBtn setTitle:@"点我你就赢了" forState:UIControlStateNormal];
+            [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            logoutBtn.backgroundColor = [UIColor colorWithRed:200.0 green:0.0 blue:0.0 alpha:1.0];
+            [logoutBtn.layer setCornerRadius:0.0]; //设置矩形四个圆角半径
+            [cell addSubview:logoutBtn];
+            cell.backgroundColor = [UIColor clearColor];
+        }
+            break;
+        default:
+            break;
+    }
     return cell;
 }
 

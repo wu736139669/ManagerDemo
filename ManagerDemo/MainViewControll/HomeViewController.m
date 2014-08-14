@@ -98,30 +98,27 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static  NSString *homeViewCell = @"HomeViewCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:homeViewCell];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeViewCell];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        switch (indexPath.row) {
-            case 0:{
-                HomeAdView* homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
-                [cell addSubview:homeAdView];
-            }
-                break;
-            case 1:{
-                NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
+    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
 
-                HomeMainView* homeMainView = (HomeMainView*)[nib objectAtIndex:0];
-                CGRect frame = homeMainView.frame;
-                frame.origin.x = 20;
-                homeMainView.frame = frame;
-                [cell addSubview:homeMainView];
-            }
-            default:
-                break;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    switch (indexPath.row) {
+        case 0:{
+            HomeAdView* homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+            [cell addSubview:homeAdView];
         }
-    }
+            break;
+        case 1:{
+            NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
+
+            HomeMainView* homeMainView = (HomeMainView*)[nib objectAtIndex:0];
+            CGRect frame = homeMainView.frame;
+            frame.origin.x = 20;
+            homeMainView.frame = frame;
+            [cell addSubview:homeMainView];
+        }
+        default:
+            break;
+        }
 
     return cell;
 }
