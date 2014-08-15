@@ -29,8 +29,6 @@
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
-		A96F2A85199D1D6800608237 /* HdPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A82199D1D6800608237 /* HdPageControl.m */; };
-		A96F2A86199D1D6800608237 /* HDScrollview.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A84199D1D6800608237 /* HDScrollview.m */; };
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
 		A988A900199A751500EB10AA /* FundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FF199A751500EB10AA /* FundListCell.m */; };
 		A988A902199A755300EB10AA /* FundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A988A901199A755300EB10AA /* FundListCell.xib */; };
@@ -168,10 +166,6 @@
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
-		A96F2A81199D1D6800608237 /* HdPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HdPageControl.h; sourceTree = "<group>"; };
-		A96F2A82199D1D6800608237 /* HdPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HdPageControl.m; sourceTree = "<group>"; };
-		A96F2A83199D1D6800608237 /* HDScrollview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDScrollview.h; sourceTree = "<group>"; };
-		A96F2A84199D1D6800608237 /* HDScrollview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDScrollview.m; sourceTree = "<group>"; };
 		A988A8FA199A50D900EB10AA /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
 		A988A8FB199A50D900EB10AA /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 		A988A8FE199A751500EB10AA /* FundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListCell.h; sourceTree = "<group>"; };
@@ -375,17 +369,6 @@
 			path = UIButtonUtil;
 			sourceTree = "<group>";
 		};
-		A96F2A80199D1D6800608237 /* HDScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				A96F2A81199D1D6800608237 /* HdPageControl.h */,
-				A96F2A82199D1D6800608237 /* HdPageControl.m */,
-				A96F2A83199D1D6800608237 /* HDScrollview.h */,
-				A96F2A84199D1D6800608237 /* HDScrollview.m */,
-			);
-			path = HDScrollView;
-			sourceTree = "<group>";
-		};
 		A988A8F9199A50B600EB10AA /* UIViewShape */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,7 +518,6 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A96F2A80199D1D6800608237 /* HDScrollView */,
 				A96F2A79199D007700608237 /* UIButtonUtil */,
 				A988A8F9199A50B600EB10AA /* UIViewShape */,
 				A93F87C71999E4DA00875287 /* AttributedString */,
@@ -855,8 +837,6 @@
 			files = (
 				A93F8801199A077F00875287 /* ListViewController.m in Sources */,
 				A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */,
-				A96F2A85199D1D6800608237 /* HdPageControl.m in Sources */,
-				A96F2A86199D1D6800608237 /* HDScrollview.m in Sources */,
 				A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */,
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,

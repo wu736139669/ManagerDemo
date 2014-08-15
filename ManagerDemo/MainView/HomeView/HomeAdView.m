@@ -7,7 +7,6 @@
 //
 
 #import "HomeAdView.h"
-#import "HDScrollview.h"
 @implementation HomeAdView
 {
     NSArray *imageArray;
@@ -55,27 +54,6 @@
 }
 */
 
-#pragma mark ==========UIScrollViewDelegate============
-
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
-    // disable v direction scroll
-
-    [_scrollview HDscrollViewDidScroll];
-
-    
-}
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView
-{
-    [_scrollview HDscrollViewDidEndDecelerating];
-}
--(void)TapView:(int)index
-{
-    DLog(@"点击了第%d个页面",index);
-    //下面可以根据自己的需求操作
-    //Example
-
-}
 #pragma mark ImagePlayerDelegate
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
 {
