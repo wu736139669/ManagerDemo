@@ -114,7 +114,7 @@
         self.autoScrollTimer = nil;
     }
     
-    self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:self.scrollInterval target:self selector:@selector(handleScrollTimer:) userInfo:nil repeats:YES];
+//    self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:self.scrollInterval target:self selector:@selector(handleScrollTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)handleScrollTimer:(NSTimer *)timer
