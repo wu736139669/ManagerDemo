@@ -12,7 +12,10 @@
 {
     __weak UITableView* _tableView;
     NSInteger _count;
+    __weak UIViewController* _delegate;          //保存创建的UIViewControll
 }
+@property (weak, nonatomic) UIViewController* delegate;
+@property (weak, nonatomic) UINavigationController* listNavigationController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic)NSInteger count;
 - (void)headerRereshing;

@@ -20,6 +20,7 @@
         viewController.extendedLayoutIncludesOpaqueBars = NO;
         viewController.modalPresentationCapturesStatusBarAppearance = NO;
         viewController.navigationController.navigationBar.translucent = NO;
+        viewController.tabBarController.tabBar.translucent = NO;
 //        viewController.navigationController.navigationBar.tintColor = [UIColor blackColor];
 //        viewController.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     }

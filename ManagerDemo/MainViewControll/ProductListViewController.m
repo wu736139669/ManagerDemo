@@ -27,10 +27,13 @@
     if (self) {
         // Custom initialization
         LoanListViewController* loanListViewController = [[LoanListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+//        loanListViewController.delegate = self;
         loanListViewController.title = @"列表1";
         FundListViewController* fundListViewController = [[FundListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+//        fundListViewController.delegate = self;
         fundListViewController.title = @"列表2";
         OtherListViewController* otherListViewController = [[OtherListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
+//        otherListViewController.delegate = self;
         otherListViewController.title = @"列表3";
         listViewContrllerArray = @[loanListViewController, fundListViewController, otherListViewController];
         _nowSelectTab = 0;
@@ -43,6 +46,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [ManagerUtil SetSubViewExternNone:self];
+    
+
     //右边按钮。
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(rightBarBtnClick:)]];
     

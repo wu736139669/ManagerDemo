@@ -32,6 +32,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.allowsSelection = YES;
+
 //    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
 //    [_tableView style] = UITableViewStyleGrouped;
     

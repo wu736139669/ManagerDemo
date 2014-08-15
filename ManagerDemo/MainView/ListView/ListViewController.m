@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [ManagerUtil SetSubViewExternNone:self];
+    if (ScreenHeight <= 480) {
+        CGRect frame = _tableView.frame;
+        frame.size.height -= 20;
+        _tableView.frame = frame;
+    }
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -103,5 +109,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)dealloc
+{
+    self.delegate = nil;
+}
 @end

@@ -29,7 +29,7 @@
     _scrollview.HDdelegate=self;
     [self addSubview:_scrollview];
     _scrollview.pagecontrol.frame=CGRectMake(0, _scrollview.pagecontrol.frame.origin.y+_scrollview.frame.size.height-10, 320, 10);
-    _scrollview.pagecontrol.currentcolor=[UIColor blackColor];
+    _scrollview.pagecontrol.currentcolor=[UIColor brownColor];
     _scrollview.pagecontrol.othercolor=[UIColor whiteColor];
     _scrollview.pagecontrol.currentPage=0;
     [_scrollview setScrollInterval:5];
@@ -50,7 +50,11 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
+    // disable v direction scroll
+
     [_scrollview HDscrollViewDidScroll];
+
+    
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)_scrollView
 {

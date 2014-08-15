@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		63816045C89E43DD9F96396F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B3792862C24377B1ACD469 /* libPods.a */; };
+		A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90BEBFF199DDA9E00230242 /* WYDProductViewController.m */; };
+		A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */; };
+		A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */; };
+		A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */; };
 		A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */; };
 		A93F87741999AA8300875287 /* ManagerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87731999AA8300875287 /* ManagerUtil.m */; };
 		A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */; };
@@ -129,6 +133,12 @@
 
 /* Begin PBXFileReference section */
 		5730F11CFCAA47EB9D024FB8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A90BEBFE199DDA9E00230242 /* WYDProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDProductViewController.h; sourceTree = "<group>"; };
+		A90BEBFF199DDA9E00230242 /* WYDProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDProductViewController.m; sourceTree = "<group>"; };
+		A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDProductViewController.xib; sourceTree = "<group>"; };
+		A90BEC03199DDACA00230242 /* WYDInfoHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDInfoHeadView.h; sourceTree = "<group>"; };
+		A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDInfoHeadView.m; sourceTree = "<group>"; };
+		A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDInfoHeadView.xib; sourceTree = "<group>"; };
 		A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_5@2x.png"; sourceTree = "<group>"; };
 		A93F87721999AA8300875287 /* ManagerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUtil.h; sourceTree = "<group>"; };
 		A93F87731999AA8300875287 /* ManagerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUtil.m; sourceTree = "<group>"; };
@@ -304,6 +314,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90BEBFD199DDA9300230242 /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				A90BEBFE199DDA9E00230242 /* WYDProductViewController.h */,
+				A90BEBFF199DDA9E00230242 /* WYDProductViewController.m */,
+				A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */,
+				A90BEC03199DDACA00230242 /* WYDInfoHeadView.h */,
+				A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */,
+				A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
 		A93F87751999AB4400875287 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +632,7 @@
 		A9AF6C971994C97F0076C0EE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				A90BEBFD199DDA9300230242 /* ProductView */,
 				A94FE51B199C9BE300626DE5 /* MoveView */,
 				A9C69443199BBE9500B2CECE /* MyView */,
 				A9A660B31999180000E9D166 /* ListView */,
@@ -746,6 +770,7 @@
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
 				A9AF6C771994B5890076C0EE /* icon_indicate_more@2x.png in Resources */,
+				A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */,
 				A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */,
 				A9AF6C6519949CD30076C0EE /* icon_dock_service@2x.png in Resources */,
 				A9AF6CA01994D0210076C0EE /* ad1@2x.png in Resources */,
@@ -757,6 +782,7 @@
 				A9C69453199BD14D00B2CECE /* more_icon_4@2x.png in Resources */,
 				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
 				A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */,
+				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
 				A9EAA04619986DC3001A872A /* fund_cell_label_bg_gray@2x.png in Resources */,
@@ -849,10 +875,12 @@
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
+				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,
 				A9AF6BFD19947DD00076C0EE /* AppDelegate.m in Sources */,
 				A9AF6C911994C5700076C0EE /* MJRefreshConst.m in Sources */,
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
+				A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */,
 				A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */,
 				A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */,
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,

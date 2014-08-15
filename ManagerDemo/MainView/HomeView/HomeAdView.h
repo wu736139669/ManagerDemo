@@ -12,4 +12,5 @@
 {
     HDScrollview* _scrollview;
 }
+@property(strong, nonatomic)HDScrollview* scrollview;
 @end

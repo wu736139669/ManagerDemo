@@ -48,7 +48,7 @@
     if (self)
     {
     }
-    imageArray=imageviewarr;
+    imageArray=[[NSMutableArray alloc] initWithArray:imageviewarr];
     loop=NO;
     NSUInteger pageCount=[imageviewarr count];
     [self setContentSize:CGSizeMake(self.frame.size.width*pageCount, self.frame.size.height)];
@@ -63,7 +63,6 @@
     }
     
     self.pagecontrol.numberOfPages=pageCount;//总的图片页数
-    NSLog(@"%d",self.pagecontrol.numberOfPages);
     [self.pagecontrol addObserver:self forKeyPath:@"currentPage" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
     return self;
 }
@@ -96,6 +95,8 @@
         UIImageView *imageview=[tempArray objectAtIndex:i];
         imageview.userInteractionEnabled=YES;
         imageview.frame=bounds;
+        imageview.contentMode = UIViewContentModeScaleToFill;
+        imageview.clipsToBounds = YES;
         [self addSubview:imageview];
     }
     self.pagecontrol.numberOfPages=pageCount-2;//总的图片页数
@@ -121,14 +122,6 @@
     if (self.pagecontrol.numberOfPages == 0) {
         return;
     }
-    
-//    NSInteger currentPage = self.pagecontrol.currentPage;
-//    NSInteger nextPage = currentPage + 1;
-//    self.pagecontrol.currentPage++;
-//    if (nextPage == self.pagecontrol.numberOfPages) {
-//        nextPage = 0;
-//        self.pagecontrol.currentPage = 0;
-//    }
     self.currentPageIndex++;
     [self autoTurn];
 
@@ -152,16 +145,18 @@
 {
     CGSize viewSize = self.frame.size;
     CGRect rect = CGRectMake(self.currentPageIndex * viewSize.width, 0, viewSize.width, viewSize.height);
-
-
+    
     [self scrollRectToVisible:rect animated:YES];
-
     [self HDscrollViewDidScroll];
     [self HDscrollViewDidEndDecelerating];
     
 }
 -(void)HDscrollViewDidScroll
 {
+    if (self.contentOffset.y > 0) {
+        [self setContentOffset:CGPointMake(self.contentOffset.x, 0)];
+        return;
+    }
     if (loop) {
         CGFloat pageWidth = self.frame.size.width;
         int page = floor((self.contentOffset.x - pageWidth / 2) / pageWidth)+1;
