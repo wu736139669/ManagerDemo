@@ -9,6 +9,7 @@
 #import "LoanListViewController.h"
 #import "AdjustableUILable.h"
 #import "LoanListCell.h"
+#import "WYDProductViewController.h"
 @interface LoanListViewController ()
 {
 }
@@ -75,6 +76,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    WYDProductViewController*  wydProductViewController = [[WYDProductViewController alloc] init];
+    wydProductViewController.hidesBottomBarWhenPushed = YES;
+    [self.delegate.navigationController pushViewController:wydProductViewController animated:YES];
+    
+    
 }
 - (void)didReceiveMemoryWarning
 {

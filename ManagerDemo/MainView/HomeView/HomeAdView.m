@@ -30,18 +30,7 @@
     ImagePlayerView* imagePlayerView = [[ImagePlayerView alloc] init];
     imagePlayerView.frame = frame;
     [imagePlayerView initWithCount:4 delegate:self];
-//
     [self addSubview:imagePlayerView];
-    //    _scrollview=[[HDScrollview alloc]initLoopScrollWithFrame:frame withImageView:imageViewArray];
-//    _scrollview.delegate=self;
-//    _scrollview.HDdelegate=self;
-//    [self addSubview:_scrollview];
-//    _scrollview.pagecontrol.frame=CGRectMake(0, _scrollview.pagecontrol.frame.origin.y+_scrollview.frame.size.height-10, 320, 10);
-//    _scrollview.pagecontrol.currentcolor=[UIColor brownColor];
-//    _scrollview.pagecontrol.othercolor=[UIColor whiteColor];
-//    _scrollview.pagecontrol.currentPage=0;
-//    [_scrollview setScrollInterval:5];
-//    [self addSubview:_scrollview.pagecontrol];
     return self;
 }
 

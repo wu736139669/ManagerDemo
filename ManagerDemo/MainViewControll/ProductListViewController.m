@@ -27,13 +27,13 @@
     if (self) {
         // Custom initialization
         LoanListViewController* loanListViewController = [[LoanListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
-//        loanListViewController.delegate = self;
+        loanListViewController.delegate = self;
         loanListViewController.title = @"列表1";
         FundListViewController* fundListViewController = [[FundListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
-//        fundListViewController.delegate = self;
+        fundListViewController.delegate = self;
         fundListViewController.title = @"列表2";
         OtherListViewController* otherListViewController = [[OtherListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
-//        otherListViewController.delegate = self;
+        otherListViewController.delegate = self;
         otherListViewController.title = @"列表3";
         listViewContrllerArray = @[loanListViewController, fundListViewController, otherListViewController];
         _nowSelectTab = 0;

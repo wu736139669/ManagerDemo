@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface WYDInfoHeadView : UIView
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet DTAttributedLabel *hasPercent;
+@property (weak, nonatomic) IBOutlet DTAttributedLabel *leftMoney;
 
+
+-(void)setProgress:(CGFloat)progress;
+-(void)setLeftMoneyAccount:(NSInteger)money;
 @end

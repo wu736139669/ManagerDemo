@@ -27,10 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [ManagerUtil SetSubViewExternNone:self];
     if (ScreenHeight <= 480) {
         CGRect frame = _tableView.frame;
-        frame.size.height -= 20;
+        frame.size.height -= 88;
         _tableView.frame = frame;
     }
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
