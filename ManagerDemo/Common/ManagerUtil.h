@@ -31,5 +31,5 @@
 
 +(UIView*)selectBackgroudViewWithFrame:(CGRect)frame;
 
-+ (UIImage *) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
++(UIImage*) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
 @end

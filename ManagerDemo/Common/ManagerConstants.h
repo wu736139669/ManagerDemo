@@ -9,6 +9,12 @@
 #ifndef ManagerDemo_ManagerConstants_h
 #define ManagerDemo_ManagerConstants_h
 
+
+/**
+ *    接口地址
+ */
+
+#define DaiDaiTong_API_URL @"mobi.yingyinglicai.com:8443/front"
 /**
  *  系统版本
  */

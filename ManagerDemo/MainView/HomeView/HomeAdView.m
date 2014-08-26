@@ -7,9 +7,10 @@
 //
 
 #import "HomeAdView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation HomeAdView
 {
-    NSArray *imageArray;
+    ImagePlayerView* imagePlayerView;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,34 +19,35 @@
     if (self) {
         // Initialization code
     }
-    imageArray=@[[UIImage imageNamed:@"ad1"],[UIImage imageNamed:@"ad2"],[UIImage imageNamed:@"ad3"],[UIImage imageNamed:@"ad4"]];
-    NSMutableArray* imageViewArray = [[NSMutableArray alloc] init];
-    for (int i=0; i<imageArray.count; i++) {
-        UIImageView *imageview=[[UIImageView alloc]init];
-        imageview.image=[imageArray objectAtIndex:i];
-        imageview.contentMode=UIViewContentModeScaleAspectFit;
-        [imageViewArray addObject:imageview];
-    }
-    
-    ImagePlayerView* imagePlayerView = [[ImagePlayerView alloc] init];
+    imagePlayerView = [[ImagePlayerView alloc] init];
     imagePlayerView.frame = frame;
     [imagePlayerView initWithCount:4 delegate:self];
     [self addSubview:imagePlayerView];
+    
     return self;
 }
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-}
-*/
 
+}
+
+-(void)setBannerInfo:(NSMutableArray *)bannerInfo
+{
+    _bannerInfo = bannerInfo;
+    [imagePlayerView initWithCount:bannerInfo.count delegate:self];
+}
 #pragma mark ImagePlayerDelegate
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
 {
-    [imageView setImage:[imageArray objectAtIndex:index]];
+    [imageView sd_setImageWithURL:[[_bannerInfo objectAtIndex:index]objectForKey:@"url"] placeholderImage:[UIImage imageNamed:@"ad1"]];
+}
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
+{
+    DLog(@"%@",[_bannerInfo objectAtIndex:index]);
 }
 @end

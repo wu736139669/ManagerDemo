@@ -10,5 +10,7 @@
 #import "ImagePlayerView.h"
 @interface HomeAdView : UIView<UIScrollViewDelegate,ImagePlayerViewDelegate>
 {
+    NSMutableArray* _bannerInfo;
 }
+@property(nonatomic,strong)NSMutableArray* bannerInfo;
 @end

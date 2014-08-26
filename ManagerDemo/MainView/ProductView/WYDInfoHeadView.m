@@ -25,7 +25,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    _progressView.transform = CGAffineTransformMakeScale(1.0f,5.0f);
+    _progressView.transform = CGAffineTransformMakeScale(1.0f,8.0f);
     _hasPercent.backgroundColor = [UIColor clearColor];
     _leftMoney.backgroundColor = [UIColor clearColor];
     [self setProgress:0.336];

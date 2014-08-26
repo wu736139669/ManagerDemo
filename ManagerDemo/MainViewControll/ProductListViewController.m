@@ -85,7 +85,7 @@
 
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number
 {
-    DLog(@"%ld",number);
+    DLog(@"%d",number);
     _nowSelectTab = number;
     //进行第一次刷新
     [(ListViewController*)[listViewContrllerArray objectAtIndex:number] firstRefresh];

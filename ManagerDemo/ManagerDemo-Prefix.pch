@@ -20,4 +20,7 @@
     #import "MBProgressHUD.h"
     #import "ManagerUtil.h"
     #import "MBProgressHUD+Util.h"
+    #import "DaiDaiTongApi.h"
+    #import <SDWebImage/UIImageView+WebCache.h>
+    #import<SDWebImage/SDImageCache.h>
 #endif

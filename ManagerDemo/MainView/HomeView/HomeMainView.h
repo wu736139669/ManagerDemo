@@ -18,5 +18,15 @@
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 - (IBAction)sureBtnClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *securityDescLabel;
+
+
+-(void)setName:(NSString*)name;
+-(void)setpercent:(float)percent;
+-(void)setExpect:(float)expect;
+-(void)setType:(NSString*)type;
+-(void)setInfo:(NSString*)info;
+-(void)setSecurityDesc:(NSString*)securityDesc;
+-(void)setTime:(NSInteger)month withStartBuy:(NSInteger)money;
 
 @end

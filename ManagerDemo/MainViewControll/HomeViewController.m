@@ -11,7 +11,10 @@
 #import "HomeAdView.h"
 #import "HomeMainView.h"
 @interface HomeViewController ()
-
+{
+    HomeAdView* homeAdView;
+    HomeMainView* homeMainView;
+}
 @end
 
 @implementation HomeViewController
@@ -44,21 +47,36 @@
 //    [_tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [_tableView headerBeginRefreshing];
 }
 
 
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
+    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+    //广告条
+    [daiDaiTongApi getBannerInfoWithcompletionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            NSMutableArray* bannerInfo = [jsonRes objectForKey:@"infos"];
+            [homeAdView setBannerInfo:bannerInfo];
+        }
+    } failedBlock:^(NSError *error) {
+        DLog(@"失败");
+        [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+    }];
+    [daiDaiTongApi getFundRecommendWithcompletionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:1.0];
+        }else{
+
+        }
         [self.tableView reloadData];
-        
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
         [self.tableView headerEndRefreshing];
-    });
+    } failedBlock:^(NSError *error) {
+        DLog(@"失败");
+        [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+    }];
 }
 
 - (void)footerRereshing
@@ -98,28 +116,34 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d",indexPath.row];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        switch (indexPath.row) {
+            case 0:{
+                homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+                [cell addSubview:homeAdView];
+            }
+                break;
+            case 1:{
+                NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
+                
+                homeMainView = (HomeMainView*)[nib objectAtIndex:0];
+                CGRect frame = homeMainView.frame;
+                frame.origin.x = 20;
+                homeMainView.frame = frame;
+                [cell addSubview:homeMainView];
+            }
+            default:
+                break;
+        }
 
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    switch (indexPath.row) {
-        case 0:{
-            HomeAdView* homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
-            [cell addSubview:homeAdView];
-        }
-            break;
-        case 1:{
-            NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
-
-            HomeMainView* homeMainView = (HomeMainView*)[nib objectAtIndex:0];
-            CGRect frame = homeMainView.frame;
-            frame.origin.x = 20;
-            homeMainView.frame = frame;
-            [cell addSubview:homeMainView];
-        }
-        default:
-            break;
-        }
-
+    
     return cell;
 }
 #pragma mark - UIBarButtonClick   导航条两边按钮
