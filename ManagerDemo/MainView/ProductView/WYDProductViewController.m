@@ -33,6 +33,8 @@
     NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"WYDInfoHeadView" owner:self options:nil];
     WYDInfoHeadView* wydInfoHedaView = (WYDInfoHeadView*)[nib objectAtIndex:0];
     _tableView.tableHeaderView = wydInfoHedaView;
+    
+    
 }
 
 #pragma mark UITableViewDelegate
@@ -134,7 +136,8 @@
 }
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return nil;
+    UIView* view = [ManagerUtil lineWithColor:Touch_BackGroudColor withAlpha:1.0 withFrame:CGRectMake(0, 0, 320, 1)];
+    return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

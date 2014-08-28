@@ -8,6 +8,7 @@
 
 #import "OtherListViewController.h"
 #import "FundListCell.h"
+#import "OtherProductInfoViewController.h"
 @interface OtherListViewController ()
 
 @end
@@ -70,6 +71,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    OtherProductInfoViewController* otherProductInfoViewController =[[OtherProductInfoViewController alloc] init];
+    [self.delegate.navigationController pushViewController:otherProductInfoViewController animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning

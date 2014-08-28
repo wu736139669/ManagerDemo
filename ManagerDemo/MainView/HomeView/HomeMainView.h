@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *securityDescLabel;
 
 
+
++(HomeMainView*) instanceHomeMainView;
 -(void)setName:(NSString*)name;
 -(void)setpercent:(float)percent;
 -(void)setExpect:(float)expect;

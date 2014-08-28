@@ -8,6 +8,7 @@
 
 #import "FundListViewController.h"
 #import "FundListCell.h"
+#import "FundProductInfoViewController.h"
 @interface FundListViewController ()
 
 @end
@@ -66,6 +67,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    FundProductInfoViewController* fundProductInfoViewController = [[FundProductInfoViewController alloc] init];
+    [self.delegate.navigationController pushViewController:fundProductInfoViewController animated:YES];
+    
 }
 - (void)didReceiveMemoryWarning
 {

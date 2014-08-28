@@ -12,6 +12,11 @@
 {
     CGFloat progressPercent;
 }
++(HomeMainView*)instanceHomeMainView
+{
+    NSArray* nibView =  [[NSBundle mainBundle] loadNibNamed:@"HomeMainView" owner:nil options:nil];
+    return [nibView objectAtIndex:0];
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

@@ -69,7 +69,6 @@
         if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:1.0];
         }else{
-
         }
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
@@ -129,9 +128,9 @@
             }
                 break;
             case 1:{
-                NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"HomeMainView" owner:self options:nil];
+
                 
-                homeMainView = (HomeMainView*)[nib objectAtIndex:0];
+                homeMainView = [HomeMainView instanceHomeMainView];
                 CGRect frame = homeMainView.frame;
                 frame.origin.x = 20;
                 homeMainView.frame = frame;

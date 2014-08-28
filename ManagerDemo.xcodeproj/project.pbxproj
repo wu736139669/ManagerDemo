@@ -95,6 +95,12 @@
 		A9AF6CA41994D0660076C0EE /* ad2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA11994D0660076C0EE /* ad2@2x.png */; };
 		A9AF6CA51994D0660076C0EE /* ad3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA21994D0660076C0EE /* ad3@2x.png */; };
 		A9AF6CA61994D0660076C0EE /* ad4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA31994D0660076C0EE /* ad4@2x.png */; };
+		A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */; };
+		A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */; };
+		A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */; };
+		A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C053FD19AD706C002331A5 /* ToolBarView.m */; };
+		A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */; };
+		A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */; };
 		A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */; };
 		A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */; };
 		A9C69448199BC1F500B2CECE /* gray_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69447199BC1F500B2CECE /* gray_select_arrow@2x.png */; };
@@ -264,6 +270,16 @@
 		A9AF6CA11994D0660076C0EE /* ad2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad2@2x.png"; sourceTree = "<group>"; };
 		A9AF6CA21994D0660076C0EE /* ad3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad3@2x.png"; sourceTree = "<group>"; };
 		A9AF6CA31994D0660076C0EE /* ad4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad4@2x.png"; sourceTree = "<group>"; };
+		A9B9F14319AEF9BE001A1315 /* TableCellLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellLineView.h; sourceTree = "<group>"; };
+		A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellLineView.m; sourceTree = "<group>"; };
+		A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherProductInfoViewController.h; sourceTree = "<group>"; };
+		A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherProductInfoViewController.m; sourceTree = "<group>"; };
+		A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherProductInfoViewController.xib; sourceTree = "<group>"; };
+		A9C053FC19AD706C002331A5 /* ToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBarView.h; sourceTree = "<group>"; };
+		A9C053FD19AD706C002331A5 /* ToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolBarView.m; sourceTree = "<group>"; };
+		A9C0540219ADBCB2002331A5 /* FundProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundProductInfoViewController.h; sourceTree = "<group>"; };
+		A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundProductInfoViewController.m; sourceTree = "<group>"; };
+		A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundProductInfoViewController.xib; sourceTree = "<group>"; };
 		A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_person_take_image@2x.png"; sourceTree = "<group>"; };
 		A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalProfitCellView.h; sourceTree = "<group>"; };
 		A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalProfitCellView.m; sourceTree = "<group>"; };
@@ -337,6 +353,16 @@
 				A90BEC03199DDACA00230242 /* WYDInfoHeadView.h */,
 				A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */,
 				A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */,
+				A9C053FC19AD706C002331A5 /* ToolBarView.h */,
+				A9C053FD19AD706C002331A5 /* ToolBarView.m */,
+				A9C0540219ADBCB2002331A5 /* FundProductInfoViewController.h */,
+				A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */,
+				A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */,
+				A9B9F14319AEF9BE001A1315 /* TableCellLineView.h */,
+				A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */,
+				A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */,
+				A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */,
+				A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -785,6 +811,7 @@
 				A9C69451199BD14D00B2CECE /* more_icon_2@2x.png in Resources */,
 				A9EAA04A19986E8C001A872A /* pull_arrow_down_black@2x.png in Resources */,
 				A9AF6C6119949CD30076C0EE /* icon_dock_mine@2x.png in Resources */,
+				A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */,
 				A9AF6CA51994D0660076C0EE /* ad3@2x.png in Resources */,
 				A9EAA04819986DC3001A872A /* fund_cell_label_bg_red@2x.png in Resources */,
 				A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */,
@@ -799,6 +826,7 @@
 				A9AF6C5D19949CD30076C0EE /* icon_dock_forum@2x.png in Resources */,
 				A9EAA04E1998787B001A872A /* hk_home_center__cycle@2x.png in Resources */,
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
+				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
 				A9AF6C771994B5890076C0EE /* icon_indicate_more@2x.png in Resources */,
 				A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */,
@@ -891,6 +919,7 @@
 			files = (
 				A93F8801199A077F00875287 /* ListViewController.m in Sources */,
 				A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */,
+				A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */,
 				A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */,
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
@@ -907,6 +936,7 @@
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
 				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
+				A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
@@ -922,7 +952,9 @@
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,
 				A93F8800199A077F00875287 /* FundListViewController.m in Sources */,
 				A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */,
+				A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,
+				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
