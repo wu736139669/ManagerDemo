@@ -49,6 +49,10 @@
 		A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */; };
 		A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */; };
 		A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */; };
+		A986269A19B423EB00FF9E2C /* ActivityCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */; };
+		A986269B19B423EB00FF9E2C /* ActivityCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */; };
+		A986269F19B4241400FF9E2C /* ActivityCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */; };
+		A98626A019B4241400FF9E2C /* ActivityCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */; };
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
 		A988A900199A751500EB10AA /* FundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FF199A751500EB10AA /* FundListCell.m */; };
 		A988A902199A755300EB10AA /* FundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A988A901199A755300EB10AA /* FundListCell.xib */; };
@@ -108,6 +112,11 @@
 		A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8A1994C5700076C0EE /* UIScrollView+Extension.m */; };
 		A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */; };
 		A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */; };
+		A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */; };
+		A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */; };
+		A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */; };
+		A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */; };
+		A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */; };
 		A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */; };
 		A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */; };
 		A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */; };
@@ -219,6 +228,12 @@
 		A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyIncomeTableViewCell.h; sourceTree = "<group>"; };
 		A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyIncomeTableViewCell.m; sourceTree = "<group>"; };
 		A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeTableViewCell.xib; sourceTree = "<group>"; };
+		A986269719B423EB00FF9E2C /* ActivityCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCenterViewController.h; sourceTree = "<group>"; };
+		A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCenterViewController.m; sourceTree = "<group>"; };
+		A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCenterViewController.xib; sourceTree = "<group>"; };
+		A986269C19B4241400FF9E2C /* ActivityCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCenterTableViewCell.h; sourceTree = "<group>"; };
+		A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCenterTableViewCell.m; sourceTree = "<group>"; };
+		A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCenterTableViewCell.xib; sourceTree = "<group>"; };
 		A988A8FA199A50D900EB10AA /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
 		A988A8FB199A50D900EB10AA /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 		A988A8FE199A751500EB10AA /* FundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListCell.h; sourceTree = "<group>"; };
@@ -301,6 +316,13 @@
 		A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		A9AF6C8D1994C5700076C0EE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterViewController.h; sourceTree = "<group>"; };
+		A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterViewController.m; sourceTree = "<group>"; };
+		A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenterViewController.xib; sourceTree = "<group>"; };
+		A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterTableViewCell.h; sourceTree = "<group>"; };
+		A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterTableViewCell.m; sourceTree = "<group>"; };
+		A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenterTableViewCell.xib; sourceTree = "<group>"; };
+		A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_select_arrow@2x.png"; sourceTree = "<group>"; };
 		A9B9F14319AEF9BE001A1315 /* TableCellLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellLineView.h; sourceTree = "<group>"; };
 		A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellLineView.m; sourceTree = "<group>"; };
 		A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherProductInfoViewController.h; sourceTree = "<group>"; };
@@ -431,6 +453,18 @@
 				A94FE51C199C9C3C00626DE5 /* MoveSocialCellView.h */,
 				A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */,
 				A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */,
+				A986269719B423EB00FF9E2C /* ActivityCenterViewController.h */,
+				A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */,
+				A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */,
+				A986269C19B4241400FF9E2C /* ActivityCenterTableViewCell.h */,
+				A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */,
+				A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */,
+				A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */,
+				A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */,
+				A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */,
+				A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */,
+				A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */,
+				A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */,
 			);
 			path = MoveView;
 			sourceTree = "<group>";
@@ -627,6 +661,7 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */,
 				A919056919B07AAF002575DF /* pie_chart_arrow@2x.png */,
 				A919056619B067B8002575DF /* adview@2x.png */,
 				A919055C19B02A6E002575DF /* icon_color_key@2x.png */,
@@ -878,6 +913,7 @@
 				A9EAA04519986DC3001A872A /* fund_cell_label_bg_blue@2x.png in Resources */,
 				A919056719B067B8002575DF /* adview@2x.png in Resources */,
 				A9AF6C6219949CD30076C0EE /* icon_dock_rt_actived@2x.png in Resources */,
+				A98626A019B4241400FF9E2C /* ActivityCenterTableViewCell.xib in Resources */,
 				A9AF6C781994B5890076C0EE /* icon_share_default.png in Resources */,
 				A9AF6C741994B5890076C0EE /* icon_indicate_add_module@2x.png in Resources */,
 				A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */,
@@ -887,6 +923,7 @@
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
+				A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */,
 				A9AF6C771994B5890076C0EE /* icon_indicate_more@2x.png in Resources */,
 				A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */,
 				A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */,
@@ -895,10 +932,12 @@
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
 				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
+				A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
+				A986269B19B423EB00FF9E2C /* ActivityCenterViewController.xib in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */,
 				A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */,
@@ -907,6 +946,7 @@
 				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
 				A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */,
 				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
+				A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */,
 				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
@@ -999,6 +1039,8 @@
 				A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */,
 				A9AF6C47199498D10076C0EE /* MoreViewController.m in Sources */,
 				A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */,
+				A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */,
+				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
@@ -1006,6 +1048,7 @@
 				A919055619B02741002575DF /* AccountInfoViewController.m in Sources */,
 				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
 				A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */,
+				A986269F19B4241400FF9E2C /* ActivityCenterTableViewCell.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
@@ -1020,6 +1063,7 @@
 				A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */,
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,
 				A93F8800199A077F00875287 /* FundListViewController.m in Sources */,
+				A986269A19B423EB00FF9E2C /* ActivityCenterViewController.m in Sources */,
 				A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */,
 				A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "MoreViewController.h"
 #import "MoveSocialCellView.h"
+#import "ActivityCenterViewController.h"
+#import "HelpCenterViewController.h"
 @interface MoreViewController ()
 
 @end
@@ -183,17 +185,37 @@
         default:
             break;
     }
-    UIView* selectedBackgroudView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
-    CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
-    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
-    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
-    cell.selectedBackgroundView = selectedBackgroudView;
+//    UIView* selectedBackgroudView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
+//    CGFloat cellHeight = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+//    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(0, 0, 1, cellHeight) ]];
+//    [selectedBackgroudView addSubview:[ManagerUtil lineWithColor:[UIColor grayColor] withAlpha:0.3 withFrame:CGRectMake(tableView.frame.size.width-1, 0, 1, cellHeight)]];
+//    cell.selectedBackgroundView = selectedBackgroudView;
     
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    switch (indexPath.section) {
+        case 0:
+        {
+            if (indexPath.row == 0) {
+                ActivityCenterViewController* activityCenterViewController = [[ActivityCenterViewController alloc] init];
+                activityCenterViewController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:activityCenterViewController animated:YES];
+            }
+            if (indexPath.row == 2) {
+                HelpCenterViewController* helpCenterViewController = [[HelpCenterViewController alloc] init];
+                helpCenterViewController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:helpCenterViewController animated:YES];
+            }
+
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 - (void)didReceiveMemoryWarning
 {

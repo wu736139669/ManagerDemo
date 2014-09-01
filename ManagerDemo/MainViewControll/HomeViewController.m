@@ -67,7 +67,7 @@
     }];
     [daiDaiTongApi getFundRecommendWithcompletionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:1.0];
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:1.0];
         }else{
         }
         [self.tableView reloadData];
