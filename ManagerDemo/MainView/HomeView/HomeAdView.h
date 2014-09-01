@@ -11,6 +11,8 @@
 @interface HomeAdView : UIView<UIScrollViewDelegate,ImagePlayerViewDelegate>
 {
     NSMutableArray* _bannerInfo;
+    __weak UIViewController* _superViewController;
 }
 @property(nonatomic,strong)NSMutableArray* bannerInfo;
+@property(nonatomic, weak)UIViewController* superViewController;
 @end

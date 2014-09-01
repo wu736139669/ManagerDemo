@@ -9,7 +9,7 @@
 #import "ImagePlayerView.h"
 
 #define kStartTag   1000
-#define kDefaultScrollInterval  2
+#define kDefaultScrollInterval  4
 
 @interface ImagePlayerView() <UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;

@@ -12,6 +12,16 @@
 		A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */; };
 		A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */; };
 		A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */; };
+		A919055619B02741002575DF /* AccountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A919055419B02741002575DF /* AccountInfoViewController.m */; };
+		A919055919B02A4F002575DF /* hw_verifycard_info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A919055819B02A4F002575DF /* hw_verifycard_info_icon.png */; };
+		A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919055A19B02A5F002575DF /* icon_color_idcard@2x.png */; };
+		A919055D19B02A6E002575DF /* icon_color_key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919055C19B02A6E002575DF /* icon_color_key@2x.png */; };
+		A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919055E19B02A72002575DF /* icon_color_bank@2x.png */; };
+		A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919056019B02A83002575DF /* icon_color_name@2x.png */; };
+		A919056319B02A8C002575DF /* icon_color_person@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919056219B02A8C002575DF /* icon_color_person@2x.png */; };
+		A919056719B067B8002575DF /* adview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919056619B067B8002575DF /* adview@2x.png */; };
+		A919056A19B07AAF002575DF /* pie_chart_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A919056919B07AAF002575DF /* pie_chart_arrow@2x.png */; };
+		A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A919056B19B0882E002575DF /* AccountInfoViewController.xib */; };
 		A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3D19AB8E9C00AEBF4D /* p2c_alert@2x.png */; };
 		A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */; };
 		A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */; };
@@ -32,6 +42,13 @@
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
+		A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */; };
+		A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */; };
+		A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268919B40AAC00FF9E2C /* SVWebViewController.m */; };
+		A986269019B411AA00FF9E2C /* DailyIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */; };
+		A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */; };
+		A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */; };
+		A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */; };
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
 		A988A900199A751500EB10AA /* FundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FF199A751500EB10AA /* FundListCell.m */; };
 		A988A902199A755300EB10AA /* FundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A988A901199A755300EB10AA /* FundListCell.xib */; };
@@ -91,10 +108,6 @@
 		A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8A1994C5700076C0EE /* UIScrollView+Extension.m */; };
 		A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */; };
 		A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */; };
-		A9AF6CA01994D0210076C0EE /* ad1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6C9F1994D0210076C0EE /* ad1@2x.png */; };
-		A9AF6CA41994D0660076C0EE /* ad2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA11994D0660076C0EE /* ad2@2x.png */; };
-		A9AF6CA51994D0660076C0EE /* ad3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA21994D0660076C0EE /* ad3@2x.png */; };
-		A9AF6CA61994D0660076C0EE /* ad4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF6CA31994D0660076C0EE /* ad4@2x.png */; };
 		A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */; };
 		A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */; };
 		A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */; };
@@ -152,6 +165,17 @@
 		A90BEC03199DDACA00230242 /* WYDInfoHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDInfoHeadView.h; sourceTree = "<group>"; };
 		A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDInfoHeadView.m; sourceTree = "<group>"; };
 		A90BEC06199DDAFB00230242 /* WYDInfoHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDInfoHeadView.xib; sourceTree = "<group>"; };
+		A919055319B02741002575DF /* AccountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoViewController.h; sourceTree = "<group>"; };
+		A919055419B02741002575DF /* AccountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoViewController.m; sourceTree = "<group>"; };
+		A919055819B02A4F002575DF /* hw_verifycard_info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hw_verifycard_info_icon.png; sourceTree = "<group>"; };
+		A919055A19B02A5F002575DF /* icon_color_idcard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_color_idcard@2x.png"; sourceTree = "<group>"; };
+		A919055C19B02A6E002575DF /* icon_color_key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_color_key@2x.png"; sourceTree = "<group>"; };
+		A919055E19B02A72002575DF /* icon_color_bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_color_bank@2x.png"; sourceTree = "<group>"; };
+		A919056019B02A83002575DF /* icon_color_name@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_color_name@2x.png"; sourceTree = "<group>"; };
+		A919056219B02A8C002575DF /* icon_color_person@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_color_person@2x.png"; sourceTree = "<group>"; };
+		A919056619B067B8002575DF /* adview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adview@2x.png"; sourceTree = "<group>"; };
+		A919056919B07AAF002575DF /* pie_chart_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pie_chart_arrow@2x.png"; sourceTree = "<group>"; };
+		A919056B19B0882E002575DF /* AccountInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountInfoViewController.xib; sourceTree = "<group>"; };
 		A91C6D3D19AB8E9C00AEBF4D /* p2c_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_alert@2x.png"; sourceTree = "<group>"; };
 		A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_datesum@2x.png"; sourceTree = "<group>"; };
 		A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_safeicon@2x.png"; sourceTree = "<group>"; };
@@ -184,6 +208,17 @@
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		A986268519B40AAC00FF9E2C /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
+		A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
+		A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
+		A986268819B40AAC00FF9E2C /* SVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewController.h; sourceTree = "<group>"; };
+		A986268919B40AAC00FF9E2C /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
+		A986268D19B411AA00FF9E2C /* DailyIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyIncomeViewController.h; sourceTree = "<group>"; };
+		A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyIncomeViewController.m; sourceTree = "<group>"; };
+		A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeViewController.xib; sourceTree = "<group>"; };
+		A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyIncomeTableViewCell.h; sourceTree = "<group>"; };
+		A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyIncomeTableViewCell.m; sourceTree = "<group>"; };
+		A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeTableViewCell.xib; sourceTree = "<group>"; };
 		A988A8FA199A50D900EB10AA /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
 		A988A8FB199A50D900EB10AA /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 		A988A8FE199A751500EB10AA /* FundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListCell.h; sourceTree = "<group>"; };
@@ -266,10 +301,6 @@
 		A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		A9AF6C8D1994C5700076C0EE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		A9AF6C9F1994D0210076C0EE /* ad1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad1@2x.png"; sourceTree = "<group>"; };
-		A9AF6CA11994D0660076C0EE /* ad2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad2@2x.png"; sourceTree = "<group>"; };
-		A9AF6CA21994D0660076C0EE /* ad3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad3@2x.png"; sourceTree = "<group>"; };
-		A9AF6CA31994D0660076C0EE /* ad4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad4@2x.png"; sourceTree = "<group>"; };
 		A9B9F14319AEF9BE001A1315 /* TableCellLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellLineView.h; sourceTree = "<group>"; };
 		A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellLineView.m; sourceTree = "<group>"; };
 		A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherProductInfoViewController.h; sourceTree = "<group>"; };
@@ -413,6 +444,18 @@
 				A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */,
 			);
 			path = UIButtonUtil;
+			sourceTree = "<group>";
+		};
+		A986268419B40AAC00FF9E2C /* SVWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A986268519B40AAC00FF9E2C /* SVModalWebViewController.h */,
+				A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */,
+				A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */,
+				A986268819B40AAC00FF9E2C /* SVWebViewController.h */,
+				A986268919B40AAC00FF9E2C /* SVWebViewController.m */,
+			);
+			path = SVWebViewController;
 			sourceTree = "<group>";
 		};
 		A988A8F9199A50B600EB10AA /* UIViewShape */ = {
@@ -564,6 +607,7 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A986268419B40AAC00FF9E2C /* SVWebViewController */,
 				A9F1E18319ACB24500B6A441 /* CustomCell */,
 				A9E8589A19AC2940001996DF /* DaiDaiTongApi */,
 				A96F2A79199D007700608237 /* UIButtonUtil */,
@@ -583,6 +627,14 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A919056919B07AAF002575DF /* pie_chart_arrow@2x.png */,
+				A919056619B067B8002575DF /* adview@2x.png */,
+				A919055C19B02A6E002575DF /* icon_color_key@2x.png */,
+				A919055E19B02A72002575DF /* icon_color_bank@2x.png */,
+				A919055A19B02A5F002575DF /* icon_color_idcard@2x.png */,
+				A919056219B02A8C002575DF /* icon_color_person@2x.png */,
+				A919056019B02A83002575DF /* icon_color_name@2x.png */,
+				A919055819B02A4F002575DF /* hw_verifycard_info_icon.png */,
 				A91C6D3D19AB8E9C00AEBF4D /* p2c_alert@2x.png */,
 				A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */,
 				A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */,
@@ -611,10 +663,6 @@
 				A9EAA04219986DC3001A872A /* fund_cell_label_bg_gray@2x.png */,
 				A9EAA04319986DC3001A872A /* fund_cell_label_bg_green@2x.png */,
 				A9EAA04419986DC3001A872A /* fund_cell_label_bg_red@2x.png */,
-				A9AF6C9F1994D0210076C0EE /* ad1@2x.png */,
-				A9AF6CA11994D0660076C0EE /* ad2@2x.png */,
-				A9AF6CA21994D0660076C0EE /* ad3@2x.png */,
-				A9AF6CA31994D0660076C0EE /* ad4@2x.png */,
 				A9AF6C6A1994B5890076C0EE /* icon_bar_card@2x.png */,
 				A9AF6C6B1994B5890076C0EE /* icon_bar_share@2x.png */,
 				A9AF6C6C1994B5890076C0EE /* icon_indicate_add_module@2x.png */,
@@ -682,6 +730,15 @@
 			children = (
 				A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */,
 				A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */,
+				A919055319B02741002575DF /* AccountInfoViewController.h */,
+				A919055419B02741002575DF /* AccountInfoViewController.m */,
+				A919056B19B0882E002575DF /* AccountInfoViewController.xib */,
+				A986268D19B411AA00FF9E2C /* DailyIncomeViewController.h */,
+				A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */,
+				A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */,
+				A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */,
+				A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */,
+				A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -793,18 +850,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AF6C43199498C40076C0EE /* MyViewController.xib in Resources */,
+				A919055D19B02A6E002575DF /* icon_color_key@2x.png in Resources */,
 				A9EAA04719986DC3001A872A /* fund_cell_label_bg_green@2x.png in Resources */,
 				A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */,
 				A9C69454199BD14D00B2CECE /* more_icon_6@2x.png in Resources */,
 				A93F8802199A077F00875287 /* ListViewController.xib in Resources */,
 				A93F8804199A077F00875287 /* LoanListCell.xib in Resources */,
 				A9C69448199BC1F500B2CECE /* gray_select_arrow@2x.png in Resources */,
+				A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
 				A9AF6C5C19949CD30076C0EE /* icon_dock_forum_actived@2x.png in Resources */,
-				A9AF6CA61994D0660076C0EE /* ad4@2x.png in Resources */,
 				A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */,
 				A9C69456199BD14D00B2CECE /* more_icon_8@2x.png in Resources */,
 				A9AF6C48199498D10076C0EE /* MoreViewController.xib in Resources */,
@@ -812,16 +870,17 @@
 				A9EAA04A19986E8C001A872A /* pull_arrow_down_black@2x.png in Resources */,
 				A9AF6C6119949CD30076C0EE /* icon_dock_mine@2x.png in Resources */,
 				A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */,
-				A9AF6CA51994D0660076C0EE /* ad3@2x.png in Resources */,
 				A9EAA04819986DC3001A872A /* fund_cell_label_bg_red@2x.png in Resources */,
 				A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */,
 				A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */,
 				A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */,
 				A9AF6C5E19949CD30076C0EE /* icon_dock_home_actived@2x.png in Resources */,
 				A9EAA04519986DC3001A872A /* fund_cell_label_bg_blue@2x.png in Resources */,
+				A919056719B067B8002575DF /* adview@2x.png in Resources */,
 				A9AF6C6219949CD30076C0EE /* icon_dock_rt_actived@2x.png in Resources */,
 				A9AF6C781994B5890076C0EE /* icon_share_default.png in Resources */,
 				A9AF6C741994B5890076C0EE /* icon_indicate_add_module@2x.png in Resources */,
+				A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */,
 				A9AF6C751994B5890076C0EE /* icon_indicate_arrow_don@2x.png in Resources */,
 				A9AF6C5D19949CD30076C0EE /* icon_dock_forum@2x.png in Resources */,
 				A9EAA04E1998787B001A872A /* hk_home_center__cycle@2x.png in Resources */,
@@ -832,31 +891,37 @@
 				A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */,
 				A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */,
 				A9AF6C6519949CD30076C0EE /* icon_dock_service@2x.png in Resources */,
-				A9AF6CA01994D0210076C0EE /* ad1@2x.png in Resources */,
 				A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */,
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
+				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */,
+				A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */,
 				A9C69453199BD14D00B2CECE /* more_icon_4@2x.png in Resources */,
 				A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */,
 				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
 				A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */,
 				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
+				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
+				A919056319B02A8C002575DF /* icon_color_person@2x.png in Resources */,
 				A9EAA04619986DC3001A872A /* fund_cell_label_bg_gray@2x.png in Resources */,
+				A919055919B02A4F002575DF /* hw_verifycard_info_icon.png in Resources */,
 				A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */,
+				A919056A19B07AAF002575DF /* pie_chart_arrow@2x.png in Resources */,
 				A9EAA052199879CC001A872A /* pie_chart_center@2x.png in Resources */,
 				A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */,
-				A9AF6CA41994D0660076C0EE /* ad2@2x.png in Resources */,
 				A9AF6C34199484200076C0EE /* HomeViewController.xib in Resources */,
 				A9AF6C0019947DD00076C0EE /* Main.storyboard in Resources */,
+				A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */,
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
+				A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */,
 				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
 				A9C69452199BD14D00B2CECE /* more_icon_3@2x.png in Resources */,
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
@@ -933,8 +998,12 @@
 				A9E8589D19AC2AAE001996DF /* DaiDaiTongApi.m in Sources */,
 				A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */,
 				A9AF6C47199498D10076C0EE /* MoreViewController.m in Sources */,
+				A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */,
+				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
+				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
+				A919055619B02741002575DF /* AccountInfoViewController.m in Sources */,
 				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
 				A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
@@ -957,6 +1026,7 @@
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
+				A986269019B411AA00FF9E2C /* DailyIncomeViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);
@@ -1091,6 +1161,7 @@
 				INFOPLIST_FILE = "ManagerDemo/ManagerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6D0F83D4-7981-4063-AEE3-8929725A2807";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1106,6 +1177,7 @@
 				INFOPLIST_FILE = "ManagerDemo/ManagerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6D0F83D4-7981-4063-AEE3-8929725A2807";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -12,6 +12,8 @@
 
 
 
+//删除参数view所有的subview
++ (void)removeAllSubView:(UIView*) view;
 /**
  *  ios7的匹配问题
  */
@@ -32,4 +34,5 @@
 +(UIView*)selectBackgroudViewWithFrame:(CGRect)frame;
 
 +(UIImage*) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
++(UIViewController *)getCurrentRootViewController;
 @end

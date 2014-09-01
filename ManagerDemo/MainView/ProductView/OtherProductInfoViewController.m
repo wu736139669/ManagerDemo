@@ -7,7 +7,7 @@
 //
 
 #import "OtherProductInfoViewController.h"
-
+#import "MJRefresh.h"
 @interface OtherProductInfoViewController ()
 
 @end
@@ -31,7 +31,48 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    //加入刷新
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    
+    //右边按钮。
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(headerBeginRefreshing)]];
+
 }
+#pragma mark MJRefreshDelegate
+- (void)headerRereshing
+{
+    
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView headerEndRefreshing];
+    });
+}
+
+- (void)footerRereshing
+{
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView footerEndRefreshing];
+    });
+}
+- (void)headerBeginRefreshing
+{
+    [self.tableView headerBeginRefreshing];
+}
+-(void)headerEndRefreshing
+{
+    [self.tableView headerEndRefreshing];
+}
+#pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 5;

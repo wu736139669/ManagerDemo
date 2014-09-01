@@ -124,6 +124,7 @@
         switch (indexPath.row) {
             case 0:{
                 homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+                homeAdView.superViewController = self;
                 [cell addSubview:homeAdView];
             }
                 break;

@@ -7,6 +7,7 @@
 //
 
 #import "HomeAdView.h"
+#import "SVWebViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @implementation HomeAdView
 {
@@ -21,9 +22,9 @@
     }
     imagePlayerView = [[ImagePlayerView alloc] init];
     imagePlayerView.frame = frame;
-    [imagePlayerView initWithCount:4 delegate:self];
+    [imagePlayerView initWithCount:5 delegate:self];
     [self addSubview:imagePlayerView];
-    
+    _superViewController = nil;
     return self;
 }
 
@@ -38,16 +39,28 @@
 
 -(void)setBannerInfo:(NSMutableArray *)bannerInfo
 {
+    if (imagePlayerView) {
+        [imagePlayerView removeFromSuperview];
+        imagePlayerView = nil;
+    }
+    imagePlayerView = [[ImagePlayerView alloc] init];
+    imagePlayerView.frame = self.frame;
+    [self addSubview:imagePlayerView];
     _bannerInfo = bannerInfo;
     [imagePlayerView initWithCount:bannerInfo.count delegate:self];
 }
 #pragma mark ImagePlayerDelegate
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
 {
-    [imageView sd_setImageWithURL:[[_bannerInfo objectAtIndex:index]objectForKey:@"url"] placeholderImage:[UIImage imageNamed:@"ad1"]];
+    [imageView sd_setImageWithURL:[[_bannerInfo objectAtIndex:index]objectForKey:@"url"] placeholderImage:[UIImage imageNamed:@"adview"]];
 }
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
 {
-    DLog(@"%@",[_bannerInfo objectAtIndex:index]);
+
+    if (_superViewController) {
+        SVWebViewController* webViewController = [[SVWebViewController alloc] initWithURL:[NSURL URLWithString:[[_bannerInfo objectAtIndex:index] objectForKey:@"value"]]];
+        webViewController.hidesBottomBarWhenPushed = YES;
+        [_superViewController.navigationController pushViewController:webViewController animated:YES];
+    }
 }
 @end

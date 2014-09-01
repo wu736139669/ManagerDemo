@@ -9,6 +9,8 @@
 #import "MyViewController.h"
 #import "MyTotalProfitCellView.h"
 #import "MJRefresh.h"
+#import "AccountInfoViewController.h"
+#import "DailyIncomeViewController.h"
 @interface MyViewController ()
 
 @end
@@ -120,6 +122,7 @@
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.detailTextLabel.text = @"13212312313";
+            cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         case 1:
@@ -136,6 +139,7 @@
             profitLabel.font = Font_Black(50);
             profitLabel.textAlignment = NSTextAlignmentCenter;
             profitLabel.text = @"100.04";
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell addSubview:profitLabel];
         }
             break;
@@ -145,6 +149,7 @@
             frmae.size.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
             cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
             MyTotalProfitCellView* myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell addSubview:myTotalProfitCellView];
         }
             break;
@@ -152,8 +157,8 @@
         {
             cell.textLabel.text = @"我是超人";
             cell.textLabel.textColor = [UIColor grayColor];
-            
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         case 4:
@@ -162,18 +167,37 @@
             cell.textLabel.textColor = [UIColor grayColor];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.detailTextLabel.text = @"100分";
+            cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         default:
             break;
     }
 
-    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
+//    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, -1, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath]-2)];
+    
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    switch (indexPath.section) {
+        case 0:
+        {
+            AccountInfoViewController* accountInfoViewController = [[AccountInfoViewController alloc] init];
+            [self.navigationController pushViewController:accountInfoViewController animated:YES];
+        }
+            break;
+        case 1:
+        {
+            DailyIncomeViewController* dailyIncomeViewController = [[DailyIncomeViewController alloc] init];
+            [self.navigationController pushViewController:dailyIncomeViewController animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
