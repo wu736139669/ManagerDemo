@@ -8,5 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @interface MainViewController : UITabBarController
-
+{
+    UINavigationController* _homeNavigationController;
+    UINavigationController* _produciListNavigationController;
+    UINavigationController* _myNavigationController;
+    UINavigationController* _moreNavigationController;
+}
+@property(nonatomic, strong)UINavigationController* homeNavigationController;
+@property(nonatomic, strong)UINavigationController* produciListNavigationController;
+@property(nonatomic, strong)UINavigationController* myNavigationController;
+@property(nonatomic, strong)UINavigationController* moreNavigationController;
 @end

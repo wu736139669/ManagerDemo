@@ -25,11 +25,31 @@
 
 -(MKNetworkOperation*)getWithPath:(NSString*)path params:(NSDictionary *)params
 {
-    return [self operationWithPath:path params:params httpMethod:@"GET" ssl:YES];
+    NSMutableDictionary* dic = nil;
+    if (params) {
+        dic = [[NSMutableDictionary alloc] initWithDictionary:params];
+    }else{
+        dic = [[NSMutableDictionary alloc] init];
+    }
+//    [dic setObject:@"1408971073.153750" forKey:@"_"];
+//    [dic setObject:@"211d9ede2548c40e5d18e47358835b16" forKey:@"sign"];
+//    [dic setObject:@"MD5" forKey:@"sign_t"];
+//    [dic setObject:@"f241caa3534d751598871852a2f5205f4927fcf8" forKey:@"token"];
+//    [dic setObject:@"2.5.0" forKey:@"ver"];
+//    [dic setObject:@"IOS" forKey:@"vjson"];
+    
+    
+    return [self operationWithPath:path params:dic httpMethod:@"GET" ssl:YES];
 }
 -(MKNetworkOperation*)postWithPath:(NSString*)path params:(NSDictionary *)params
 {
-    return [self operationWithPath:path params:params httpMethod:@"POST" ssl:YES];
+    NSMutableDictionary* dic = nil;
+    if (params) {
+        dic = [[NSMutableDictionary alloc] initWithDictionary:params];
+    }else{
+        dic = [[NSMutableDictionary alloc] init];
+    }
+    return [self operationWithPath:path params:dic httpMethod:@"POST" ssl:YES];
 }
 -(MKNetworkOperation*)getBannerInfoWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
@@ -63,5 +83,23 @@
     [self enqueueOperation:op forceReload:YES];
     
     return op;
+}
+-(MKNetworkOperation*)loginWithPhone:(NSString *)phoneNum withPassWord:(NSString *)password withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:phoneNum, @"cell", password, @"loginPwd",nil];
+    MKNetworkOperation* op = [self postWithPath:@"fastlogin.do" params:dic];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+
 }
 @end

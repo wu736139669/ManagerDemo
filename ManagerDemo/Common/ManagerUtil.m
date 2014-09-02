@@ -7,9 +7,22 @@
 //
 
 #import "ManagerUtil.h"
-
+#import "LoginViewController.h"
+#import "AppDelegate.h"
 @implementation ManagerUtil
 
+
++(void)presentLoginView
+{
+    LoginViewController *login = [[LoginViewController alloc] init];
+    UINavigationController *nav =[[UINavigationController alloc]initWithRootViewController:login];
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    [app.mainViewController presentViewController:nav animated:YES completion:^{
+        
+    }];
+    
+}
 
 +(void)SetSubViewExternNone:(UIViewController *)viewController
 {

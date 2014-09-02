@@ -34,4 +34,15 @@ typedef void (^FailedBlock) (NSError *error);
  *  @return MKNetworkOperation
  */
 -(MKNetworkOperation*)getFundRecommendWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  快速登录
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param phoneNum        手机号码
+ *  @param password        登录密码
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)loginWithPhone:(NSString*)phoneNum withPassWord:(NSString*)password withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
 @end

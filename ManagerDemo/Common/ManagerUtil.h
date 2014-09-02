@@ -12,6 +12,12 @@
 
 
 
+/**
+ *  跳转到登录页面
+ *
+ *  @param type type description
+ */
++(void)presentLoginView;
 //删除参数view所有的subview
 + (void)removeAllSubView:(UIView*) view;
 /**

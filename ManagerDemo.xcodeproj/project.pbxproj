@@ -42,6 +42,16 @@
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
+		A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */; };
+		A97F9D1619B592E90073E7E6 /* get_ver_button_red_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1319B592E90073E7E6 /* get_ver_button_red_s@2x.png */; };
+		A97F9D1719B592E90073E7E6 /* get_ver_button_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1419B592E90073E7E6 /* get_ver_button_red@2x.png */; };
+		A97F9D1A19B592FD0073E7E6 /* login_button_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1819B592FD0073E7E6 /* login_button_s@2x.png */; };
+		A97F9D1B19B592FD0073E7E6 /* login_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1919B592FD0073E7E6 /* login_button@2x.png */; };
+		A97F9D1E19B5931C0073E7E6 /* register_button_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */; };
+		A97F9D1F19B5931C0073E7E6 /* register_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */; };
+		A97F9D2319B595550073E7E6 /* InputPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A97F9D2119B595550073E7E6 /* InputPassWordViewController.m */; };
+		A97F9D2419B595550073E7E6 /* InputPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D2219B595550073E7E6 /* InputPassWordViewController.xib */; };
+		A97F9D2719B5974B0073E7E6 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A97F9D2619B5974B0073E7E6 /* UIUnderlinedButton.m */; };
 		A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */; };
 		A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */; };
 		A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268919B40AAC00FF9E2C /* SVWebViewController.m */; };
@@ -152,6 +162,13 @@
 		A9EAA052199879CC001A872A /* pie_chart_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EAA051199879CC001A872A /* pie_chart_center@2x.png */; };
 		A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAA05519988C55001A872A /* MRCircularProgressView.m */; };
 		A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EAA05E1998BB82001A872A /* about_dot@2x.png */; };
+		A9EC95B719B54F6E00681678 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EC95B519B54F6E00681678 /* LoginViewController.m */; };
+		A9EC95B819B54F6E00681678 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95B619B54F6E00681678 /* LoginViewController.xib */; };
+		A9EC95BB19B54FDB00681678 /* textField_cancel_ios7_s.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95B919B54FDB00681678 /* textField_cancel_ios7_s.png */; };
+		A9EC95BC19B54FDB00681678 /* textField_cancel_ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95BA19B54FDB00681678 /* textField_cancel_ios7.png */; };
+		A9EC95BE19B54FEC00681678 /* textField_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95BD19B54FEC00681678 /* textField_bg@2x.png */; };
+		A9EC95C019B5501B00681678 /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95BF19B5501B00681678 /* icon_phone@2x.png */; };
+		A9EC95C319B55CF100681678 /* ManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EC95C219B55CF100681678 /* ManagerUser.m */; };
 		A9F1E18619ACB63100B6A441 /* DTCoreTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F1E18519ACB63100B6A441 /* DTCoreTextTableViewCell.m */; };
 		A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F1E18719ACB64D00B6A441 /* DTCoreTextTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -217,6 +234,18 @@
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "get_ver_button_gry@2x.png"; sourceTree = "<group>"; };
+		A97F9D1319B592E90073E7E6 /* get_ver_button_red_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "get_ver_button_red_s@2x.png"; sourceTree = "<group>"; };
+		A97F9D1419B592E90073E7E6 /* get_ver_button_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "get_ver_button_red@2x.png"; sourceTree = "<group>"; };
+		A97F9D1819B592FD0073E7E6 /* login_button_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_button_s@2x.png"; sourceTree = "<group>"; };
+		A97F9D1919B592FD0073E7E6 /* login_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_button@2x.png"; sourceTree = "<group>"; };
+		A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_button_s@2x.png"; sourceTree = "<group>"; };
+		A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_button@2x.png"; sourceTree = "<group>"; };
+		A97F9D2019B595550073E7E6 /* InputPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPassWordViewController.h; sourceTree = "<group>"; };
+		A97F9D2119B595550073E7E6 /* InputPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPassWordViewController.m; sourceTree = "<group>"; };
+		A97F9D2219B595550073E7E6 /* InputPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputPassWordViewController.xib; sourceTree = "<group>"; };
+		A97F9D2519B5974B0073E7E6 /* UIUnderlinedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUnderlinedButton.h; sourceTree = "<group>"; };
+		A97F9D2619B5974B0073E7E6 /* UIUnderlinedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUnderlinedButton.m; sourceTree = "<group>"; };
 		A986268519B40AAC00FF9E2C /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
 		A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
 		A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
@@ -366,6 +395,15 @@
 		A9EAA05419988C55001A872A /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
 		A9EAA05519988C55001A872A /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
 		A9EAA05E1998BB82001A872A /* about_dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_dot@2x.png"; sourceTree = "<group>"; };
+		A9EC95B419B54F6E00681678 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A9EC95B519B54F6E00681678 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A9EC95B619B54F6E00681678 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A9EC95B919B54FDB00681678 /* textField_cancel_ios7_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField_cancel_ios7_s.png; sourceTree = "<group>"; };
+		A9EC95BA19B54FDB00681678 /* textField_cancel_ios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField_cancel_ios7.png; sourceTree = "<group>"; };
+		A9EC95BD19B54FEC00681678 /* textField_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textField_bg@2x.png"; sourceTree = "<group>"; };
+		A9EC95BF19B5501B00681678 /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
+		A9EC95C119B55CF100681678 /* ManagerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUser.h; sourceTree = "<group>"; };
+		A9EC95C219B55CF100681678 /* ManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUser.m; sourceTree = "<group>"; };
 		A9F1E18419ACB63100B6A441 /* DTCoreTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCoreTextTableViewCell.h; sourceTree = "<group>"; };
 		A9F1E18519ACB63100B6A441 /* DTCoreTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCoreTextTableViewCell.m; sourceTree = "<group>"; };
 		A9F1E18719ACB64D00B6A441 /* DTCoreTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCoreTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -476,6 +514,8 @@
 				A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */,
 				A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */,
 				A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */,
+				A97F9D2519B5974B0073E7E6 /* UIUnderlinedButton.h */,
+				A97F9D2619B5974B0073E7E6 /* UIUnderlinedButton.m */,
 			);
 			path = UIButtonUtil;
 			sourceTree = "<group>";
@@ -654,6 +694,8 @@
 				A9AF6C4B19949B7B0076C0EE /* ManagerConstants.h */,
 				A93F87721999AA8300875287 /* ManagerUtil.h */,
 				A93F87731999AA8300875287 /* ManagerUtil.m */,
+				A9EC95C119B55CF100681678 /* ManagerUser.h */,
+				A9EC95C219B55CF100681678 /* ManagerUser.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -661,6 +703,17 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */,
+				A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */,
+				A97F9D1819B592FD0073E7E6 /* login_button_s@2x.png */,
+				A97F9D1919B592FD0073E7E6 /* login_button@2x.png */,
+				A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */,
+				A97F9D1319B592E90073E7E6 /* get_ver_button_red_s@2x.png */,
+				A97F9D1419B592E90073E7E6 /* get_ver_button_red@2x.png */,
+				A9EC95BF19B5501B00681678 /* icon_phone@2x.png */,
+				A9EC95BD19B54FEC00681678 /* textField_bg@2x.png */,
+				A9EC95B919B54FDB00681678 /* textField_cancel_ios7_s.png */,
+				A9EC95BA19B54FDB00681678 /* textField_cancel_ios7.png */,
 				A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */,
 				A919056919B07AAF002575DF /* pie_chart_arrow@2x.png */,
 				A919056619B067B8002575DF /* adview@2x.png */,
@@ -751,6 +804,7 @@
 		A9AF6C971994C97F0076C0EE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				A9EC95B319B54F5700681678 /* LoginView */,
 				A90BEBFD199DDA9300230242 /* ProductView */,
 				A94FE51B199C9BE300626DE5 /* MoveView */,
 				A9C69443199BBE9500B2CECE /* MyView */,
@@ -794,6 +848,19 @@
 				A9EAA05519988C55001A872A /* MRCircularProgressView.m */,
 			);
 			path = MRCircularProgressView;
+			sourceTree = "<group>";
+		};
+		A9EC95B319B54F5700681678 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				A9EC95B419B54F6E00681678 /* LoginViewController.h */,
+				A9EC95B519B54F6E00681678 /* LoginViewController.m */,
+				A9EC95B619B54F6E00681678 /* LoginViewController.xib */,
+				A97F9D2019B595550073E7E6 /* InputPassWordViewController.h */,
+				A97F9D2119B595550073E7E6 /* InputPassWordViewController.m */,
+				A97F9D2219B595550073E7E6 /* InputPassWordViewController.xib */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		A9F1E18319ACB24500B6A441 /* CustomCell */ = {
@@ -894,11 +961,15 @@
 				A9C69448199BC1F500B2CECE /* gray_select_arrow@2x.png in Resources */,
 				A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
+				A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
 				A9AF6C5C19949CD30076C0EE /* icon_dock_forum_actived@2x.png in Resources */,
+				A97F9D1E19B5931C0073E7E6 /* register_button_s@2x.png in Resources */,
+				A9EC95BE19B54FEC00681678 /* textField_bg@2x.png in Resources */,
 				A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */,
+				A97F9D1F19B5931C0073E7E6 /* register_button@2x.png in Resources */,
 				A9C69456199BD14D00B2CECE /* more_icon_8@2x.png in Resources */,
 				A9AF6C48199498D10076C0EE /* MoreViewController.xib in Resources */,
 				A9C69451199BD14D00B2CECE /* more_icon_2@2x.png in Resources */,
@@ -908,12 +979,15 @@
 				A9EAA04819986DC3001A872A /* fund_cell_label_bg_red@2x.png in Resources */,
 				A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */,
 				A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */,
+				A9EC95B819B54F6E00681678 /* LoginViewController.xib in Resources */,
 				A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */,
 				A9AF6C5E19949CD30076C0EE /* icon_dock_home_actived@2x.png in Resources */,
 				A9EAA04519986DC3001A872A /* fund_cell_label_bg_blue@2x.png in Resources */,
+				A97F9D1719B592E90073E7E6 /* get_ver_button_red@2x.png in Resources */,
 				A919056719B067B8002575DF /* adview@2x.png in Resources */,
 				A9AF6C6219949CD30076C0EE /* icon_dock_rt_actived@2x.png in Resources */,
 				A98626A019B4241400FF9E2C /* ActivityCenterTableViewCell.xib in Resources */,
+				A9EC95C019B5501B00681678 /* icon_phone@2x.png in Resources */,
 				A9AF6C781994B5890076C0EE /* icon_share_default.png in Resources */,
 				A9AF6C741994B5890076C0EE /* icon_indicate_add_module@2x.png in Resources */,
 				A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */,
@@ -923,6 +997,7 @@
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
+				A9EC95BB19B54FDB00681678 /* textField_cancel_ios7_s.png in Resources */,
 				A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */,
 				A9AF6C771994B5890076C0EE /* icon_indicate_more@2x.png in Resources */,
 				A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */,
@@ -934,6 +1009,7 @@
 				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
 				A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
+				A97F9D1A19B592FD0073E7E6 /* login_button_s@2x.png in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
@@ -946,6 +1022,7 @@
 				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
 				A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */,
 				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
+				A97F9D1619B592E90073E7E6 /* get_ver_button_red_s@2x.png in Resources */,
 				A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */,
 				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
@@ -960,6 +1037,7 @@
 				A9AF6C34199484200076C0EE /* HomeViewController.xib in Resources */,
 				A9AF6C0019947DD00076C0EE /* Main.storyboard in Resources */,
 				A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */,
+				A97F9D2419B595550073E7E6 /* InputPassWordViewController.xib in Resources */,
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
 				A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */,
 				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
@@ -967,6 +1045,8 @@
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
 				A9EAA04F1998787B001A872A /* hk_home_center_bg@2x.png in Resources */,
 				A9AF6C6319949CD30076C0EE /* icon_dock_rt@2x.png in Resources */,
+				A97F9D1B19B592FD0073E7E6 /* login_button@2x.png in Resources */,
+				A9EC95BC19B54FDB00681678 /* textField_cancel_ios7.png in Resources */,
 				A9AF6C721994B5890076C0EE /* icon_bar_card@2x.png in Resources */,
 				A9AF6C6819949CD30076C0EE /* icon_dock_session_msg@2x.png in Resources */,
 				A9AF6C6619949CD30076C0EE /* icon_dock_session_actived_msg@2x.png in Resources */,
@@ -1050,9 +1130,13 @@
 				A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */,
 				A986269F19B4241400FF9E2C /* ActivityCenterTableViewCell.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
+				A9EC95B719B54F6E00681678 /* LoginViewController.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,
+				A97F9D2319B595550073E7E6 /* InputPassWordViewController.m in Sources */,
+				A9EC95C319B55CF100681678 /* ManagerUser.m in Sources */,
+				A97F9D2719B5974B0073E7E6 /* UIUnderlinedButton.m in Sources */,
 				A9AF6BFD19947DD00076C0EE /* AppDelegate.m in Sources */,
 				A9AF6C911994C5700076C0EE /* MJRefreshConst.m in Sources */,
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,

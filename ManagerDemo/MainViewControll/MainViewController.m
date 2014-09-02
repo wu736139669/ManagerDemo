@@ -11,6 +11,7 @@
 #import "ProductListViewController.h"
 #import "MyViewController.h"
 #import "MoreViewController.h"
+#import "LoginViewController.h"
 @interface MainViewController ()
 
 @end
@@ -24,26 +25,26 @@
         // Custom initialization
         
         //首页
-        UINavigationController* homeNavigationController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+        _homeNavigationController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
         //第二页
-        UINavigationController* produciListNavigationController = [[UINavigationController alloc] initWithRootViewController:[[ProductListViewController alloc] init]];
+        _produciListNavigationController = [[UINavigationController alloc] initWithRootViewController:[[ProductListViewController alloc] init]];
         //第三页
-        UINavigationController* myNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MyViewController alloc] init]];
+        _myNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MyViewController alloc] init]];
         
         //第四页
-        UINavigationController* moreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
+        _moreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
-            [homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
-            [homeNavigationController.tabBarItem setBadgeValue:@"新"];
+            [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
+            [_homeNavigationController.tabBarItem setBadgeValue:@"新"];
             
-            [produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第二页" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
+            [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第二页" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
             
-            [myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第三页" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
+            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第三页" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
             
-            [moreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第四页" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
+            [_moreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第四页" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
         }
         
-        self.viewControllers = @[homeNavigationController, produciListNavigationController, myNavigationController, moreNavigationController];
+        self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _moreNavigationController];
         
         
     }
@@ -55,7 +56,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [ManagerUser shareInstance].isLogin = NO;
 }
+
 
 - (void)didReceiveMemoryWarning
 {

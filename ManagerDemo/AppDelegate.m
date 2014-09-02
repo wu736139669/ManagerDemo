@@ -8,14 +8,15 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
+#import "MyViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    MainViewController* mainViewController = [[MainViewController alloc] init];
-    self.window.rootViewController = mainViewController;
+    _mainViewController = [[MainViewController alloc] init];
+    self.window.rootViewController = _mainViewController;
+    _mainViewController.delegate = self;
     return YES;
 }
 							
@@ -46,4 +47,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark -  UITabBarController
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    if ([viewController isEqual:_mainViewController.myNavigationController]) {
+        if (![ManagerUser shareInstance].isLogin) {
+            [ManagerUtil presentLoginView];
+            return NO;
+        }else{
+            return YES;
+        }
+    }
+    return YES;
+}
 @end
