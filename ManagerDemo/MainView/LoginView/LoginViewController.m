@@ -139,11 +139,16 @@
 
 
 - (IBAction)sureBtnClick:(id)sender {
-    InputPassWordViewController* inputPassWordViewController = [[InputPassWordViewController alloc] init];
-    inputPassWordViewController.hidesBottomBarWhenPushed = YES;
-    inputPassWordViewController.delegate = self;
-    inputPassWordViewController.phoneNum = _phoneTextField.text;
-    [self.navigationController pushViewController:inputPassWordViewController animated:YES];
+    if (![ManagerUtil isValidateMobile:_phoneTextField.text]) {
+        [MBProgressHUD errorHudWithView:self.view label:@"请输入正确手机号" hidesAfter:1.0];
+    }else{
+        InputPassWordViewController* inputPassWordViewController = [[InputPassWordViewController alloc] init];
+        inputPassWordViewController.hidesBottomBarWhenPushed = YES;
+        inputPassWordViewController.delegate = self;
+        inputPassWordViewController.phoneNum = _phoneTextField.text;
+        [self.navigationController pushViewController:inputPassWordViewController animated:YES];
+    }
+
 }
 
 #pragma mark InputPassWordViewControllerDelegate

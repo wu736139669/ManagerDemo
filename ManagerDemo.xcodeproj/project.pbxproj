@@ -133,6 +133,7 @@
 		A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C053FD19AD706C002331A5 /* ToolBarView.m */; };
 		A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */; };
 		A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */; };
+		A9C2E4E519B6A0C900C659B3 /* icon_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */; };
 		A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */; };
 		A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */; };
 		A9C69448199BC1F500B2CECE /* gray_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69447199BC1F500B2CECE /* gray_select_arrow@2x.png */; };
@@ -362,6 +363,7 @@
 		A9C0540219ADBCB2002331A5 /* FundProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundProductInfoViewController.h; sourceTree = "<group>"; };
 		A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundProductInfoViewController.m; sourceTree = "<group>"; };
 		A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundProductInfoViewController.xib; sourceTree = "<group>"; };
+		A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_email@2x.png"; sourceTree = "<group>"; };
 		A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_person_take_image@2x.png"; sourceTree = "<group>"; };
 		A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalProfitCellView.h; sourceTree = "<group>"; };
 		A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalProfitCellView.m; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */,
 				A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */,
 				A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */,
 				A97F9D1819B592FD0073E7E6 /* login_button_s@2x.png */,
@@ -966,6 +969,7 @@
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
 				A9AF6C5C19949CD30076C0EE /* icon_dock_forum_actived@2x.png in Resources */,
+				A9C2E4E519B6A0C900C659B3 /* icon_email@2x.png in Resources */,
 				A97F9D1E19B5931C0073E7E6 /* register_button_s@2x.png in Resources */,
 				A9EC95BE19B54FEC00681678 /* textField_bg@2x.png in Resources */,
 				A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */,

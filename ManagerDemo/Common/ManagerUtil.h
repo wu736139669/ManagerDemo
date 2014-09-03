@@ -41,4 +41,10 @@
 
 +(UIImage*) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
 +(UIViewController *)getCurrentRootViewController;
+
+/**
+*   手机号码验证
+*/
++(BOOL) isValidateMobile:(NSString *)mobile;
+
 @end

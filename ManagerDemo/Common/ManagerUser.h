@@ -11,7 +11,11 @@
 @interface ManagerUser : NSObject
 {
     BOOL _isLogin;
+    NSString* _userId;
+    NSString* _token;
 }
 @property(nonatomic, assign)BOOL isLogin;
+@property(nonatomic, strong)NSString* userId;
+@property(nonatomic, strong)NSString* token;
 +(ManagerUser*)shareInstance;
 @end

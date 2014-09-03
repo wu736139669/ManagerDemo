@@ -9,6 +9,7 @@
 #import "FundListViewController.h"
 #import "FundListCell.h"
 #import "FundProductInfoViewController.h"
+#import "MJRefresh.h"
 @interface FundListViewController ()
 
 @end
@@ -30,21 +31,39 @@
 	// Do any additional setup after loading the view.
 }
 #pragma mark MJRefreshDelegate
--(void)headerRereshing
+-(void)loadData
 {
-    _count = 15;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
+    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+    [daiDaiTongApi productListForType:@"HW" withPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
+        if (_pageNum == 1) {
+            [_productInfoArray removeAllObjects];
+            [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+        }
+        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            [_productInfoArray addObjectsFromArray:[jsonRes objectForKey:@"datas"]];
+            // 刷新表格
+            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
+                [self.tableView removeFooter];
+            }
+            [self.tableView reloadData];
+        }else{
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+        }
         [self headerEndRefreshing];
-    });
+        [self footerEndRefreshing];
+        
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
+        [self headerEndRefreshing];
+        [self footerEndRefreshing];
+    }];
 }
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _count;
+    return _productInfoArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -61,7 +80,7 @@
         [tableView registerNib:nib forCellReuseIdentifier:loanListCell];
         cell = (FundListCell *)[tableView dequeueReusableCellWithIdentifier:loanListCell];
     }
-    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
+    [(FundListCell*)cell setInfoDic:[_productInfoArray objectAtIndex:indexPath.row]];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

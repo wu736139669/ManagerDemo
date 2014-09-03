@@ -45,4 +45,24 @@ typedef void (^FailedBlock) (NSError *error);
  *  @return MKNetworkOperation
  */
 -(MKNetworkOperation*)loginWithPhone:(NSString*)phoneNum withPassWord:(NSString*)password withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+/**
+ *  获取列表
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param type            类型
+ *  @param pageNum         页数
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)productListForType:(NSString*)type withPageNum:(NSInteger)pageNum withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取个人信息
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getAccountInfoWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
 @end

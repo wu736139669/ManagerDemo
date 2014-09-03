@@ -12,7 +12,12 @@
 #import "AccountInfoViewController.h"
 #import "DailyIncomeViewController.h"
 @interface MyViewController ()
-
+{
+    NSDictionary* _myInfoDic;
+    MyTotalProfitCellView* _myTotalProfitCellView;
+    UILabel* _timeLabel;
+    UILabel* _profitLabel;
+}
 @end
 
 @implementation MyViewController
@@ -22,6 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _myInfoDic = nil;
     }
     return self;
 }
@@ -34,17 +40,18 @@
     [ManagerUtil SetSubViewExternNone:self];
     
     //左边按钮
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"左边按钮" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"帮助" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
     
     //右边按钮。
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(rightBarBtnClick:)]];
+
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_email"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)]];
     
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.allowsSelection = YES;
     [_tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
-    
+    [self headerRereshing];
 
     
 }
@@ -52,33 +59,32 @@
 - (void)headerRereshing
 {
     
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
+
+    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+    [daiDaiTongApi getAccountInfoWithcompletionBlock:^(id jsonRes) {
         
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView headerEndRefreshing];
-    });
+        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+        }
+        [_tableView reloadData];
+        [_tableView headerEndRefreshing];
+    } failedBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)footerRereshing
 {
     
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
-        
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView footerEndRefreshing];
-    });
 }
 
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    if (_myInfoDic) {
+        return 5;
+    }
+    return 0;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -114,33 +120,78 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d%d",indexPath.section,indexPath.row];
+    
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+        switch (indexPath.section) {
+
+            case 1:
+            {
+                cell.backgroundColor = [UIColor redColor];
+                _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 320, 30)];
+                _timeLabel.textColor = [UIColor whiteColor];
+                _timeLabel.font = Font_Black(15);
+                _timeLabel.textAlignment = NSTextAlignmentCenter;
+                [cell addSubview:_timeLabel];
+                _profitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 320, 100)];
+                _profitLabel.textColor = [UIColor whiteColor];
+                _profitLabel.font = Font_Black(50);
+                _profitLabel.textAlignment = NSTextAlignmentCenter;
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                [cell addSubview:_profitLabel];
+            }
+                break;
+            case 2:
+            {
+                CGRect frmae = cell.frame;
+                frmae.size.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
+                cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+                MyTotalProfitCellView* myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                [cell addSubview:myTotalProfitCellView];
+                myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
+                myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
+            }
+                break;
+            case 3:
+            {
+                cell.textLabel.text = @"交易记录";
+                cell.detailTextLabel.text = @"查看记录";
+                cell.textLabel.textColor = [UIColor grayColor];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
+            }
+                break;
+            case 4:
+            {
+                cell.textLabel.text = @"总积分";
+                cell.textLabel.textColor = [UIColor grayColor];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic objectForKey:@"point"]];
+                cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
+            }
+                break;
+            default:
+                break;
+        }
+
+    }
     switch (indexPath.section) {
         case 0:
         {
-            cell.textLabel.text = @"吴盛华";
+            cell.textLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"realShowName"];
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = @"13212312313";
+            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"cell"];
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         case 1:
         {
-            cell.backgroundColor = [UIColor redColor];
-            UILabel* timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 320, 30)];
-            timeLabel.textColor = [UIColor whiteColor];
-            timeLabel.font = Font_Black(15);
-            timeLabel.textAlignment = NSTextAlignmentCenter;
-            timeLabel.text = @"08月12日收益(元)";
-            [cell addSubview:timeLabel];
-            UILabel* profitLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 320, 100)];
-            profitLabel.textColor = [UIColor whiteColor];
-            profitLabel.font = Font_Black(50);
-            profitLabel.textAlignment = NSTextAlignmentCenter;
-            profitLabel.text = @"100.04";
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            [cell addSubview:profitLabel];
+            _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",[_myInfoDic objectForKey:@"profitShowDate"]];
+            _profitLabel.text = [_myInfoDic objectForKey:@"datePofit"];
         }
             break;
         case 2:
@@ -151,11 +202,14 @@
             MyTotalProfitCellView* myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell addSubview:myTotalProfitCellView];
+            myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
+            myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
         }
             break;
         case 3:
         {
-            cell.textLabel.text = @"我是超人";
+            cell.textLabel.text = @"交易记录";
+            cell.detailTextLabel.text = @"查看记录";
             cell.textLabel.textColor = [UIColor grayColor];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
@@ -163,10 +217,10 @@
             break;
         case 4:
         {
-            cell.textLabel.text = @"我是超人";
+            cell.textLabel.text = @"总积分";
             cell.textLabel.textColor = [UIColor grayColor];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = @"100分";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic objectForKey:@"point"]];
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
@@ -174,7 +228,6 @@
             break;
     }
 
-//    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, -1, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath]-2)];
     
     
     return cell;

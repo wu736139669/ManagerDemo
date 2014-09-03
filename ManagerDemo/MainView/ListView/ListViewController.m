@@ -32,6 +32,7 @@
         frame.size.height -= 88;
         _tableView.frame = frame;
     }
+    _productInfoArray = [[NSMutableArray alloc] init];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -39,32 +40,22 @@
     self.tableView.allowsSelection = YES;
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    _pageNum = 1;
     
 }
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
     
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
-        
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView headerEndRefreshing];
-    });
+    
+    _pageNum = 1;
+    [self loadData];
 }
 
 - (void)footerRereshing
 {
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
-        
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView footerEndRefreshing];
-    });
+    _pageNum++;
+    [self loadData];
 }
 - (void)headerBeginRefreshing
 {
@@ -74,15 +65,19 @@
 {
     [self.tableView headerEndRefreshing];
 }
+-(void)footerEndRefreshing
+{
+    [self.tableView footerEndRefreshing];
+}
 -(void)firstRefresh
 {
-    if (_count <= 0) {
+    if (_productInfoArray.count <= 0) {
         [self headerBeginRefreshing];
     }
 }
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 0;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 30;

@@ -12,8 +12,8 @@
 #import "HomeMainView.h"
 @interface HomeViewController ()
 {
-    HomeAdView* homeAdView;
-    HomeMainView* homeMainView;
+    HomeAdView* _homeAdView;
+    HomeMainView* _homeMainView;
 }
 @end
 
@@ -54,27 +54,38 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
+    
     DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
     //广告条
     [daiDaiTongApi getBannerInfoWithcompletionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
             NSMutableArray* bannerInfo = [jsonRes objectForKey:@"infos"];
-            [homeAdView setBannerInfo:bannerInfo];
+            [_homeAdView setBannerInfo:bannerInfo];
         }
     } failedBlock:^(NSError *error) {
         DLog(@"失败");
         [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
     }];
+    _homeMainView.hidden = YES;
     [daiDaiTongApi getFundRecommendWithcompletionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }else{
+            _homeMainView.hidden = NO;
+            [_homeMainView setName:[jsonRes objectForKey:@"name"]];
+            [_homeMainView setpercent:[[jsonRes objectForKey:@"percent"] floatValue]/100.0];
+            [_homeMainView setExpect:[[jsonRes objectForKey:@"qrsy"] floatValue]];
+            [_homeMainView setType:[jsonRes objectForKey:@"tip"]];
+            [_homeMainView setInfo:[jsonRes objectForKey:@"activityDesc"]];
+            [_homeMainView setSecurityDesc:[jsonRes objectForKey:@"securityDesc"]];
+            [_homeMainView setTime:[jsonRes objectForKey:@"jjzq"] withStartBuy:[[jsonRes objectForKey:@"startBuy"] integerValue]];
         }
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
         DLog(@"失败");
         [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+        [self.tableView headerEndRefreshing];
     }];
 }
 
@@ -123,19 +134,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         switch (indexPath.row) {
             case 0:{
-                homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
-                homeAdView.superViewController = self;
-                [cell addSubview:homeAdView];
+                _homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+                _homeAdView.superViewController = self;
+                [cell addSubview:_homeAdView];
             }
                 break;
             case 1:{
 
                 
-                homeMainView = [HomeMainView instanceHomeMainView];
-                CGRect frame = homeMainView.frame;
+                _homeMainView = [HomeMainView instanceHomeMainView];
+                CGRect frame = _homeMainView.frame;
                 frame.origin.x = 20;
-                homeMainView.frame = frame;
-                [cell addSubview:homeMainView];
+                _homeMainView.frame = frame;
+                [cell addSubview:_homeMainView];
             }
             default:
                 break;

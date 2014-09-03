@@ -40,10 +40,12 @@
     _percentView.wrapperColor = [UIColor clearColor];
     _percentView.progressColor = [UIColor redColor];
     _percentDtlabel.backgroundColor = [UIColor clearColor];
+    //旋转
+    _typeLabel.transform = CGAffineTransformMakeRotation( M_PI/4);
 }
 -(void)setPercent:(NSInteger) percent
 {
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%ld</span> %%",percent];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%d</span> %%",percent];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
@@ -52,9 +54,38 @@
 }
 -(void)setTimeWithString:(NSString*)htmlString
 {
+    
     NSData *data = [htmlString dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
+    NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentLeft],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
     _timeDtLabel.attributedString = percentString;
+}
+-(void)setStartBuy:(NSInteger)price
+{
+    _priceLabel.text = [NSString stringWithFormat:@"%d元起购",price];
+}
+-(void)setInfoDic:(NSDictionary *)dic
+{
+    self.profitLabel.text = [dic objectForKey:@"nhsy"];
+    self.nameLabel.text = [dic objectForKey:@"jjmc"];
+    self.typeLabel.text = [dic objectForKey:@"tip"];
+    if ([[dic objectForKey:@"state"] isEqualToString:@"SALE"]) {
+        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
+        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
+        NSMutableString* timeStr = [[NSMutableString alloc] initWithString:[dic objectForKey:@"jjzq"]];
+        [timeStr insertString:@"</span>" atIndex:1];
+        [timeStr insertString:@"<span  style=\" color:green;\">" atIndex:0];
+        [self setTimeWithString:timeStr];
+    }else if([[dic objectForKey:@"state"] isEqualToString:@"EFFECTED"]){
+        [self setTimeWithString:@"最近还款日"];
+        [_percentView setProgress:0 animated:NO];
+        NSString* htmlStr = @"&nbsp;&nbsp;还款中";
+        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentLeft],DTDefaultTextAlignment, nil];
+        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
+        _percentDtlabel.attributedString = percentString;
+        _priceLabel.text = [dic objectForKey:@"recRepayDate"];
+    }
+
 }
 @end

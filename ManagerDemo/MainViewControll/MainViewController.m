@@ -56,7 +56,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [ManagerUser shareInstance].isLogin = NO;
+    [ManagerUser shareInstance].isLogin = YES;
+    [ManagerUser shareInstance].userId = @"8201408070536905";
+    [ManagerUser shareInstance].token = @"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11";
 }
 
 

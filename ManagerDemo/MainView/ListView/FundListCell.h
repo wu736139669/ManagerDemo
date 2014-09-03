@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numProfitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *typeImg;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *buyTypeDtLabel;
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *lowestPriceDtLabel;
@@ -23,4 +24,6 @@
 
 -(void)setBuyTypeWithString:(NSString*)htmlStr;
 -(void)setLowestPriceWtihCount:(NSInteger)price;
+
+-(void)setInfoDic:(NSDictionary*)dic;
 @end

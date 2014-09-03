@@ -10,6 +10,7 @@
 #import "AdjustableUILable.h"
 #import "LoanListCell.h"
 #import "WYDProductViewController.h"
+#import "MJRefresh.h"
 @interface LoanListViewController ()
 {
 }
@@ -34,21 +35,41 @@
     
 }
 #pragma mark MJRefreshDelegate
--(void)headerRereshing
+-(void)loadData
 {
-    _count = 10;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
+    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+    [daiDaiTongApi productListForType:@"RYT" withPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
+        if (_pageNum == 1) {
+            [_productInfoArray removeAllObjects];
+            [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+        }
+        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            [_productInfoArray addObjectsFromArray:[jsonRes objectForKey:@"datas"]];
+            // 刷新表格
+            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
+                [self.tableView removeFooter];
+            }
+            [self.tableView reloadData];
+        }else{
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+        }
         [self headerEndRefreshing];
-    });
+        [self footerEndRefreshing];
+        
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
+        [self headerEndRefreshing];
+        [self footerEndRefreshing];
+    }];
+
 }
+
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _count;
+    return _productInfoArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -58,19 +79,17 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static  NSString *loanListCell = @"LoanListCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:loanListCell];
+    static  NSString *CellIdentifier = @"LoanListCell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
         UINib *nib = [UINib nibWithNibName:@"LoanListCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:loanListCell];
-        cell = (LoanListCell *)[tableView dequeueReusableCellWithIdentifier:loanListCell];
+        [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+        cell = (LoanListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleDefault];
-    [(LoanListCell*)cell setPercent:40];
-    NSString* htmlStr = @"<span style=\"text-align:center; color:green;\">限</span>12个月";
-    [(LoanListCell*)cell setTimeWithString:htmlStr];
-    cell.selectedBackgroundView = [ManagerUtil selectBackgroudViewWithFrame:CGRectMake(0, 0, 320, [self tableView:tableView heightForRowAtIndexPath:indexPath])];
+    [(LoanListCell*)cell setInfoDic:[_productInfoArray objectAtIndex:indexPath.row]];
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *timeDtLabel;
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *percentDtlabel;
 @property (weak, nonatomic) IBOutlet MRCircularProgressView *percentView;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
--(void)setPercent:(NSInteger) percent;
--(void)setTimeWithString:(NSString*)htmlString;
+-(void)setInfoDic:(NSDictionary *)dic;
 @end

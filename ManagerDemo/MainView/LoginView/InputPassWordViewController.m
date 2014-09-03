@@ -59,13 +59,15 @@
         DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
         [daiDaiTongApi loginWithPhone:_phoneNum withPassWord:_passwordTextField.text withCompletionBlock:^(id jsonRes) {
             if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
-                [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+//                [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
             }else{
             }
+            [ManagerUser shareInstance].isLogin = YES;
             [self.navigationController popToRootViewControllerAnimated:NO];
             if ([self.delegate respondsToSelector:@selector(loginSuccess)]) {
                 [self.delegate loginSuccess];
             }
+            
             
         } failedBlock:^(NSError *error) {
             DLog(@"失败");

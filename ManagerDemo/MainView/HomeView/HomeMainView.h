@@ -29,6 +29,6 @@
 -(void)setType:(NSString*)type;
 -(void)setInfo:(NSString*)info;
 -(void)setSecurityDesc:(NSString*)securityDesc;
--(void)setTime:(NSInteger)month withStartBuy:(NSInteger)money;
+-(void)setTime:(NSString*)time withStartBuy:(NSInteger)money;
 
 @end

@@ -73,7 +73,7 @@
     progressPercent = percent;
     [_percentView setProgress:percent duration:1.0];
     //中间文字
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:40px; color:red; text-align:center; \">%d</span>%%",(int)percent*100];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:40px; color:red; text-align:center; \">%d</span>%%",(int)(percent*100.0)];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
@@ -82,15 +82,18 @@
 -(void)setExpect:(float)expect
 {
     //预期
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:11px;text-align:center; \">四个大字<span  style=\"font-size:13px; color:red;\">%.2f%%</span></span>",expect];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:11px;text-align:center; \">预期年化<span  style=\"font-size:13px; color:red;\">%.2f%%</span></span>",expect];
     NSData* data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString* percentString = [[NSAttributedString alloc] initWithHTMLData:data documentAttributes:NULL];
     _expectLabel.attributedString = percentString;
 }
--(void)setTime:(NSInteger)month withStartBuy:(NSInteger)money
+-(void)setTime:(NSString*)time withStartBuy:(NSInteger)money
 {
+
+    NSCharacterSet* nonDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    time = [time stringByReplacingOccurrencesOfString:[time stringByTrimmingCharactersInSet:nonDigits] withString:[NSString stringWithFormat:@"<span  style=\"font-size:13px; color:red;\">%@</span>",[time stringByTrimmingCharactersInSet:nonDigits]]];
     //时间
-    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">限<span  style=\"font-size:13px; color:red;\">%d</span>个月<span  style=\"font-size:13px; color:red;\">%d</span>起</span>",month,money];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">%@<span  style=\"font-size:13px; color:red;\">%d</span>起购</span>",time,money];
     NSData* data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString* percentString = [[NSAttributedString alloc] initWithHTMLData:data documentAttributes:NULL];
     _timeLabel.attributedString = percentString;
