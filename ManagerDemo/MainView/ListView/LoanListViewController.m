@@ -39,11 +39,12 @@
 {
     DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
     [daiDaiTongApi productListForType:@"RYT" withPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
-        if (_pageNum == 1) {
-            [_productInfoArray removeAllObjects];
-            [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-        }
+
         if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            if (_pageNum == 1) {
+                [_productInfoArray removeAllObjects];
+                [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+            }
             [_productInfoArray addObjectsFromArray:[jsonRes objectForKey:@"datas"]];
             // 刷新表格
             if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {

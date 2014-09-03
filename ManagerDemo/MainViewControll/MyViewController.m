@@ -11,6 +11,7 @@
 #import "MJRefresh.h"
 #import "AccountInfoViewController.h"
 #import "DailyIncomeViewController.h"
+#import "MessageCenterViewController.h"
 @interface MyViewController ()
 {
     NSDictionary* _myInfoDic;
@@ -58,8 +59,6 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    
-
     DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
     [daiDaiTongApi getAccountInfoWithcompletionBlock:^(id jsonRes) {
         
@@ -69,7 +68,9 @@
         [_tableView reloadData];
         [_tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
-        
+        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+        [_tableView reloadData];
+        [_tableView headerEndRefreshing];
     }];
 }
 
@@ -148,11 +149,9 @@
                 CGRect frmae = cell.frame;
                 frmae.size.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
                 cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-                MyTotalProfitCellView* myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
+                _myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                [cell addSubview:myTotalProfitCellView];
-                myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
-                myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
+                [cell addSubview:_myTotalProfitCellView];
             }
                 break;
             case 3:
@@ -169,7 +168,6 @@
                 cell.textLabel.text = @"总积分";
                 cell.textLabel.textColor = [UIColor grayColor];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic objectForKey:@"point"]];
                 cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
             }
                 break;
@@ -196,32 +194,14 @@
             break;
         case 2:
         {
-            CGRect frmae = cell.frame;
-            frmae.size.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
-            cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-            MyTotalProfitCellView* myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            [cell addSubview:myTotalProfitCellView];
-            myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
-            myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
-        }
-            break;
-        case 3:
-        {
-            cell.textLabel.text = @"交易记录";
-            cell.detailTextLabel.text = @"查看记录";
-            cell.textLabel.textColor = [UIColor grayColor];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
+            _myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
+            _myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
         }
             break;
         case 4:
         {
-            cell.textLabel.text = @"总积分";
-            cell.textLabel.textColor = [UIColor grayColor];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic objectForKey:@"point"]];
-            cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
+
         }
             break;
         default:
@@ -259,8 +239,9 @@
 }
 -(void)rightBarBtnClick:(id)sender
 {
-    DLog(@"首页右边按钮");
-    [_tableView headerBeginRefreshing];
+    MessageCenterViewController* messageCenterViewController = [[MessageCenterViewController alloc] init];
+    messageCenterViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:messageCenterViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning
 {

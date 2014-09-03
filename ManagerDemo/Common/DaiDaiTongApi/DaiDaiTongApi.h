@@ -65,4 +65,34 @@ typedef void (^FailedBlock) (NSError *error);
  *  @return MKNetworkOperation
  */
 -(MKNetworkOperation*)getAccountInfoWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取消息
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param pageNum         页数
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getMsgwithPageNum:(NSInteger)pageNum withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  标记消息已读
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)readMsgWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  读取消息详情
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param msgId         页数
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getMsgDetailwithPageNum:(NSString*)msgId withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
 @end

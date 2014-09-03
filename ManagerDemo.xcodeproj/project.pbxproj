@@ -40,6 +40,13 @@
 		A93F8806199A077F00875287 /* OtherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FF199A077F00875287 /* OtherListViewController.m */; };
 		A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */; };
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
+		A95CEA3419B754A800D4605F /* MessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3219B754A800D4605F /* MessageCenterViewController.m */; };
+		A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3319B754A800D4605F /* MessageCenterViewController.xib */; };
+		A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3719B755C000D4605F /* MessageCenterTableViewCell.m */; };
+		A95CEA3A19B755C000D4605F /* MessageCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3819B755C000D4605F /* MessageCenterTableViewCell.xib */; };
+		A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3B19B7667400D4605F /* icon_success@2x.png */; };
+		A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */; };
+		A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
 		A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */; };
@@ -231,6 +238,16 @@
 		A94FE51C199C9C3C00626DE5 /* MoveSocialCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveSocialCellView.h; sourceTree = "<group>"; };
 		A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveSocialCellView.m; sourceTree = "<group>"; };
 		A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveSocialCellView.xib; sourceTree = "<group>"; };
+		A95CEA3119B754A800D4605F /* MessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterViewController.h; sourceTree = "<group>"; };
+		A95CEA3219B754A800D4605F /* MessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterViewController.m; sourceTree = "<group>"; };
+		A95CEA3319B754A800D4605F /* MessageCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCenterViewController.xib; sourceTree = "<group>"; };
+		A95CEA3619B755C000D4605F /* MessageCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterTableViewCell.h; sourceTree = "<group>"; };
+		A95CEA3719B755C000D4605F /* MessageCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterTableViewCell.m; sourceTree = "<group>"; };
+		A95CEA3819B755C000D4605F /* MessageCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCenterTableViewCell.xib; sourceTree = "<group>"; };
+		A95CEA3B19B7667400D4605F /* icon_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_success@2x.png"; sourceTree = "<group>"; };
+		A95CEA3D19B766F400D4605F /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewController.h; sourceTree = "<group>"; };
+		A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewController.m; sourceTree = "<group>"; };
+		A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageDetailViewController.xib; sourceTree = "<group>"; };
 		A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -705,6 +722,7 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A95CEA3B19B7667400D4605F /* icon_success@2x.png */,
 				A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */,
 				A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */,
 				A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */,
@@ -831,6 +849,15 @@
 				A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */,
 				A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */,
 				A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */,
+				A95CEA3119B754A800D4605F /* MessageCenterViewController.h */,
+				A95CEA3219B754A800D4605F /* MessageCenterViewController.m */,
+				A95CEA3319B754A800D4605F /* MessageCenterViewController.xib */,
+				A95CEA3619B755C000D4605F /* MessageCenterTableViewCell.h */,
+				A95CEA3719B755C000D4605F /* MessageCenterTableViewCell.m */,
+				A95CEA3819B755C000D4605F /* MessageCenterTableViewCell.xib */,
+				A95CEA3D19B766F400D4605F /* MessageDetailViewController.h */,
+				A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */,
+				A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -965,6 +992,7 @@
 				A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
 				A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */,
+				A95CEA3A19B755C000D4605F /* MessageCenterTableViewCell.xib in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
@@ -1010,6 +1038,7 @@
 				A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */,
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
+				A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */,
 				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
 				A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
@@ -1029,6 +1058,7 @@
 				A97F9D1619B592E90073E7E6 /* get_ver_button_red_s@2x.png in Resources */,
 				A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */,
 				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
+				A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
 				A919056319B02A8C002575DF /* icon_color_person@2x.png in Resources */,
@@ -1043,6 +1073,7 @@
 				A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */,
 				A97F9D2419B595550073E7E6 /* InputPassWordViewController.xib in Resources */,
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
+				A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */,
 				A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */,
 				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
 				A9C69452199BD14D00B2CECE /* more_icon_3@2x.png in Resources */,
@@ -1127,6 +1158,7 @@
 				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
+				A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
 				A919055619B02741002575DF /* AccountInfoViewController.m in Sources */,
@@ -1143,7 +1175,9 @@
 				A97F9D2719B5974B0073E7E6 /* UIUnderlinedButton.m in Sources */,
 				A9AF6BFD19947DD00076C0EE /* AppDelegate.m in Sources */,
 				A9AF6C911994C5700076C0EE /* MJRefreshConst.m in Sources */,
+				A95CEA3419B754A800D4605F /* MessageCenterViewController.m in Sources */,
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,
+				A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */,
 				A9F1E18619ACB63100B6A441 /* DTCoreTextTableViewCell.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
 				A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */,

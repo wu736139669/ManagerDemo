@@ -46,8 +46,6 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    
-    
     _pageNum = 1;
     [self loadData];
 }

@@ -148,4 +148,55 @@
     
     return op;
 }
+-(MKNetworkOperation*)getMsgwithPageNum:(NSInteger)pageNum withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token",[NSNumber numberWithInt:pageNum], @"pageNum", nil];
+    MKNetworkOperation* op = [self postWithPath:@"msgquerypage.do" params:dic];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)readMsgWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", nil];
+    MKNetworkOperation* op = [self postWithPath:@"msgread.do" params:dic];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)getMsgDetailwithPageNum:(NSString *)msgId withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", msgId, @"msgId", nil];
+    MKNetworkOperation* op = [self postWithPath:@"msgdetailquery.do" params:dic];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
 @end

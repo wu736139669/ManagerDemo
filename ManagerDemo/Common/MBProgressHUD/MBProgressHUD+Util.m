@@ -32,8 +32,7 @@ static MBProgressHUD *activityHUD = nil;
     {
         view = [UIApplication sharedApplication].delegate.window;
     }
-    
-    
+    [MBProgressHUD hideAllHUDsForView:view animated:YES];
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
     HUD.dimBackground = NO;
     HUD.animationType = MBProgressHUDAnimationFade;
@@ -52,13 +51,13 @@ static MBProgressHUD *activityHUD = nil;
         view = [UIApplication sharedApplication].delegate.window;
     }
     
-    
+    [MBProgressHUD hideAllHUDsForView:view animated:YES];
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
     
     HUD.dimBackground = NO;
     HUD.animationType = MBProgressHUDAnimationFade;
     [view addSubview:HUD];
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark"]];
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_success"]];
     HUD.mode = MBProgressHUDModeCustomView;
     HUD.labelText = msg;
     [HUD show:YES];

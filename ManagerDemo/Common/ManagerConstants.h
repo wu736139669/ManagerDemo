@@ -36,4 +36,8 @@
  * 点击的背景颜色
  */
 #define Touch_BackGroudColor [UIColor colorWithWhite:0.5 alpha:0.3]
+/**
+ *   错误字符串
+ */
+#define  Net_Error_Str @"网络出错"
 #endif
