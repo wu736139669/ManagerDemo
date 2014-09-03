@@ -66,10 +66,15 @@
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
+
     self.profitLabel.text = [dic objectForKey:@"nhsy"];
     self.nameLabel.text = [dic objectForKey:@"jjmc"];
-    self.typeLabel.text = [dic objectForKey:@"tip"];
-    if ([[dic objectForKey:@"state"] isEqualToString:@"SALE"]) {
+    if ([[dic objectForKey:@"tip"] isKindOfClass:[NSNull class]]) {
+        self.typeLabel.text = @"";
+    }else{
+        self.typeLabel.text = [dic objectForKey:@"tip"];
+    }
+    if ([[dic objectForKey:@"state"] isEqualToString:@"SALE"] ) {
         [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
         [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
         NSMutableString* timeStr = [[NSMutableString alloc] initWithString:[dic objectForKey:@"jjzq"]];
@@ -79,12 +84,22 @@
     }else if([[dic objectForKey:@"state"] isEqualToString:@"EFFECTED"]){
         [self setTimeWithString:@"最近还款日"];
         [_percentView setProgress:0 animated:NO];
-        NSString* htmlStr = @"&nbsp;&nbsp;还款中";
+        NSString* htmlStr = [dic objectForKey:@"descValue"];
         NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentLeft],DTDefaultTextAlignment, nil];
+        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
         NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
         _percentDtlabel.attributedString = percentString;
         _priceLabel.text = [dic objectForKey:@"recRepayDate"];
+    }else if ( [[dic objectForKey:@"state"] isEqualToString:@"ENABLED"])
+    {
+        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
+        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
+        NSString* htmlStr = [dic objectForKey:@"descValue"];
+        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
+        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
+        _percentDtlabel.attributedString = percentString;
+
     }
 
 }
