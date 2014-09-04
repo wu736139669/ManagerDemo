@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DailyIncomeTableViewCell : UITableViewCell
+{
+    NSString* _profitId;
+}
+@property (strong, nonatomic)NSString* profitId;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;

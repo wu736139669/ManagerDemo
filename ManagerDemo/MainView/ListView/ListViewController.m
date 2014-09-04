@@ -41,7 +41,6 @@
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
     _pageNum = 1;
-    
 }
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
@@ -72,6 +71,10 @@
     if (_productInfoArray.count <= 0) {
         [self headerBeginRefreshing];
     }
+}
+-(void)loadData
+{
+    
 }
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

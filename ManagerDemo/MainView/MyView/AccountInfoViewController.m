@@ -9,7 +9,9 @@
 #import "AccountInfoViewController.h"
 
 @interface AccountInfoViewController ()
-
+{
+    NSDictionary* _infoDic;
+}
 @end
 
 @implementation AccountInfoViewController
@@ -19,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _infoDic = nil;
     }
     return self;
 }
@@ -29,11 +32,29 @@
     // Do any additional setup after loading the view from its nib.
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    [self loadData];
 }
-
+-(void)loadData
+{
+    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+    [daiDaiTongApi getPersonDetailWithcompletionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+            _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+            [_tableView reloadData];
+        }
+        else{
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+        }
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+    }];
+}
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (!_infoDic) {
+        return 0;
+    }
     return 5;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -66,6 +87,14 @@
     }
     return 44;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10.0;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1.0;
+}
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellIdentifier = @"cellidentifier";
@@ -78,8 +107,8 @@
         case 0:
         {
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
-            cell.textLabel.text = @"我的名字";
-            cell.detailTextLabel.text = @"1356725***334";
+            cell.textLabel.text = @"账户";
+            cell.detailTextLabel.text = [_infoDic objectForKey:@"cell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
             break;
@@ -88,12 +117,12 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (indexPath.row == 0) {
                 cell.imageView.image = [UIImage imageNamed:@"icon_color_name"];
-                cell.textLabel.text = @"我的名字";
-                cell.detailTextLabel.text = @"*名字";
+                cell.textLabel.text = @"实名认证";
+                cell.detailTextLabel.text = [_infoDic objectForKey:@"realName"];
             }else{
                 cell.imageView.image = [UIImage imageNamed:@"icon_color_idcard"];
                 cell.textLabel.text = @"身份认证";
-                cell.detailTextLabel.text = @"13123131313**13132";
+                cell.detailTextLabel.text = [_infoDic objectForKey:@"certNo"];
             }
         }
             
@@ -103,6 +132,7 @@
             cell.imageView.image = [UIImage imageNamed:@"icon_color_bank"];
             cell.textLabel.text = @"银行卡管理";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"(%@)",[_infoDic objectForKey:@"cardNum"]];
             
         }
             break;

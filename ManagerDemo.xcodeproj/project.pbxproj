@@ -26,6 +26,8 @@
 		A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */; };
 		A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */; };
 		A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */; };
+		A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9354F5A19B870C700FDCB52 /* BaseListViewController.m */; };
+		A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */; };
 		A93F87741999AA8300875287 /* ManagerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87731999AA8300875287 /* ManagerUtil.m */; };
 		A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */; };
 		A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877F1999B92800875287 /* QCSlideSwitchView.m */; };
@@ -62,8 +64,6 @@
 		A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268619B40AAC00FF9E2C /* SVModalWebViewController.m */; };
 		A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */; };
 		A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268919B40AAC00FF9E2C /* SVWebViewController.m */; };
-		A986269019B411AA00FF9E2C /* DailyIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */; };
-		A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */; };
 		A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */; };
 		A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */; };
 		A986269A19B423EB00FF9E2C /* ActivityCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */; };
@@ -73,6 +73,9 @@
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
 		A988A900199A751500EB10AA /* FundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FF199A751500EB10AA /* FundListCell.m */; };
 		A988A902199A755300EB10AA /* FundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A988A901199A755300EB10AA /* FundListCell.xib */; };
+		A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7419B8BC410079F143 /* DailyProfitViewController.m */; };
+		A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */; };
+		A9971D7A19B8C39C0079F143 /* DatailProfitTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */; };
 		A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA3259199702DB000BE4FB /* Images.xcassets */; };
 		A9AA326019970335000BE4FB /* HomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325D19970335000BE4FB /* HomeAdView.m */; };
 		A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325F19970335000BE4FB /* ImagePlayerView.m */; };
@@ -214,6 +217,9 @@
 		A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_datesum@2x.png"; sourceTree = "<group>"; };
 		A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_safeicon@2x.png"; sourceTree = "<group>"; };
 		A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_5@2x.png"; sourceTree = "<group>"; };
+		A9354F5919B870C700FDCB52 /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListViewController.h; sourceTree = "<group>"; };
+		A9354F5A19B870C700FDCB52 /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
+		A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseListViewController.xib; sourceTree = "<group>"; };
 		A93F87721999AA8300875287 /* ManagerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUtil.h; sourceTree = "<group>"; };
 		A93F87731999AA8300875287 /* ManagerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUtil.m; sourceTree = "<group>"; };
 		A93F877A1999AC9900875287 /* MBProgressHUD+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Util.h"; sourceTree = "<group>"; };
@@ -269,9 +275,6 @@
 		A986268719B40AAC00FF9E2C /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
 		A986268819B40AAC00FF9E2C /* SVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewController.h; sourceTree = "<group>"; };
 		A986268919B40AAC00FF9E2C /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
-		A986268D19B411AA00FF9E2C /* DailyIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyIncomeViewController.h; sourceTree = "<group>"; };
-		A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyIncomeViewController.m; sourceTree = "<group>"; };
-		A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeViewController.xib; sourceTree = "<group>"; };
 		A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyIncomeTableViewCell.h; sourceTree = "<group>"; };
 		A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyIncomeTableViewCell.m; sourceTree = "<group>"; };
 		A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -286,6 +289,11 @@
 		A988A8FE199A751500EB10AA /* FundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundListCell.h; sourceTree = "<group>"; };
 		A988A8FF199A751500EB10AA /* FundListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundListCell.m; sourceTree = "<group>"; };
 		A988A901199A755300EB10AA /* FundListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundListCell.xib; sourceTree = "<group>"; };
+		A9971D7319B8BC410079F143 /* DailyProfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyProfitViewController.h; sourceTree = "<group>"; };
+		A9971D7419B8BC410079F143 /* DailyProfitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyProfitViewController.m; sourceTree = "<group>"; };
+		A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailProfitTopTableViewCell.h; sourceTree = "<group>"; };
+		A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailProfitTopTableViewCell.m; sourceTree = "<group>"; };
+		A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailProfitTopTableViewCell.xib; sourceTree = "<group>"; };
 		A9AA3259199702DB000BE4FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9AA325C19970335000BE4FB /* HomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeAdView.h; sourceTree = "<group>"; };
 		A9AA325D19970335000BE4FB /* HomeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeAdView.m; sourceTree = "<group>"; };
@@ -475,6 +483,16 @@
 				A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */,
 			);
 			path = ProductView;
+			sourceTree = "<group>";
+		};
+		A9354F5819B870B900FDCB52 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				A9354F5919B870C700FDCB52 /* BaseListViewController.h */,
+				A9354F5A19B870C700FDCB52 /* BaseListViewController.m */,
+				A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		A93F87751999AB4400875287 /* MBProgressHUD */ = {
@@ -700,6 +718,7 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9354F5819B870B900FDCB52 /* BaseView */,
 				A986268419B40AAC00FF9E2C /* SVWebViewController */,
 				A9F1E18319ACB24500B6A441 /* CustomCell */,
 				A9E8589A19AC2940001996DF /* DaiDaiTongApi */,
@@ -843,9 +862,6 @@
 				A919055319B02741002575DF /* AccountInfoViewController.h */,
 				A919055419B02741002575DF /* AccountInfoViewController.m */,
 				A919056B19B0882E002575DF /* AccountInfoViewController.xib */,
-				A986268D19B411AA00FF9E2C /* DailyIncomeViewController.h */,
-				A986268E19B411AA00FF9E2C /* DailyIncomeViewController.m */,
-				A986268F19B411AA00FF9E2C /* DailyIncomeViewController.xib */,
 				A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */,
 				A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */,
 				A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */,
@@ -858,6 +874,11 @@
 				A95CEA3D19B766F400D4605F /* MessageDetailViewController.h */,
 				A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */,
 				A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */,
+				A9971D7319B8BC410079F143 /* DailyProfitViewController.h */,
+				A9971D7419B8BC410079F143 /* DailyProfitViewController.m */,
+				A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */,
+				A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */,
+				A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -1025,6 +1046,7 @@
 				A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */,
 				A9AF6C751994B5890076C0EE /* icon_indicate_arrow_don@2x.png in Resources */,
 				A9AF6C5D19949CD30076C0EE /* icon_dock_forum@2x.png in Resources */,
+				A9971D7A19B8C39C0079F143 /* DatailProfitTopTableViewCell.xib in Resources */,
 				A9EAA04E1998787B001A872A /* hk_home_center__cycle@2x.png in Resources */,
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
@@ -1070,7 +1092,6 @@
 				A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */,
 				A9AF6C34199484200076C0EE /* HomeViewController.xib in Resources */,
 				A9AF6C0019947DD00076C0EE /* Main.storyboard in Resources */,
-				A986269119B411AA00FF9E2C /* DailyIncomeViewController.xib in Resources */,
 				A97F9D2419B595550073E7E6 /* InputPassWordViewController.xib in Resources */,
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
 				A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */,
@@ -1080,6 +1101,7 @@
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
 				A9EAA04F1998787B001A872A /* hk_home_center_bg@2x.png in Resources */,
 				A9AF6C6319949CD30076C0EE /* icon_dock_rt@2x.png in Resources */,
+				A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */,
 				A97F9D1B19B592FD0073E7E6 /* login_button@2x.png in Resources */,
 				A9EC95BC19B54FDB00681678 /* textField_cancel_ios7.png in Resources */,
 				A9AF6C721994B5890076C0EE /* icon_bar_card@2x.png in Resources */,
@@ -1158,6 +1180,7 @@
 				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
+				A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */,
 				A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
@@ -1168,6 +1191,7 @@
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
 				A9EC95B719B54F6E00681678 /* LoginViewController.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
+				A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,
 				A97F9D2319B595550073E7E6 /* InputPassWordViewController.m in Sources */,
@@ -1188,11 +1212,11 @@
 				A986269A19B423EB00FF9E2C /* ActivityCenterViewController.m in Sources */,
 				A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */,
 				A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */,
+				A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
-				A986269019B411AA00FF9E2C /* DailyIncomeViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);

@@ -199,4 +199,60 @@
     
     return op;
 }
+-(MKNetworkOperation*)getPersonDetailWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", nil];
+    MKNetworkOperation* op = [self postWithPath:@"uAccCenter.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)getProfitDatedetailWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", nil];
+    MKNetworkOperation* op = [self postWithPath:@"profitDatedetail.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)getListwithPageNum:(NSInteger)pageNum withType:(NSString *)typeStr withParam:(NSDictionary *)param withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSMutableDictionary* dic;
+    if (param) {
+        dic = [[NSMutableDictionary alloc] initWithDictionary:param];
+    }else{
+        dic = [[NSMutableDictionary alloc] init];
+    }
+    [dic setObject:[ManagerUser shareInstance].userId forKey:@"userId"];
+    [dic setObject:[ManagerUser shareInstance].token forKey:@"token"];
+    [dic setObject:[NSNumber numberWithInt:pageNum] forKey:@"pageNum"];
+    MKNetworkOperation* op = [self postWithPath:typeStr params:dic];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+
+}
 @end

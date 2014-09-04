@@ -13,6 +13,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    _profitId = @"";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -10,7 +10,7 @@
 #import "MyTotalProfitCellView.h"
 #import "MJRefresh.h"
 #import "AccountInfoViewController.h"
-#import "DailyIncomeViewController.h"
+#import "DailyProfitViewController.h"
 #import "MessageCenterViewController.h"
 @interface MyViewController ()
 {
@@ -219,13 +219,16 @@
         case 0:
         {
             AccountInfoViewController* accountInfoViewController = [[AccountInfoViewController alloc] init];
+            accountInfoViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:accountInfoViewController animated:YES];
         }
             break;
         case 1:
         {
-            DailyIncomeViewController* dailyIncomeViewController = [[DailyIncomeViewController alloc] init];
-            [self.navigationController pushViewController:dailyIncomeViewController animated:YES];
+            DailyProfitViewController* dailyProfitViewController = [[DailyProfitViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
+            dailyProfitViewController.hidesBottomBarWhenPushed = YES;
+            dailyProfitViewController.profitDate = [_myInfoDic objectForKey:@"profitDate"];
+            [self.navigationController pushViewController:dailyProfitViewController animated:YES];
         }
             break;
         default:

@@ -91,8 +91,40 @@ typedef void (^FailedBlock) (NSError *error);
  *
  *  @param completionBlock 请求完成
  *  @param failedBlock     请求失败
- *  @param msgId         页数
+ *  @param msgId           消息id
  *  @return MKNetworkOperation
  */
 -(MKNetworkOperation*)getMsgDetailwithPageNum:(NSString*)msgId withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取个人详细信息
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getPersonDetailWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取每日收益信息
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getProfitDatedetailWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  读取有页数的列表
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param pageNum           页数
+ *  @param typeStr         列表类型
+ *  @param param            附加参数
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getListwithPageNum:(NSInteger)pageNum  withType:(NSString*)typeStr withParam:(NSDictionary*)param withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
 @end
