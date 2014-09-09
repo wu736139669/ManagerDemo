@@ -639,7 +639,18 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 
 - (CGSize)suggestedFrameSizeToFitEntireStringConstraintedToWidth:(CGFloat)width
 {
-	// create a temporary frame, will be cached by the layouter for the given rect
+//	// create a temporary frame, will be cached by the layouter for the given rect
+//	CGRect rect = [self _frameForLayoutFrameConstraintedToWidth:width];
+//	DTCoreTextLayoutFrame *tmpLayoutFrame = [self.layouter layoutFrameWithRect:rect range:NSMakeRange(0, 0)];
+//	
+//	// assign current layout frame properties to tmpLayoutFrame
+//	tmpLayoutFrame.numberOfLines = _numberOfLines;
+//	tmpLayoutFrame.lineBreakMode = _lineBreakMode;
+//	tmpLayoutFrame.truncationString = _truncationString;
+//	
+//	//  we have a layout frame and from this we get the needed size
+//	return CGSizeMake(tmpLayoutFrame.frame.size.width + _edgeInsets.left + _edgeInsets.right, CGRectGetMaxY(tmpLayoutFrame.frame) + _edgeInsets.bottom);
+    // create a temporary frame, will be cached by the layouter for the given rect
 	CGRect rect = [self _frameForLayoutFrameConstraintedToWidth:width];
 	DTCoreTextLayoutFrame *tmpLayoutFrame = [self.layouter layoutFrameWithRect:rect range:NSMakeRange(0, 0)];
 	
@@ -648,8 +659,17 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 	tmpLayoutFrame.lineBreakMode = _lineBreakMode;
 	tmpLayoutFrame.truncationString = _truncationString;
 	
+    // Note: this returns an unreliable measure prior to 4.2 for very long documents
+	CGSize neededSize = CTFramesetterSuggestFrameSizeWithConstraints(self.layouter.framesetter, CFRangeMake(0, 0), NULL,
+																	 CGSizeMake(width, CGFLOAT_MAX),
+																	 NULL);
+    
+	// round up because generally we don't want non-integer view sizes
+	neededSize.width = ceilf(neededSize.width);
+	neededSize.height = ceilf(neededSize.height);
 	//  we have a layout frame and from this we get the needed size
-	return CGSizeMake(tmpLayoutFrame.frame.size.width + _edgeInsets.left + _edgeInsets.right, CGRectGetMaxY(tmpLayoutFrame.frame) + _edgeInsets.bottom);
+	return CGSizeMake(neededSize.width + _edgeInsets.left + _edgeInsets.right, neededSize.height + _edgeInsets.bottom);
+
 }
 
 #pragma mark Properties

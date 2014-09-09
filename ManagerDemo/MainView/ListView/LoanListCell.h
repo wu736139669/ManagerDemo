@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *percentDtlabel;
 @property (weak, nonatomic) IBOutlet MRCircularProgressView *percentView;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *pieImage;
 
 -(void)setInfoDic:(NSDictionary *)dic;
 @end

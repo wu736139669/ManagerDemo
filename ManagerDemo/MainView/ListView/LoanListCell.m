@@ -50,6 +50,11 @@
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
     _percentDtlabel.attributedString = percentString;
+    CGRect frame = _percentDtlabel.frame;
+    CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:_percentDtlabel.frame.size.width];
+    frame.size.height = size.height+2;
+    _percentDtlabel.frame = frame;
+    _percentDtlabel.center = _pieImage.center;
     [_percentView setProgress:percent/100.0 animated:NO];
 }
 -(void)setTimeWithString:(NSString*)htmlString
@@ -84,11 +89,17 @@
     }else if([[dic objectForKey:@"state"] isEqualToString:@"EFFECTED"]){
         [self setTimeWithString:@"最近还款日"];
         [_percentView setProgress:0 animated:NO];
-        NSString* htmlStr = [dic objectForKey:@"descValue"];
+        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"descValue"]];
+        
         NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
         NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
         _percentDtlabel.attributedString = percentString;
+        CGRect frame = _percentDtlabel.frame;
+        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:60.0];
+        frame.size.height = size.height+2;
+        _percentDtlabel.frame = frame;
+        _percentDtlabel.center = _pieImage.center;
         _priceLabel.text = [dic objectForKey:@"recRepayDate"];
     }else if ( [[dic objectForKey:@"state"] isEqualToString:@"ENABLED"])
     {
@@ -99,6 +110,11 @@
         NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
         NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
         _percentDtlabel.attributedString = percentString;
+        CGRect frame = _percentDtlabel.frame;
+        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:_percentDtlabel.frame.size.width];
+        frame.size.height = size.height;
+        _percentDtlabel.frame = frame;
+        _percentDtlabel.center = _pieImage.center;
 
     }
 

@@ -63,7 +63,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="jKx-eQ-tZj" customClass="DTAttributedLabel">
-                                <rect key="frame" x="16" y="28" width="38" height="28"/>
+                                <rect key="frame" x="5" y="30" width="60" height="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                         </subviews>
@@ -88,6 +88,7 @@
                 <outlet property="nameLabel" destination="Idi-qw-ohG" id="Sin-dw-1XV"/>
                 <outlet property="percentDtlabel" destination="jKx-eQ-tZj" id="d0H-GV-ZdV"/>
                 <outlet property="percentView" destination="hV2-1G-Fem" id="GTM-2T-X7I"/>
+                <outlet property="pieImage" destination="oUp-Tx-bC8" id="iJY-QQ-NQv"/>
                 <outlet property="priceLabel" destination="gFc-RY-QUU" id="nSK-qF-A0n"/>
                 <outlet property="profitLabel" destination="gnS-Tv-BcD" id="fMT-gW-cxV"/>
                 <outlet property="timeDtLabel" destination="0L4-K9-Tyn" id="5dK-d7-zP9"/>
