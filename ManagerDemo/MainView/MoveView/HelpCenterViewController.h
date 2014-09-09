@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HelpCenterViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+#import "BaseListViewController.h"
+@interface HelpCenterViewController : BaseListViewController
 
 @end

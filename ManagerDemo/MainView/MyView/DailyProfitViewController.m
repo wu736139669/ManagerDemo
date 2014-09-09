@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view.
     _topCell = [DatailProfitTopTableViewCell instance];
     
-    [self headerBeginRefreshing];
+//    [self headerBeginRefreshing];
 }
 -(void)loadDataWithDic:(NSDictionary *)dic withType:(NSString *)typeStr WithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {

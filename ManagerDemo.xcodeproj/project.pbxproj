@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		63816045C89E43DD9F96396F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B3792862C24377B1ACD469 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		A904E4A619BEF11F0014F694 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A904E4A419BEF11F0014F694 /* AboutViewController.m */; };
+		A904E4A719BEF11F0014F694 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A904E4A519BEF11F0014F694 /* AboutViewController.xib */; };
+		A904E4AA19BEF18A0014F694 /* about_copyright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A904E4A819BEF18A0014F694 /* about_copyright@2x.png */; };
+		A904E4AB19BEF18A0014F694 /* about_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A904E4A919BEF18A0014F694 /* about_logo@2x.png */; };
 		A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90BEBFF199DDA9E00230242 /* WYDProductViewController.m */; };
 		A90BEC02199DDA9E00230242 /* WYDProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */; };
 		A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90BEC04199DDACA00230242 /* WYDInfoHeadView.m */; };
@@ -67,7 +71,6 @@
 		A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */; };
 		A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */; };
 		A986269A19B423EB00FF9E2C /* ActivityCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */; };
-		A986269B19B423EB00FF9E2C /* ActivityCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */; };
 		A986269F19B4241400FF9E2C /* ActivityCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */; };
 		A98626A019B4241400FF9E2C /* ActivityCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */; };
 		A988A8FC199A50D900EB10AA /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988A8FB199A50D900EB10AA /* TriangleView.m */; };
@@ -133,7 +136,6 @@
 		A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */; };
 		A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */; };
 		A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */; };
-		A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */; };
 		A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */; };
 		A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */; };
 		A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */; };
@@ -196,6 +198,11 @@
 
 /* Begin PBXFileReference section */
 		5730F11CFCAA47EB9D024FB8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A904E4A319BEF11F0014F694 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A904E4A419BEF11F0014F694 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		A904E4A519BEF11F0014F694 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		A904E4A819BEF18A0014F694 /* about_copyright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_copyright@2x.png"; sourceTree = "<group>"; };
+		A904E4A919BEF18A0014F694 /* about_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_logo@2x.png"; sourceTree = "<group>"; };
 		A90BEBFE199DDA9E00230242 /* WYDProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDProductViewController.h; sourceTree = "<group>"; };
 		A90BEBFF199DDA9E00230242 /* WYDProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDProductViewController.m; sourceTree = "<group>"; };
 		A90BEC00199DDA9E00230242 /* WYDProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDProductViewController.xib; sourceTree = "<group>"; };
@@ -280,7 +287,6 @@
 		A986269419B413D600FF9E2C /* DailyIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyIncomeTableViewCell.xib; sourceTree = "<group>"; };
 		A986269719B423EB00FF9E2C /* ActivityCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCenterViewController.h; sourceTree = "<group>"; };
 		A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCenterViewController.m; sourceTree = "<group>"; };
-		A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCenterViewController.xib; sourceTree = "<group>"; };
 		A986269C19B4241400FF9E2C /* ActivityCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCenterTableViewCell.h; sourceTree = "<group>"; };
 		A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCenterTableViewCell.m; sourceTree = "<group>"; };
 		A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCenterTableViewCell.xib; sourceTree = "<group>"; };
@@ -373,7 +379,6 @@
 		A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterViewController.h; sourceTree = "<group>"; };
 		A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterViewController.m; sourceTree = "<group>"; };
-		A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenterViewController.xib; sourceTree = "<group>"; };
 		A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterTableViewCell.h; sourceTree = "<group>"; };
 		A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterTableViewCell.m; sourceTree = "<group>"; };
 		A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenterTableViewCell.xib; sourceTree = "<group>"; };
@@ -530,16 +535,17 @@
 				A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */,
 				A986269719B423EB00FF9E2C /* ActivityCenterViewController.h */,
 				A986269819B423EB00FF9E2C /* ActivityCenterViewController.m */,
-				A986269919B423EB00FF9E2C /* ActivityCenterViewController.xib */,
 				A986269C19B4241400FF9E2C /* ActivityCenterTableViewCell.h */,
 				A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */,
 				A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */,
 				A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */,
 				A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */,
-				A9B2506E19B4C75E003E8855 /* HelpCenterViewController.xib */,
 				A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */,
 				A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */,
 				A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */,
+				A904E4A319BEF11F0014F694 /* AboutViewController.h */,
+				A904E4A419BEF11F0014F694 /* AboutViewController.m */,
+				A904E4A519BEF11F0014F694 /* AboutViewController.xib */,
 			);
 			path = MoveView;
 			sourceTree = "<group>";
@@ -774,6 +780,8 @@
 				A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */,
 				A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */,
 				A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */,
+				A904E4A819BEF18A0014F694 /* about_copyright@2x.png */,
+				A904E4A919BEF18A0014F694 /* about_logo@2x.png */,
 				A9C69449199BD14D00B2CECE /* more_icon_2@2x.png */,
 				A9C6944A199BD14D00B2CECE /* more_icon_3@2x.png */,
 				A9C6944B199BD14D00B2CECE /* more_icon_4@2x.png */,
@@ -1059,16 +1067,16 @@
 				A9AF6C6519949CD30076C0EE /* icon_dock_service@2x.png in Resources */,
 				A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */,
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
+				A904E4AB19BEF18A0014F694 /* about_logo@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
 				A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */,
 				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
-				A9B2507019B4C75E003E8855 /* HelpCenterViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
 				A97F9D1A19B592FD0073E7E6 /* login_button_s@2x.png in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
+				A904E4A719BEF11F0014F694 /* AboutViewController.xib in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
-				A986269B19B423EB00FF9E2C /* ActivityCenterViewController.xib in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */,
 				A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */,
@@ -1083,6 +1091,7 @@
 				A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
+				A904E4AA19BEF18A0014F694 /* about_copyright@2x.png in Resources */,
 				A919056319B02A8C002575DF /* icon_color_person@2x.png in Resources */,
 				A9EAA04619986DC3001A872A /* fund_cell_label_bg_gray@2x.png in Resources */,
 				A919055919B02A4F002575DF /* hw_verifycard_info_icon.png in Resources */,
@@ -1170,6 +1179,7 @@
 				A9AA326019970335000BE4FB /* HomeAdView.m in Sources */,
 				A988A900199A751500EB10AA /* FundListCell.m in Sources */,
 				A9AF6C3D199486CA0076C0EE /* ProductListViewController.m in Sources */,
+				A904E4A619BEF11F0014F694 /* AboutViewController.m in Sources */,
 				A93F87741999AA8300875287 /* ManagerUtil.m in Sources */,
 				A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */,
 				A9E8589D19AC2AAE001996DF /* DaiDaiTongApi.m in Sources */,

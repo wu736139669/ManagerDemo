@@ -11,6 +11,7 @@
 #import "ActivityCenterViewController.h"
 #import "HelpCenterViewController.h"
 #import "MessageCenterViewController.h"
+#import "AboutViewController.h"
 @interface MoreViewController ()
 
 @end
@@ -146,17 +147,17 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    cell.textLabel.text = @"活动中心";
+                    cell.textLabel.text = @"检查更新";
                     cell.imageView.image = [UIImage imageNamed:@"more_icon_7"];
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     cell.detailTextLabel.textColor = [UIColor grayColor];
-                    cell.detailTextLabel.text = @"有什么我能帮助你的嘛？";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"当前版本v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]];
                     
                 }
                     break;
                 case 1:
                 {
-                    cell.textLabel.text = @"帮助中心";
+                    cell.textLabel.text = @"关于盈盈";
                     cell.imageView.image = [UIImage imageNamed:@"more_icon_8"];
                     
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -213,7 +214,15 @@
 
         }
             break;
-            
+        case 2:
+        {
+            if (indexPath.row == 1) {
+                AboutViewController* aboutViewController = [[AboutViewController alloc] init];
+                aboutViewController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:aboutViewController animated:YES];
+            }
+        }
+            break;
         default:
             break;
     }
