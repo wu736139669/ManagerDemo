@@ -82,6 +82,11 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
+
+-(void)checkVersion
+{
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

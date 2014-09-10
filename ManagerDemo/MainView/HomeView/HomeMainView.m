@@ -93,7 +93,7 @@
     NSCharacterSet* nonDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     time = [time stringByReplacingOccurrencesOfString:[time stringByTrimmingCharactersInSet:nonDigits] withString:[NSString stringWithFormat:@"<span  style=\"font-size:13px; color:red;\">%@</span>",[time stringByTrimmingCharactersInSet:nonDigits]]];
     //时间
-    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">%@<span  style=\"font-size:13px; color:red;\">%d</span>起购</span>",time,money];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">%@<span  style=\"font-size:13px; color:red;\">%ld</span>起购</span>",time,money];
     NSData* data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString* percentString = [[NSAttributedString alloc] initWithHTMLData:data documentAttributes:NULL];
     _timeLabel.attributedString = percentString;

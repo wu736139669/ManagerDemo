@@ -12,8 +12,17 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *hasPercent;
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *leftMoney;
+@property (weak, nonatomic) IBOutlet UILabel *totalCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startBuyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *benxiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fundPeriodDescLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profitDescLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialBlackDescLabel;
+@property (weak, nonatomic) IBOutlet UILabel *securityTipLabel;
 
 
 -(void)setProgress:(CGFloat)progress;
 -(void)setLeftMoneyAccount:(NSInteger)money;
+-(void)setInfoWithDic:(NSDictionary*)dic;
 @end

@@ -126,7 +126,7 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d",indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld",indexPath.row];
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     

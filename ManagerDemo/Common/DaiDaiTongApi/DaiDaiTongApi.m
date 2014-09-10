@@ -150,7 +150,7 @@
 }
 -(MKNetworkOperation*)getMsgwithPageNum:(NSInteger)pageNum withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
-    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token",[NSNumber numberWithInt:pageNum], @"pageNum", nil];
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token",[NSNumber numberWithInteger:pageNum], @"pageNum", nil];
     MKNetworkOperation* op = [self postWithPath:@"msgquerypage.do" params:dic];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
@@ -239,7 +239,7 @@
     }
     [dic setObject:[ManagerUser shareInstance].userId forKey:@"userId"];
     [dic setObject:[ManagerUser shareInstance].token forKey:@"token"];
-    [dic setObject:[NSNumber numberWithInt:pageNum] forKey:@"pageNum"];
+    [dic setObject:[NSNumber numberWithInteger:pageNum] forKey:@"pageNum"];
     MKNetworkOperation* op = [self postWithPath:typeStr params:dic];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
@@ -254,5 +254,64 @@
     
     return op;
 
+}
+-(MKNetworkOperation*)getIosVersion:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", nil];
+    MKNetworkOperation* op = [self postWithPath:@"iosversion.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)getFundDetailWithFundId:(NSString *)fundCode withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token",fundCode, @"fundCode", nil];
+    MKNetworkOperation* op = [self postWithPath:@"funddetail.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+
+-(MKNetworkOperation*)getHoldAssetTypewithCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token", nil];
+    MKNetworkOperation* op = [self postWithPath:@"holdAssetTypeQuery.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    [self enqueueOperation:op forceReload:YES];
+    return op;
+}
+-(MKNetworkOperation*)getAccWealthFormType:(NSString *)type withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:[ManagerUser shareInstance].userId, @"userId",[ManagerUser shareInstance].token,@"token",type, @"type", nil];
+    MKNetworkOperation* op = [self postWithPath:@"accWealthForType.do" params:dic];
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
 }
 @end

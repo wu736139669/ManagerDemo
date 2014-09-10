@@ -30,6 +30,14 @@
 		A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */; };
 		A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */; };
 		A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */; };
+		A93320C219BFE8090090D640 /* MyTotalAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93320C019BFE8090090D640 /* MyTotalAmountViewController.m */; };
+		A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320C119BFE8090090D640 /* MyTotalAmountViewController.xib */; };
+		A93320C719C0227F0090D640 /* MyHoldAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93320C519C0227F0090D640 /* MyHoldAmountViewController.m */; };
+		A93320C819C0227F0090D640 /* MyHoldAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320C619C0227F0090D640 /* MyHoldAmountViewController.xib */; };
+		A93320CC19C02F0B0090D640 /* WYDAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93320CA19C02F0B0090D640 /* WYDAmountViewController.m */; };
+		A93320CD19C02F0B0090D640 /* WYDAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320CB19C02F0B0090D640 /* WYDAmountViewController.xib */; };
+		A93320D119C02F240090D640 /* FundAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93320CF19C02F240090D640 /* FundAmountViewController.m */; };
+		A93320D219C02F240090D640 /* FundAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320D019C02F240090D640 /* FundAmountViewController.xib */; };
 		A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9354F5A19B870C700FDCB52 /* BaseListViewController.m */; };
 		A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */; };
 		A93F87741999AA8300875287 /* ManagerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87731999AA8300875287 /* ManagerUtil.m */; };
@@ -224,6 +232,18 @@
 		A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_datesum@2x.png"; sourceTree = "<group>"; };
 		A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_safeicon@2x.png"; sourceTree = "<group>"; };
 		A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_5@2x.png"; sourceTree = "<group>"; };
+		A93320BF19BFE8090090D640 /* MyTotalAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalAmountViewController.h; sourceTree = "<group>"; };
+		A93320C019BFE8090090D640 /* MyTotalAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalAmountViewController.m; sourceTree = "<group>"; };
+		A93320C119BFE8090090D640 /* MyTotalAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTotalAmountViewController.xib; sourceTree = "<group>"; };
+		A93320C419C0227F0090D640 /* MyHoldAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHoldAmountViewController.h; sourceTree = "<group>"; };
+		A93320C519C0227F0090D640 /* MyHoldAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHoldAmountViewController.m; sourceTree = "<group>"; };
+		A93320C619C0227F0090D640 /* MyHoldAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHoldAmountViewController.xib; sourceTree = "<group>"; };
+		A93320C919C02F0B0090D640 /* WYDAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDAmountViewController.h; sourceTree = "<group>"; };
+		A93320CA19C02F0B0090D640 /* WYDAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDAmountViewController.m; sourceTree = "<group>"; };
+		A93320CB19C02F0B0090D640 /* WYDAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDAmountViewController.xib; sourceTree = "<group>"; };
+		A93320CE19C02F240090D640 /* FundAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundAmountViewController.h; sourceTree = "<group>"; };
+		A93320CF19C02F240090D640 /* FundAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundAmountViewController.m; sourceTree = "<group>"; };
+		A93320D019C02F240090D640 /* FundAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundAmountViewController.xib; sourceTree = "<group>"; };
 		A9354F5919B870C700FDCB52 /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListViewController.h; sourceTree = "<group>"; };
 		A9354F5A19B870C700FDCB52 /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
 		A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseListViewController.xib; sourceTree = "<group>"; };
@@ -887,6 +907,18 @@
 				A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */,
 				A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */,
 				A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */,
+				A93320BF19BFE8090090D640 /* MyTotalAmountViewController.h */,
+				A93320C019BFE8090090D640 /* MyTotalAmountViewController.m */,
+				A93320C119BFE8090090D640 /* MyTotalAmountViewController.xib */,
+				A93320C419C0227F0090D640 /* MyHoldAmountViewController.h */,
+				A93320C519C0227F0090D640 /* MyHoldAmountViewController.m */,
+				A93320C619C0227F0090D640 /* MyHoldAmountViewController.xib */,
+				A93320C919C02F0B0090D640 /* WYDAmountViewController.h */,
+				A93320CA19C02F0B0090D640 /* WYDAmountViewController.m */,
+				A93320CB19C02F0B0090D640 /* WYDAmountViewController.xib */,
+				A93320CE19C02F240090D640 /* FundAmountViewController.h */,
+				A93320CF19C02F240090D640 /* FundAmountViewController.m */,
+				A93320D019C02F240090D640 /* FundAmountViewController.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -913,8 +945,8 @@
 			isa = PBXGroup;
 			children = (
 				A9EC95B419B54F6E00681678 /* LoginViewController.h */,
-				A9EC95B519B54F6E00681678 /* LoginViewController.m */,
 				A9EC95B619B54F6E00681678 /* LoginViewController.xib */,
+				A9EC95B519B54F6E00681678 /* LoginViewController.m */,
 				A97F9D2019B595550073E7E6 /* InputPassWordViewController.h */,
 				A97F9D2119B595550073E7E6 /* InputPassWordViewController.m */,
 				A97F9D2219B595550073E7E6 /* InputPassWordViewController.xib */,
@@ -1042,6 +1074,7 @@
 				A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */,
 				A9EC95B819B54F6E00681678 /* LoginViewController.xib in Resources */,
 				A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */,
+				A93320C819C0227F0090D640 /* MyHoldAmountViewController.xib in Resources */,
 				A9AF6C5E19949CD30076C0EE /* icon_dock_home_actived@2x.png in Resources */,
 				A9EAA04519986DC3001A872A /* fund_cell_label_bg_blue@2x.png in Resources */,
 				A97F9D1719B592E90073E7E6 /* get_ver_button_red@2x.png in Resources */,
@@ -1072,6 +1105,7 @@
 				A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */,
 				A919056C19B0882E002575DF /* AccountInfoViewController.xib in Resources */,
 				A9AF6C8F1994C5700076C0EE /* MJRefresh.bundle in Resources */,
+				A93320D219C02F240090D640 /* FundAmountViewController.xib in Resources */,
 				A97F9D1A19B592FD0073E7E6 /* login_button_s@2x.png in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
@@ -1096,6 +1130,7 @@
 				A9EAA04619986DC3001A872A /* fund_cell_label_bg_gray@2x.png in Resources */,
 				A919055919B02A4F002575DF /* hw_verifycard_info_icon.png in Resources */,
 				A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */,
+				A93320CD19C02F0B0090D640 /* WYDAmountViewController.xib in Resources */,
 				A919056A19B07AAF002575DF /* pie_chart_arrow@2x.png in Resources */,
 				A9EAA052199879CC001A872A /* pie_chart_center@2x.png in Resources */,
 				A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */,
@@ -1111,6 +1146,7 @@
 				A9EAA04F1998787B001A872A /* hk_home_center_bg@2x.png in Resources */,
 				A9AF6C6319949CD30076C0EE /* icon_dock_rt@2x.png in Resources */,
 				A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */,
+				A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */,
 				A97F9D1B19B592FD0073E7E6 /* login_button@2x.png in Resources */,
 				A9EC95BC19B54FDB00681678 /* textField_cancel_ios7.png in Resources */,
 				A9AF6C721994B5890076C0EE /* icon_bar_card@2x.png in Resources */,
@@ -1195,12 +1231,16 @@
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
 				A919055619B02741002575DF /* AccountInfoViewController.m in Sources */,
+				A93320CC19C02F0B0090D640 /* WYDAmountViewController.m in Sources */,
 				A93F8805199A077F00875287 /* LoanListViewController.m in Sources */,
 				A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */,
 				A986269F19B4241400FF9E2C /* ActivityCenterTableViewCell.m in Sources */,
+				A93320D119C02F240090D640 /* FundAmountViewController.m in Sources */,
 				A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */,
+				A93320C219BFE8090090D640 /* MyTotalAmountViewController.m in Sources */,
 				A9EC95B719B54F6E00681678 /* LoginViewController.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
+				A93320C719C0227F0090D640 /* MyHoldAmountViewController.m in Sources */,
 				A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,

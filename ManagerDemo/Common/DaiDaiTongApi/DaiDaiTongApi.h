@@ -127,4 +127,43 @@ typedef void (^FailedBlock) (NSError *error);
  *  @return MKNetworkOperation
  */
 -(MKNetworkOperation*)getListwithPageNum:(NSInteger)pageNum  withType:(NSString*)typeStr withParam:(NSDictionary*)param withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  检查ios版本号.
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getIosVersion:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取产品详细信息.
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param fundCode         id
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getFundDetailWithFundId:(NSString*)fundCode withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  获取拥有资产种类.
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getHoldAssetTypewithCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
+
+/**
+ *  根据类型获取拥有资产.
+ *
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *  @param type            资产类型
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getAccWealthFormType:(NSString*)type withCompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock;
 @end

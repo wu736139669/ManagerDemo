@@ -105,14 +105,14 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起息日：  募集成功次日计算收益" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="esU-Zb-has">
-                    <rect key="frame" x="20" y="191" width="280" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起息日：  募集成功次日计算收益" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="esU-Zb-has">
+                    <rect key="frame" x="20" y="187" width="287" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还款提示： 按月等额本息还至账户余额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQ3-1B-JLD">
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还款提示： 按月等额本息还至账户余额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQ3-1B-JLD">
                     <rect key="frame" x="20" y="209" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -134,9 +134,17 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="benxiLabel" destination="wb7-cz-cnP" id="rZt-vC-2Mh"/>
+                <outlet property="expectLabel" destination="RF7-IF-cuT" id="R5U-mc-vpa"/>
+                <outlet property="fundPeriodDescLabel" destination="jqp-AZ-0gM" id="IHA-h1-HG5"/>
                 <outlet property="hasPercent" destination="vfm-xl-jIE" id="vyY-Lg-wMn"/>
                 <outlet property="leftMoney" destination="gD8-R5-ouO" id="Lb1-jk-RRP"/>
+                <outlet property="profitDescLabel" destination="1bV-FM-qrH" id="JcH-1C-uVM"/>
                 <outlet property="progressView" destination="fuY-SE-r31" id="2ZE-KX-s42"/>
+                <outlet property="securityTipLabel" destination="hkG-19-1qV" id="AGr-sk-wFH"/>
+                <outlet property="specialBlackDescLabel" destination="esU-Zb-has" id="1Dq-1w-NQr"/>
+                <outlet property="startBuyLabel" destination="vln-TR-h3K" id="0Ed-Mr-EPV"/>
+                <outlet property="totalCountLabel" destination="yCh-FU-y40" id="4L6-1F-e5T"/>
             </connections>
         </view>
     </objects>

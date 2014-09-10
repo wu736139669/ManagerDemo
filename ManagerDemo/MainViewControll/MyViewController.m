@@ -12,6 +12,7 @@
 #import "AccountInfoViewController.h"
 #import "DailyProfitViewController.h"
 #import "MessageCenterViewController.h"
+#import "MyTotalAmountViewController.h"
 @interface MyViewController ()
 {
     NSDictionary* _myInfoDic;
@@ -121,7 +122,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d%d",indexPath.section,indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
@@ -150,6 +151,7 @@
                 frmae.size.height = [self tableView:tableView heightForRowAtIndexPath:indexPath];
                 cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
                 _myTotalProfitCellView = [[MyTotalProfitCellView alloc] initWithFrame:frmae];
+                _myTotalProfitCellView.delegate = self;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [cell addSubview:_myTotalProfitCellView];
             }
@@ -235,6 +237,14 @@
             break;
     }
 }
+#pragma mark - MyTotalProfitCellViewDelegate
+-(void)totalMoneyClick
+{
+    MyTotalAmountViewController* myTotalAmountViewController = [[MyTotalAmountViewController alloc] init];
+    myTotalAmountViewController.hidesBottomBarWhenPushed = YES;
+    [myTotalAmountViewController setTotalAmount:[[_myInfoDic objectForKey:@"totalAmount"] floatValue] withHoldAmount:[[_myInfoDic objectForKey:@"holdAmount"] floatValue] withAccBalance:[[_myInfoDic objectForKey:@"accBalance"] floatValue]];
+    [self.navigationController pushViewController:myTotalAmountViewController animated:YES];
+}
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
 {
@@ -243,6 +253,7 @@
 -(void)rightBarBtnClick:(id)sender
 {
     MessageCenterViewController* messageCenterViewController = [[MessageCenterViewController alloc] init];
+
     messageCenterViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:messageCenterViewController animated:YES];
 }

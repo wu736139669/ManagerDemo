@@ -89,10 +89,12 @@
 
 -(void)leftBtnClick:(id)sender
 {
-    [MBProgressHUD checkHudWithView:self label:@"点我没用" hidesAfter:1.0];
+    if ([_delegate respondsToSelector:@selector(totalMoneyClick)]) {
+        [_delegate totalMoneyClick];
+    }
 }
 -(void)rightBtnClick:(id)sender
 {
-    [MBProgressHUD checkHudWithView:self label:@"点我没用" hidesAfter:1.0];
+    
 }
 @end

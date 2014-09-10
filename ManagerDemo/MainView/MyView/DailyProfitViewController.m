@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _topCell = [DatailProfitTopTableViewCell instance];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 //    [self headerBeginRefreshing];
 }
 -(void)loadDataWithDic:(NSDictionary *)dic withType:(NSString *)typeStr WithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
@@ -62,16 +62,6 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 1.0;
-}
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return nil;
-}
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
-    view.backgroundColor = [UIColor clearColor];
-    return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {

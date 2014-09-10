@@ -96,7 +96,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    LoanListCell* cell = (LoanListCell*)[tableView cellForRowAtIndexPath:indexPath];
     WYDProductViewController*  wydProductViewController = [[WYDProductViewController alloc] init];
+    wydProductViewController.productId = cell.productId;
     wydProductViewController.hidesBottomBarWhenPushed = YES;
     [self.delegate.navigationController pushViewController:wydProductViewController animated:YES];
     

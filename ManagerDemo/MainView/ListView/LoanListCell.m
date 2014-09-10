@@ -45,7 +45,7 @@
 }
 -(void)setPercent:(NSInteger) percent
 {
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%d</span> %%",percent];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%ld</span> %%",percent];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
@@ -67,11 +67,12 @@
 }
 -(void)setStartBuy:(NSInteger)price
 {
-    _priceLabel.text = [NSString stringWithFormat:@"%d元起购",price];
+    _priceLabel.text = [NSString stringWithFormat:@"%ld元起购",price];
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
 
+    self.productId = [dic objectForKey:@"jjdm"];
     self.profitLabel.text = [dic objectForKey:@"nhsy"];
     self.nameLabel.text = [dic objectForKey:@"jjmc"];
     if ([[dic objectForKey:@"tip"] isKindOfClass:[NSNull class]]) {

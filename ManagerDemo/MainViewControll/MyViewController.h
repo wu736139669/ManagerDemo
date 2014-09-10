@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "MyTotalProfitCellView.h"
+@interface MyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MyTotalProfitCellViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

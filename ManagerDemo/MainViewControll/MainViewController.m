@@ -32,7 +32,7 @@
         _myNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MyViewController alloc] init]];
         
         //第四页
-        _moreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
+        _myMoreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
             [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
             [_homeNavigationController.tabBarItem setBadgeValue:@"新"];
@@ -41,10 +41,10 @@
             
             [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第三页" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
             
-            [_moreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第四页" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
+            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第四页" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
         }
         
-        self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _moreNavigationController];
+        self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _myMoreNavigationController];
         
         
     }

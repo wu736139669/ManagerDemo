@@ -27,11 +27,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if (ScreenHeight <= 480) {
-        CGRect frame = _tableView.frame;
-        frame.size.height -= 88;
-        _tableView.frame = frame;
-    }
+//    if (ScreenHeight <= 480) {
+//        CGRect frame = _tableView.frame;
+//        frame.size.height -= 88;
+//        _tableView.frame = frame;
+//    }
     _productInfoArray = [[NSMutableArray alloc] init];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
