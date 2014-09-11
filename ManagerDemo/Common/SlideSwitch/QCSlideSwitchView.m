@@ -9,10 +9,10 @@
 
 #import "QCSlideSwitchView.h"
 
-static const CGFloat kHeightOfTopScrollView = 30.0f;
-static const CGFloat kWidthOfButtonMargin = 44.0f;
-static const CGFloat kFontSizeOfTabButton = 17.0f;
-static const NSUInteger kTagOfRightSideButton = 999;
+CGFloat kHeightOfTopScrollView = 30.0f;
+CGFloat kWidthOfButtonMargin = 44.0f;
+CGFloat kFontSizeOfTabButton = 17.0f;
+NSUInteger kTagOfRightSideButton = 999;
 
 @implementation QCSlideSwitchView
 
@@ -164,6 +164,11 @@ static const NSUInteger kTagOfRightSideButton = 999;
     [_shadowImageView setImage:_shadowImage];
     [_topScrollView addSubview:_shadowImageView];
     
+    if ([_viewArray count] == 2) {
+        kWidthOfButtonMargin = 70.0f;
+    }else if([_viewArray count] == 3){
+        kWidthOfButtonMargin = 44.0f;
+    }
     //顶部tabbar的总长度
     CGFloat topScrollViewContentWidth = kWidthOfButtonMargin;
     //每个tab偏移量
@@ -272,13 +277,13 @@ static const NSUInteger kTagOfRightSideButton = 999;
     //如果 当前显示的最后一个tab文字超出右边界
     if (sender.frame.origin.x - _topScrollView.contentOffset.x > self.bounds.size.width - (kWidthOfButtonMargin+sender.bounds.size.width)) {
         //向左滚动视图，显示完整tab文字
-        [_topScrollView setContentOffset:CGPointMake(sender.frame.origin.x - (_topScrollView.bounds.size.width- (kWidthOfButtonMargin+sender.bounds.size.width)), 0)  animated:YES];
+//        [_topScrollView setContentOffset:CGPointMake(sender.frame.origin.x - (_topScrollView.bounds.size.width- (kWidthOfButtonMargin+sender.bounds.size.width)), 0)  animated:YES];
     }
     
     //如果 （tab的文字坐标 - 当前滚动视图左边界所在整个视图的x坐标） < 按钮的隔间 ，代表tab文字已超出边界
     if (sender.frame.origin.x - _topScrollView.contentOffset.x < kWidthOfButtonMargin) {
         //向右滚动视图（tab文字的x坐标 - 按钮间隔 = 新的滚动视图左边界在整个视图的x坐标），使文字显示完整
-        [_topScrollView setContentOffset:CGPointMake(sender.frame.origin.x - kWidthOfButtonMargin, 0)  animated:YES];
+//        [_topScrollView setContentOffset:CGPointMake(sender.frame.origin.x - kWidthOfButtonMargin, 0)  animated:YES];
     }
 }
 

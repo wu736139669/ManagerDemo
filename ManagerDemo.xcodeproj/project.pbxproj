@@ -190,6 +190,8 @@
 		A9EC95BE19B54FEC00681678 /* textField_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95BD19B54FEC00681678 /* textField_bg@2x.png */; };
 		A9EC95C019B5501B00681678 /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EC95BF19B5501B00681678 /* icon_phone@2x.png */; };
 		A9EC95C319B55CF100681678 /* ManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EC95C219B55CF100681678 /* ManagerUser.m */; };
+		A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EE5EE519C20CDA004E7A2C /* WYDAmountTableViewCell.m */; };
+		A9EE5EE819C20CDA004E7A2C /* WYDAmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EE5EE619C20CDA004E7A2C /* WYDAmountTableViewCell.xib */; };
 		A9F1E18619ACB63100B6A441 /* DTCoreTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F1E18519ACB63100B6A441 /* DTCoreTextTableViewCell.m */; };
 		A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F1E18719ACB64D00B6A441 /* DTCoreTextTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -456,6 +458,9 @@
 		A9EC95BF19B5501B00681678 /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
 		A9EC95C119B55CF100681678 /* ManagerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUser.h; sourceTree = "<group>"; };
 		A9EC95C219B55CF100681678 /* ManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUser.m; sourceTree = "<group>"; };
+		A9EE5EE419C20CDA004E7A2C /* WYDAmountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYDAmountTableViewCell.h; sourceTree = "<group>"; };
+		A9EE5EE519C20CDA004E7A2C /* WYDAmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYDAmountTableViewCell.m; sourceTree = "<group>"; };
+		A9EE5EE619C20CDA004E7A2C /* WYDAmountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYDAmountTableViewCell.xib; sourceTree = "<group>"; };
 		A9F1E18419ACB63100B6A441 /* DTCoreTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCoreTextTableViewCell.h; sourceTree = "<group>"; };
 		A9F1E18519ACB63100B6A441 /* DTCoreTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCoreTextTableViewCell.m; sourceTree = "<group>"; };
 		A9F1E18719ACB64D00B6A441 /* DTCoreTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCoreTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -919,6 +924,9 @@
 				A93320CE19C02F240090D640 /* FundAmountViewController.h */,
 				A93320CF19C02F240090D640 /* FundAmountViewController.m */,
 				A93320D019C02F240090D640 /* FundAmountViewController.xib */,
+				A9EE5EE419C20CDA004E7A2C /* WYDAmountTableViewCell.h */,
+				A9EE5EE519C20CDA004E7A2C /* WYDAmountTableViewCell.m */,
+				A9EE5EE619C20CDA004E7A2C /* WYDAmountTableViewCell.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -1144,6 +1152,7 @@
 				A9C69452199BD14D00B2CECE /* more_icon_3@2x.png in Resources */,
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
 				A9EAA04F1998787B001A872A /* hk_home_center_bg@2x.png in Resources */,
+				A9EE5EE819C20CDA004E7A2C /* WYDAmountTableViewCell.xib in Resources */,
 				A9AF6C6319949CD30076C0EE /* icon_dock_rt@2x.png in Resources */,
 				A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */,
 				A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */,
@@ -1268,6 +1277,7 @@
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
+				A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

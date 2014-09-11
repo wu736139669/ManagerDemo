@@ -7,10 +7,12 @@
 //
 
 #import "MyHoldAmountViewController.h"
-
+#import "WYDAmountViewController.h"
+#import "FundAmountViewController.h"
 @interface MyHoldAmountViewController ()
 {
     NSArray* _typeArray;
+    NSMutableArray* _listViewContrllerArray;  //界面列表
 }
 @end
 
@@ -22,6 +24,7 @@
     if (self) {
         // Custom initialization
         _typeArray = nil;
+        _listViewContrllerArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -30,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [ManagerUtil SetSubViewExternNone:self];
     self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
     self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"bb0b15"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
@@ -44,6 +47,7 @@
     [daiDaiTongApi getHoldAssetTypewithCompletionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
             _typeArray = [NSArray arrayWithArray:[jsonRes objectForKey:@"types"]];
+            [self initSlideSwitchView];
         }else{
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
@@ -51,26 +55,39 @@
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
 }
+-(void)initSlideSwitchView
+{
+    [_listViewContrllerArray removeAllObjects];
+    for (NSString* type in _typeArray) {
+        if ([type isEqualToString:@"RYT"]) {
+            WYDAmountViewController* wydAmountViewController = [[WYDAmountViewController alloc] init];
+            wydAmountViewController.title = @"稳盈贷";
+            [_listViewContrllerArray addObject:wydAmountViewController];
+        }else{
+            FundAmountViewController* fundAmountViewController = [[FundAmountViewController alloc] init];
+            fundAmountViewController.title = @"货币基金";
+            [_listViewContrllerArray addObject:fundAmountViewController];
+        }
+    }
+    [self.slideSwitchView buildUI];
+}
 #pragma mark - 滑动tab视图代理方法
-//- (NSUInteger)numberOfTab:(QCSlideSwitchView *)view
-//{
-//    // you can set the best you can do it ;
-//    return listViewContrllerArray.count;
-//}
-//
-//- (UIViewController *)slideSwitchView:(QCSlideSwitchView *)view viewOfTab:(NSUInteger)number
-//{
-//    
-//    return [listViewContrllerArray objectAtIndex:number];
-//}
-//
-//
-//- (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number
-//{
-//    _nowSelectTab = number;
-//    //进行第一次刷新
-//    [(ListViewController*)[listViewContrllerArray objectAtIndex:number] firstRefresh];
-//}
+- (NSUInteger)numberOfTab:(QCSlideSwitchView *)view
+{
+    // you can set the best you can do it ;
+    return _listViewContrllerArray.count;
+}
+
+- (UIViewController *)slideSwitchView:(QCSlideSwitchView *)view viewOfTab:(NSUInteger)number
+{
+    
+    return [_listViewContrllerArray objectAtIndex:number];
+}
+
+
+- (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number
+{
+}
 
 - (void)didReceiveMemoryWarning
 {

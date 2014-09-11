@@ -7,9 +7,11 @@
 //
 
 #import "MyTotalAmountViewController.h"
-
+#import "MyHoldAmountViewController.h"
 @interface MyTotalAmountViewController ()
-
+{
+    UILabel* _titleLabel;
+}
 @end
 
 @implementation MyTotalAmountViewController
@@ -30,6 +32,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 49)];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.numberOfLines = 0;
+    self.navigationItem.titleView = _titleLabel;
     _holdAmountView.progressColor = [UIColor redColor];
     _holdAmountView.wrapperColor = Touch_BackGroudColor;
     _holdAmountView.wrapperArcWidth = 5.0;
@@ -45,6 +53,7 @@
     _totalAmount = totalAmount;
     _holdAmount = holdAmount;
     _accBalance = accBalance;
+    _titleLabel.text = [NSString stringWithFormat:@"持有资产(元)\n%.2f",totalAmount];
     _holdAmountLabel.attributedString = [self getPercentStr:holdAmount/totalAmount withColor:@"red"];
     _accBalanceLabel.attributedString = [self getPercentStr:accBalance/totalAmount withColor:@"red"];
     [_holdAmountView setProgress:holdAmount/totalAmount animated:YES];
@@ -68,4 +77,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)accBalanceClick:(id)sender {
+}
+
+- (IBAction)holdAmountClick:(id)sender {
+    MyHoldAmountViewController*  myHoldAmountViewController = [[MyHoldAmountViewController alloc] init];
+    myHoldAmountViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:myHoldAmountViewController animated:YES];
+}
 @end

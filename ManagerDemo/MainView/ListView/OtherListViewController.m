@@ -30,7 +30,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _productInfoArray = [[NSMutableArray alloc] init];
 }
 
 #pragma mark MJRefreshDelegate

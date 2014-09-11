@@ -14,6 +14,8 @@
     float _holdAmount;          //持有资产
     float _accBalance;          //余额
 }
+- (IBAction)accBalanceClick:(id)sender;
+- (IBAction)holdAmountClick:(id)sender;
 @property (assign, nonatomic)float totalAmount;
 @property (assign, nonatomic)float holdAmount;
 @property (assign, nonatomic)float accBalance;
