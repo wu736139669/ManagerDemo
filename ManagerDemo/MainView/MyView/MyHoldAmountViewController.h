@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "QCSlideSwitchView.h"
 @interface MyHoldAmountViewController : UIViewController<QCSlideSwitchViewDelegate>
+{
+    float _totalAmount;
+}
+@property (assign, nonatomic)float totalAmount;
 @property (weak, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 
 @end

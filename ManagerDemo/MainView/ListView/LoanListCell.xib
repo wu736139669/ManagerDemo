@@ -45,8 +45,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_cell_label_bg_blue.png" id="Abj-cs-h8U">
-                        <rect key="frame" x="270" y="16" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_blue_icon.png" id="Abj-cs-h8U">
+                        <rect key="frame" x="270" y="16" width="35" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <view contentMode="scaleToFill" id="4z9-ep-7jg">
@@ -67,15 +67,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.29999999999999999" contentMode="scaleToFill" id="d0U-mH-Q48">
                         <rect key="frame" x="0.0" y="106" width="320" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新手标" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J9N-s5-AIQ">
-                        <rect key="frame" x="270" y="16" width="42" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新手标" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J9N-s5-AIQ">
+                        <rect key="frame" x="275" y="12" width="35" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +98,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="fund_cell_label_bg_blue.png" width="38" height="40"/>
         <image name="pie_chart_center.png" width="117" height="117"/>
+        <image name="sale_blue_icon.png" width="35" height="34"/>
     </resources>
 </document>

@@ -15,6 +15,17 @@ typedef void (^FailedBlock) (NSError *error);
 
 +(DaiDaiTongApi*)shareInstance;
 
+
+/**
+ *  api
+ *  @param param           参数
+ *  @param apiType         api接口
+ *  @param completionBlock 请求完成
+ *  @param failedBlock     请求失败
+ *
+ *  @return MKNetworkOperation
+ */
+-(MKNetworkOperation*)getApiWithParam:(NSDictionary*)param withApiType:(NSString*) apiType completionBlock:(CompletionBlock) completionBlock failedBlock:(FailedBlock)failedBlock;
 /**
  *  获取首页广告
  *

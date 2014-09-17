@@ -63,6 +63,22 @@
     [dic setObject:@"IOS" forKey:@"vjson"];
     return [self operationWithPath:path params:dic httpMethod:@"POST" ssl:YES];
 }
+-(MKNetworkOperation*)getApiWithParam:(NSDictionary *)param withApiType:(NSString *)apiType completionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
+    MKNetworkOperation* op = [self postWithPath:apiType params:param];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
 -(MKNetworkOperation*)getBannerInfoWithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
     MKNetworkOperation* op = [self postWithPath:@"bannerInfo.do" params:nil];

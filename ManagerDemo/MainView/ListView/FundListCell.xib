@@ -54,8 +54,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_cell_label_bg_blue.png" id="0hb-Ff-rGB">
-                        <rect key="frame" x="283" y="14" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_blue_icon.png" id="0hb-Ff-rGB">
+                        <rect key="frame" x="283" y="14" width="35" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <view contentMode="scaleToFill" id="D4z-2i-gXI" customClass="DTAttributedLabel">
@@ -74,10 +74,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热售" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3HE-Th-552">
-                        <rect key="frame" x="283" y="18" width="34" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热售" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3HE-Th-552">
+                        <rect key="frame" x="289" y="14" width="34" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -98,6 +98,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="fund_cell_label_bg_blue.png" width="38" height="40"/>
+        <image name="sale_blue_icon.png" width="35" height="34"/>
     </resources>
 </document>

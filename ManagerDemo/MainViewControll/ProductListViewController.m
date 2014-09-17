@@ -28,13 +28,13 @@
         // Custom initialization
         LoanListViewController* loanListViewController = [[LoanListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
         loanListViewController.delegate = self;
-        loanListViewController.title = @"列表1";
+        loanListViewController.title = @"稳赢贷";
         FundListViewController* fundListViewController = [[FundListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
         fundListViewController.delegate = self;
-        fundListViewController.title = @"列表2";
+        fundListViewController.title = @"货币基金";
         OtherListViewController* otherListViewController = [[OtherListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
         otherListViewController.delegate = self;
-        otherListViewController.title = @"列表3";
+        otherListViewController.title = @"其他产品";
         listViewContrllerArray = @[loanListViewController, fundListViewController, otherListViewController];
         _nowSelectTab = 0;
     }
@@ -49,13 +49,13 @@
     
 
     //右边按钮。
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(rightBarBtnClick:)]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)]];
     
     self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
     self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"bb0b15"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
-    [self.navigationItem setTitle:@"第二页"];
+    [self.navigationItem setTitle:@"产品列表"];
     [self.slideSwitchView buildUI];
     
 

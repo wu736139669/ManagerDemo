@@ -11,9 +11,6 @@
 #import "OtherProductInfoViewController.h"
 #import "MJRefresh.h"
 @interface OtherListViewController ()
-{
-    NSMutableArray* _productInfoArray;
-}
 @end
 
 @implementation OtherListViewController
@@ -23,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+    
     }
     return self;
 }

@@ -87,6 +87,8 @@
 		A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7419B8BC410079F143 /* DailyProfitViewController.m */; };
 		A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */; };
 		A9971D7A19B8C39C0079F143 /* DatailProfitTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */; };
+		A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */; };
+		A9A7948419C8AC4E00516C60 /* FundAmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */; };
 		A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA3259199702DB000BE4FB /* Images.xcassets */; };
 		A9AA326019970335000BE4FB /* HomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325D19970335000BE4FB /* HomeAdView.m */; };
 		A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AA325F19970335000BE4FB /* ImagePlayerView.m */; };
@@ -166,6 +168,7 @@
 		A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C6944F199BD14D00B2CECE /* more_icon_9@2x.png */; };
 		A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69450199BD14D00B2CECE /* more_icon_10@2x.png */; };
 		A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69459199BD16000B2CECE /* more_icon_1@2x.png */; };
+		A9D7A71C19C913A60029911F /* sale_blue_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D7A71B19C913A60029911F /* sale_blue_icon@2x.png */; };
 		A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E76DD219AB378A00C0D232 /* hk_home_icon1@2x.png */; };
 		A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E76DD319AB378A00C0D232 /* hk_home_icon2@2x.png */; };
 		A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E76DD419AB378A00C0D232 /* hk_home_icon3@2x.png */; };
@@ -322,6 +325,9 @@
 		A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailProfitTopTableViewCell.h; sourceTree = "<group>"; };
 		A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailProfitTopTableViewCell.m; sourceTree = "<group>"; };
 		A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailProfitTopTableViewCell.xib; sourceTree = "<group>"; };
+		A9A7948019C8AC4E00516C60 /* FundAmountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundAmountTableViewCell.h; sourceTree = "<group>"; };
+		A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundAmountTableViewCell.m; sourceTree = "<group>"; };
+		A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundAmountTableViewCell.xib; sourceTree = "<group>"; };
 		A9AA3259199702DB000BE4FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9AA325C19970335000BE4FB /* HomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeAdView.h; sourceTree = "<group>"; };
 		A9AA325D19970335000BE4FB /* HomeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeAdView.m; sourceTree = "<group>"; };
@@ -429,6 +435,7 @@
 		A9C6944F199BD14D00B2CECE /* more_icon_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_9@2x.png"; sourceTree = "<group>"; };
 		A9C69450199BD14D00B2CECE /* more_icon_10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_10@2x.png"; sourceTree = "<group>"; };
 		A9C69459199BD16000B2CECE /* more_icon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_1@2x.png"; sourceTree = "<group>"; };
+		A9D7A71B19C913A60029911F /* sale_blue_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sale_blue_icon@2x.png"; sourceTree = "<group>"; };
 		A9E76DD219AB378A00C0D232 /* hk_home_icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hk_home_icon1@2x.png"; sourceTree = "<group>"; };
 		A9E76DD319AB378A00C0D232 /* hk_home_icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hk_home_icon2@2x.png"; sourceTree = "<group>"; };
 		A9E76DD419AB378A00C0D232 /* hk_home_icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hk_home_icon3@2x.png"; sourceTree = "<group>"; };
@@ -772,6 +779,7 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9D7A71B19C913A60029911F /* sale_blue_icon@2x.png */,
 				A95CEA3B19B7667400D4605F /* icon_success@2x.png */,
 				A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */,
 				A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */,
@@ -892,8 +900,8 @@
 			children = (
 				A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */,
 				A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */,
-				A919055319B02741002575DF /* AccountInfoViewController.h */,
 				A919055419B02741002575DF /* AccountInfoViewController.m */,
+				A919055319B02741002575DF /* AccountInfoViewController.h */,
 				A919056B19B0882E002575DF /* AccountInfoViewController.xib */,
 				A986269219B413D600FF9E2C /* DailyIncomeTableViewCell.h */,
 				A986269319B413D600FF9E2C /* DailyIncomeTableViewCell.m */,
@@ -919,6 +927,9 @@
 				A93320C519C0227F0090D640 /* MyHoldAmountViewController.m */,
 				A93320C619C0227F0090D640 /* MyHoldAmountViewController.xib */,
 				A93320C919C02F0B0090D640 /* WYDAmountViewController.h */,
+				A9A7948019C8AC4E00516C60 /* FundAmountTableViewCell.h */,
+				A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */,
+				A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */,
 				A93320CA19C02F0B0090D640 /* WYDAmountViewController.m */,
 				A93320CB19C02F0B0090D640 /* WYDAmountViewController.xib */,
 				A93320CE19C02F240090D640 /* FundAmountViewController.h */,
@@ -1121,6 +1132,7 @@
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */,
+				A9D7A71C19C913A60029911F /* sale_blue_icon@2x.png in Resources */,
 				A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */,
 				A9C69453199BD14D00B2CECE /* more_icon_4@2x.png in Resources */,
 				A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */,
@@ -1148,6 +1160,7 @@
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
 				A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */,
 				A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */,
+				A9A7948419C8AC4E00516C60 /* FundAmountTableViewCell.xib in Resources */,
 				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
 				A9C69452199BD14D00B2CECE /* more_icon_3@2x.png in Resources */,
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
@@ -1234,6 +1247,7 @@
 				A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */,
 				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
+				A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
 				A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */,
 				A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */,

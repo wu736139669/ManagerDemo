@@ -7,7 +7,7 @@
 //
 
 #import "WYDAmountViewController.h"
-
+#import "WYDAmountTableViewCell.h"
 @interface WYDAmountViewController ()
 {
     NSDictionary* _infoDic;
@@ -59,34 +59,62 @@
     }
     return 1;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section != 0) {
+        return 200.0;
+    }
+    return 44.0;
+}
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* cellIdentifier = @"cellIdentifier";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-    }
     if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"待收本金(元)";
-                cell.detailTextLabel.text = [_infoDic objectForKey:@"waitReturnMoney"];
-                break;
-            case 1:
-                cell.textLabel.text = @"未结算收益(元)";
-                cell.detailTextLabel.text = @"0.02";
-                break;
-            case 2:
-                cell.textLabel.text = @"已还款";
-                cell.detailTextLabel.text = @"查看记录";
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                break;
-            default:
-                break;
+        static NSString* cellIdentifier = @"cellIdentifier";
+        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         }
+        if (indexPath.section == 0) {
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"待收本金(元)";
+                    cell.detailTextLabel.text = [_infoDic objectForKey:@"waitReturnMoney"];
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    break;
+                case 1:
+                    cell.textLabel.text = @"未结算收益(元)";
+                    cell.detailTextLabel.text = [_infoDic objectForKey:@"unSettlementProfit"];
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    break;
+                case 2:
+                    cell.textLabel.text = @"已还款";
+                    cell.detailTextLabel.text = @"查看记录";
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return cell;
+
+    }else{
+        static  NSString *wydAmountTableViewCell = @"WYDAmountTableViewCell";
+        WYDAmountTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:wydAmountTableViewCell];
+        if (cell == nil) {
+            
+            UINib *nib = [UINib nibWithNibName:@"WYDAmountTableViewCell" bundle:nil];
+            [tableView registerNib:nib forCellReuseIdentifier:wydAmountTableViewCell];
+            cell = (WYDAmountTableViewCell *)[tableView dequeueReusableCellWithIdentifier:wydAmountTableViewCell];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setInfoWithDic:[_infoArray objectAtIndex:indexPath.section-1]];
+        return cell;
+
     }
-    
-    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 - (void)didReceiveMemoryWarning
 {

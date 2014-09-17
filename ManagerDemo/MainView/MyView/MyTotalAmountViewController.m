@@ -83,6 +83,7 @@
 - (IBAction)holdAmountClick:(id)sender {
     MyHoldAmountViewController*  myHoldAmountViewController = [[MyHoldAmountViewController alloc] init];
     myHoldAmountViewController.hidesBottomBarWhenPushed = YES;
+    [myHoldAmountViewController setTotalAmount:_totalAmount];
     [self.navigationController pushViewController:myHoldAmountViewController animated:YES];
 }
 @end

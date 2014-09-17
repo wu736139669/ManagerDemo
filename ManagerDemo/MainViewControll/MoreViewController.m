@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationItem setTitle:@"第三页"];
+    [self.navigationItem setTitle:@"更多"];
     [ManagerUtil SetSubViewExternNone:self];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -44,7 +44,10 @@
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    if ([ManagerUser shareInstance].isLogin) {
+        return 4;
+    }
+    return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -157,7 +160,7 @@
                     break;
                 case 1:
                 {
-                    cell.textLabel.text = @"关于盈盈";
+                    cell.textLabel.text = @"关于贷贷";
                     cell.imageView.image = [UIImage imageNamed:@"more_icon_8"];
                     
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -174,7 +177,8 @@
             UIButton* logoutBtn = [UIButton buttonWithType:UIButtonTypeSystem];
             logoutBtn.backgroundColor = [UIColor clearColor];
             logoutBtn.frame = CGRectMake(0, 0, 280, 44);
-            [logoutBtn setTitle:@"点我你就赢了" forState:UIControlStateNormal];
+            [logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+            [logoutBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
             [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
             logoutBtn.backgroundColor = [UIColor colorWithRed:200.0 green:0.0 blue:0.0 alpha:1.0];
@@ -226,6 +230,11 @@
         default:
             break;
     }
+}
+-(void)logout
+{
+    [ManagerUser shareInstance].isLogin = false;
+    [_tableView reloadData];
 }
 - (void)didReceiveMemoryWarning
 {

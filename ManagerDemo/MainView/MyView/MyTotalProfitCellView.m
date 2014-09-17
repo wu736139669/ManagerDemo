@@ -71,7 +71,7 @@
         rightBtn.backgroundColor = [UIColor clearColor];
         rightBtn.frame = CGRectMake(size.width/2, 0, size.width/2, size.height);
         [rightBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:Touch_BackGroudColor withFrame:rightBtn.frame] forState:UIControlStateHighlighted];
-        [rightBtn addTarget:self action:@selector(leftBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [rightBtn addTarget:self action:@selector(rightBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:rightBtn];
 
     }

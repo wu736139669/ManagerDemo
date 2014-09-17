@@ -35,10 +35,10 @@
     [self.navigationItem setTitle:@"首页"];
     [ManagerUtil SetSubViewExternNone:self];
     //左边按钮
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"左边按钮" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"贷贷我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
     
     //右边按钮。
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(rightBarBtnClick:)]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)]];
     
     
     _tableView.delegate = self;
@@ -50,7 +50,17 @@
     [_tableView headerBeginRefreshing];
 }
 
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    if ([ManagerUser shareInstance].isLogin) {
+        //左边按钮
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"贷贷我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+    }else{
+        //左边按钮
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+    }
+}
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
@@ -126,7 +136,7 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld",indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d",indexPath.row];
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     
@@ -160,11 +170,12 @@
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
 {
-    DLog(@"首页左边按钮");
+    if (![ManagerUser shareInstance].isLogin) {
+        [ManagerUtil presentLoginView];
+    }
 }
 -(void)rightBarBtnClick:(id)sender
 {
-    DLog(@"首页右边按钮");
     [_tableView headerBeginRefreshing];
 }
 - (void)didReceiveMemoryWarning

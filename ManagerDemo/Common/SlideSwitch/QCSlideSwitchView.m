@@ -167,7 +167,7 @@ NSUInteger kTagOfRightSideButton = 999;
     if ([_viewArray count] == 2) {
         kWidthOfButtonMargin = 70.0f;
     }else if([_viewArray count] == 3){
-        kWidthOfButtonMargin = 44.0f;
+        kWidthOfButtonMargin = 35.0f;
     }
     //顶部tabbar的总长度
     CGFloat topScrollViewContentWidth = kWidthOfButtonMargin;

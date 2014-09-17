@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationItem setTitle:@"第三页"];
+    [self.navigationItem setTitle:@"我的"];
     [ManagerUtil SetSubViewExternNone:self];
     
     //左边按钮
@@ -248,7 +248,8 @@
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
 {
-    DLog(@"首页左边按钮");
+
+    
 }
 -(void)rightBarBtnClick:(id)sender
 {

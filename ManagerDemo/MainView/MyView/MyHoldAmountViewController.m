@@ -13,6 +13,7 @@
 {
     NSArray* _typeArray;
     NSMutableArray* _listViewContrllerArray;  //界面列表
+    UILabel* _titleLabel;
 }
 @end
 
@@ -37,9 +38,20 @@
     self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
     self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"bb0b15"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 49)];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.numberOfLines = 0;
+    self.navigationItem.titleView = _titleLabel;
     [self initData];
+    
 }
 
+-(void)setTotalAmount:(float)totalAmount
+{
+    _titleLabel.text = [NSString stringWithFormat:@"持有资产(元)\n%.2f",totalAmount];
+}
 #pragma mark - InitData
 -(void)initData
 {

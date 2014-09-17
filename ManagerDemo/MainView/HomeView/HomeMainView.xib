@@ -43,15 +43,15 @@
                     <rect key="frame" x="240" y="0.0" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund_cell_label_bg_blue.png" id="Obj-JA-SBo">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_blue_icon.png" id="Obj-JA-SBo">
+                            <rect key="frame" x="0.0" y="1" width="35" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1tT-kO-DcP">
                             <rect key="frame" x="0.0" y="3" width="42" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -125,7 +125,7 @@
         </view>
     </objects>
     <resources>
-        <image name="fund_cell_label_bg_blue.png" width="38" height="40"/>
         <image name="pie_chart_center.png" width="117" height="117"/>
+        <image name="sale_blue_icon.png" width="35" height="34"/>
     </resources>
 </document>

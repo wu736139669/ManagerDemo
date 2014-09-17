@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FundAmountViewController : UIViewController
+#import "BaseListViewController.h"
+@interface FundAmountViewController : BaseListViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UILabel *headTotalLabel;
 
 @end

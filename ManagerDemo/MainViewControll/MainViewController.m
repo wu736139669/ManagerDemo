@@ -35,13 +35,13 @@
         _myMoreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
             [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
-            [_homeNavigationController.tabBarItem setBadgeValue:@"新"];
+//            [_homeNavigationController.tabBarItem setBadgeValue:@"新"];
             
-            [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第二页" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
+            [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"产品列表" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
             
-            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第三页" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
+            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"我的贷贷" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
             
-            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"第四页" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
+            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"更多" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
         }
         
         self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _myMoreNavigationController];
