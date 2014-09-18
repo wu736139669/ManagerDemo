@@ -56,17 +56,32 @@
 
 - (IBAction)login:(id)sender {
     if (_passwordTextField.text.length>0 && _phoneNum.length>0) {
-        DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-        [daiDaiTongApi loginWithPhone:_phoneNum withPassWord:_passwordTextField.text withCompletionBlock:^(id jsonRes) {
-            if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
+//        DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//        [daiDaiTongApi loginWithPhone:_phoneNum withPassWord:_passwordTextField.text withCompletionBlock:^(id jsonRes) {
+//            if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
+//            }else{
+//            }
+//            [ManagerUser shareInstance].isLogin = YES;
+//            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//            
+//        } failedBlock:^(NSError *error) {
+//            [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+//        }];
+        
+        [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+        DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum",_passwordTextField.text, @"loginPsw", nil] withApiType:@"loginByPsw" completionBlock:^(id jsonRes) {
+            if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
+                [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
             }else{
+                [ManagerUser shareInstance].isLogin = YES;
+                [ManagerUser shareInstance].userId = [jsonRes objectForKey:@"userid"];
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+               [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             }
-            [ManagerUser shareInstance].isLogin = YES;
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-            
         } failedBlock:^(NSError *error) {
-            DLog(@"失败");
-            [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+            
+            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
         }];
     }
 }

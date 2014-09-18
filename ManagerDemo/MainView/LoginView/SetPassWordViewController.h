@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
-@interface SetPassWordViewController : ViewController
+@interface SetPassWordViewController : ViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *surePassWordTextField;
+- (IBAction)completeBtnClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *completeBtn;
 
 @end

@@ -38,6 +38,9 @@
     if ([ManagerUser shareInstance].token.length > 0) {
         [dic setObject:[ManagerUser shareInstance].token forKey:@"token"];
     }
+    if ([ManagerUser shareInstance].userId.length > 0) {
+        [dic setObject:[ManagerUser shareInstance].userId forKey:@"userid"];
+    }
     NSError *parseError = nil;
     NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
     NSString* tempStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];

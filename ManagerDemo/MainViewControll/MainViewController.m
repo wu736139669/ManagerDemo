@@ -35,7 +35,6 @@
         _myMoreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
             [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
-//            [_homeNavigationController.tabBarItem setBadgeValue:@"新"];
             
             [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"产品列表" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
             
@@ -56,8 +55,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [ManagerUser shareInstance].userId = @"8201408070536905";
-    [ManagerUser shareInstance].token = @"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11";
+//    [ManagerUser shareInstance].userId = @"8201408070536905";
+//    [ManagerUser shareInstance].token = @"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11";
 }
 
 

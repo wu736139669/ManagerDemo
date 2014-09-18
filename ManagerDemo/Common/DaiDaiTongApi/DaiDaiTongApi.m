@@ -61,6 +61,8 @@
     [dic setObject:@"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11" forKey:@"token"];
     [dic setObject:@"2.5.0" forKey:@"ver"];
     [dic setObject:@"IOS" forKey:@"vjson"];
+    [dic setObject:@"8201408070536905" forKey:@"userId"];
+    [dic setObject:@"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11" forKey:@"token"];
     return [self operationWithPath:path params:dic httpMethod:@"POST" ssl:YES];
 }
 -(MKNetworkOperation*)getApiWithParam:(NSDictionary *)param withApiType:(NSString *)apiType completionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
