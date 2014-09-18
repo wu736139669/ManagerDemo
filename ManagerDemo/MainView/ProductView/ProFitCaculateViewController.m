@@ -64,21 +64,42 @@
     if ([amount isEqualToString:@""]) {
         amount = @"10000";
     }
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_productCode,@"productCode",amount,@"amount", nil];
-    [daiDaiTongApi postApiWithParam:dic withApiType:@"calcProfit.do" completionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-            _infoLabel.text = [jsonRes objectForKey:@"desc"];
-            _exceptLabel.text = [NSString stringWithFormat:@"%.2f元",[[jsonRes objectForKey:@"pre_profit"] floatValue]];
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:_productCode,@"productCode",amount,@"amount", nil];
+//    [daiDaiTongApi postApiWithParam:dic withApiType:@"calcProfit.do" completionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            _infoLabel.text = [jsonRes objectForKey:@"desc"];
+//            _exceptLabel.text = [NSString stringWithFormat:@"%.2f元",[[jsonRes objectForKey:@"pre_profit"] floatValue]];
+//            if (_caculateBtn.enabled) {
+//                _exceptLabel.textColor = [UIColor redColor];
+//            }else{
+//                _exceptLabel.textColor = [UIColor grayColor];
+//            }
+//        }
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+//    }];
+    
+    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_productCode,@"proId",amount, @"money", nil] withApiType:@"estimateProfit" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+
+        }
+        else{
+            _exceptLabel.text = [NSString stringWithFormat:@"%.2f元",[[jsonRes objectForKey:@"estimateProfit"] floatValue]];
             if (_caculateBtn.enabled) {
                 _exceptLabel.textColor = [UIColor redColor];
             }else{
                 _exceptLabel.textColor = [UIColor grayColor];
             }
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         }
     } failedBlock:^(NSError *error) {
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
+
 }
 
 #pragma mark UITableViewDelegate

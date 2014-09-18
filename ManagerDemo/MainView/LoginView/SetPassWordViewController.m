@@ -7,7 +7,7 @@
 //
 
 #import "SetPassWordViewController.h"
-
+#import "MainOrderViewController.h"
 @interface SetPassWordViewController ()
 
 @end
@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _type = 0;
     }
     return self;
 }
@@ -27,7 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"设置登录密码";
+    if (_type == 0) {
+        self.navigationItem.title = @"设置登录密码";
+    }else{
+        self.navigationItem.title = @"设置交易密码";
+    }
+    
     _passWordTextField.leftViewMode = UITextFieldViewModeAlways;
     _passWordTextField.layer.masksToBounds=YES;
     _passWordTextField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
@@ -104,19 +110,38 @@
         [MBProgressHUD errorHudWithView:self.view label:@"密码不规范" hidesAfter:0.5];
     }
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
-    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_passWordTextField.text,@"loginPsw", nil] withApiType:@"setLoginPsw" completionBlock:^(id jsonRes) {
-        if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
-            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
-        }else{
-            [self.navigationController dismissViewControllerAnimated:YES completion:^{
-                
-            }];
-        }
-    } failedBlock:^(NSError *error) {
-        
-        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
-    }];
+    
+    
+    if (_type == 0 ) {
+        DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_passWordTextField.text,@"loginPsw", nil] withApiType:@"setLoginPsw" completionBlock:^(id jsonRes) {
+            if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
+                [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+            }else{
+                [self.navigationController dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }
+        } failedBlock:^(NSError *error) {
+            
+            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+        }];
 
+    }else{
+        DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_passWordTextField.text,@"tradePsw", nil] withApiType:@"setTradePsw" completionBlock:^(id jsonRes) {
+            if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
+                [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+            }else{
+                [[ManagerUser shareInstance] setTradePsw:_passWordTextField.text];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } failedBlock:^(NSError *error) {
+            
+            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+        }];
+
+    }
+    
 }
 @end

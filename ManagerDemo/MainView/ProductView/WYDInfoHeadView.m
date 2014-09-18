@@ -55,8 +55,9 @@
 }
 -(void)setInfoWithDic:(NSDictionary *)dic
 {
+
     //计算总数.
-    NSInteger totalCount = [[dic objectForKey:@"total"] integerValue];
+    NSInteger totalCount = [[[dic objectForKey:@"proInfo"] objectForKey:@"totalAmount"] integerValue];
     NSString* totalStr = @".00";
     while (totalCount>0) {
         totalStr = [[NSString stringWithFormat:@"%ld",totalCount%10] stringByAppendingString:totalStr];
@@ -67,16 +68,20 @@
     }
     _totalCountLabel.text = totalStr;
     //设置剩余
-    [self setProgress:[[dic objectForKey:@"freeze"] floatValue]/[[dic objectForKey:@"total"] floatValue]];
+    [self setProgress:[[[dic objectForKey:@"proInfo"] objectForKey:@"inAmount"] floatValue]/[[[dic objectForKey:@"proInfo"] objectForKey:@"totalAmount"] floatValue]];
     //设置已经融资
-    [self setLeftMoneyAccount:[[dic objectForKey:@"avaiable"] integerValue]];
+    [self setLeftMoneyAccount:[[[dic objectForKey:@"proInfo"] objectForKey:@"totalAmount"] integerValue] - [[[dic objectForKey:@"proInfo"] objectForKey:@"inAmount"] integerValue]];
     //设置预期年化
-    _expectLabel.text = [dic objectForKey:@"nhsy"];
-    _startBuyLabel.text = [dic objectForKey:@"startBuy"];
-    _profitDescLabel.text = [dic objectForKey:@"profitDesc"];
-    _benxiLabel.text = [dic objectForKey:@"benxiDesc"];
-    _fundPeriodDescLabel.text = [dic objectForKey:@"fundPeriodDesc"];
-    _securityTipLabel.text = [dic objectForKey:@"securityTip"];
-    _specialBlackDescLabel.text = [dic objectForKey:@"specialBlackDesc"];
+    _expectLabel.text = [NSString stringWithFormat:@"%.2f%%",[[[dic objectForKey:@"proInfo"] objectForKey:@"nhsy"] floatValue]];
+    _startBuyLabel.text = [[[dic objectForKey:@"proInfo"] objectForKey:@"startBuy"] stringValue];
+    _profitDescLabel.text = [[dic objectForKey:@"proInfo"] objectForKey:@"profitDesc"];
+    
+    if ([[dic objectForKey:@"detail"] isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    _benxiLabel.text = [[dic objectForKey:@"detail"] objectForKey:@"benxiDesc"];
+    _fundPeriodDescLabel.text = [NSString stringWithFormat:@"限%@个月",[[dic objectForKey:@"proInfo"] objectForKey:@"timeLimit"]];
+    _securityTipLabel.text = [[dic objectForKey:@"detail"] objectForKey:@"securityTip"];
+    _specialBlackDescLabel.text = [[dic objectForKey:@"detail"] objectForKey:@"companyDesc"];
 }
 @end

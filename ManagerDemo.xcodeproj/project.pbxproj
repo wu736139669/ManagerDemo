@@ -96,6 +96,11 @@
 		A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */; };
 		A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */; };
 		A99FDB0B19CAC16E00D2B3D3 /* SetPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */; };
+		A9A6AD2F19CB1C7000626B48 /* MainOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */; };
+		A9A6AD3019CB1C7000626B48 /* MainOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */; };
+		A9A6AD3419CB26FD00626B48 /* OrderPassWordViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD3219CB26FD00626B48 /* OrderPassWordViewController.mm */; };
+		A9A6AD3519CB26FD00626B48 /* OrderPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A6AD3319CB26FD00626B48 /* OrderPassWordViewController.xib */; };
+		A9A6AD3B19CB310100626B48 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A6AD3719CB310100626B48 /* libUPPayPlugin.a */; };
 		A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */; };
 		A9A7948419C8AC4E00516C60 /* FundAmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */; };
 		A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA3259199702DB000BE4FB /* Images.xcassets */; };
@@ -348,6 +353,15 @@
 		A99FDB0719CAC16E00D2B3D3 /* SetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPassWordViewController.h; sourceTree = "<group>"; };
 		A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPassWordViewController.m; sourceTree = "<group>"; };
 		A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPassWordViewController.xib; sourceTree = "<group>"; };
+		A9A6AD2C19CB1C7000626B48 /* MainOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainOrderViewController.h; sourceTree = "<group>"; };
+		A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainOrderViewController.m; sourceTree = "<group>"; };
+		A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainOrderViewController.xib; sourceTree = "<group>"; };
+		A9A6AD3119CB26FD00626B48 /* OrderPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPassWordViewController.h; sourceTree = "<group>"; };
+		A9A6AD3219CB26FD00626B48 /* OrderPassWordViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OrderPassWordViewController.mm; sourceTree = "<group>"; };
+		A9A6AD3319CB26FD00626B48 /* OrderPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderPassWordViewController.xib; sourceTree = "<group>"; };
+		A9A6AD3719CB310100626B48 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
+		A9A6AD3919CB310100626B48 /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
+		A9A6AD3A19CB310100626B48 /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
 		A9A7948019C8AC4E00516C60 /* FundAmountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundAmountTableViewCell.h; sourceTree = "<group>"; };
 		A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundAmountTableViewCell.m; sourceTree = "<group>"; };
 		A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundAmountTableViewCell.xib; sourceTree = "<group>"; };
@@ -504,6 +518,7 @@
 			files = (
 				A9AF6BEF19947DD00076C0EE /* CoreGraphics.framework in Frameworks */,
 				A9AF6BF119947DD00076C0EE /* UIKit.framework in Frameworks */,
+				A9A6AD3B19CB310100626B48 /* libUPPayPlugin.a in Frameworks */,
 				A9AF6BED19947DD00076C0EE /* Foundation.framework in Frameworks */,
 				63816045C89E43DD9F96396F /* libPods.a in Frameworks */,
 			);
@@ -547,6 +562,12 @@
 				A95EAEE019C9BE2E00D1592B /* FundCaculateViewController.h */,
 				A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */,
 				A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */,
+				A9A6AD2C19CB1C7000626B48 /* MainOrderViewController.h */,
+				A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */,
+				A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */,
+				A9A6AD3119CB26FD00626B48 /* OrderPassWordViewController.h */,
+				A9A6AD3219CB26FD00626B48 /* OrderPassWordViewController.mm */,
+				A9A6AD3319CB26FD00626B48 /* OrderPassWordViewController.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -667,6 +688,16 @@
 			path = ListView;
 			sourceTree = "<group>";
 		};
+		A9A6AD3619CB30E400626B48 /* UPPay */ = {
+			isa = PBXGroup;
+			children = (
+				A9A6AD3719CB310100626B48 /* libUPPayPlugin.a */,
+				A9A6AD3919CB310100626B48 /* UPPayPlugin.h */,
+				A9A6AD3A19CB310100626B48 /* UPPayPluginDelegate.h */,
+			);
+			path = UPPay;
+			sourceTree = "<group>";
+		};
 		A9AA325B19970304000BE4FB /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +816,7 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9A6AD3619CB30E400626B48 /* UPPay */,
 				A9354F5819B870B900FDCB52 /* BaseView */,
 				A986268419B40AAC00FF9E2C /* SVWebViewController */,
 				A9F1E18319ACB24500B6A441 /* CustomCell */,
@@ -1120,9 +1152,11 @@
 				A9F1E18819ACB64D00B6A441 /* DTCoreTextTableViewCell.xib in Resources */,
 				A97F9D1F19B5931C0073E7E6 /* register_button@2x.png in Resources */,
 				A9C69456199BD14D00B2CECE /* more_icon_8@2x.png in Resources */,
+				A9A6AD3519CB26FD00626B48 /* OrderPassWordViewController.xib in Resources */,
 				A9AF6C48199498D10076C0EE /* MoreViewController.xib in Resources */,
 				A9C69451199BD14D00B2CECE /* more_icon_2@2x.png in Resources */,
 				A9EAA04A19986E8C001A872A /* pull_arrow_down_black@2x.png in Resources */,
+				A9A6AD3019CB1C7000626B48 /* MainOrderViewController.xib in Resources */,
 				A9AF6C6119949CD30076C0EE /* icon_dock_mine@2x.png in Resources */,
 				A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */,
 				A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */,
@@ -1286,6 +1320,7 @@
 				A9E8589D19AC2AAE001996DF /* DaiDaiTongApi.m in Sources */,
 				A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */,
 				A9AF6C47199498D10076C0EE /* MoreViewController.m in Sources */,
+				A9A6AD2F19CB1C7000626B48 /* MainOrderViewController.m in Sources */,
 				A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */,
 				A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */,
 				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
@@ -1310,6 +1345,7 @@
 				A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,
+				A9A6AD3419CB26FD00626B48 /* OrderPassWordViewController.mm in Sources */,
 				A97F9D2319B595550073E7E6 /* InputPassWordViewController.m in Sources */,
 				A9EC95C319B55CF100681678 /* ManagerUser.m in Sources */,
 				A97F9D2719B5974B0073E7E6 /* UIUnderlinedButton.m in Sources */,
@@ -1470,6 +1506,10 @@
 				GCC_PREFIX_HEADER = "ManagerDemo/ManagerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ManagerDemo/ManagerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ManagerDemo/Common/UPPay",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6D0F83D4-7981-4063-AEE3-8929725A2807";
 				WRAPPER_EXTENSION = app;
@@ -1486,6 +1526,10 @@
 				GCC_PREFIX_HEADER = "ManagerDemo/ManagerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ManagerDemo/ManagerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ManagerDemo/Common/UPPay",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6D0F83D4-7981-4063-AEE3-8929725A2807";
 				WRAPPER_EXTENSION = app;

@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface SetPassWordViewController : ViewController<UITextFieldDelegate>
+{
+    NSInteger _type;
+}
+@property (assign, nonatomic)NSInteger type;
 @property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *surePassWordTextField;
 - (IBAction)completeBtnClick:(id)sender;

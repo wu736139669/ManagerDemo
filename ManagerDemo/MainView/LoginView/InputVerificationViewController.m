@@ -64,7 +64,7 @@
         if (![_timer isValid]) {
             [_timer fire];
         }
-        [_reGetCodeBtn setTitle:[NSString stringWithFormat:@"%d秒后重新获取",_timeSecond] forState:UIControlStateDisabled];
+        [_reGetCodeBtn setTitle:[NSString stringWithFormat:@"%ld秒后重新获取",_timeSecond] forState:UIControlStateDisabled];
         _timeSecond--;
     }else{
         _reGetCodeBtn.enabled = YES;
@@ -143,6 +143,8 @@
         }else{
             [ManagerUser shareInstance].isLogin = YES;
             [ManagerUser shareInstance].userId = [jsonRes objectForKey:@"userid"];
+            [ManagerUser shareInstance].token = [jsonRes objectForKey:@"token"];
+            
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"设置登录密码可以方便登录" delegate:self cancelButtonTitle:@"下一次设置" otherButtonTitles:@"设置", nil];
             [alertView show];

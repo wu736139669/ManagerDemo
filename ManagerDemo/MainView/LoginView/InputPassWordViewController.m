@@ -76,6 +76,7 @@
             }else{
                 [ManagerUser shareInstance].isLogin = YES;
                 [ManagerUser shareInstance].userId = [jsonRes objectForKey:@"userid"];
+                [ManagerUser shareInstance].token = [jsonRes objectForKey:@"token"];
                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             }

@@ -40,6 +40,7 @@
     [dic setObject:@"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11" forKey:@"token"];
     [dic setObject:@"2.5.0" forKey:@"ver"];
     [dic setObject:@"IOS" forKey:@"vjson"];
+    [dic setObject:@"8201408070536905" forKey:@"userId"];
     
     
     return [self operationWithPath:path params:dic httpMethod:@"GET" ssl:YES];
@@ -58,7 +59,6 @@
     [dic setObject:timeString forKey:@"_"];
     [dic setObject:@"211d9ede2548c40e5d18e47358835b16" forKey:@"sign"];
     [dic setObject:@"MD5" forKey:@"sign_t"];
-    [dic setObject:@"15e6c60bbdfa5d62dc7baab09cca5d19d1f32d11" forKey:@"token"];
     [dic setObject:@"2.5.0" forKey:@"ver"];
     [dic setObject:@"IOS" forKey:@"vjson"];
     [dic setObject:@"8201408070536905" forKey:@"userId"];

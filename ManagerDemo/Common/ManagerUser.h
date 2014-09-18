@@ -13,7 +13,9 @@
     BOOL _isLogin;
     NSString* _userId;
     NSString* _token;
+    NSString* _tradePsw;
 }
+@property(nonatomic, strong)NSString* tradePsw;
 @property(nonatomic, assign)BOOL isLogin;
 @property(nonatomic, strong)NSString* userId;
 @property(nonatomic, strong)NSString* token;

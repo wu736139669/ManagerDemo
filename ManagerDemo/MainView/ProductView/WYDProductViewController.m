@@ -10,6 +10,7 @@
 #import "WYDInfoHeadView.h"
 #import "MJRefresh.h"
 #import "ProFitCaculateViewController.h"
+#import "MainOrderViewController.h"
 @interface WYDProductViewController ()
 
 
@@ -78,8 +79,10 @@
             _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
             [self.tableView reloadData];
         }else{
+            
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
+        [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
         [self.tableView headerEndRefreshing];
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
@@ -129,7 +132,7 @@
         [cell setHTMLString:[[((NSArray*)[_infoDic objectForKey:@"items"]) objectAtIndex:indexPath.section-1] objectForKey:@"itemDesc"]];
         cell.hasFixedRowHeight = YES;
         cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 15, 0, 15);
-        return [cell.attributedTextContextView suggestedFrameSizeToFitEntireStringConstraintedToWidth:300].height+15;
+        return [cell.attributedTextContextView suggestedFrameSizeToFitEntireStringConstraintedToWidth:300].height+25;
     }
 
     return 40;
@@ -146,7 +149,12 @@
         cell.textLabel.font = [UIFont systemFontOfSize:12.0];
         cell.textLabel.text = @"已投标人数:";
         cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@人",[_infoDic objectForKey:@"ygrs"]];
+        if ([[_infoDic objectForKey:@"detail"] isKindOfClass:[NSNull class]]) {
+            cell.detailTextLabel.text = @"0人";
+        }else{
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@人",[[_infoDic objectForKey:@"detail"] objectForKey:@"buyPerNum"]];
+        }
+        
     }else{
         [cell setHTMLString:[[((NSArray*)[_infoDic objectForKey:@"items"]) objectAtIndex:indexPath.section-1] objectForKey:@"itemDesc"]];
         cell.hasFixedRowHeight = YES;
@@ -190,16 +198,22 @@
 -(void)caculateProfit
 {
     ProFitCaculateViewController* proFitCaculateViewController = [[ProFitCaculateViewController alloc] init];
-    [proFitCaculateViewController initWithTotal:[_infoDic objectForKey:@"total"] withCode:[_infoDic objectForKey:@"code"] withTime:[[_infoDic objectForKey:@"fundPeriodDesc"] substringWithRange:NSMakeRange(1, [(NSString*)[_infoDic objectForKey:@"fundPeriodDesc"] length]-2)] withName:[_infoDic objectForKey:@"fundName"]];
+    [proFitCaculateViewController initWithTotal:[[_infoDic objectForKey:@"proInfo"]objectForKey:@"totalAmount" ] withCode:[[_infoDic objectForKey:@"proInfo"] objectForKey:@"id"] withTime:[[[_infoDic objectForKey:@"proInfo"] objectForKey:@"timeLimit"] stringValue] withName:[[_infoDic objectForKey:@"proInfo"] objectForKey:@"proName"]];
     [self.navigationController pushViewController:proFitCaculateViewController animated:YES];
-
-
 }
 -(void)buyFund
 {
     if (![ManagerUser shareInstance].isLogin) {
         [ManagerUtil presentLoginView];
+    }else{
+        MainOrderViewController* mainOrderViewController = [[MainOrderViewController alloc] init];
+        mainOrderViewController.productId =[[_infoDic objectForKey:@"proInfo"] objectForKey:@"id"];
+        mainOrderViewController.productName = [[_infoDic objectForKey:@"proInfo"] objectForKey:@"proName"];
+        mainOrderViewController.timeLimitNum = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"timeLimit"] integerValue];
+        mainOrderViewController.startBuy = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"startBuy"] integerValue];
+        [self.navigationController pushViewController:mainOrderViewController animated:YES];
     }
+    
 }
 - (void)didReceiveMemoryWarning
 {
