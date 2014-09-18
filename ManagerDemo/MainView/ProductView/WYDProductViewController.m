@@ -9,6 +9,7 @@
 #import "WYDProductViewController.h"
 #import "WYDInfoHeadView.h"
 #import "MJRefresh.h"
+#import "ProFitCaculateViewController.h"
 @interface WYDProductViewController ()
 
 
@@ -40,6 +41,8 @@
     _wydInfoHedaView = (WYDInfoHeadView*)[nib objectAtIndex:0];
     _tableView.tableHeaderView = _wydInfoHedaView;
     
+    
+    _toolBarView.delegate = self;
     //加入刷新
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     
@@ -50,9 +53,26 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi getFundDetailWithFundId:_productId withCompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    [daiDaiTongApi getFundDetailWithFundId:_productId withCompletionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            self.navigationItem.title = [jsonRes objectForKey:@"fundName"];
+//            [_wydInfoHedaView setInfoWithDic:jsonRes];
+//            _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+//            [self.tableView reloadData];
+//        }else{
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+//        }
+//
+//        [self.tableView headerEndRefreshing];
+//    } failedBlock:^(NSError *error) {
+//        [self.tableView headerEndRefreshing];
+//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+//    }];
+    
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_productId,@"proId", nil] withApiType:@"proDetail" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
             self.navigationItem.title = [jsonRes objectForKey:@"fundName"];
             [_wydInfoHedaView setInfoWithDic:jsonRes];
             _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
@@ -60,12 +80,11 @@
         }else{
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
-
-        [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
         [self.tableView headerEndRefreshing];
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
+
 
 }
 
@@ -166,6 +185,21 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
+}
+#pragma mark ToolBarViewDelegate
+-(void)caculateProfit
+{
+    ProFitCaculateViewController* proFitCaculateViewController = [[ProFitCaculateViewController alloc] init];
+    [proFitCaculateViewController initWithTotal:[_infoDic objectForKey:@"total"] withCode:[_infoDic objectForKey:@"code"] withTime:[[_infoDic objectForKey:@"fundPeriodDesc"] substringWithRange:NSMakeRange(1, [(NSString*)[_infoDic objectForKey:@"fundPeriodDesc"] length]-2)] withName:[_infoDic objectForKey:@"fundName"]];
+    [self.navigationController pushViewController:proFitCaculateViewController animated:YES];
+
+
+}
+-(void)buyFund
+{
+    if (![ManagerUser shareInstance].isLogin) {
+        [ManagerUtil presentLoginView];
+    }
 }
 - (void)didReceiveMemoryWarning
 {

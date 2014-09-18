@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FundListCell : UITableViewCell
+{
+    NSString* _productId;
+}
+@property (strong, nonatomic) NSString* productId;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profitLabel;

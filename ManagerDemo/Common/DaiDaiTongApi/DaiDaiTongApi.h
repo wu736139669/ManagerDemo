@@ -22,10 +22,21 @@ typedef void (^FailedBlock) (NSError *error);
  *  @param apiType         api接口
  *  @param completionBlock 请求完成
  *  @param failedBlock     请求失败
- *
+ *                  post请求
  *  @return MKNetworkOperation
  */
+-(MKNetworkOperation*)postApiWithParam:(NSDictionary*)param withApiType:(NSString*) apiType completionBlock:(CompletionBlock) completionBlock failedBlock:(FailedBlock)failedBlock;
+///**
+// *  api
+// *  @param param           参数
+// *  @param apiType         api接口
+// *  @param completionBlock 请求完成
+// *  @param failedBlock     请求失败
+// *              get请求
+// *  @return MKNetworkOperation
+// */
 -(MKNetworkOperation*)getApiWithParam:(NSDictionary*)param withApiType:(NSString*) apiType completionBlock:(CompletionBlock) completionBlock failedBlock:(FailedBlock)failedBlock;
+
 /**
  *  获取首页广告
  *

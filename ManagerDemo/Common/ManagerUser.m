@@ -19,4 +19,15 @@
     });
     return shareInstance;
 }
+
+-(void)setIsLogin:(BOOL)isLogin
+{
+    _isLogin = isLogin;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:_isLogin] forKey:@"LoginState"];
+}
+-(BOOL)isLogin
+{
+    _isLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LoginState"] boolValue];
+    return _isLogin;
+}
 @end

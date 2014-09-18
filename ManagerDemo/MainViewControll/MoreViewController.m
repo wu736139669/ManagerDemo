@@ -41,6 +41,13 @@
 //    [_tableView style] = UITableViewStyleGrouped;
     
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (_tableView) {
+        [_tableView reloadData];
+    }
+}
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ToolBarView.h"
-@interface WYDProductViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface WYDProductViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, TollBarViewDelegate>
 {
     NSString* _productId;
 }

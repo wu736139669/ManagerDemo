@@ -87,7 +87,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    FundListCell* cell = (FundListCell*)[tableView cellForRowAtIndexPath:indexPath];
+
     FundProductInfoViewController* fundProductInfoViewController = [[FundProductInfoViewController alloc] init];
+    fundProductInfoViewController.hidesBottomBarWhenPushed = YES;
+    fundProductInfoViewController.productId = cell.productId;
     [self.delegate.navigationController pushViewController:fundProductInfoViewController animated:YES];
     
 }

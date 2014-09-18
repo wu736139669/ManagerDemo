@@ -65,6 +65,22 @@
 }
 -(MKNetworkOperation*)getApiWithParam:(NSDictionary *)param withApiType:(NSString *)apiType completionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
+    MKNetworkOperation* op = [self getWithPath:apiType params:param];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        completionBlock(completedOperation.responseJSON);
+        
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        DLog(@"%@", error);
+        failedBlock(error);
+    }];
+    
+    [self enqueueOperation:op forceReload:YES];
+    
+    return op;
+}
+-(MKNetworkOperation*)postApiWithParam:(NSDictionary *)param withApiType:(NSString *)apiType completionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
+{
     MKNetworkOperation* op = [self postWithPath:apiType params:param];
     
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {

@@ -18,6 +18,11 @@
  *  @param type type description
  */
 +(void)presentLoginView;
+
+//获取view的viewcontroller
++(UIViewController*)getCurrentViewControllerWithView:(UIView*)view;
+//获取当前viewcontroller
++(UIViewController*)getCurrentRootViewController;
 //删除参数view所有的subview
 + (void)removeAllSubView:(UIView*) view;
 /**
@@ -40,11 +45,12 @@
 +(UIView*)selectBackgroudViewWithFrame:(CGRect)frame;
 
 +(UIImage*) buttonImageFromColor:(UIColor *)color withFrame:(CGRect)frame;
-+(UIViewController *)getCurrentRootViewController;
 
 /**
 *   手机号码验证
 */
 +(BOOL) isValidateMobile:(NSString *)mobile;
 
+//创建动画
++ (void)animationFromLayer:(CALayer *) layer type:(NSString *)type subType:(NSString *)subType duration:(double) duration;
 @end

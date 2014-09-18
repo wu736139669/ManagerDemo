@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MRCircularProgressView.h"
 @interface HomeMainView : UIView
+{
+    NSString* _fundCode;
+    __weak UIViewController* _delegate;
+}
+@property (weak, nonatomic)UIViewController* delegate;
+@property (strong, nonatomic)NSString* fundCode;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet MRCircularProgressView *percentView;

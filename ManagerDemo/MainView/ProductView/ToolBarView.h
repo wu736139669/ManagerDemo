@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToolBarView : UIView
+@protocol TollBarViewDelegate <NSObject>
 
+-(void)caculateProfit;
+-(void)buyFund;
+@end
+
+@interface ToolBarView : UIView
+{
+    __weak id<TollBarViewDelegate> _delegate;
+}
+@property (weak, nonatomic)id<TollBarViewDelegate> delegate;
+-(void)setEnable:(BOOL)enable;
 @end

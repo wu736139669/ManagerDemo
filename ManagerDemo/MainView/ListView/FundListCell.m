@@ -53,8 +53,9 @@
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
+    self.productId = [dic objectForKey:@"jjdm"];
     self.nameLabel.text = [dic objectForKey:@"jjmc"];
-    self.profitLabel.text = [NSString stringWithFormat:@"%@ + %@",[dic objectForKey:@"nhsy"],[dic objectForKey:@"fd"]];
+    self.profitLabel.text = [NSString stringWithFormat:@"%@ + %@%%",[dic objectForKey:@"nhsy"],[dic objectForKey:@"fd"]];
     self.totalLabel.text = [NSString stringWithFormat:@"已申购%@人",[dic objectForKey:@"ygrs"]];
     self.priceLabel.text = [NSString stringWithFormat:@"%@元",[dic objectForKey:@"wfsy"]];
     [self setLowestPriceWtihCount:[[dic objectForKey:@"startBuy"] integerValue]];

@@ -23,7 +23,6 @@
     }];
     
 }
-
 +(void)SetSubViewExternNone:(UIViewController *)viewController
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
@@ -105,6 +104,16 @@
     UIGraphicsEndImageContext();
     return img;
 }
++(UIViewController *)getCurrentViewControllerWithView:(UIView *)view
+{
+    for (UIView* next = [view superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
 +(UIViewController *)getCurrentRootViewController {
     
     
@@ -146,5 +155,20 @@
     NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(18[0,0-9]))\\d{8}$";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phoneTest evaluateWithObject:mobile];
+}
+
++ (CATransition*)animationLayer:(NSString *)type subType:(NSString *)subType
+{
+    CATransition *transition = [CATransition animation]; //定义过度动画
+    transition.duration = 1; //持续时间
+    transition.type = type;   //动画样式
+    transition.subtype = subType;  //方向
+    
+    return transition;
+}
++ (void)animationFromLayer:(CALayer *) layer type:(NSString *)type subType:(NSString *)subType duration:(double) duration {
+    CAAnimation* animation = [ManagerUtil animationLayer:type subType:subType];
+    animation.duration = duration;
+    [layer addAnimation:animation forKey:@"animationFromLayer"];
 }
 @end

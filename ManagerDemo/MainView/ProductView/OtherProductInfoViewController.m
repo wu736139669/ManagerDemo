@@ -8,6 +8,7 @@
 
 #import "OtherProductInfoViewController.h"
 #import "MJRefresh.h"
+#import "FundCaculateViewController.h"
 @interface OtherProductInfoViewController ()
 
 @end
@@ -32,6 +33,8 @@
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
+    _toolBarView.delegate = self;
     //加入刷新
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     
@@ -198,7 +201,21 @@
     }
     return cell;
 }
-
+#pragma mark ToolBarViewDelegate
+-(void)caculateProfit
+{
+//    FundCaculateViewController* fundCaculateViewController = [[FundCaculateViewController alloc] init];
+//    
+//    fundCaculateViewController.qrnh = _infoDic;
+//    [self.navigationController pushViewController:proFitCaculateViewController animated:YES];
+    
+}
+-(void)buyFund
+{
+    if (![ManagerUser shareInstance].isLogin) {
+        [ManagerUtil presentLoginView];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

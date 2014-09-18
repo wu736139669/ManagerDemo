@@ -15,6 +15,7 @@
  */
 
 #define DaiDaiTong_API_URL @"mobi.yingyinglicai.com:8443/front"
+#define DaiDaiTong_Api_Test_URL @"daidaitong.imwanmei.com:8080/mobile"
 /**
  *  系统版本
  */

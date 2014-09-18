@@ -45,7 +45,7 @@
 }
 -(void)setPercent:(NSInteger) percent
 {
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%ld</span> %%",percent];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%d</span> %%",percent];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
@@ -67,57 +67,57 @@
 }
 -(void)setStartBuy:(NSInteger)price
 {
-    _priceLabel.text = [NSString stringWithFormat:@"%ld元起购",price];
+    _priceLabel.text = [NSString stringWithFormat:@"%d元起购",price];
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
 
-    self.productId = [dic objectForKey:@"jjdm"];
-    self.profitLabel.text = [dic objectForKey:@"nhsy"];
-    self.nameLabel.text = [dic objectForKey:@"jjmc"];
+    self.productId = [dic objectForKey:@"id"];
+    self.profitLabel.text = [NSString stringWithFormat:@"%.2f%%",[[dic objectForKey:@"nhsy"] floatValue]];
+    self.nameLabel.text = [dic objectForKey:@"proName"];
     if ([[dic objectForKey:@"tip"] isKindOfClass:[NSNull class]]) {
         self.typeLabel.text = @"";
     }else{
         self.typeLabel.text = [dic objectForKey:@"tip"];
     }
-    if ([[dic objectForKey:@"state"] isEqualToString:@"SALE"] ) {
+//    if ([[dic objectForKey:@"state"] integerValue] == 1 ) {
         [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
         [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
-        NSMutableString* timeStr = [[NSMutableString alloc] initWithString:[dic objectForKey:@"jjzq"]];
-        [timeStr insertString:@"</span>" atIndex:1];
-        [timeStr insertString:@"<span  style=\" color:green;\">" atIndex:0];
+        NSString* timeStr = [NSString stringWithFormat:@"<span  style=\" color:green;\">限</span>%@个月起",[dic objectForKey:@"timeLimit"]];
         [self setTimeWithString:timeStr];
-    }else if([[dic objectForKey:@"state"] isEqualToString:@"EFFECTED"]){
-        [self setTimeWithString:@"最近还款日"];
-        [_percentView setProgress:0 animated:NO];
-        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"descValue"]];
-        
-        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
-        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
-        _percentDtlabel.attributedString = percentString;
-        CGRect frame = _percentDtlabel.frame;
-        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:60.0];
-        frame.size.height = size.height+2;
-        _percentDtlabel.frame = frame;
-        _percentDtlabel.center = _pieImage.center;
-        _priceLabel.text = [dic objectForKey:@"recRepayDate"];
-    }else if ( [[dic objectForKey:@"state"] isEqualToString:@"ENABLED"])
-    {
-        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
-        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
-        NSString* htmlStr = [dic objectForKey:@"descValue"];
-        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
-        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
-        _percentDtlabel.attributedString = percentString;
-        CGRect frame = _percentDtlabel.frame;
-        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:_percentDtlabel.frame.size.width];
-        frame.size.height = size.height;
-        _percentDtlabel.frame = frame;
-        _percentDtlabel.center = _pieImage.center;
-
-    }
+//    }
+//    else if([[dic objectForKey:@"state"] integerValue] == 2){
+//        [self setTimeWithString:@"最近还款日"];
+//        [_percentView setProgress:0 animated:NO];
+//        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"percent"]];
+//        htmlStr = [htmlStr stringByReplacingOccurrencesOfString:@"\n" withString:@"<p></p>"];
+//        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
+//        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
+//        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
+//        _percentDtlabel.attributedString = percentString;
+//        CGRect frame = _percentDtlabel.frame;
+//        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:60.0];
+//        frame.size.height = size.height+2;
+//        _percentDtlabel.frame = frame;
+//        _percentDtlabel.center = _pieImage.center;
+//        _priceLabel.text = [dic objectForKey:@"startTime"];
+//    }else if ([[dic objectForKey:@"state"] integerValue] == 3)
+//    {
+//        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
+//        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
+//        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"percent"]];
+//        htmlStr = [htmlStr stringByReplacingOccurrencesOfString:@"\n" withString:@"<p></p>"];
+//        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
+//        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
+//        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
+//        _percentDtlabel.attributedString = percentString;
+//        CGRect frame = _percentDtlabel.frame;
+//        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:_percentDtlabel.frame.size.width];
+//        frame.size.height = size.height;
+//        _percentDtlabel.frame = frame;
+//        _percentDtlabel.center = _pieImage.center;
+//
+//    }
 
 }
 @end

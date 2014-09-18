@@ -21,6 +21,7 @@
     #import "ManagerUtil.h"
     #import "MBProgressHUD+Util.h"
     #import "DaiDaiTongApi.h"
+    #import "DaiDaiTongTestApi.h"
     #import <SDWebImage/UIImageView+WebCache.h>
     #import<SDWebImage/SDImageCache.h>
     #import "ManagerUser.h"

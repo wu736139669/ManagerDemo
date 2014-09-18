@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ToolBarView.h"
-@interface OtherProductInfoViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface OtherProductInfoViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,TollBarViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet ToolBarView *toolBarView;
 @property (strong, nonatomic) IBOutlet UITableViewCell *headCell;

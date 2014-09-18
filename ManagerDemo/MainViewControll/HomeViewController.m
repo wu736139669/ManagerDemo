@@ -82,6 +82,7 @@
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }else{
             _homeMainView.hidden = NO;
+            _homeMainView.fundCode = [jsonRes objectForKey:@"code"];
             [_homeMainView setName:[jsonRes objectForKey:@"name"]];
             [_homeMainView setpercent:[[jsonRes objectForKey:@"percent"] floatValue]/100.0];
             [_homeMainView setExpect:[[jsonRes objectForKey:@"qrsy"] floatValue]];
@@ -153,6 +154,7 @@
 
                 
                 _homeMainView = [HomeMainView instanceHomeMainView];
+                _homeMainView.delegate = self;
                 CGRect frame = _homeMainView.frame;
                 frame.origin.x = 20;
                 _homeMainView.frame = frame;

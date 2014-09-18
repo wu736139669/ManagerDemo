@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "InputPassWordViewController.h"
+#import "InputVerificationViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -54,6 +55,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
+    [super touchesMoved:touches withEvent:event];
     [_phoneTextField resignFirstResponder];
     if (_phoneLabel.hidden == NO) {
         _phoneLabel.hidden = YES;
@@ -142,19 +144,47 @@
     if (![ManagerUtil isValidateMobile:_phoneTextField.text]) {
         [MBProgressHUD errorHudWithView:self.view label:@"请输入正确手机号" hidesAfter:1.0];
     }else{
-        InputPassWordViewController* inputPassWordViewController = [[InputPassWordViewController alloc] init];
-        inputPassWordViewController.hidesBottomBarWhenPushed = YES;
-        inputPassWordViewController.delegate = self;
-        inputPassWordViewController.phoneNum = _phoneTextField.text;
-        [self.navigationController pushViewController:inputPassWordViewController animated:YES];
+        [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+        DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_phoneTextField.text,@"phoneNum", nil] withApiType:@"loginFirst" completionBlock:^(id jsonRes) {
+            if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+                [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+            }else{
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                [self completeVerificate:jsonRes];
+            }
+        } failedBlock:^(NSError *error) {
+            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+        }];
+
     }
 
 }
-
-#pragma mark InputPassWordViewControllerDelegate
--(void)loginSuccess
+-(void)completeVerificate:(NSDictionary*)dic
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [ManagerUser shareInstance].token = [dic objectForKey:@"token"];
+    switch ([[dic objectForKey:@"resultflag"] integerValue]) {
+        case 0:
+        {
+            InputPassWordViewController* inputPassWordViewController = [[InputPassWordViewController alloc] init];
+            inputPassWordViewController.hidesBottomBarWhenPushed = YES;
+            inputPassWordViewController.phoneNum = _phoneTextField.text;
+            [self.navigationController pushViewController:inputPassWordViewController animated:YES];
+        }
+            break;
+        case 2:
+        case 3:
+        {
+            InputVerificationViewController* inputVerificationViewController = [[InputVerificationViewController alloc] init];
+            inputVerificationViewController.hidesBottomBarWhenPushed = YES;
+            inputVerificationViewController.phone = _phoneTextField.text;
+            [self.navigationController pushViewController:inputVerificationViewController animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+
 }
 -(void)dealloc
 {

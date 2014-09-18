@@ -7,12 +7,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FundProductInfoViewController">
             <connections>
                 <outlet property="aboutCell" destination="rZx-la-t9d" id="XZO-JF-oay"/>
+                <outlet property="companyLabel" destination="X3i-Hj-m6L" id="4YX-hz-giW"/>
+                <outlet property="detailLabel" destination="DTt-Ll-Jia" id="x1c-BD-8Vk"/>
+                <outlet property="fundStateLabel" destination="FoB-Dr-HcK" id="EcG-X2-f9E"/>
+                <outlet property="gmbsLabel" destination="54C-64-e5O" id="KVv-e2-Kvd"/>
                 <outlet property="headCell" destination="qdE-RM-OZc" id="tTv-hZ-wu4"/>
+                <outlet property="moreInfoTextView" destination="RKS-9M-K1N" id="ZlK-lb-P9Q"/>
+                <outlet property="qrnhLabel" destination="WKf-nx-WBh" id="Wre-8e-Zt4"/>
+                <outlet property="qrnhwfsyLabel" destination="IJe-rL-2kq" id="PZd-DN-zzW"/>
                 <outlet property="resultsCell" destination="Dsm-ZB-WFk" id="hbl-GR-ckM"/>
+                <outlet property="rjsgLabel" destination="gGl-Cb-G1U" id="cSr-hs-MDh"/>
+                <outlet property="sgrsLabel" destination="ftw-tg-h0G" id="YSH-gl-BLM"/>
+                <outlet property="startBuyLabel" destination="qnE-Pf-9l4" id="esy-zG-6aC"/>
                 <outlet property="stateInfoCell" destination="xov-P4-9jT" id="Uhw-wB-zHL"/>
                 <outlet property="tableView" destination="ciS-rs-KfU" id="H95-2T-aWr"/>
                 <outlet property="toolBarView" destination="UNJ-f6-5he" id="1bt-SR-GRa"/>
+                <outlet property="totalAmountLabel" destination="Kcj-yZ-GFL" id="OWr-sz-7gw"/>
+                <outlet property="typeLabel" destination="ZNb-ff-OEz" id="emO-WU-Llx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wfsyLabel" destination="EPa-1t-dIL" id="A1X-i4-dnS"/>
+                <outlet property="ysgrsLabel" destination="31H-kM-2WE" id="Pcn-Mn-3z6"/>
+                <outlet property="zfLabel" destination="itd-zg-VOq" id="S0d-QQ-xA7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -68,13 +83,13 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qnE-Pf-9l4">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qnE-Pf-9l4">
                         <rect key="frame" x="10" y="58" width="133" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.19%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WKf-nx-WBh">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WKf-nx-WBh">
                         <rect key="frame" x="177" y="58" width="133" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -88,13 +103,13 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65535" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ftw-tg-h0G">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ftw-tg-h0G">
                         <rect key="frame" x="10" y="122" width="108" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1138" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EPa-1t-dIL">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EPa-1t-dIL">
                         <rect key="frame" x="202" y="122" width="108" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -106,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="额外0.1%积分奖励" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTt-Ll-Jia">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="额外0.0%积分奖励" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTt-Ll-Jia">
                         <rect key="frame" x="202" y="151" width="108" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -184,7 +199,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " selectable="NO" id="RKS-9M-K1N">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="RKS-9M-K1N">
                         <rect key="frame" x="10" y="100" width="300" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

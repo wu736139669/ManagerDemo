@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "InputPassWordViewController.h"
-@interface LoginViewController : UIViewController<UITextFieldDelegate, InputPassWordViewControllerDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UIView *infoView;

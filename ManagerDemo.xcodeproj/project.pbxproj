@@ -29,6 +29,8 @@
 		A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3D19AB8E9C00AEBF4D /* p2c_alert@2x.png */; };
 		A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */; };
 		A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */; };
+		A9202B8719C95B97009932C2 /* ProFitCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9202B8519C95B97009932C2 /* ProFitCaculateViewController.m */; };
+		A9202B8819C95B97009932C2 /* ProFitCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9202B8619C95B97009932C2 /* ProFitCaculateViewController.xib */; };
 		A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */; };
 		A93320C219BFE8090090D640 /* MyTotalAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93320C019BFE8090090D640 /* MyTotalAmountViewController.m */; };
 		A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320C119BFE8090090D640 /* MyTotalAmountViewController.xib */; };
@@ -61,6 +63,8 @@
 		A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3B19B7667400D4605F /* icon_success@2x.png */; };
 		A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */; };
 		A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */; };
+		A95EAEE319C9BE2E00D1592B /* FundCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */; };
+		A95EAEE419C9BE2E00D1592B /* FundCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
 		A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */; };
@@ -87,6 +91,11 @@
 		A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7419B8BC410079F143 /* DailyProfitViewController.m */; };
 		A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */; };
 		A9971D7A19B8C39C0079F143 /* DatailProfitTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */; };
+		A99FDAFE19CA683100D2B3D3 /* DaiDaiTongTestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */; };
+		A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB0019CAACA400D2B3D3 /* InputVerificationViewController.m */; };
+		A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */; };
+		A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */; };
+		A99FDB0B19CAC16E00D2B3D3 /* SetPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */; };
 		A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */; };
 		A9A7948419C8AC4E00516C60 /* FundAmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */; };
 		A9AA325A199702DB000BE4FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9AA3259199702DB000BE4FB /* Images.xcassets */; };
@@ -236,6 +245,9 @@
 		A91C6D3D19AB8E9C00AEBF4D /* p2c_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_alert@2x.png"; sourceTree = "<group>"; };
 		A91C6D3E19AB8E9C00AEBF4D /* p2c_datesum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_datesum@2x.png"; sourceTree = "<group>"; };
 		A91C6D3F19AB8E9C00AEBF4D /* p2c_safeicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2c_safeicon@2x.png"; sourceTree = "<group>"; };
+		A9202B8419C95B97009932C2 /* ProFitCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProFitCaculateViewController.h; sourceTree = "<group>"; };
+		A9202B8519C95B97009932C2 /* ProFitCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProFitCaculateViewController.m; sourceTree = "<group>"; };
+		A9202B8619C95B97009932C2 /* ProFitCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProFitCaculateViewController.xib; sourceTree = "<group>"; };
 		A9233E63199CA44700DA80D8 /* more_icon_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_icon_5@2x.png"; sourceTree = "<group>"; };
 		A93320BF19BFE8090090D640 /* MyTotalAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalAmountViewController.h; sourceTree = "<group>"; };
 		A93320C019BFE8090090D640 /* MyTotalAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalAmountViewController.m; sourceTree = "<group>"; };
@@ -286,6 +298,9 @@
 		A95CEA3D19B766F400D4605F /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewController.h; sourceTree = "<group>"; };
 		A95CEA3E19B766F400D4605F /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewController.m; sourceTree = "<group>"; };
 		A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageDetailViewController.xib; sourceTree = "<group>"; };
+		A95EAEE019C9BE2E00D1592B /* FundCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundCaculateViewController.h; sourceTree = "<group>"; };
+		A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundCaculateViewController.m; sourceTree = "<group>"; };
+		A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundCaculateViewController.xib; sourceTree = "<group>"; };
 		A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -325,6 +340,14 @@
 		A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailProfitTopTableViewCell.h; sourceTree = "<group>"; };
 		A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailProfitTopTableViewCell.m; sourceTree = "<group>"; };
 		A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailProfitTopTableViewCell.xib; sourceTree = "<group>"; };
+		A99FDAFC19CA683100D2B3D3 /* DaiDaiTongTestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiDaiTongTestApi.h; sourceTree = "<group>"; };
+		A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiDaiTongTestApi.m; sourceTree = "<group>"; };
+		A99FDAFF19CAACA400D2B3D3 /* InputVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputVerificationViewController.h; sourceTree = "<group>"; };
+		A99FDB0019CAACA400D2B3D3 /* InputVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputVerificationViewController.m; sourceTree = "<group>"; };
+		A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputVerificationViewController.xib; sourceTree = "<group>"; };
+		A99FDB0719CAC16E00D2B3D3 /* SetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPassWordViewController.h; sourceTree = "<group>"; };
+		A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPassWordViewController.m; sourceTree = "<group>"; };
+		A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPassWordViewController.xib; sourceTree = "<group>"; };
 		A9A7948019C8AC4E00516C60 /* FundAmountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundAmountTableViewCell.h; sourceTree = "<group>"; };
 		A9A7948119C8AC4E00516C60 /* FundAmountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundAmountTableViewCell.m; sourceTree = "<group>"; };
 		A9A7948219C8AC4E00516C60 /* FundAmountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundAmountTableViewCell.xib; sourceTree = "<group>"; };
@@ -518,6 +541,12 @@
 				A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */,
 				A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */,
 				A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */,
+				A9202B8419C95B97009932C2 /* ProFitCaculateViewController.h */,
+				A9202B8519C95B97009932C2 /* ProFitCaculateViewController.m */,
+				A9202B8619C95B97009932C2 /* ProFitCaculateViewController.xib */,
+				A95EAEE019C9BE2E00D1592B /* FundCaculateViewController.h */,
+				A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */,
+				A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -947,6 +976,8 @@
 			children = (
 				A9E8589B19AC2AAE001996DF /* DaiDaiTongApi.h */,
 				A9E8589C19AC2AAE001996DF /* DaiDaiTongApi.m */,
+				A99FDAFC19CA683100D2B3D3 /* DaiDaiTongTestApi.h */,
+				A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */,
 			);
 			path = DaiDaiTongApi;
 			sourceTree = "<group>";
@@ -969,6 +1000,12 @@
 				A97F9D2019B595550073E7E6 /* InputPassWordViewController.h */,
 				A97F9D2119B595550073E7E6 /* InputPassWordViewController.m */,
 				A97F9D2219B595550073E7E6 /* InputPassWordViewController.xib */,
+				A99FDAFF19CAACA400D2B3D3 /* InputVerificationViewController.h */,
+				A99FDB0019CAACA400D2B3D3 /* InputVerificationViewController.m */,
+				A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */,
+				A99FDB0719CAC16E00D2B3D3 /* SetPassWordViewController.h */,
+				A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */,
+				A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -1087,11 +1124,13 @@
 				A9C69451199BD14D00B2CECE /* more_icon_2@2x.png in Resources */,
 				A9EAA04A19986E8C001A872A /* pull_arrow_down_black@2x.png in Resources */,
 				A9AF6C6119949CD30076C0EE /* icon_dock_mine@2x.png in Resources */,
+				A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */,
 				A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */,
 				A9EAA04819986DC3001A872A /* fund_cell_label_bg_red@2x.png in Resources */,
 				A91C6D4219AB8E9C00AEBF4D /* p2c_safeicon@2x.png in Resources */,
 				A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */,
 				A9EC95B819B54F6E00681678 /* LoginViewController.xib in Resources */,
+				A99FDB0B19CAC16E00D2B3D3 /* SetPassWordViewController.xib in Resources */,
 				A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */,
 				A93320C819C0227F0090D640 /* MyHoldAmountViewController.xib in Resources */,
 				A9AF6C5E19949CD30076C0EE /* icon_dock_home_actived@2x.png in Resources */,
@@ -1111,6 +1150,7 @@
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
+				A9202B8819C95B97009932C2 /* ProFitCaculateViewController.xib in Resources */,
 				A9EC95BB19B54FDB00681678 /* textField_cancel_ios7_s.png in Resources */,
 				A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */,
 				A9AF6C771994B5890076C0EE /* icon_indicate_more@2x.png in Resources */,
@@ -1141,6 +1181,7 @@
 				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
 				A97F9D1619B592E90073E7E6 /* get_ver_button_red_s@2x.png in Resources */,
 				A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */,
+				A95EAEE419C9BE2E00D1592B /* FundCaculateViewController.xib in Resources */,
 				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
 				A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
@@ -1231,7 +1272,9 @@
 				A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */,
 				A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */,
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
+				A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
+				A9202B8719C95B97009932C2 /* ProFitCaculateViewController.m in Sources */,
 				A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */,
 				A93F8803199A077F00875287 /* LoanListCell.m in Sources */,
 				A9AA326019970335000BE4FB /* HomeAdView.m in Sources */,
@@ -1277,7 +1320,9 @@
 				A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */,
 				A9F1E18619ACB63100B6A441 /* DTCoreTextTableViewCell.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
+				A99FDAFE19CA683100D2B3D3 /* DaiDaiTongTestApi.m in Sources */,
 				A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */,
+				A95EAEE319C9BE2E00D1592B /* FundCaculateViewController.m in Sources */,
 				A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */,
 				A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */,
 				A9AF6C33199484200076C0EE /* HomeViewController.m in Sources */,
@@ -1290,6 +1335,7 @@
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
+				A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
