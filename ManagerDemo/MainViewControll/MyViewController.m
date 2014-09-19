@@ -20,6 +20,7 @@
     MyTotalProfitCellView* _myTotalProfitCellView;
     UILabel* _timeLabel;
     UILabel* _profitLabel;
+    float _todayProfit;
 }
 @end
 
@@ -42,6 +43,7 @@
     [self.navigationItem setTitle:@"我的"];
     [ManagerUtil SetSubViewExternNone:self];
     
+    _todayProfit = 0.0;
     //左边按钮
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"帮助" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
     
@@ -85,11 +87,7 @@
 
         }
         [_tableView reloadData];
-        [_tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
-        [_tableView reloadData];
-        [_tableView headerEndRefreshing];
     }];
     
 
@@ -98,7 +96,7 @@
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
         }else{
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+            _todayProfit = [[jsonRes objectForKey:@"todayProfit"] floatValue];
             
         }
         [_tableView reloadData];
@@ -232,7 +230,7 @@
             
             NSString *  locationString=[dateformatter stringFromDate:senddate];
             _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",locationString];
-            _profitLabel.text = [_myInfoDic objectForKey:@"datePofit"];
+            _profitLabel.text = [NSString stringWithFormat:@"%.2f",_todayProfit];
         }
             break;
         case 2:
