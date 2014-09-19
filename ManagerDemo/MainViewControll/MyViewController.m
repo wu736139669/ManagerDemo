@@ -13,6 +13,7 @@
 #import "DailyProfitViewController.h"
 #import "MessageCenterViewController.h"
 #import "MyTotalAmountViewController.h"
+#import "TransactionRecordsViewController.h"
 @interface MyViewController ()
 {
     NSDictionary* _myInfoDic;
@@ -60,16 +61,50 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi getAccountInfoWithcompletionBlock:^(id jsonRes) {
-        
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    [daiDaiTongApi getAccountInfoWithcompletionBlock:^(id jsonRes) {
+//        
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+//        }
+//        [_tableView reloadData];
+//        [_tableView headerEndRefreshing];
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+//        [_tableView reloadData];
+//        [_tableView headerEndRefreshing];
+//    }];
+    
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"userMsg" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+
         }
         [_tableView reloadData];
         [_tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+        [_tableView reloadData];
+        [_tableView headerEndRefreshing];
+    }];
+    
+
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"todayProfit" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+            
+        }
+        [_tableView reloadData];
+        [_tableView headerEndRefreshing];
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
         [_tableView reloadData];
         [_tableView headerEndRefreshing];
     }];
@@ -181,28 +216,34 @@
     switch (indexPath.section) {
         case 0:
         {
-            cell.textLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"realShowName"];
+            cell.textLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"userName"];
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"cell"];
+//            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"cell"];
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         case 1:
         {
-            _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",[_myInfoDic objectForKey:@"profitShowDate"]];
+            NSDate *  senddate=[NSDate date];
+            NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+            
+            [dateformatter setDateFormat:@"MM月dd日"];
+            
+            NSString *  locationString=[dateformatter stringFromDate:senddate];
+            _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",locationString];
             _profitLabel.text = [_myInfoDic objectForKey:@"datePofit"];
         }
             break;
         case 2:
         {
-            _myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic objectForKey:@"totalAmount"];
-            _myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic objectForKey:@"totalProfit"];
+            _myTotalProfitCellView.totalMoneyLabel.text = [[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalAssets"] stringValue];
+            _myTotalProfitCellView.profitMoneyLabel.text = [[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalProfit"] stringValue];
         }
             break;
         case 4:
         {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic objectForKey:@"point"]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalIntegral"] stringValue]];
 
         }
             break;
@@ -231,6 +272,13 @@
             dailyProfitViewController.hidesBottomBarWhenPushed = YES;
             dailyProfitViewController.profitDate = [_myInfoDic objectForKey:@"profitDate"];
             [self.navigationController pushViewController:dailyProfitViewController animated:YES];
+        }
+            break;
+        case 3:
+        {
+            TransactionRecordsViewController* transactionRecordsViewController = [[TransactionRecordsViewController alloc] init];
+            transactionRecordsViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:transactionRecordsViewController animated:YES];
         }
             break;
         default:

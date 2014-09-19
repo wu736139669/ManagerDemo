@@ -171,4 +171,15 @@
     animation.duration = duration;
     [layer addAnimation:animation forKey:@"animationFromLayer"];
 }
+
++(NSString*)timeFromtimeSp:(NSString*)timeSp
+{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:MM"];
+//    NSDate *date = [formatter dateFromString:@"1231312312"];
+    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[timeSp floatValue]];
+    return [formatter stringFromDate:date];
+}
 @end

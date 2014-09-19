@@ -77,6 +77,11 @@
             self.navigationItem.title = [jsonRes objectForKey:@"fundName"];
             [_wydInfoHedaView setInfoWithDic:jsonRes];
             _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+            if ([[[jsonRes objectForKey:@"proInfo"] objectForKey:@"state"] integerValue] == 1) {
+                [_toolBarView setEnable:YES];
+            }else{
+                [_toolBarView setEnable:NO];
+            }
             [self.tableView reloadData];
         }else{
             

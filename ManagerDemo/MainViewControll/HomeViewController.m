@@ -77,27 +77,55 @@
         [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
     }];
     _homeMainView.hidden = YES;
-    [daiDaiTongApi getFundRecommendWithcompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
-        }else{
+    
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:1],@"pageNum", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
+            NSDictionary* dic = [[jsonRes objectForKey:@"proList"] objectAtIndex:0];
             _homeMainView.hidden = NO;
-            _homeMainView.fundCode = [jsonRes objectForKey:@"code"];
-            [_homeMainView setName:[jsonRes objectForKey:@"name"]];
-            [_homeMainView setpercent:[[jsonRes objectForKey:@"percent"] floatValue]/100.0];
-            [_homeMainView setExpect:[[jsonRes objectForKey:@"qrsy"] floatValue]];
-            [_homeMainView setType:[jsonRes objectForKey:@"tip"]];
-            [_homeMainView setInfo:[jsonRes objectForKey:@"activityDesc"]];
-            [_homeMainView setSecurityDesc:[jsonRes objectForKey:@"securityDesc"]];
-            [_homeMainView setTime:[jsonRes objectForKey:@"jjzq"] withStartBuy:[[jsonRes objectForKey:@"startBuy"] integerValue]];
+            _homeMainView.fundCode = [dic objectForKey:@"id"];
+            [_homeMainView setName:[dic objectForKey:@"proName"]];
+            [_homeMainView setpercent:[[dic objectForKey:@"percent"] floatValue]/100.0];
+            [_homeMainView setExpect:[[dic objectForKey:@"nhsy"] floatValue]];
+            [_homeMainView setType:[dic objectForKey:@"tip"]];
+            [_homeMainView setInfo:[dic objectForKey:@"activityDesc"]];
+            [_homeMainView setSecurityDesc:[dic objectForKey:@"syms"]];
+            [_homeMainView setTime:[[dic objectForKey:@"timeLimit"] stringValue] withStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
+
+        }else{
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
         [self.tableView reloadData];
         [self.tableView headerEndRefreshing];
+
+ 
+        
     } failedBlock:^(NSError *error) {
-        DLog(@"失败");
-        [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
         [self.tableView headerEndRefreshing];
     }];
+
+//    [daiDaiTongApi getFundRecommendWithcompletionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] != 1) {
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+//        }else{
+//            _homeMainView.hidden = NO;
+//            _homeMainView.fundCode = [jsonRes objectForKey:@"code"];
+//            [_homeMainView setName:[jsonRes objectForKey:@"name"]];
+//            [_homeMainView setpercent:[[jsonRes objectForKey:@"percent"] floatValue]/100.0];
+//            [_homeMainView setExpect:[[jsonRes objectForKey:@"qrsy"] floatValue]];
+//            [_homeMainView setType:[jsonRes objectForKey:@"tip"]];
+//            [_homeMainView setInfo:[jsonRes objectForKey:@"activityDesc"]];
+//            [_homeMainView setSecurityDesc:[jsonRes objectForKey:@"securityDesc"]];
+//            [_homeMainView setTime:[jsonRes objectForKey:@"jjzq"] withStartBuy:[[jsonRes objectForKey:@"startBuy"] integerValue]];
+//        }
+//        [self.tableView reloadData];
+//        [self.tableView headerEndRefreshing];
+//    } failedBlock:^(NSError *error) {
+//        DLog(@"失败");
+//        [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+//        [self.tableView headerEndRefreshing];
+//    }];
 }
 
 - (void)footerRereshing

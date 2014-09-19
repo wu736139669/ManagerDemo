@@ -39,6 +39,7 @@
     _nameLabel.text = _productName;
     _startBuyLabel.text = [NSString stringWithFormat:@"%ld元",_startBuy];
     _timeLimit.text = [NSString stringWithFormat:@"限%ld个月",_timeLimitNum];
+    _orderAmountTextField.placeholder = [NSString stringWithFormat:@"投标金额≤%ld",_startBuy];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

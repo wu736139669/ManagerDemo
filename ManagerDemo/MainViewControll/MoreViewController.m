@@ -12,6 +12,7 @@
 #import "HelpCenterViewController.h"
 #import "MessageCenterViewController.h"
 #import "AboutViewController.h"
+#import "AppDelegate.h"
 @interface MoreViewController ()
 
 @end
@@ -241,6 +242,8 @@
 -(void)logout
 {
     [ManagerUser shareInstance].isLogin = false;
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    [app.mainViewController setSelectedIndex:0];
     [_tableView reloadData];
 }
 - (void)didReceiveMemoryWarning

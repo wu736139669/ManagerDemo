@@ -53,4 +53,7 @@
 
 //创建动画
 + (void)animationFromLayer:(CALayer *) layer type:(NSString *)type subType:(NSString *)subType duration:(double) duration;
+
+//时间戳转时间
++(NSString*)timeFromtimeSp:(NSString*)timeSp;
 @end

@@ -95,6 +95,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     OtherProductInfoViewController* otherProductInfoViewController =[[OtherProductInfoViewController alloc] init];
+    otherProductInfoViewController.hidesBottomBarWhenPushed = YES;
     [self.delegate.navigationController pushViewController:otherProductInfoViewController animated:YES];
     
 }

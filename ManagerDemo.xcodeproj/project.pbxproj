@@ -91,6 +91,10 @@
 		A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7419B8BC410079F143 /* DailyProfitViewController.m */; };
 		A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */; };
 		A9971D7A19B8C39C0079F143 /* DatailProfitTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */; };
+		A99EBEA919CB9ABB005E1AA0 /* TransactionRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99EBEA719CB9ABB005E1AA0 /* TransactionRecordsViewController.m */; };
+		A99EBEAA19CB9ABB005E1AA0 /* TransactionRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99EBEA819CB9ABB005E1AA0 /* TransactionRecordsViewController.xib */; };
+		A99EBEAE19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A99EBEAC19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m */; };
+		A99EBEAF19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99EBEAD19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib */; };
 		A99FDAFE19CA683100D2B3D3 /* DaiDaiTongTestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */; };
 		A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB0019CAACA400D2B3D3 /* InputVerificationViewController.m */; };
 		A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */; };
@@ -345,6 +349,12 @@
 		A9971D7619B8C39C0079F143 /* DatailProfitTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailProfitTopTableViewCell.h; sourceTree = "<group>"; };
 		A9971D7719B8C39C0079F143 /* DatailProfitTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailProfitTopTableViewCell.m; sourceTree = "<group>"; };
 		A9971D7819B8C39C0079F143 /* DatailProfitTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailProfitTopTableViewCell.xib; sourceTree = "<group>"; };
+		A99EBEA619CB9ABB005E1AA0 /* TransactionRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionRecordsViewController.h; sourceTree = "<group>"; };
+		A99EBEA719CB9ABB005E1AA0 /* TransactionRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionRecordsViewController.m; sourceTree = "<group>"; };
+		A99EBEA819CB9ABB005E1AA0 /* TransactionRecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionRecordsViewController.xib; sourceTree = "<group>"; };
+		A99EBEAB19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionRecordsTableViewCell.h; sourceTree = "<group>"; };
+		A99EBEAC19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionRecordsTableViewCell.m; sourceTree = "<group>"; };
+		A99EBEAD19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionRecordsTableViewCell.xib; sourceTree = "<group>"; };
 		A99FDAFC19CA683100D2B3D3 /* DaiDaiTongTestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiDaiTongTestApi.h; sourceTree = "<group>"; };
 		A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiDaiTongTestApi.m; sourceTree = "<group>"; };
 		A99FDAFF19CAACA400D2B3D3 /* InputVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputVerificationViewController.h; sourceTree = "<group>"; };
@@ -999,6 +1009,12 @@
 				A9EE5EE419C20CDA004E7A2C /* WYDAmountTableViewCell.h */,
 				A9EE5EE519C20CDA004E7A2C /* WYDAmountTableViewCell.m */,
 				A9EE5EE619C20CDA004E7A2C /* WYDAmountTableViewCell.xib */,
+				A99EBEA619CB9ABB005E1AA0 /* TransactionRecordsViewController.h */,
+				A99EBEA719CB9ABB005E1AA0 /* TransactionRecordsViewController.m */,
+				A99EBEA819CB9ABB005E1AA0 /* TransactionRecordsViewController.xib */,
+				A99EBEAB19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.h */,
+				A99EBEAC19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m */,
+				A99EBEAD19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -1231,6 +1247,7 @@
 				A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */,
 				A9AF6C34199484200076C0EE /* HomeViewController.xib in Resources */,
 				A9AF6C0019947DD00076C0EE /* Main.storyboard in Resources */,
+				A99EBEAF19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib in Resources */,
 				A97F9D2419B595550073E7E6 /* InputPassWordViewController.xib in Resources */,
 				A9AF6C3E199486CA0076C0EE /* ProductListViewController.xib in Resources */,
 				A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */,
@@ -1246,6 +1263,7 @@
 				A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */,
 				A97F9D1B19B592FD0073E7E6 /* login_button@2x.png in Resources */,
 				A9EC95BC19B54FDB00681678 /* textField_cancel_ios7.png in Resources */,
+				A99EBEAA19CB9ABB005E1AA0 /* TransactionRecordsViewController.xib in Resources */,
 				A9AF6C721994B5890076C0EE /* icon_bar_card@2x.png in Resources */,
 				A9AF6C6819949CD30076C0EE /* icon_dock_session_msg@2x.png in Resources */,
 				A9AF6C6619949CD30076C0EE /* icon_dock_session_actived_msg@2x.png in Resources */,
@@ -1342,6 +1360,7 @@
 				A9EC95B719B54F6E00681678 /* LoginViewController.m in Sources */,
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A93320C719C0227F0090D640 /* MyHoldAmountViewController.m in Sources */,
+				A99EBEAE19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m in Sources */,
 				A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,
@@ -1368,6 +1387,7 @@
 				A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */,
 				A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,
+				A99EBEA919CB9ABB005E1AA0 /* TransactionRecordsViewController.m in Sources */,
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
