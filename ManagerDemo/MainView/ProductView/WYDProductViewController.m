@@ -82,6 +82,7 @@
             }else{
                 [_toolBarView setEnable:NO];
             }
+            self.navigationItem.title = [[jsonRes objectForKey:@"proInfo"] objectForKey:@"proName"];
             [self.tableView reloadData];
         }else{
             

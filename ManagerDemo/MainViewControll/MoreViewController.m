@@ -209,7 +209,7 @@
         case 0:
         {
             if (indexPath.row == 0) {
-                ActivityCenterViewController* activityCenterViewController = [[ActivityCenterViewController alloc] init];
+                ActivityCenterViewController* activityCenterViewController = [[ActivityCenterViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
                 activityCenterViewController.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:activityCenterViewController animated:YES];
             }
@@ -219,7 +219,7 @@
                 [self.navigationController pushViewController:messageCenterViewController animated:YES];
             }
             if (indexPath.row == 2) {
-                HelpCenterViewController* helpCenterViewController = [[HelpCenterViewController alloc] init];
+                HelpCenterViewController* helpCenterViewController = [[HelpCenterViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
                 helpCenterViewController.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:helpCenterViewController animated:YES];
             }

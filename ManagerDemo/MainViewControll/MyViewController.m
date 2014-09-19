@@ -13,6 +13,7 @@
 #import "DailyProfitViewController.h"
 #import "MessageCenterViewController.h"
 #import "MyTotalAmountViewController.h"
+#import "HelpCenterViewController.h"
 #import "TransactionRecordsViewController.h"
 @interface MyViewController ()
 {
@@ -294,7 +295,9 @@
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender
 {
-
+    HelpCenterViewController* helpCenterViewController = [[HelpCenterViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
+    helpCenterViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:helpCenterViewController animated:YES];
     
 }
 -(void)rightBarBtnClick:(id)sender
