@@ -31,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _topCell = [DatailProfitTopTableViewCell instance];
+    self.navigationItem.title = @"每日收益";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 //    [self headerBeginRefreshing];
 }
