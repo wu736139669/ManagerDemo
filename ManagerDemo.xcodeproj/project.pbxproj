@@ -97,6 +97,7 @@
 		A99EBEAF19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99EBEAD19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib */; };
 		A99EBEB719CBAF55005E1AA0 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = A99EBEB319CBAF55005E1AA0 /* Icon-57.png */; };
 		A99EBEBC19CBAFE3005E1AA0 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = A99EBEBB19CBAFE3005E1AA0 /* Icon-114.png */; };
+		A99EBEC419CBB47C005E1AA0 /* HelpCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99EBEC219CBB47C005E1AA0 /* HelpCenterViewController.m */; };
 		A99FDAFE19CA683100D2B3D3 /* DaiDaiTongTestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */; };
 		A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB0019CAACA400D2B3D3 /* InputVerificationViewController.m */; };
 		A99FDB0319CAACA400D2B3D3 /* InputVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB0119CAACA400D2B3D3 /* InputVerificationViewController.xib */; };
@@ -165,7 +166,6 @@
 		A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8A1994C5700076C0EE /* UIScrollView+Extension.m */; };
 		A9AF6C951994C5700076C0EE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */; };
 		A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */; };
-		A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */; };
 		A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */; };
 		A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */; };
 		A9B2507719B4C8B2003E8855 /* red_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B2507619B4C8B2003E8855 /* red_select_arrow@2x.png */; };
@@ -359,6 +359,8 @@
 		A99EBEAD19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionRecordsTableViewCell.xib; sourceTree = "<group>"; };
 		A99EBEB319CBAF55005E1AA0 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		A99EBEBB19CBAFE3005E1AA0 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		A99EBEC219CBB47C005E1AA0 /* HelpCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterViewController.m; sourceTree = "<group>"; };
+		A99EBEC319CBB47C005E1AA0 /* HelpCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterViewController.h; sourceTree = "<group>"; };
 		A99FDAFC19CA683100D2B3D3 /* DaiDaiTongTestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiDaiTongTestApi.h; sourceTree = "<group>"; };
 		A99FDAFD19CA683100D2B3D3 /* DaiDaiTongTestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiDaiTongTestApi.m; sourceTree = "<group>"; };
 		A99FDAFF19CAACA400D2B3D3 /* InputVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputVerificationViewController.h; sourceTree = "<group>"; };
@@ -456,8 +458,6 @@
 		A9AF6C8C1994C5700076C0EE /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		A9AF6C8D1994C5700076C0EE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A9AF6C8E1994C5700076C0EE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterViewController.h; sourceTree = "<group>"; };
-		A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterViewController.m; sourceTree = "<group>"; };
 		A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenterTableViewCell.h; sourceTree = "<group>"; };
 		A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenterTableViewCell.m; sourceTree = "<group>"; };
 		A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenterTableViewCell.xib; sourceTree = "<group>"; };
@@ -634,8 +634,6 @@
 				A986269C19B4241400FF9E2C /* ActivityCenterTableViewCell.h */,
 				A986269D19B4241400FF9E2C /* ActivityCenterTableViewCell.m */,
 				A986269E19B4241400FF9E2C /* ActivityCenterTableViewCell.xib */,
-				A9B2506C19B4C75E003E8855 /* HelpCenterViewController.h */,
-				A9B2506D19B4C75E003E8855 /* HelpCenterViewController.m */,
 				A9B2507119B4C796003E8855 /* HelpCenterTableViewCell.h */,
 				A9B2507219B4C796003E8855 /* HelpCenterTableViewCell.m */,
 				A9B2507319B4C796003E8855 /* HelpCenterTableViewCell.xib */,
@@ -975,6 +973,8 @@
 		A9C69443199BBE9500B2CECE /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				A99EBEC219CBB47C005E1AA0 /* HelpCenterViewController.m */,
+				A99EBEC319CBB47C005E1AA0 /* HelpCenterViewController.h */,
 				A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */,
 				A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */,
 				A919055419B02741002575DF /* AccountInfoViewController.m */,
@@ -1333,6 +1333,7 @@
 				A9EAA05619988C55001A872A /* MRCircularProgressView.m in Sources */,
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
 				A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */,
+				A99EBEC419CBB47C005E1AA0 /* HelpCenterViewController.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
 				A9202B8719C95B97009932C2 /* ProFitCaculateViewController.m in Sources */,
 				A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */,
@@ -1349,7 +1350,6 @@
 				A9A6AD2F19CB1C7000626B48 /* MainOrderViewController.m in Sources */,
 				A986268C19B40AAC00FF9E2C /* SVWebViewController.m in Sources */,
 				A9B2507419B4C796003E8855 /* HelpCenterTableViewCell.m in Sources */,
-				A9B2506F19B4C75E003E8855 /* HelpCenterViewController.m in Sources */,
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
 				A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
