@@ -82,6 +82,7 @@
     [daiDaiTongTestApi getApiWithParam:nil withApiType:@"userMsg" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+            [ManagerUtil presentLoginView];
         }else{
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
@@ -156,7 +157,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d%d",indexPath.section,indexPath.row];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {

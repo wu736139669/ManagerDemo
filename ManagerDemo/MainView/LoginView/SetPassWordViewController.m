@@ -61,11 +61,15 @@
     [super touchesMoved:touches withEvent:event];
     [_surePassWordTextField resignFirstResponder];
     [_passWordTextField resignFirstResponder];
+    _surePassWordTextField.layer.borderColor = [[UIColor grayColor] CGColor];
+    _passWordTextField.layer.borderColor = [[UIColor grayColor] CGColor];
     
 }
 #pragma mark UITextFieldDelegate
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    _surePassWordTextField.layer.borderColor = [[UIColor grayColor] CGColor];
+    _passWordTextField.layer.borderColor = [[UIColor grayColor] CGColor];
     textField.layer.borderColor = [[UIColor orangeColor]CGColor];
     return YES;
 }

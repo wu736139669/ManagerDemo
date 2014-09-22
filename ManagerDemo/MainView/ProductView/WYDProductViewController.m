@@ -11,6 +11,7 @@
 #import "MJRefresh.h"
 #import "ProFitCaculateViewController.h"
 #import "MainOrderViewController.h"
+#import "SetPassWordViewController.h"
 @interface WYDProductViewController ()
 
 
@@ -41,7 +42,7 @@
     NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"WYDInfoHeadView" owner:self options:nil];
     _wydInfoHedaView = (WYDInfoHeadView*)[nib objectAtIndex:0];
     _tableView.tableHeaderView = _wydInfoHedaView;
-    
+    _wydInfoHedaView.hidden = YES;
     
     _toolBarView.delegate = self;
     //加入刷新
@@ -84,13 +85,16 @@
             }
             self.navigationItem.title = [[jsonRes objectForKey:@"proInfo"] objectForKey:@"proName"];
             [self.tableView reloadData];
+            _wydInfoHedaView.hidden = NO;
         }else{
             
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+            _wydInfoHedaView.hidden = YES;
         }
         [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
         [self.tableView headerEndRefreshing];
+        _wydInfoHedaView.hidden = YES;
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
 
@@ -212,12 +216,15 @@
     if (![ManagerUser shareInstance].isLogin) {
         [ManagerUtil presentLoginView];
     }else{
+        
         MainOrderViewController* mainOrderViewController = [[MainOrderViewController alloc] init];
         mainOrderViewController.productId =[[_infoDic objectForKey:@"proInfo"] objectForKey:@"id"];
         mainOrderViewController.productName = [[_infoDic objectForKey:@"proInfo"] objectForKey:@"proName"];
         mainOrderViewController.timeLimitNum = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"timeLimit"] integerValue];
         mainOrderViewController.startBuy = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"startBuy"] integerValue];
         [self.navigationController pushViewController:mainOrderViewController animated:YES];
+
+
     }
     
 }

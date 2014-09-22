@@ -8,6 +8,7 @@
 
 #import "OrderPassWordViewController.h"
 #import "UPPayPlugin.h"
+#import "AuthenticationViewController.h"
 @interface OrderPassWordViewController ()
 
 @end
@@ -52,7 +53,7 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     
-    if (range.location >= 13)
+    if (range.location > 15)
         return NO; // return NO to not change text
     
     return YES;
@@ -87,15 +88,20 @@
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_amount],@"amount", _passwordTextField.text,@"tradePsw",_proId, @"proId", nil] withApiType:@"buyProduct" completionBlock:^(id jsonRes) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
-        }else{
+        }else if([[jsonRes objectForKey:@"resultflag"] integerValue] == 2){
+            AuthenticationViewController* authenticationViewController = [[AuthenticationViewController alloc] init];
+            [self.navigationController pushViewController:authenticationViewController animated:YES];
+        }else if([[jsonRes objectForKey:@"resultflag"] integerValue] == 0){
             NSString* tn = [jsonRes objectForKey:@"tn"];
             if (tn) {
                 [UPPayPlugin startPay:tn mode:@"01" viewController:self delegate:self];
             }
             
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            
         }
     } failedBlock:^(NSError *error) {
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
@@ -108,7 +114,7 @@
     if ([result isEqualToString:@"success"]) {
         [MBProgressHUD errorHudWithView:self.view label:@"投标成功" hidesAfter:1.0];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*1.0),
-                       dispatch_get_current_queue(), ^(){
+                       dispatch_get_main_queue(), ^(){
                            [self.navigationController popToRootViewControllerAnimated:YES];
                        });
         

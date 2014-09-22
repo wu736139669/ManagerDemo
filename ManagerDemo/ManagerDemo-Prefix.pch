@@ -25,4 +25,5 @@
     #import <SDWebImage/UIImageView+WebCache.h>
     #import<SDWebImage/SDImageCache.h>
     #import "ManagerUser.h"
+    #import "NSDictionary+ChangeNull.h"
 #endif

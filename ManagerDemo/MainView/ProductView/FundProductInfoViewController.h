@@ -35,5 +35,6 @@
 @property (weak, nonatomic) IBOutlet TableCellLineView *companyLabel;
 @property (weak, nonatomic) IBOutlet TableCellLineView *fundStateLabel;
 @property (weak, nonatomic) IBOutlet UITextView *moreInfoTextView;
+@property (weak, nonatomic) IBOutlet TableCellLineView *topTimeLabel;
 
 @end

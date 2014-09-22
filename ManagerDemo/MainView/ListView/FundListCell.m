@@ -53,13 +53,13 @@
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
-    self.productId = [dic objectForKey:@"jjdm"];
-    self.nameLabel.text = [dic objectForKey:@"jjmc"];
-    self.profitLabel.text = [NSString stringWithFormat:@"%@ + %@%%",[dic objectForKey:@"nhsy"],[dic objectForKey:@"fd"]];
-    self.totalLabel.text = [NSString stringWithFormat:@"已申购%@人",[dic objectForKey:@"ygrs"]];
+    self.productId = [dic objectForKey:@"id"];
+    self.nameLabel.text = [dic objectForKey:@"proName"];
+    self.profitLabel.text = [NSString stringWithFormat:@"%.2f + %.2f%%",[[dic objectForKey:@"nhsy"] floatValue],[[dic objectForKeyWithoutNull:@"fd"] floatValue]];
+    self.totalLabel.text = [NSString stringWithFormat:@"已申购%.0f人",[[dic objectForKeyWithoutNull:@"ygrs"] floatValue]];
     self.priceLabel.text = [NSString stringWithFormat:@"%@元",[dic objectForKey:@"wfsy"]];
     [self setLowestPriceWtihCount:[[dic objectForKey:@"startBuy"] integerValue]];
-    NSMutableString* timeStr = [[NSMutableString alloc] initWithString:[dic objectForKey:@"jjzq"]];
+    NSMutableString* timeStr = [[NSMutableString alloc] initWithString:@"随买随卖"];
     [timeStr insertString:@"</span>" atIndex:1];
     [timeStr insertString:@"<span  style=\" color:green;\">" atIndex:0];
     [self setBuyTypeWithString:timeStr];

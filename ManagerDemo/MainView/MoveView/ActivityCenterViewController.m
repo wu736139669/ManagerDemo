@@ -35,8 +35,8 @@
 -(void)loadDataWithDic:(NSDictionary *)dic withType:(NSString *)typeStr WithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
 
-    [super loadDataWithDic:nil withType:@"activeInfoQuery.do" WithcompletionBlock:^(id jsonRes){
-        [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"datas"]];
+    [super loadDataWithDic:nil withType:@"activeList" WithcompletionBlock:^(id jsonRes){
+        [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"activeList"]];
         
     }failedBlock:^(NSError *error){
         

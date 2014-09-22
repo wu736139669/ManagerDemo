@@ -20,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _type = 0;
     }
     return self;
 }
@@ -37,9 +38,18 @@
     [_completeBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:[UIColor lightGrayColor] withFrame:_completeBtn.frame] forState:UIControlStateDisabled];
     
     _nameLabel.text = _productName;
-    _startBuyLabel.text = [NSString stringWithFormat:@"%ld元",_startBuy];
-    _timeLimit.text = [NSString stringWithFormat:@"限%ld个月",_timeLimitNum];
-    _orderAmountTextField.placeholder = [NSString stringWithFormat:@"投标金额≤%ld",_startBuy];
+    _startBuyLabel.text = [NSString stringWithFormat:@"%d元",_startBuy];
+    if (_type == 0) {
+        _timeLimit.text = [NSString stringWithFormat:@"限%d个月",_timeLimitNum];
+        _infoLabel.hidden = NO;
+        _infoLabel.text = [NSString stringWithFormat:@"投标金额:%d的整数倍",_startBuy];
+        _orderAmountTextField.placeholder = [NSString stringWithFormat:@"投标金额≥%d",_startBuy];
+    }else{
+        _timeLimit.text = @"随买随卖";
+        _orderAmountTextField.placeholder = @"建议100元以上，以便收益计算";
+        _infoLabel.hidden = YES;
+    }
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -82,7 +92,7 @@
 {
     
     UITextField* textField = [sender object];
-    if ([textField.text isEqualToString:@""] || [textField.text integerValue]%50 != 0) {
+    if ([textField.text isEqualToString:@""] || [textField.text integerValue]%_startBuy != 0) {
             _completeBtn.enabled = NO;
         
     }else{
@@ -104,15 +114,30 @@
 }
 
 - (IBAction)completeBtnClick:(id)sender {
-    if ([ManagerUser shareInstance].tradePsw.length>0) {
-        OrderPassWordViewController* orderPassWordViewController = [[OrderPassWordViewController alloc] init];
-        orderPassWordViewController.amount = [_orderAmountTextField.text integerValue];
-        orderPassWordViewController.proId = _productId;
-        [self.navigationController pushViewController:orderPassWordViewController animated:YES];
-    }else{
-        SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
-        setPassWordViewController.type = 1;
-        [self.navigationController pushViewController:setPassWordViewController animated:YES];
-    }
+    
+    
+    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"hasTradePsw" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:@"还没设置交易密码" hidesAfter:1.0];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*1.0), dispatch_get_main_queue(), ^{
+                SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
+                setPassWordViewController.type = 1;
+                [self.navigationController pushViewController:setPassWordViewController animated:YES];
+            });
+            
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            OrderPassWordViewController* orderPassWordViewController = [[OrderPassWordViewController alloc] init];
+            orderPassWordViewController.amount = [_orderAmountTextField.text integerValue];
+            orderPassWordViewController.proId = _productId;
+            [self.navigationController pushViewController:orderPassWordViewController animated:YES];
+        }
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+    }];
+    
 }
 @end

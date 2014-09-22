@@ -22,6 +22,7 @@
                 <outlet property="stateInfoCell" destination="xov-P4-9jT" id="Uhw-wB-zHL"/>
                 <outlet property="tableView" destination="ciS-rs-KfU" id="H95-2T-aWr"/>
                 <outlet property="toolBarView" destination="UNJ-f6-5he" id="1bt-SR-GRa"/>
+                <outlet property="topTimeLabel" destination="GTM-EO-LYx" id="XRV-bP-62W"/>
                 <outlet property="totalAmountLabel" destination="Kcj-yZ-GFL" id="OWr-sz-7gw"/>
                 <outlet property="typeLabel" destination="ZNb-ff-OEz" id="emO-WU-Llx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -117,7 +118,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="ZNb-ff-OEz" customClass="DTAttributedLabel">
-                        <rect key="frame" x="10" y="146" width="141" height="23"/>
+                        <rect key="frame" x="10" y="155" width="141" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
@@ -199,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="RKS-9M-K1N">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" id="RKS-9M-K1N">
                         <rect key="frame" x="10" y="100" width="300" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -42,6 +42,8 @@
 		A93320D219C02F240090D640 /* FundAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93320D019C02F240090D640 /* FundAmountViewController.xib */; };
 		A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9354F5A19B870C700FDCB52 /* BaseListViewController.m */; };
 		A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */; };
+		A936792B19D06A1B004F6EBE /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A936792919D06A1B004F6EBE /* AuthenticationViewController.m */; };
+		A936792C19D06A1B004F6EBE /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A936792A19D06A1B004F6EBE /* AuthenticationViewController.xib */; };
 		A93F87741999AA8300875287 /* ManagerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87731999AA8300875287 /* ManagerUtil.m */; };
 		A93F877C1999ACF600875287 /* MBProgressHUD+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877B1999ACF600875287 /* MBProgressHUD+Util.m */; };
 		A93F87801999B92800875287 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F877F1999B92800875287 /* QCSlideSwitchView.m */; };
@@ -65,6 +67,7 @@
 		A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3F19B766F400D4605F /* MessageDetailViewController.xib */; };
 		A95EAEE319C9BE2E00D1592B /* FundCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */; };
 		A95EAEE419C9BE2E00D1592B /* FundCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */; };
+		A9623E2F19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = A9623E2E19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
 		A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F9D1219B592E90073E7E6 /* get_ver_button_gry@2x.png */; };
@@ -275,6 +278,9 @@
 		A9354F5919B870C700FDCB52 /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListViewController.h; sourceTree = "<group>"; };
 		A9354F5A19B870C700FDCB52 /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
 		A9354F5B19B870C700FDCB52 /* BaseListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseListViewController.xib; sourceTree = "<group>"; };
+		A936792819D06A1B004F6EBE /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		A936792919D06A1B004F6EBE /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		A936792A19D06A1B004F6EBE /* AuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		A93F87721999AA8300875287 /* ManagerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUtil.h; sourceTree = "<group>"; };
 		A93F87731999AA8300875287 /* ManagerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUtil.m; sourceTree = "<group>"; };
 		A93F877A1999AC9900875287 /* MBProgressHUD+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Util.h"; sourceTree = "<group>"; };
@@ -312,6 +318,8 @@
 		A95EAEE019C9BE2E00D1592B /* FundCaculateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundCaculateViewController.h; sourceTree = "<group>"; };
 		A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundCaculateViewController.m; sourceTree = "<group>"; };
 		A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundCaculateViewController.xib; sourceTree = "<group>"; };
+		A9623E2D19CBEB1A004F7D9D /* NSDictionary+ChangeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ChangeNull.h"; sourceTree = "<group>"; };
+		A9623E2E19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ChangeNull.m"; sourceTree = "<group>"; };
 		A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -845,6 +853,8 @@
 				A93F87731999AA8300875287 /* ManagerUtil.m */,
 				A9EC95C119B55CF100681678 /* ManagerUser.h */,
 				A9EC95C219B55CF100681678 /* ManagerUser.m */,
+				A9623E2D19CBEB1A004F7D9D /* NSDictionary+ChangeNull.h */,
+				A9623E2E19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1060,6 +1070,9 @@
 				A99FDB0719CAC16E00D2B3D3 /* SetPassWordViewController.h */,
 				A99FDB0819CAC16E00D2B3D3 /* SetPassWordViewController.m */,
 				A99FDB0919CAC16E00D2B3D3 /* SetPassWordViewController.xib */,
+				A936792819D06A1B004F6EBE /* AuthenticationViewController.h */,
+				A936792919D06A1B004F6EBE /* AuthenticationViewController.m */,
+				A936792A19D06A1B004F6EBE /* AuthenticationViewController.xib */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -1167,6 +1180,7 @@
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
 				A9AF6C6919949CD30076C0EE /* icon_dock_session@2x.png in Resources */,
+				A936792C19D06A1B004F6EBE /* AuthenticationViewController.xib in Resources */,
 				A9AF6C5C19949CD30076C0EE /* icon_dock_forum_actived@2x.png in Resources */,
 				A9C2E4E519B6A0C900C659B3 /* icon_email@2x.png in Resources */,
 				A97F9D1E19B5931C0073E7E6 /* register_button_s@2x.png in Resources */,
@@ -1353,6 +1367,7 @@
 				A986269519B413D600FF9E2C /* DailyIncomeTableViewCell.m in Sources */,
 				A9A7948319C8AC4E00516C60 /* FundAmountTableViewCell.m in Sources */,
 				A986268A19B40AAC00FF9E2C /* SVModalWebViewController.m in Sources */,
+				A9623E2F19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m in Sources */,
 				A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */,
 				A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
@@ -1378,6 +1393,7 @@
 				A97F9D2719B5974B0073E7E6 /* UIUnderlinedButton.m in Sources */,
 				A9AF6BFD19947DD00076C0EE /* AppDelegate.m in Sources */,
 				A9AF6C911994C5700076C0EE /* MJRefreshConst.m in Sources */,
+				A936792B19D06A1B004F6EBE /* AuthenticationViewController.m in Sources */,
 				A95CEA3419B754A800D4605F /* MessageCenterViewController.m in Sources */,
 				A9AF6C931994C5700076C0EE /* MJRefreshHeaderView.m in Sources */,
 				A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */,

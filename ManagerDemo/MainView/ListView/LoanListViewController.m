@@ -63,7 +63,7 @@
 //        [self footerEndRefreshing];
 //    }];
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum",@"WYD",@"type", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
             if (_pageNum == 1) {
                 [_productInfoArray removeAllObjects];

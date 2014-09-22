@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="backgroudView" destination="dUX-Wj-rrD" id="ZVH-rS-caI"/>
                 <outlet property="completeBtn" destination="NA0-Yc-lgR" id="Mjq-DE-CZO"/>
+                <outlet property="infoLabel" destination="jSo-Rl-B1x" id="muz-a0-NNK"/>
                 <outlet property="nameLabel" destination="cH3-xu-AqY" id="qP5-oH-wbO"/>
                 <outlet property="orderAmountTextField" destination="wtp-s8-tvh" id="HXt-pL-sYC"/>
                 <outlet property="startBuyLabel" destination="qO9-6h-Y38" id="aS2-6K-vX4"/>
@@ -110,7 +111,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="投标金额≤50" minimumFontSize="17" id="wtp-s8-tvh">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="投标金额≥50" minimumFontSize="17" id="wtp-s8-tvh">
                                     <rect key="frame" x="95" y="6" width="216" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

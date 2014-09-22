@@ -54,12 +54,13 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.5" contentMode="scaleToFill" id="MKf-vY-jQ4">
-                        <rect key="frame" x="10" y="88" width="300" height="1"/>
+                        <rect key="frame" x="10" y="89" width="300" height="1"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="helpTitle" destination="iqw-Us-kDH" id="AHU-xY-xtY"/>
                 <outlet property="infoTextView" destination="O4g-bd-5uC" id="iif-3u-0xO"/>

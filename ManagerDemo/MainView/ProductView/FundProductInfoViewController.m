@@ -9,6 +9,7 @@
 #import "FundProductInfoViewController.h"
 #import "MJRefresh.h"
 #import "FundCaculateViewController.h"
+#import "MainOrderViewController.h"
 @interface FundProductInfoViewController ()
 {
     NSDictionary* _infoDic;
@@ -45,52 +46,58 @@
 }
 -(void)initData
 {
-    self.navigationItem.title = [_infoDic objectForKey:@"jjmc"];
-    _startBuyLabel.text = [_infoDic objectForKey:@"sgbz"];
-    _qrnhLabel.text = [_infoDic objectForKey:@"qrsy"];
-    _sgrsLabel.text = [_infoDic objectForKey:@"ygrs"];
-    _wfsyLabel.text = [_infoDic objectForKey:@"wfsy"];
-    _detailLabel.text = [NSString stringWithFormat:@"额外%@%%积分奖励",[_infoDic objectForKey:@"fd"]];
-    [self setTypeLabelWithStr:[_infoDic objectForKey:@"jjzq"]];
+    self.navigationItem.title = [[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"proName"];
+    
+    _topTimeLabel.leftTitleLabel.text = @"概况";
+    _topTimeLabel.leftInfoLabel.hidden = YES;
+    _topTimeLabel.rightTitleLabel.hidden = YES;
+    _startBuyLabel.text = [[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"startBuy"];
+    _qrnhLabel.text = [NSString stringWithFormat:@"%@%%",[[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"qrsy"]];
+    _sgrsLabel.text = [[_infoDic objectForKeyWithoutNull:@"detail"] objectForKeyWithoutNull:@"buyPerNum"];
+    _wfsyLabel.text = [NSString stringWithFormat:@"%.4f%%",[[[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"wfsy"] floatValue]];
+    _detailLabel.text = [NSString stringWithFormat:@"额外%@%%积分奖励",[[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"extraPoint"]];
+    [self setTypeLabelWithStr:@"随买随卖"];
     _ysgrsLabel.leftTitleLabel.text = @"已申购人数:";
     _ysgrsLabel.leftInfoLabel.hidden = YES;
     _ysgrsLabel.rightTitleLabel.hidden = YES;
-    _ysgrsLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 人",[_infoDic objectForKey:@"ygrs"]];
+    _ysgrsLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 人",[[_infoDic objectForKeyWithoutNull:@"detail"] objectForKeyWithoutNull:@"buyPerNum"]];
     _gmbsLabel.leftTitleLabel.text = @"购买比数:";
     _gmbsLabel.leftInfoLabel.hidden = YES;
     _gmbsLabel.rightTitleLabel.hidden = YES;
-    _gmbsLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 笔",[_infoDic objectForKey:@"zgmbs"]];
+    _gmbsLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 笔",[[_infoDic objectForKeyWithoutNull:@"detail"] objectForKeyWithoutNull:@"buyNum"]];
     
     _totalAmountLabel.leftTitleLabel.text = @"总申购金额:";
     _totalAmountLabel.leftInfoLabel.hidden = YES;
     _totalAmountLabel.rightTitleLabel.hidden = YES;
-    _totalAmountLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%.2f 元",[[_infoDic objectForKey:@"zsgje"] floatValue]];
+    _totalAmountLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%.2f 元",[[[_infoDic objectForKeyWithoutNull:@"detail"] objectForKeyWithoutNull:@"totalMoney"] floatValue]];
     
     _rjsgLabel.leftTitleLabel.text = @"人均申购金额:";
     _rjsgLabel.leftInfoLabel.hidden = YES;
     _rjsgLabel.rightTitleLabel.hidden = YES;
-    _rjsgLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 元",[_infoDic objectForKey:@"rjje"]];
+    _rjsgLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ 元",[[_infoDic objectForKeyWithoutNull:@"detail"] objectForKeyWithoutNull:@"avgMoney"]];
     _qrnhwfsyLabel.leftTitleLabel.text = @"七日年化:";
-    _qrnhwfsyLabel.leftInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[_infoDic objectForKey:@"qrsy"]];
+    _qrnhwfsyLabel.leftInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"qrnh"]];
     _qrnhwfsyLabel.rightTitleLabel.text = @"万份收益:";
-    _qrnhwfsyLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@元",[_infoDic objectForKey:@"wfsy"]];
+    _qrnhwfsyLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@元",[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"wfsy"]];
     
     _zfLabel.leftTitleLabel.text = @"六个月涨幅:";
-    _zfLabel.leftInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[_infoDic objectForKey:@"hb6y"]];
+    _zfLabel.leftInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"sixMonRose"]];
     _zfLabel.rightTitleLabel.text = @"一年涨幅:";
-    _zfLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[_infoDic objectForKey:@"hb1n"]];
+    _zfLabel.rightInfoLabel.text = [NSString stringWithFormat:@"%@ %%",[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"yearRose"]];
     
     _companyLabel.leftTitleLabel.text = @"基金公司:";
-    _companyLabel.leftInfoLabel.text = [_infoDic objectForKey:@"jjgs"];
+    _companyLabel.leftInfoLabel.text = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"comName"];
     _companyLabel.rightTitleLabel.text = @"销售公司:";
-    _companyLabel.rightInfoLabel.text = [_infoDic objectForKey:@"ssgs"];
+    _companyLabel.rightInfoLabel.text = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"saleComName"];
     
     _fundStateLabel.leftTitleLabel.text = @"基金规模:";
-    _fundStateLabel.leftInfoLabel.text = [_infoDic objectForKey:@"jjgm"];
+    _fundStateLabel.leftInfoLabel.text = [NSString stringWithFormat:@"%.2f 亿",[[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"fundScale"] floatValue]/100000000.0];
     _fundStateLabel.rightTitleLabel.text = @"销售类型:";
-    _fundStateLabel.rightInfoLabel.text = [_infoDic objectForKey:@"fundTypeName"];
-    
-    _moreInfoTextView.text = [_infoDic objectForKey:@"fundIntroduce"];
+    if ([[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"fundType"] integerValue] == 0) {
+        _fundStateLabel.rightInfoLabel.text = @"货币型";
+    }
+
+    _moreInfoTextView.text = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"detailDesc1"];
     _moreInfoTextView.textColor = [UIColor redColor];
 
 }
@@ -107,23 +114,27 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-    
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi getFundDetailWithFundId:_productId withCompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_productId,@"proId", nil] withApiType:@"proDetail" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
             self.navigationItem.title = [jsonRes objectForKey:@"fundName"];
             _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
+            if ([[[jsonRes objectForKey:@"proInfo"] objectForKey:@"state"] integerValue] == 1) {
+                [_toolBarView setEnable:YES];
+            }else{
+                [_toolBarView setEnable:NO];
+            }
         }else{
+            
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
-        [self initData];
         [self.tableView reloadData];
+        [self initData];
         [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
         [self.tableView headerEndRefreshing];
         [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
-
 }
 
 - (void)footerRereshing
@@ -148,10 +159,16 @@
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    if (_infoDic) {
+        return 4;
+    }else{
+        return 0;
+    }
+    return 0;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return 1;
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -263,7 +280,7 @@
 {
     FundCaculateViewController* fundCaculateViewController = [[FundCaculateViewController alloc] init];
     
-    fundCaculateViewController.qrnh = [[_infoDic objectForKey:@"qrsy"] floatValue]/100.0;
+    fundCaculateViewController.qrnh = [[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"qrnh"] floatValue]/100.0;
 //    fundCaculateViewController.name =
     [self.navigationController pushViewController:fundCaculateViewController animated:YES];
 
@@ -272,6 +289,14 @@
 {
     if (![ManagerUser shareInstance].isLogin) {
         [ManagerUtil presentLoginView];
+    }else{
+        MainOrderViewController* mainOrderViewController = [[MainOrderViewController alloc] init];
+        mainOrderViewController.productId =[[_infoDic objectForKey:@"proInfo"] objectForKey:@"id"];
+        mainOrderViewController.productName = [[_infoDic objectForKey:@"proInfo"] objectForKey:@"proName"];
+        mainOrderViewController.timeLimitNum = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"timeLimit"] integerValue];
+        mainOrderViewController.startBuy = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"startBuy"] integerValue];
+        mainOrderViewController.type = 1;
+        [self.navigationController pushViewController:mainOrderViewController animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning
