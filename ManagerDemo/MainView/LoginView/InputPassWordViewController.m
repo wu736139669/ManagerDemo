@@ -57,7 +57,7 @@
     if (_passwordTextField.text.length>0 && _phoneNum.length>0) {
         [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
         DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum",_passwordTextField.text, @"loginPsw", nil] withApiType:@"loginByPsw" completionBlock:^(id jsonRes) {
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum",[ManagerUtil md5:_passwordTextField.text], @"loginPsw", nil] withApiType:@"loginByPsw" completionBlock:^(id jsonRes) {
             if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
                 [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
 

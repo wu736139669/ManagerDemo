@@ -54,7 +54,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.5" contentMode="scaleToFill" id="MKf-vY-jQ4">
-                        <rect key="frame" x="10" y="89" width="300" height="1"/>
+                        <rect key="frame" x="10" y="88" width="300" height="1"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

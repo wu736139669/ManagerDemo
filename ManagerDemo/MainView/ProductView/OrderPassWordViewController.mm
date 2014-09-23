@@ -47,7 +47,6 @@
 #pragma mark UITextFieldDelegate
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-
     return YES;
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -87,7 +86,7 @@
     
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_amount],@"amount", _passwordTextField.text,@"tradePsw",_proId, @"proId", nil] withApiType:@"buyProduct" completionBlock:^(id jsonRes) {
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_amount],@"amount", [ManagerUtil md5:_passwordTextField.text],@"tradePsw",_proId, @"proId", nil] withApiType:@"buyProduct" completionBlock:^(id jsonRes) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {

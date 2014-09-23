@@ -7,7 +7,7 @@
 //
 
 #import "AccountInfoViewController.h"
-
+#import "SetPassWordViewController.h"
 @interface AccountInfoViewController ()
 {
     NSDictionary* _infoDic;
@@ -30,8 +30,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"账户中心";
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    [_topBtn addTarget:self action:@selector(modifyLoginPassword:) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomBtn addTarget:self action:@selector(modifyTransactionsPassword:) forControlEvents:UIControlEventTouchUpInside];
     [self loadData];
 }
 -(void)loadData
@@ -166,9 +169,16 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
--(void)modifyPassword:(id)sender
+-(void)modifyLoginPassword:(id)sender
 {
-    DLog(@"点击");
+    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
+    [self.navigationController pushViewController:setPassWordViewController animated:YES];
+}
+-(void)modifyTransactionsPassword:(id)sender
+{
+    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
+    setPassWordViewController.type = 1;
+    [self.navigationController pushViewController:setPassWordViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning
 {

@@ -241,10 +241,25 @@
 }
 -(void)logout
 {
-    [ManagerUser shareInstance].isLogin = false;
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    [app.mainViewController setSelectedIndex:0];
-    [_tableView reloadData];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"确定退出吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出登录", nil];
+    [alertView show];
+
+}
+
+#pragma mark UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [ManagerUser shareInstance].isLogin = false;
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+        [app.mainViewController setSelectedIndex:0];
+        [_tableView reloadData];
+        DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+        [daiDaiTongTestApi getApiWithParam:nil withApiType:@"logout" completionBlock:^(id jsonRes) {
+        } failedBlock:^(NSError *error) {
+        }];
+
+    }
 }
 - (void)didReceiveMemoryWarning
 {

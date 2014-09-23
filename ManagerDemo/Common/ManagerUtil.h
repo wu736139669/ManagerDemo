@@ -56,4 +56,6 @@
 
 //时间戳转时间
 +(NSString*)timeFromtimeSp:(NSString*)timeSp;
+//md5加密
++(NSString*)md5:(NSString *)str;
 @end

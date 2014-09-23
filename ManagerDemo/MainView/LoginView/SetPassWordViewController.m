@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     if (_type == 0) {
         self.navigationItem.title = @"设置登录密码";
     }else{
@@ -118,13 +119,15 @@
     
     if (_type == 0 ) {
         DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_passWordTextField.text,@"loginPsw", nil] withApiType:@"setLoginPsw" completionBlock:^(id jsonRes) {
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[ManagerUtil md5:_passWordTextField.text],@"loginPsw", nil] withApiType:@"setLoginPsw" completionBlock:^(id jsonRes) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
                 [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
             }else{
                 [self.navigationController dismissViewControllerAnimated:YES completion:^{
                     
                 }];
+                [self.navigationController popViewControllerAnimated:YES];
             }
         } failedBlock:^(NSError *error) {
             
@@ -132,8 +135,10 @@
         }];
 
     }else{
+
         DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_passWordTextField.text,@"tradePsw", nil] withApiType:@"setTradePsw" completionBlock:^(id jsonRes) {
+        [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[ManagerUtil md5:_passWordTextField.text],@"tradePsw", nil] withApiType:@"setTradePsw" completionBlock:^(id jsonRes) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             if (!([[jsonRes objectForKey:@"resultflag"] integerValue] == 0)) {
                 [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
             }else{
