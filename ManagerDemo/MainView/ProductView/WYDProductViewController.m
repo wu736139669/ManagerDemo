@@ -55,22 +55,6 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-//    [daiDaiTongApi getFundDetailWithFundId:_productId withCompletionBlock:^(id jsonRes) {
-//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-//            self.navigationItem.title = [jsonRes objectForKey:@"fundName"];
-//            [_wydInfoHedaView setInfoWithDic:jsonRes];
-//            _infoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
-//            [self.tableView reloadData];
-//        }else{
-//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
-//        }
-//
-//        [self.tableView headerEndRefreshing];
-//    } failedBlock:^(NSError *error) {
-//        [self.tableView headerEndRefreshing];
-//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
-//    }];
     
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_productId,@"proId", nil] withApiType:@"proDetail" completionBlock:^(id jsonRes) {
@@ -88,7 +72,7 @@
             _wydInfoHedaView.hidden = NO;
         }else{
             
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
             _wydInfoHedaView.hidden = YES;
         }
         [self.tableView headerEndRefreshing];
@@ -149,7 +133,7 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIDentifier = [NSString stringWithFormat:@"CellIDentifier%ld-%ld",indexPath.section,indexPath.row];
+    NSString* cellIDentifier = [NSString stringWithFormat:@"CellIDentifier%ld-%d",indexPath.section,indexPath.row];
     DTAttributedTextCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIDentifier];
     if (!cell) {
         cell = [[DTAttributedTextCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIDentifier];

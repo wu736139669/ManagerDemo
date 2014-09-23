@@ -64,25 +64,15 @@
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
-//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-//    [daiDaiTongApi getAccountInfoWithcompletionBlock:^(id jsonRes) {
-//        
-//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-//            _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
-//        }
-//        [_tableView reloadData];
-//        [_tableView headerEndRefreshing];
-//    } failedBlock:^(NSError *error) {
-//        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
-//        [_tableView reloadData];
-//        [_tableView headerEndRefreshing];
-//    }];
     
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:nil withApiType:@"userMsg" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
-            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
-            [ManagerUtil presentLoginView];
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ManagerUtil presentLoginView];
+            });
+            
         }else{
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             _myInfoDic = [NSDictionary dictionaryWithDictionary:jsonRes];
@@ -216,16 +206,16 @@
     switch (indexPath.section) {
         case 0:
         {
-            cell.textLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"userName"];
+            cell.textLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"realName"];
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"info"] objectForKey:@"cell"];
+            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"userName"];
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
         case 1:
         {
-            NSDate *  senddate=[NSDate date];
+            NSDate *  senddate= [NSDate dateWithTimeIntervalSinceNow:-(24 * 60 * 60)];
             NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
             
             [dateformatter setDateFormat:@"MM月dd日"];
@@ -233,6 +223,7 @@
             NSString *  locationString=[dateformatter stringFromDate:senddate];
             _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",locationString];
             _profitLabel.text = [NSString stringWithFormat:@"%.2f",_todayProfit];
+            NSLog(@"%f",_todayProfit);
         }
             break;
         case 2:

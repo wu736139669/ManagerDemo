@@ -31,16 +31,26 @@
     }else{
         dic = [[NSMutableDictionary alloc] init];
     }
+    NSString* sign = @"";
     NSDate* timeDate = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval =[timeDate timeIntervalSince1970]*1000;
-    NSString *timeString = [NSString stringWithFormat:@"%f", timeInterval];//转为字符型
-    [dic setObject:timeString forKey:@"timeStamp"];
-    if ([ManagerUser shareInstance].token.length > 0) {
-        [dic setObject:[ManagerUser shareInstance].token forKey:@"token"];
-    }
+//    NSString *timeString = [NSString stringWithFormat:@"%f", timeInterval];//转为字符型
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MMddHHmm:ss"];
+    NSString *  timeString=[dateformatter stringFromDate:timeDate];
+    [dic setObject:[NSString stringWithFormat:@"%f", timeInterval] forKey:@"timeStamp"];
+    
     if ([ManagerUser shareInstance].userId.length > 0) {
         [dic setObject:[ManagerUser shareInstance].userId forKey:@"userid"];
     }
+    if ([ManagerUser shareInstance].token.length > 0) {
+        [dic setObject:[ManagerUser shareInstance].token forKey:@"token"];
+        sign = [sign stringByAppendingString:[ManagerUser shareInstance].token];
+    }
+    sign = [sign stringByAppendingString:timeString];
+    sign = [sign stringByAppendingString:@"qHdKC5yNgKwdi1BFa5EKOw29fwYeetV78EcSN04H93jBYvoLkP631rFcSa3OT3Np"];
+    [dic setObject:[ManagerUtil md5:sign] forKey:@"sign"];
+
     NSError *parseError = nil;
     NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
     NSString* tempStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
