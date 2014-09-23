@@ -68,7 +68,6 @@
 }
 -(void)firstRefresh
 {
-    NSLog(@"%d",_productInfoArray.count);
     if ([_productInfoArray count] <= 0) {
         [self headerBeginRefreshing];
     }

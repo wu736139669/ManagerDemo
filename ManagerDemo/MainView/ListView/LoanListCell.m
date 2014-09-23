@@ -45,7 +45,7 @@
 }
 -(void)setPercent:(NSInteger) percent
 {
-    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%d</span> %%",percent];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\"font-size:20px; color:red; text-align:center; \">%ld</span> %%",percent];
     NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
     NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
@@ -72,18 +72,18 @@
 -(void)setInfoDic:(NSDictionary *)dic
 {
 
-    self.productId = [dic objectForKey:@"id"];
-    self.profitLabel.text = [NSString stringWithFormat:@"%.2f%%",[[dic objectForKey:@"nhsy"] floatValue]];
-    self.nameLabel.text = [dic objectForKey:@"proName"];
-    if ([[dic objectForKey:@"tip"] isKindOfClass:[NSNull class]]) {
+    self.productId = [dic objectForKeyWithoutNull:@"id"];
+    self.profitLabel.text = [NSString stringWithFormat:@"%.2f%%",[[dic objectForKeyWithoutNull:@"nhsy"] floatValue]];
+    self.nameLabel.text = [dic objectForKeyWithoutNull:@"proName"];
+    if ([[dic objectForKeyWithoutNull:@"tip"] isKindOfClass:[NSNull class]]) {
         self.typeLabel.text = @"";
     }else{
-        self.typeLabel.text = [dic objectForKey:@"tip"];
+        self.typeLabel.text = [dic objectForKeyWithoutNull:@"tip"];
     }
 //    if ([[dic objectForKey:@"state"] integerValue] == 1 ) {
-        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
-        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
-        NSString* timeStr = [NSString stringWithFormat:@"<span  style=\" color:green;\">限</span>%@个月起",[dic objectForKey:@"timeLimit"]];
+        [self setPercent:[[dic objectForKeyWithoutNull:@"percent"] floatValue]];
+        [self setStartBuy:[[dic objectForKeyWithoutNull:@"startBuy"] integerValue]];
+        NSString* timeStr = [NSString stringWithFormat:@"<span  style=\" color:green;\">限</span>%@个月起",[dic objectForKeyWithoutNull:@"timeLimit"]];
         [self setTimeWithString:timeStr];
 //    }
 //    else if([[dic objectForKey:@"state"] integerValue] == 2){
