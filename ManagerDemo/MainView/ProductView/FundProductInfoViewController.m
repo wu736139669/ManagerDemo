@@ -9,6 +9,7 @@
 #import "FundProductInfoViewController.h"
 #import "MJRefresh.h"
 #import "FundCaculateViewController.h"
+#import "ComPanyAboutViewController.h"
 #import "MainOrderViewController.h"
 @interface FundProductInfoViewController ()
 {
@@ -32,10 +33,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    _tableView.userInteractionEnabled = YES;
     _toolBarView.delegate = self;
     //加入刷新
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
@@ -164,7 +165,7 @@
     }else{
         return 0;
     }
-    return 0;
+    return 4;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -275,6 +276,24 @@
             break;
     }
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (indexPath.section == 4) {
+        ComPanyAboutViewController* comPanyAboutViewController = [[ComPanyAboutViewController alloc] init];
+        comPanyAboutViewController.hidesBottomBarWhenPushed = YES;
+        comPanyAboutViewController.comPanyName = [[_infoDic objectForKeyWithoutNull:@"proInfo"] objectForKeyWithoutNull:@"proName"];
+        comPanyAboutViewController.jjComPanyNameStr = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"comName"];
+        comPanyAboutViewController.xsComPanyNameStr = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"saleComName"];
+        comPanyAboutViewController.fundStateStr = [NSString stringWithFormat:@"%.2f 亿",[[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"fundScale"] floatValue]/100000000.0];
+        comPanyAboutViewController.fundTypeStr = @"货币型";
+        comPanyAboutViewController.detailInfo1 = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"detailDesc1"];
+        comPanyAboutViewController.detailInfo2 = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"detailDesc2"];
+        comPanyAboutViewController.detailInfo3 = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"detailDesc3"];
+        [self.navigationController pushViewController:comPanyAboutViewController animated:YES];
+    }
+ 
 }
 #pragma mark ToolBarViewDelegate
 -(void)caculateProfit

@@ -38,13 +38,14 @@
     [ManagerUtil SetSubViewExternNone:self];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     NSArray *nib=[[NSBundle mainBundle]loadNibNamed:@"WYDInfoHeadView" owner:self options:nil];
     _wydInfoHedaView = (WYDInfoHeadView*)[nib objectAtIndex:0];
     _tableView.tableHeaderView = _wydInfoHedaView;
     _wydInfoHedaView.hidden = YES;
     
     _toolBarView.delegate = self;
+    _toolBarView.hidden = YES;
     //加入刷新
     [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     
@@ -69,6 +70,7 @@
             }
             self.navigationItem.title = [[jsonRes objectForKey:@"proInfo"] objectForKey:@"proName"];
             [self.tableView reloadData];
+            _toolBarView.hidden = NO;
             _wydInfoHedaView.hidden = NO;
         }else{
             
@@ -133,7 +135,7 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIDentifier = [NSString stringWithFormat:@"CellIDentifier%ld-%d",indexPath.section,indexPath.row];
+    NSString* cellIDentifier = [NSString stringWithFormat:@"CellIDentifier%ld-%ld",indexPath.section,indexPath.row];
     DTAttributedTextCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIDentifier];
     if (!cell) {
         cell = [[DTAttributedTextCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIDentifier];
@@ -172,7 +174,7 @@
 }
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    UIView* view = [ManagerUtil lineWithColor:[UIColor clearColor] withAlpha:1.0 withFrame:CGRectMake(0, 0, 320, 1)];
+    UIView* view = [ManagerUtil lineWithColor:Touch_BackGroudColor withAlpha:1.0 withFrame:CGRectMake(0, 0, 320, 1)];
     return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

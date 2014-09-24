@@ -118,6 +118,12 @@
 		A9A59E8419D299EA00D7DC4F /* tab_mine_p_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E7C19D299EA00D7DC4F /* tab_mine_p_bg@2x.png */; };
 		A9A59E8519D299EA00D7DC4F /* tab_more_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E7D19D299EA00D7DC4F /* tab_more_bg@2x.png */; };
 		A9A59E8619D299EA00D7DC4F /* tab_more_p_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E7E19D299EA00D7DC4F /* tab_more_p_bg@2x.png */; };
+		A9A59E8A19D2BB2600D7DC4F /* ComPanyAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A59E8819D2BB2600D7DC4F /* ComPanyAboutViewController.m */; };
+		A9A59E8B19D2BB2600D7DC4F /* ComPanyAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8919D2BB2600D7DC4F /* ComPanyAboutViewController.xib */; };
+		A9A59E8D19D2C40100D7DC4F /* hw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8C19D2C40100D7DC4F /* hw@2x.png */; };
+		A9A59E9119D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8E19D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png */; };
+		A9A59E9219D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8F19D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png */; };
+		A9A59E9319D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E9019D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png */; };
 		A9A6AD2F19CB1C7000626B48 /* MainOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */; };
 		A9A6AD3019CB1C7000626B48 /* MainOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */; };
 		A9A6AD3419CB26FD00626B48 /* OrderPassWordViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD3219CB26FD00626B48 /* OrderPassWordViewController.mm */; };
@@ -403,6 +409,13 @@
 		A9A59E7C19D299EA00D7DC4F /* tab_mine_p_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_mine_p_bg@2x.png"; sourceTree = "<group>"; };
 		A9A59E7D19D299EA00D7DC4F /* tab_more_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_more_bg@2x.png"; sourceTree = "<group>"; };
 		A9A59E7E19D299EA00D7DC4F /* tab_more_p_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_more_p_bg@2x.png"; sourceTree = "<group>"; };
+		A9A59E8719D2BB2600D7DC4F /* ComPanyAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComPanyAboutViewController.h; sourceTree = "<group>"; };
+		A9A59E8819D2BB2600D7DC4F /* ComPanyAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComPanyAboutViewController.m; sourceTree = "<group>"; };
+		A9A59E8919D2BB2600D7DC4F /* ComPanyAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComPanyAboutViewController.xib; sourceTree = "<group>"; };
+		A9A59E8C19D2C40100D7DC4F /* hw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw@2x.png"; sourceTree = "<group>"; };
+		A9A59E8E19D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_1@2x.png"; sourceTree = "<group>"; };
+		A9A59E8F19D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_2@2x.png"; sourceTree = "<group>"; };
+		A9A59E9019D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_3@2x.png"; sourceTree = "<group>"; };
 		A9A6AD2C19CB1C7000626B48 /* MainOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainOrderViewController.h; sourceTree = "<group>"; };
 		A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainOrderViewController.m; sourceTree = "<group>"; };
 		A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainOrderViewController.xib; sourceTree = "<group>"; };
@@ -621,6 +634,9 @@
 				A970885F19D273E700F880C1 /* OtherCaculateViewController.h */,
 				A970886019D273E700F880C1 /* OtherCaculateViewController.m */,
 				A970886119D273E700F880C1 /* OtherCaculateViewController.xib */,
+				A9A59E8719D2BB2600D7DC4F /* ComPanyAboutViewController.h */,
+				A9A59E8819D2BB2600D7DC4F /* ComPanyAboutViewController.m */,
+				A9A59E8919D2BB2600D7DC4F /* ComPanyAboutViewController.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -909,8 +925,12 @@
 				A99EBEBB19CBAFE3005E1AA0 /* Icon-114.png */,
 				A9D7A71B19C913A60029911F /* sale_blue_icon@2x.png */,
 				A95CEA3B19B7667400D4605F /* icon_success@2x.png */,
+				A9A59E8E19D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png */,
+				A9A59E8F19D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png */,
+				A9A59E9019D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png */,
 				A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */,
 				A97F9D1C19B5931C0073E7E6 /* register_button_s@2x.png */,
+				A9A59E8C19D2C40100D7DC4F /* hw@2x.png */,
 				A97F9D1D19B5931C0073E7E6 /* register_button@2x.png */,
 				A97F9D1819B592FD0073E7E6 /* login_button_s@2x.png */,
 				A97F9D1919B592FD0073E7E6 /* login_button@2x.png */,
@@ -1220,6 +1240,7 @@
 				A986268B19B40AAC00FF9E2C /* SVWebViewController.bundle in Resources */,
 				A9AF6C731994B5890076C0EE /* icon_bar_share@2x.png in Resources */,
 				A97F9D1519B592E90073E7E6 /* get_ver_button_gry@2x.png in Resources */,
+				A9A59E9219D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png in Resources */,
 				A95CEA3A19B755C000D4605F /* MessageCenterTableViewCell.xib in Resources */,
 				A9EAA04019985EDE001A872A /* HomeMainView.xib in Resources */,
 				A988A902199A755300EB10AA /* FundListCell.xib in Resources */,
@@ -1267,6 +1288,7 @@
 				A9EAA04E1998787B001A872A /* hk_home_center__cycle@2x.png in Resources */,
 				A9EAA0501998787B001A872A /* hk_home_center_cover@2x.png in Resources */,
 				A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */,
+				A9A59E9319D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png in Resources */,
 				A9AF6C6719949CD30076C0EE /* icon_dock_session_actived@2x.png in Resources */,
 				A9202B8819C95B97009932C2 /* ProFitCaculateViewController.xib in Resources */,
 				A9EC95BB19B54FDB00681678 /* textField_cancel_ios7_s.png in Resources */,
@@ -1278,6 +1300,7 @@
 				A93F87821999BB1D00875287 /* red_line_and_shadow@2x.png in Resources */,
 				A9A59E8619D299EA00D7DC4F /* tab_more_p_bg@2x.png in Resources */,
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
+				A9A59E8D19D2C40100D7DC4F /* hw@2x.png in Resources */,
 				A9A59E8319D299EA00D7DC4F /* tab_mine_bg@2x.png in Resources */,
 				A904E4AB19BEF18A0014F694 /* about_logo@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
@@ -1290,6 +1313,7 @@
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
 				A904E4A719BEF11F0014F694 /* AboutViewController.xib in Resources */,
 				A9A59E7619D299DE00D7DC4F /* sale_red_icon@2x.png in Resources */,
+				A9A59E8B19D2BB2600D7DC4F /* ComPanyAboutViewController.xib in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9A59E7519D299DE00D7DC4F /* sale_gray_icon@2x.png in Resources */,
@@ -1334,6 +1358,7 @@
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
 				A9EAA04F1998787B001A872A /* hk_home_center_bg@2x.png in Resources */,
 				A9EE5EE819C20CDA004E7A2C /* WYDAmountTableViewCell.xib in Resources */,
+				A9A59E9119D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png in Resources */,
 				A9AF6C6319949CD30076C0EE /* icon_dock_rt@2x.png in Resources */,
 				A9354F5D19B870C700FDCB52 /* BaseListViewController.xib in Resources */,
 				A93320C319BFE8090090D640 /* MyTotalAmountViewController.xib in Resources */,
@@ -1439,6 +1464,7 @@
 				A9AA326119970335000BE4FB /* ImagePlayerView.m in Sources */,
 				A93320C719C0227F0090D640 /* MyHoldAmountViewController.m in Sources */,
 				A99EBEAE19CB9E8A005E1AA0 /* TransactionRecordsTableViewCell.m in Sources */,
+				A9A59E8A19D2BB2600D7DC4F /* ComPanyAboutViewController.m in Sources */,
 				A9971D7919B8C39C0079F143 /* DatailProfitTopTableViewCell.m in Sources */,
 				A9AF6C0319947DD00076C0EE /* ViewController.m in Sources */,
 				A90BEC01199DDA9E00230242 /* WYDProductViewController.m in Sources */,

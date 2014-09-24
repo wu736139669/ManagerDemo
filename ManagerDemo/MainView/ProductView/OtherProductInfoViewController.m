@@ -258,9 +258,9 @@
             
             break;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
 #pragma mark ToolBarViewDelegate
 -(void)caculateProfit
 {
