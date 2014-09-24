@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.navigationItem.title = @"持有资产";
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 49)];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.backgroundColor = [UIColor clearColor];
@@ -46,7 +46,28 @@
     _accBalanceView.wrapperColor = Touch_BackGroudColor;
     _accBalanceView.wrapperArcWidth = 5.0;
     _accBalanceView.progressArcWidth = 5.0;
-    [self setTotalAmount:_totalAmount withHoldAmount:_holdAmount withAccBalance:_accBalance];
+    
+    _holdAmountView.hidden = YES;
+    _accBalanceView.hidden = YES;
+    [self loadData];
+}
+-(void)loadData
+{
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"totalAssets" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
+            
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [self setTotalAmount:[[jsonRes objectForKey:@"totalAssets"] integerValue] withHoldAmount:[[jsonRes objectForKey:@"holdAssets"] integerValue] withAccBalance:[[jsonRes objectForKey:@"balance"] integerValue]];
+            _holdAmountView.hidden = NO;
+            _accBalanceView.hidden = NO;
+        }
+    } failedBlock:^(NSError *error) {
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
+    }];
+
 }
 -(void)setTotalAmount:(float)totalAmount withHoldAmount:(float)holdAmount withAccBalance:(float)accBalance
 {

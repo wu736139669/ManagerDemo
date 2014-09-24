@@ -95,6 +95,8 @@
 }
 -(void)rightBtnClick:(id)sender
 {
-    
+    if ([_delegate respondsToSelector:@selector(totalProfitClick)]) {
+        [_delegate totalProfitClick];
+    }
 }
 @end

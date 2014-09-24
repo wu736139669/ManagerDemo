@@ -11,7 +11,9 @@
 @interface MyHoldAmountViewController : UIViewController<QCSlideSwitchViewDelegate>
 {
     float _totalAmount;
+    NSInteger _type;
 }
+@property (assign, nonatomic)NSInteger type;
 @property (assign, nonatomic)float totalAmount;
 @property (weak, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 

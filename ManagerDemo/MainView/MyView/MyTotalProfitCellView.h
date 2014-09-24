@@ -11,6 +11,7 @@
 @protocol MyTotalProfitCellViewDelegate <NSObject>
 
 -(void)totalMoneyClick;
+-(void)totalProfitClick;
 
 @end
 @interface MyTotalProfitCellView : UIView

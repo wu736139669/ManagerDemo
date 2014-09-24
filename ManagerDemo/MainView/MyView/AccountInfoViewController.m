@@ -8,6 +8,8 @@
 
 #import "AccountInfoViewController.h"
 #import "SetPassWordViewController.h"
+#import "ModifyPassWordViewController.h"
+#import "AuthenticationViewController.h"
 @interface AccountInfoViewController ()
 {
     NSDictionary* _infoDic;
@@ -35,7 +37,7 @@
     _tableView.dataSource = self;
     [_topBtn addTarget:self action:@selector(modifyLoginPassword:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomBtn addTarget:self action:@selector(modifyTransactionsPassword:) forControlEvents:UIControlEventTouchUpInside];
-    [self loadData];
+//    [self loadData];
 }
 -(void)loadData
 {
@@ -55,10 +57,7 @@
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (!_infoDic) {
-        return 0;
-    }
-    return 5;
+    return 4;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -85,7 +84,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         return 90;
     }
     return 44;
@@ -111,7 +110,7 @@
         {
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.textLabel.text = @"账户";
-            cell.detailTextLabel.text = [_infoDic objectForKey:@"cell"];
+            cell.detailTextLabel.text = _phoneNum;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
             break;
@@ -121,25 +120,17 @@
             if (indexPath.row == 0) {
                 cell.imageView.image = [UIImage imageNamed:@"icon_color_name"];
                 cell.textLabel.text = @"实名认证";
-                cell.detailTextLabel.text = [_infoDic objectForKey:@"realName"];
+                cell.detailTextLabel.text = _name;
             }else{
                 cell.imageView.image = [UIImage imageNamed:@"icon_color_idcard"];
                 cell.textLabel.text = @"身份认证";
-                cell.detailTextLabel.text = [_infoDic objectForKey:@"certNo"];
+                cell.detailTextLabel.text = _idCard;
             }
         }
             
             break;
+
         case 2:
-        {
-            cell.imageView.image = [UIImage imageNamed:@"icon_color_bank"];
-            cell.textLabel.text = @"银行卡管理";
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"(%@)",[_infoDic objectForKey:@"cardNum"]];
-            
-        }
-            break;
-        case 3:
         {
             _modifyInfoCell.selectionStyle = UITableViewCellSelectionStyleNone;
             [_topBtn setBackgroundImage:[ManagerUtil buttonImageFromColor:[UIColor lightGrayColor] withFrame:_topBtn.frame] forState:UIControlStateHighlighted];
@@ -148,7 +139,7 @@
             return _modifyInfoCell;
         }
             break;
-        case 4:
+        case 3:
         {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.imageView.image = [UIImage imageNamed:@"hw_verifycard_info_icon"];
@@ -157,6 +148,15 @@
             [switchButton setOn:YES];
 //            [switchButton addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
             cell.accessoryView = switchButton;
+            
+        }
+            break;
+        case 4:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"icon_color_bank"];
+            cell.textLabel.text = @"银行卡管理";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"(%@)",[_infoDic objectForKey:@"cardNum"]];
             
         }
             break;
@@ -171,14 +171,24 @@
 }
 -(void)modifyLoginPassword:(id)sender
 {
-    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
-    [self.navigationController pushViewController:setPassWordViewController animated:YES];
+    ModifyPassWordViewController* modifyPassWordViewController = [[ModifyPassWordViewController alloc] init];
+    modifyPassWordViewController.type = 0;
+    modifyPassWordViewController.phoneNum = _phoneNum;
+    [self.navigationController pushViewController:modifyPassWordViewController animated:YES];
+//    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
+//    [self.navigationController pushViewController:setPassWordViewController animated:YES];
 }
 -(void)modifyTransactionsPassword:(id)sender
 {
-    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
-    setPassWordViewController.type = 1;
-    [self.navigationController pushViewController:setPassWordViewController animated:YES];
+    ModifyPassWordViewController* modifyPassWordViewController = [[ModifyPassWordViewController alloc] init];
+    modifyPassWordViewController.type = 1;
+    modifyPassWordViewController.phoneNum = _phoneNum;
+    [self.navigationController pushViewController:modifyPassWordViewController animated:YES];
+//    AuthenticationViewController* authenticationViewController = [[AuthenticationViewController alloc] init];
+//    [self.navigationController pushViewController:authenticationViewController animated:YES];
+//    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
+//    setPassWordViewController.type = 1;
+//    [self.navigationController pushViewController:setPassWordViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning
 {

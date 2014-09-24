@@ -44,6 +44,7 @@
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.numberOfLines = 0;
     self.navigationItem.titleView = _titleLabel;
+    _titleLabel.text = [NSString stringWithFormat:@"持有资产(元)\n%.2f",_totalAmount];
     [self initData];
     
 }

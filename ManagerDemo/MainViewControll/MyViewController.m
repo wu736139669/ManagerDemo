@@ -58,15 +58,22 @@
     _tableView.allowsSelection = YES;
     [_tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self headerRereshing];
-
+    [self.tableView headerBeginRefreshing];
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (_myInfoDic == nil) {
+        [self.tableView headerBeginRefreshing];
+    }
 }
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing
 {
     
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"userMsg" completionBlock:^(id jsonRes) {
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"userAccount" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -79,25 +86,29 @@
 
         }
         [_tableView reloadData];
+        [_tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
+        [_tableView reloadData];
+        [_tableView headerEndRefreshing];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
     }];
     
 
-    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"todayProfit" completionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
-            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
-        }else{
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            _todayProfit = [[jsonRes objectForKey:@"todayProfit"] floatValue];
-            
-        }
-        [_tableView reloadData];
-        [_tableView headerEndRefreshing];
-    } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
-        [_tableView reloadData];
-        [_tableView headerEndRefreshing];
-    }];
+//    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"todayProfit" completionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"resultflag"] integerValue] != 0) {
+//            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+//        }else{
+//            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//            _todayProfit = [[jsonRes objectForKey:@"todayProfit"] floatValue];
+//            
+//        }
+//        [_tableView reloadData];
+//        [_tableView headerEndRefreshing];
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+//        [_tableView reloadData];
+//        [_tableView headerEndRefreshing];
+//    }];
 }
 
 - (void)footerRereshing
@@ -147,7 +158,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d%d",indexPath.section,indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld%ld",indexPath.section,indexPath.row];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
@@ -206,10 +217,10 @@
     switch (indexPath.section) {
         case 0:
         {
-            cell.textLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"realName"];
+            cell.textLabel.text = [_myInfoDic objectForKeyWithoutNull:@"realName"];
             cell.imageView.image = [UIImage imageNamed:@"icon_person_take_image"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.detailTextLabel.text = [[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"userName"];
+            cell.detailTextLabel.text = [_myInfoDic  objectForKeyWithoutNull:@"userName"];
             cell.selectedBackgroundView.backgroundColor = Touch_BackGroudColor;
         }
             break;
@@ -217,24 +228,21 @@
         {
             NSDate *  senddate= [NSDate dateWithTimeIntervalSinceNow:-(24 * 60 * 60)];
             NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-            
             [dateformatter setDateFormat:@"MM月dd日"];
-            
             NSString *  locationString=[dateformatter stringFromDate:senddate];
             _timeLabel.text = [NSString stringWithFormat:@"%@收益(元)",locationString];
-            _profitLabel.text = [NSString stringWithFormat:@"%.2f",_todayProfit];
-            NSLog(@"%f",_todayProfit);
+            _profitLabel.text = [NSString stringWithFormat:@"%.2f",[[_myInfoDic  objectForKeyWithoutNull:@"lastDayProfit"] floatValue]];
         }
             break;
         case 2:
         {
-            _myTotalProfitCellView.totalMoneyLabel.text = [[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalAssets"] stringValue];
-            _myTotalProfitCellView.profitMoneyLabel.text = [[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalProfit"] stringValue];
+            _myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic  objectForKeyWithoutNull:@"totalAssets"] ;
+            _myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic  objectForKeyWithoutNull:@"totalProfit"];
         }
             break;
         case 4:
         {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[[[_myInfoDic objectForKey:@"userMsg"] objectForKey:@"totalIntegral"] stringValue]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",[_myInfoDic  objectForKeyWithoutNull:@"totalIntegral"]];
 
         }
             break;
@@ -253,6 +261,9 @@
         case 0:
         {
             AccountInfoViewController* accountInfoViewController = [[AccountInfoViewController alloc] init];
+            accountInfoViewController.name = [_myInfoDic objectForKey:@"realName"];
+            accountInfoViewController.idCard = [_myInfoDic objectForKey:@"idcardNo"];
+            accountInfoViewController.phoneNum = [_myInfoDic objectForKey:@"userName"];
             accountInfoViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:accountInfoViewController animated:YES];
         }
@@ -261,7 +272,7 @@
         {
             DailyProfitViewController* dailyProfitViewController = [[DailyProfitViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
             dailyProfitViewController.hidesBottomBarWhenPushed = YES;
-            dailyProfitViewController.profitDate = [_myInfoDic objectForKey:@"profitDate"];
+            dailyProfitViewController.totalProfit = [[_myInfoDic objectForKey:@"lastDayProfit"] floatValue];
             [self.navigationController pushViewController:dailyProfitViewController animated:YES];
         }
             break;
@@ -281,8 +292,16 @@
 {
     MyTotalAmountViewController* myTotalAmountViewController = [[MyTotalAmountViewController alloc] init];
     myTotalAmountViewController.hidesBottomBarWhenPushed = YES;
-    [myTotalAmountViewController setTotalAmount:[[_myInfoDic objectForKey:@"totalAmount"] floatValue] withHoldAmount:[[_myInfoDic objectForKey:@"holdAmount"] floatValue] withAccBalance:[[_myInfoDic objectForKey:@"accBalance"] floatValue]];
+//    [myTotalAmountViewController setTotalAmount:[[_myInfoDic objectForKey:@"totalAmount"] floatValue] withHoldAmount:[[_myInfoDic objectForKey:@"holdAmount"] floatValue] withAccBalance:[[_myInfoDic objectForKey:@"accBalance"] floatValue]];
     [self.navigationController pushViewController:myTotalAmountViewController animated:YES];
+}
+-(void)totalProfitClick
+{
+    DailyProfitViewController* dailyProfitViewController = [[DailyProfitViewController alloc] initWithNibName:@"BaseListViewController" bundle:nil];
+    dailyProfitViewController.hidesBottomBarWhenPushed = YES;
+    dailyProfitViewController.totalProfit = [[_myInfoDic objectForKey:@"totalProfit"] floatValue];
+    dailyProfitViewController.type = 1;
+    [self.navigationController pushViewController:dailyProfitViewController animated:YES];
 }
 #pragma mark - UIBarButtonClick   导航条两边按钮
 -(void)leftBarBtnClick:(id)sender

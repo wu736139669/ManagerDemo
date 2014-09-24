@@ -68,7 +68,7 @@
         cell = (TransactionRecordsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:dailyIncomeTableViewCell];
     }
     cell.nameLabel.text = [[_infoArray objectAtIndex:indexPath.section] objectForKey:@"proName"];
-    cell.timeLabel.text = [ManagerUtil timeFromtimeSp:[[[_infoArray objectAtIndex:indexPath.section] objectForKey:@"tradeTime"] stringValue]];
+    cell.timeLabel.text = [ManagerUtil timeFromtimeSp:[NSString stringWithFormat:@"%f",[[[_infoArray objectAtIndex:indexPath.section] objectForKey:@"tradeTime"] doubleValue]/1000.0]];
     cell.amountLabel.text = [NSString stringWithFormat:@"%.2f",[[[_infoArray objectAtIndex:indexPath.section] objectForKey:@"tradeMoney"] floatValue]];
     return cell;
 }

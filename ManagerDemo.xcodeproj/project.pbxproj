@@ -193,6 +193,8 @@
 		A9B9F14519AEF9BE001A1315 /* TableCellLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14419AEF9BE001A1315 /* TableCellLineView.m */; };
 		A9B9F14C19AF1493001A1315 /* OtherProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */; };
 		A9B9F14D19AF1493001A1315 /* OtherProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */; };
+		A9BA324619D338C500B48A8F /* ModifyPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BA324419D338C500B48A8F /* ModifyPassWordViewController.m */; };
+		A9BA324719D338C500B48A8F /* ModifyPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9BA324519D338C500B48A8F /* ModifyPassWordViewController.xib */; };
 		A9C053FE19AD706C002331A5 /* ToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C053FD19AD706C002331A5 /* ToolBarView.m */; };
 		A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */; };
 		A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */; };
@@ -514,6 +516,9 @@
 		A9B9F14919AF1493001A1315 /* OtherProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherProductInfoViewController.h; sourceTree = "<group>"; };
 		A9B9F14A19AF1493001A1315 /* OtherProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherProductInfoViewController.m; sourceTree = "<group>"; };
 		A9B9F14B19AF1493001A1315 /* OtherProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherProductInfoViewController.xib; sourceTree = "<group>"; };
+		A9BA324319D338C500B48A8F /* ModifyPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPassWordViewController.h; sourceTree = "<group>"; };
+		A9BA324419D338C500B48A8F /* ModifyPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPassWordViewController.m; sourceTree = "<group>"; };
+		A9BA324519D338C500B48A8F /* ModifyPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyPassWordViewController.xib; sourceTree = "<group>"; };
 		A9C053FC19AD706C002331A5 /* ToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBarView.h; sourceTree = "<group>"; };
 		A9C053FD19AD706C002331A5 /* ToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolBarView.m; sourceTree = "<group>"; };
 		A9C0540219ADBCB2002331A5 /* FundProductInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundProductInfoViewController.h; sourceTree = "<group>"; };
@@ -1136,6 +1141,9 @@
 				A936792819D06A1B004F6EBE /* AuthenticationViewController.h */,
 				A936792919D06A1B004F6EBE /* AuthenticationViewController.m */,
 				A936792A19D06A1B004F6EBE /* AuthenticationViewController.xib */,
+				A9BA324319D338C500B48A8F /* ModifyPassWordViewController.h */,
+				A9BA324419D338C500B48A8F /* ModifyPassWordViewController.m */,
+				A9BA324519D338C500B48A8F /* ModifyPassWordViewController.xib */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -1340,6 +1348,7 @@
 				A9233E64199CA44700DA80D8 /* more_icon_5@2x.png in Resources */,
 				A93320CD19C02F0B0090D640 /* WYDAmountViewController.xib in Resources */,
 				A919056A19B07AAF002575DF /* pie_chart_arrow@2x.png in Resources */,
+				A9BA324719D338C500B48A8F /* ModifyPassWordViewController.xib in Resources */,
 				A99EBEBC19CBAFE3005E1AA0 /* Icon-114.png in Resources */,
 				A9EAA052199879CC001A872A /* pie_chart_center@2x.png in Resources */,
 				A9C69458199BD14D00B2CECE /* more_icon_10@2x.png in Resources */,
@@ -1497,6 +1506,7 @@
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
+				A9BA324619D338C500B48A8F /* ModifyPassWordViewController.m in Sources */,
 				A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */,

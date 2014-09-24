@@ -70,30 +70,6 @@
 }
 -(void)loadDataWithDic:(NSDictionary *)dic withType:(NSString *)typeStr WithcompletionBlock:(CompletionBlock)completionBlock failedBlock:(FailedBlock)failedBlock
 {
-//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-//    [daiDaiTongApi getListwithPageNum:_pageNum withType:typeStr withParam:dic withCompletionBlock:^(id jsonRes) {
-//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-//            if (_pageNum == 1) {
-//                [_infoArray removeAllObjects];
-//                [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-//            }
-//            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
-//                [self.tableView removeFooter];
-//            }
-//            completionBlock(jsonRes);
-//            [self.tableView reloadData];
-//        }else{
-//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5]; 
-//        }
-//        [self headerEndRefreshing];
-//        [self footerEndRefreshing];
-//        
-//    } failedBlock:^(NSError *error) {
-//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
-//        [self headerEndRefreshing];
-//        [self footerEndRefreshing];
-//        failedBlock(error);
-//    }];
     
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum", nil] withApiType:typeStr completionBlock:^(id jsonRes) {

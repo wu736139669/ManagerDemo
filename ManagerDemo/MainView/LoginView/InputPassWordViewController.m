@@ -7,6 +7,7 @@
 //
 
 #import "InputPassWordViewController.h"
+#import "ModifyPassWordViewController.h"
 @interface InputPassWordViewController ()
 
 @end
@@ -73,5 +74,12 @@
             [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
         }];
     }
+}
+- (IBAction)forgetBtnClick:(id)sender {
+    ModifyPassWordViewController* modifyPassWordViewController = [[ModifyPassWordViewController alloc] init];
+    modifyPassWordViewController.type = 0;
+    modifyPassWordViewController.phoneNum = _phoneNum;
+    modifyPassWordViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:modifyPassWordViewController animated:YES];
 }
 @end

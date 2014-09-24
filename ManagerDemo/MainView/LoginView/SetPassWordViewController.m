@@ -127,7 +127,7 @@
                 [self.navigationController dismissViewControllerAnimated:YES completion:^{
                     
                 }];
-                [self.navigationController popViewControllerAnimated:YES];
+                [self.navigationController popToRootViewControllerAnimated:YES];
             }
         } failedBlock:^(NSError *error) {
             
@@ -143,7 +143,9 @@
                 [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
             }else{
                 [[ManagerUser shareInstance] setTradePsw:_passWordTextField.text];
-                [self.navigationController popViewControllerAnimated:YES];
+                [self.navigationController dismissViewControllerAnimated:YES completion:^{
+                }];
+                [self.navigationController popToRootViewControllerAnimated:YES];
             }
         } failedBlock:^(NSError *error) {
             

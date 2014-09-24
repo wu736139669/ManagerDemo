@@ -11,6 +11,10 @@
 @interface DailyProfitViewController : BaseListViewController
 {
     NSString* _profitDate;
+    float _totalProfit;
+    NSInteger _type;
 }
+@property(assign, nonatomic)NSInteger type;
+@property(assign, nonatomic)float totalProfit;
 @property(strong, nonatomic)NSString* profitDate;
 @end

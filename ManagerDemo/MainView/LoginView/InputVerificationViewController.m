@@ -126,8 +126,9 @@
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
         }else{
-            [_timer fire];
         }
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(reGetCodeTime) userInfo:nil repeats:YES];
+        [_timer fire];
     } failedBlock:^(NSError *error) {
         
     }];

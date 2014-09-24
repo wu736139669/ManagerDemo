@@ -17,6 +17,7 @@
 @property (strong, nonatomic)NSString* phoneNum;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+- (IBAction)forgetBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 @property (weak, nonatomic) IBOutlet UIUnderlinedButton *forgetBtn;
 - (IBAction)login:(id)sender;
