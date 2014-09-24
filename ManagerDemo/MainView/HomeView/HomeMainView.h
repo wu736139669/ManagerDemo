@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 - (IBAction)sureBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *securityDescLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *tipImg;
 
 
 
@@ -36,5 +37,6 @@
 -(void)setInfo:(NSString*)info;
 -(void)setSecurityDesc:(NSString*)securityDesc;
 -(void)setTime:(NSString*)time withStartBuy:(NSInteger)money;
+-(void)setTipColor:(NSString*)tipColor;
 
 @end

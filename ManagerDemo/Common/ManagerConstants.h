@@ -36,7 +36,7 @@
 /**
  * 点击的背景颜色
  */
-#define Touch_BackGroudColor [UIColor colorWithWhite:0.5 alpha:0.3]
+#define Touch_BackGroudColor [UIColor colorWithWhite:0.8 alpha:0.3]
 /**
  *   错误字符串
  */

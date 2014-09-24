@@ -34,21 +34,20 @@
 -(void)headerRereshing
 {
     
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi productListForType:@"HK" withPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
-
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum",@"QT",@"type", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
             if (_pageNum == 1) {
                 [_productInfoArray removeAllObjects];
                 [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
             }
-            [_productInfoArray addObjectsFromArray: [jsonRes objectForKey:@"datas"]];
+            [_productInfoArray addObjectsFromArray:[jsonRes objectForKey:@"proList"]];
             // 刷新表格
-            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
+            if ([[jsonRes objectForKey:@"totalNum"] integerValue] <= _pageNum*20) {
                 [self.tableView removeFooter];
             }
-            [self.tableView reloadData];
             
+            [self.tableView reloadData];
         }else{
             [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
@@ -56,7 +55,7 @@
         [self footerEndRefreshing];
         
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
         [self headerEndRefreshing];
         [self footerEndRefreshing];
     }];
@@ -94,7 +93,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    FundListCell* cell = (FundListCell*)[tableView cellForRowAtIndexPath:indexPath];
     OtherProductInfoViewController* otherProductInfoViewController =[[OtherProductInfoViewController alloc] init];
+    otherProductInfoViewController.productId = cell.productId;
     otherProductInfoViewController.hidesBottomBarWhenPushed = YES;
     [self.delegate.navigationController pushViewController:otherProductInfoViewController animated:YES];
     

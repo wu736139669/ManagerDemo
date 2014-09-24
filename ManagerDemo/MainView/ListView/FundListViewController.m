@@ -33,31 +33,6 @@
 #pragma mark MJRefreshDelegate
 -(void)loadData
 {
-//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-//    [daiDaiTongApi productListForType:@"HW" withPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
-//
-//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-//            if (_pageNum == 1) {
-//                [_productInfoArray removeAllObjects];
-//                [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
-//            }
-//            [_productInfoArray addObjectsFromArray:[jsonRes objectForKey:@"datas"]];
-//            // 刷新表格
-//            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
-//                [self.tableView removeFooter];
-//            }
-//            [self.tableView reloadData];
-//        }else{
-//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
-//        }
-//        [self headerEndRefreshing];
-//        [self footerEndRefreshing];
-//        
-//    } failedBlock:^(NSError *error) {
-//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
-//        [self headerEndRefreshing];
-//        [self footerEndRefreshing];
-//    }];
     
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum",@"JJ",@"type", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {

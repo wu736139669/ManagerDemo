@@ -11,10 +11,15 @@
 @interface FundCaculateViewController : UIViewController<UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource>
 {
     float _qrnh;
+    float _extraPoint;
     NSString* _name;
+    NSString* _productId;
+    
 }
 @property (strong, nonatomic)NSString* name;
+@property (strong, nonatomic)NSString* productId;
 @property (assign, nonatomic)float qrnh;
+@property (assign, nonatomic)float extraPoint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sgqeLabel;

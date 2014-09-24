@@ -95,7 +95,7 @@
     NSCharacterSet* nonDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     time = [time stringByReplacingOccurrencesOfString:[time stringByTrimmingCharactersInSet:nonDigits] withString:[NSString stringWithFormat:@"限<span  style=\"font-size:13px; color:red;\">%@</span>个月",[time stringByTrimmingCharactersInSet:nonDigits]]];
     //时间
-    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">%@<span  style=\"font-size:13px; color:red;\">%d</span>元起购</span>",time,money];
+    NSString* htmlStr = [NSString stringWithFormat:@"<span style=\"font-size:11px;text-align:center; \">%@<span  style=\"font-size:13px; color:red;\">%ld</span>元起购</span>",time,money];
     NSData* data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString* percentString = [[NSAttributedString alloc] initWithHTMLData:data documentAttributes:NULL];
     _timeLabel.attributedString = percentString;
@@ -111,6 +111,16 @@
 -(void)setSecurityDesc:(NSString *)securityDesc
 {
     [_securityDescLabel setText:securityDesc];
+}
+-(void)setTipColor:(NSString*)tipColor
+{
+    if ([tipColor isEqualToString:@"RED"]) {
+        [_tipImg setImage:[UIImage imageNamed:@"sale_red_icon"]];
+    }else if([tipColor isEqualToString:@"GRAY"]){
+        [_tipImg setImage:[UIImage imageNamed:@"sale_gray_icon"]];
+    }else{
+        [_tipImg setImage:[UIImage imageNamed:@"sale_blue_icon"]];
+    }
 }
 #pragma mark - CABasicAnimationDelegate
 

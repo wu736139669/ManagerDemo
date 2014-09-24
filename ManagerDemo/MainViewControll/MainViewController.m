@@ -34,13 +34,13 @@
         //第四页
         _myMoreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
-            [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"icon_dock_home"] selectedImage:[UIImage imageNamed:@"icon_dock_home_actived"]]];
+            [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"tab_home_bg"] selectedImage:[UIImage imageNamed:@"tab_home_p_bg"]]];
             
-            [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"产品列表" image:[UIImage imageNamed:@"icon_dock_session"] selectedImage:[UIImage imageNamed:@"icon_dock_session_actived"]]];
+            [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"产品列表" image:[UIImage imageNamed:@"tab_fund_list_bg"] selectedImage:[UIImage imageNamed:@"tab_fund_list_p_bg"]]];
             
-            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"我的贷贷" image:[UIImage imageNamed:@"icon_dock_mine"] selectedImage:[UIImage imageNamed:@"icon_dock_mine_actived"]]];
+            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"我的贷贷" image:[UIImage imageNamed:@"tab_mine_bg"] selectedImage:[UIImage imageNamed:@"tab_mine_p_bg"]]];
             
-            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"更多" image:[UIImage imageNamed:@"icon_dock_service"] selectedImage:[UIImage imageNamed:@"icon_dock_service_actived"]]];
+            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"更多" image:[UIImage imageNamed:@"tab_more_bg"] selectedImage:[UIImage imageNamed:@"tab_more_p_bg"]]];
         }
         
         self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _myMoreNavigationController];
@@ -55,6 +55,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor clearColor]];
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
     
 }
 

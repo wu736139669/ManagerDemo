@@ -40,6 +40,8 @@
 /**
  *
  */
++(UIView*)dottedlinewithFrame:(CGRect)frame;
+
 +(UIView*)lineWithColor:(UIColor*)color withAlpha:(CGFloat)alpha withFrame:(CGRect)frame;
 
 +(UIView*)selectBackgroudViewWithFrame:(CGRect)frame;

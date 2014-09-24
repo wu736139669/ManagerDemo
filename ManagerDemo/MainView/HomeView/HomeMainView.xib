@@ -120,6 +120,7 @@
                 <outlet property="percentView" destination="r0t-sm-d8w" id="ncm-g1-PfS"/>
                 <outlet property="securityDescLabel" destination="G0Z-tK-6d4" id="xll-sb-7fY"/>
                 <outlet property="timeLabel" destination="yOO-QQ-AEi" id="hJv-z0-5nv"/>
+                <outlet property="tipImg" destination="Obj-JA-SBo" id="3ik-Ib-qCT"/>
                 <outlet property="typeLabel" destination="1tT-kO-DcP" id="CMf-iF-RqM"/>
             </connections>
         </view>

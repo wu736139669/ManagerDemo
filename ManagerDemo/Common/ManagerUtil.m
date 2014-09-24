@@ -9,6 +9,7 @@
 #import "ManagerUtil.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "DottedLineView.h"
 #import <CommonCrypto/CommonDigest.h>
 @implementation ManagerUtil
 
@@ -81,6 +82,12 @@
 						   green:((float) g / 255.0f)
 							blue:((float) b / 255.0f)
 						   alpha:alpha];
+}
++(UIView*)dottedlinewithFrame:(CGRect)frame
+{
+    DottedLineView* dottedlineView = [[DottedLineView alloc] initWithFrame:frame];
+    dottedlineView.backgroundColor = [UIColor clearColor];
+    return dottedlineView;
 }
 +(UIView*)lineWithColor:(UIColor*)color withAlpha:(CGFloat)alpha withFrame:(CGRect)frame
 {

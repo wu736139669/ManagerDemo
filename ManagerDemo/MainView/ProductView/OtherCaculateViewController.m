@@ -1,25 +1,24 @@
 //
-//  FundCaculateViewController.m
+//  OtherCaculateViewController.m
 //  ManagerDemo
 //
-//  Created by xmfish on 14-9-17.
+//  Created by xmfish on 14-9-24.
 //  Copyright (c) 2014年 ash. All rights reserved.
 //
 
-#import "FundCaculateViewController.h"
+#import "OtherCaculateViewController.h"
 
-@interface FundCaculateViewController ()
+@interface OtherCaculateViewController ()
 
 @end
 
-@implementation FundCaculateViewController
+@implementation OtherCaculateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _qrnh = 0.0;
     }
     return self;
 }
@@ -38,7 +37,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:_timeTextField];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-
+    
     _caculateBtn.enabled = NO;
     _caculateBtn.backgroundColor = [UIColor grayColor];
     [self initData];
@@ -46,27 +45,39 @@
 }
 -(void)initData
 {
-//    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
-//    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
-//    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:@"10000",@"money", @"365", @"days", _productId, @"proId",nil] withApiType:@"estimateJjProfit" completionBlock:^(id jsonRes) {
-//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
-//            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
-//        }else{
-//            
-//        }
-//    } failedBlock:^(NSError *error) {
-//        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
-//    }];
+    //    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+    //    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    //    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:@"10000",@"money", @"365", @"days", _productId, @"proId",nil] withApiType:@"estimateJjProfit" completionBlock:^(id jsonRes) {
+    //        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    //        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+    //            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+    //        }else{
+    //
+    //        }
+    //    } failedBlock:^(NSError *error) {
+    //        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+    //    }];
     
     _nameLabel.text = _name;
-    _ygsy1Label.text = [NSString stringWithFormat:@"%.2f元",_qrnh*10000*1/365];
-    _ygsy7Label.text = [NSString stringWithFormat:@"%.2f元",_qrnh*10000*7/365];
-    _ygsy30Label.text = [NSString stringWithFormat:@"%.2f元",_qrnh*10000*30/365];
-    _ygsy90Label.text = [NSString stringWithFormat:@"%.2f元",_qrnh*10000*90/365];
-    _ygsy365Label.text = [NSString stringWithFormat:@"%.2f元",_qrnh*10000*365/365];
+    _profit1Label.text = [NSString stringWithFormat:@"%.2f元",[self caculateProfit:10000 withDay:365]];
+    _profit3Label.text = [NSString stringWithFormat:@"%.2f元",[self caculateProfit:10000 withDay:365*3]];
+    _profit5Label.text = [NSString stringWithFormat:@"%.2f元",[self caculateProfit:10000 withDay:365*5]];
+    _profit7Label.text = [NSString stringWithFormat:@"%.2f元",[self caculateProfit:10000 withDay:365*7]];
     
-    
+}
+-(float)caculateProfit:(NSInteger)amount withDay:(NSInteger)dayTotal
+{
+    NSInteger tempDay = dayTotal;
+    float proFit = 0.0;
+    while (tempDay>0) {
+        if (tempDay>=365) {
+            proFit += _qrnh*(amount+proFit);
+        }else{
+            proFit += _qrnh*(amount+proFit)*(tempDay/365.0);
+        }
+        tempDay -= 365;
+    }
+    return proFit;
 }
 #pragma mark Responding to keyboard events
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -76,9 +87,9 @@
         frame.origin.y -= 120;
         _tableView.frame = frame;
     } completion:^(BOOL finished)
-    {
-        
-    }];
+     {
+         
+     }];
 }
 - (void)keyboardWillHide:(NSNotification *)notification
 {
@@ -153,14 +164,12 @@
 - (IBAction)caculateBtnClick:(id)sender {
     if ([_amountTextField.text isEqualToString:@""] && [_timeTextField.text isEqualToString:@""]) {
         _ygsyLabel.text = [NSString stringWithFormat:@"%.2f 元",_qrnh*10000];
-        _yhhqsyLabel.text = [NSString stringWithFormat:@"%.2f 元",0.0035*10000];
         _jfsyLabel.text = [NSString stringWithFormat:@"%.0f 分",10000*_extraPoint];
     }else{
         NSInteger amount = [_amountTextField.text intValue];
         NSInteger time = [_timeTextField.text intValue];
-        _ygsyLabel.text = [NSString stringWithFormat:@"%.2f 元",_qrnh*amount*time/365];
+        _ygsyLabel.text = [NSString stringWithFormat:@"%.2f 元",[self caculateProfit:amount withDay:time]];
         _jfsyLabel.text = [NSString stringWithFormat:@"%.0f 分",_extraPoint * amount * (time/365.0)];
-        _yhhqsyLabel.text = [NSString stringWithFormat:@"%.2f 元",0.0035*amount*time/365];
     }
 }
 @end

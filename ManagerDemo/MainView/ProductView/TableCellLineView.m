@@ -48,7 +48,7 @@
     _rightInfoLabel.textAlignment = NSTextAlignmentRight;
     [self addSubview:_rightInfoLabel];
     
-    [self addSubview:[ManagerUtil lineWithColor:Touch_BackGroudColor withAlpha:1.0 withFrame:CGRectMake(10, self.bounds.size.height-1, self.bounds.size.width-20, 1.0)]];
+    [self addSubview:[ManagerUtil dottedlinewithFrame:CGRectMake(10, self.bounds.size.height-1, self.bounds.size.width-20, 1.0)]];
 }
 
 // Only override drawRect: if you perform custom drawing.

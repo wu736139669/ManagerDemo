@@ -53,21 +53,28 @@
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
-    self.productId = [dic objectForKey:@"id"];
-    self.nameLabel.text = [dic objectForKey:@"proName"];
-    self.profitLabel.text = [NSString stringWithFormat:@"%.2f + %.2f%%",[[dic objectForKey:@"nhsy"] floatValue],[[dic objectForKeyWithoutNull:@"fd"] floatValue]];
+    self.productId = [dic objectForKeyWithoutNull:@"id"];
+    self.nameLabel.text = [dic objectForKeyWithoutNull:@"proName"];
+    self.profitLabel.text = [NSString stringWithFormat:@"%.2f + %.2f%%",[[dic objectForKeyWithoutNull:@"nhsy"] floatValue],[[dic objectForKeyWithoutNull:@"fd"] floatValue]];
     self.totalLabel.text = [NSString stringWithFormat:@"已申购%.0f人",[[dic objectForKeyWithoutNull:@"ygrs"] floatValue]];
-    self.priceLabel.text = [NSString stringWithFormat:@"%@元",[dic objectForKey:@"wfsy"]];
+    self.priceLabel.text = [NSString stringWithFormat:@"%@元",[dic objectForKeyWithoutNull:@"wfsy"]];
     [self setLowestPriceWtihCount:[[dic objectForKey:@"startBuy"] integerValue]];
     NSMutableString* timeStr = [[NSMutableString alloc] initWithString:@"随买随卖"];
     [timeStr insertString:@"</span>" atIndex:1];
     [timeStr insertString:@"<span  style=\" color:green;\">" atIndex:0];
     [self setBuyTypeWithString:timeStr];
-    if ([[dic objectForKey:@"tip"] isKindOfClass:[NSString class]]) {
+    if ([[dic objectForKeyWithoutNull:@"proType"] isEqualToString:@"JJ"]) {
+        _typeImg.hidden = YES;
+    }else{
         _typeImg.hidden = NO;
         _typeLabel.text = [dic objectForKey:@"tip"];
-    }else{
-        _typeImg.hidden = YES;
+        if ([[dic objectForKeyWithoutNull:@"tipColor"] isEqualToString:@"RED"]) {
+            [_typeImg setImage:[UIImage imageNamed:@"sale_red_icon"]];
+        }else if ([[dic objectForKeyWithoutNull:@"tipColor"] isEqualToString:@"GRAY"]){
+            [_typeImg setImage:[UIImage imageNamed:@"sale_gray_icon"]];
+        }else{
+            [_typeImg setImage:[UIImage imageNamed:@"sale_blue_icon"]];
+        }
     }
 }
 @end

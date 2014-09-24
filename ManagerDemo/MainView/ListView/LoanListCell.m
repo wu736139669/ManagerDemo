@@ -67,7 +67,7 @@
 }
 -(void)setStartBuy:(NSInteger)price
 {
-    _priceLabel.text = [NSString stringWithFormat:@"%d元起购",price];
+    _priceLabel.text = [NSString stringWithFormat:@"%ld元起购",price];
 }
 -(void)setInfoDic:(NSDictionary *)dic
 {
@@ -80,44 +80,17 @@
     }else{
         self.typeLabel.text = [dic objectForKeyWithoutNull:@"tip"];
     }
-//    if ([[dic objectForKey:@"state"] integerValue] == 1 ) {
-        [self setPercent:[[dic objectForKeyWithoutNull:@"percent"] floatValue]];
-        [self setStartBuy:[[dic objectForKeyWithoutNull:@"startBuy"] integerValue]];
-        NSString* timeStr = [NSString stringWithFormat:@"<span  style=\" color:green;\">限</span>%@个月起",[dic objectForKeyWithoutNull:@"timeLimit"]];
-        [self setTimeWithString:timeStr];
-//    }
-//    else if([[dic objectForKey:@"state"] integerValue] == 2){
-//        [self setTimeWithString:@"最近还款日"];
-//        [_percentView setProgress:0 animated:NO];
-//        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"percent"]];
-//        htmlStr = [htmlStr stringByReplacingOccurrencesOfString:@"\n" withString:@"<p></p>"];
-//        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
-//        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
-//        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
-//        _percentDtlabel.attributedString = percentString;
-//        CGRect frame = _percentDtlabel.frame;
-//        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:60.0];
-//        frame.size.height = size.height+2;
-//        _percentDtlabel.frame = frame;
-//        _percentDtlabel.center = _pieImage.center;
-//        _priceLabel.text = [dic objectForKey:@"startTime"];
-//    }else if ([[dic objectForKey:@"state"] integerValue] == 3)
-//    {
-//        [self setPercent:[[dic objectForKey:@"percent"] floatValue]];
-//        [self setStartBuy:[[dic objectForKey:@"startBuy"] integerValue]];
-//        NSString* htmlStr = [NSString stringWithFormat:@"<span  style=\" text-align:center; \">%@</span> ",[dic objectForKey:@"percent"]];
-//        htmlStr = [htmlStr stringByReplacingOccurrencesOfString:@"\n" withString:@"<p></p>"];
-//        NSData *data = [htmlStr dataUsingEncoding:NSUTF8StringEncoding];
-//        NSDictionary* optionsDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:kCTTextAlignmentCenter],DTDefaultTextAlignment, nil];
-//        NSAttributedString *percentString = [[NSAttributedString alloc] initWithHTMLData:data options:optionsDic documentAttributes:nil];
-//        _percentDtlabel.attributedString = percentString;
-//        CGRect frame = _percentDtlabel.frame;
-//        CGSize size = [_percentDtlabel suggestedFrameSizeToFitEntireStringConstraintedToWidth:_percentDtlabel.frame.size.width];
-//        frame.size.height = size.height;
-//        _percentDtlabel.frame = frame;
-//        _percentDtlabel.center = _pieImage.center;
-//
-//    }
-
+    [self setPercent:[[dic objectForKeyWithoutNull:@"percent"] floatValue]];
+    [self setStartBuy:[[dic objectForKeyWithoutNull:@"startBuy"] integerValue]];
+    NSString* timeStr = [NSString stringWithFormat:@"<span  style=\" color:green;\">限</span>%@个月起",[dic objectForKeyWithoutNull:@"timeLimit"]];
+    [self setTimeWithString:timeStr];
+    
+    if ([[dic objectForKeyWithoutNull:@"tipColor"] isEqualToString:@"RED"]) {
+        [_typeImg setImage:[UIImage imageNamed:@"sale_red_icon"]];
+    }else if ([[dic objectForKeyWithoutNull:@"tipColor"] isEqualToString:@"GRAY"]){
+        [_typeImg setImage:[UIImage imageNamed:@"sale_gray_icon"]];
+    }else{
+        [_typeImg setImage:[UIImage imageNamed:@"sale_blue_icon"]];
+    }
 }
 @end

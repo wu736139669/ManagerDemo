@@ -200,6 +200,7 @@
     UIView* view = [ManagerUtil lineWithColor:Touch_BackGroudColor withAlpha:1.0 withFrame:CGRectMake(0, 0, 320, 1)];
     return view;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -281,7 +282,9 @@
     FundCaculateViewController* fundCaculateViewController = [[FundCaculateViewController alloc] init];
     
     fundCaculateViewController.qrnh = [[[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"qrnh"] floatValue]/100.0;
-//    fundCaculateViewController.name =
+    fundCaculateViewController.productId =[[_infoDic objectForKey:@"proInfo"] objectForKey:@"id"];
+    fundCaculateViewController.extraPoint = [[[_infoDic objectForKey:@"proInfo"] objectForKey:@"extraPoint"] floatValue];
+    fundCaculateViewController.name = [[_infoDic objectForKeyWithoutNull:@"fundcomp"] objectForKeyWithoutNull:@"comName"];
     [self.navigationController pushViewController:fundCaculateViewController animated:YES];
 
 }
