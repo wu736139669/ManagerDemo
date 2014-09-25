@@ -174,7 +174,9 @@
     ModifyPassWordViewController* modifyPassWordViewController = [[ModifyPassWordViewController alloc] init];
     modifyPassWordViewController.type = 0;
     modifyPassWordViewController.phoneNum = _phoneNum;
-    [self.navigationController pushViewController:modifyPassWordViewController animated:YES];
+    [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:modifyPassWordViewController] animated:YES completion:^{
+        
+    }];
 //    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
 //    [self.navigationController pushViewController:setPassWordViewController animated:YES];
 }
@@ -183,7 +185,9 @@
     ModifyPassWordViewController* modifyPassWordViewController = [[ModifyPassWordViewController alloc] init];
     modifyPassWordViewController.type = 1;
     modifyPassWordViewController.phoneNum = _phoneNum;
-    [self.navigationController pushViewController:modifyPassWordViewController animated:YES];
+    [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:modifyPassWordViewController] animated:YES completion:^{
+        
+    }];
 //    AuthenticationViewController* authenticationViewController = [[AuthenticationViewController alloc] init];
 //    [self.navigationController pushViewController:authenticationViewController animated:YES];
 //    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];

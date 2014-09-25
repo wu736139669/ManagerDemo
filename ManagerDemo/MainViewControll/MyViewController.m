@@ -64,9 +64,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (_myInfoDic == nil) {
-        [self.tableView headerBeginRefreshing];
-    }
+//    if (_myInfoDic == nil) {
+//        [self.tableView headerBeginRefreshing];
+//    }
 }
 #pragma mark MJRefreshDelegate
 - (void)headerRereshing

@@ -9,6 +9,7 @@
 #import "ManagerUtil.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "ModifyPassWordViewController.h"
 #import "DottedLineView.h"
 #import <CommonCrypto/CommonDigest.h>
 @implementation ManagerUtil
@@ -23,7 +24,6 @@
     [app.mainViewController presentViewController:nav animated:YES completion:^{
         
     }];
-    
 }
 +(void)SetSubViewExternNone:(UIViewController *)viewController
 {

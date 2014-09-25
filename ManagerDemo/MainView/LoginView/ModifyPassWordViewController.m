@@ -31,6 +31,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(popViewController)];
+    self.navigationItem.title = @"身份验证";
     _isRealName = YES;
     _timeSecond = 60;
     _cmsBtn.enabled = NO;
@@ -67,6 +70,11 @@
     [self realNameCheck];
     
 }
+
+-(void)popViewController
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 -(void)reGetCodeTime
 {
     if (_timeSecond > 0 && !_cmsBtn.enabled) {
@@ -81,6 +89,7 @@
         [_timer invalidate];
     }
 }
+
 -(void)realNameCheck
 {
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];

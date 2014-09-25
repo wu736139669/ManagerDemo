@@ -18,7 +18,6 @@
  *  @param type type description
  */
 +(void)presentLoginView;
-
 //获取view的viewcontroller
 +(UIViewController*)getCurrentViewControllerWithView:(UIView*)view;
 //获取当前viewcontroller
