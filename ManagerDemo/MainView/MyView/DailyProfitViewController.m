@@ -65,7 +65,7 @@
             if (_type == 0) {
                 _topCell.timeLabel.text = locationString;
             }else{
-                _topCell.timeLabel.text = @"稳赢贷累计收益";
+                _topCell.timeLabel.text = @"累计收益";
             }
             
             [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"userProfits"]];
