@@ -65,20 +65,21 @@
 - (void)headerRereshing
 {
     
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    //广告条
-    [daiDaiTongApi getBannerInfoWithcompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-            NSMutableArray* bannerInfo = [jsonRes objectForKey:@"infos"];
+    //广告
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"getBanner" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            NSMutableArray* bannerInfo = [jsonRes objectForKey:@"banners"];
             [_homeAdView setBannerInfo:bannerInfo];
         }
     } failedBlock:^(NSError *error) {
-        DLog(@"失败");
-        [MBProgressHUD errorHudWithView:nil label:@"网络出错" hidesAfter:1.0];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
     }];
     _homeMainView.hidden = YES;
     
-    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
     [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:1],@"pageNum", nil] withApiType:@"proList" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 0) {
             NSDictionary* dic = [[jsonRes objectForKeyWithoutNull:@"proList"] objectAtIndex:0];

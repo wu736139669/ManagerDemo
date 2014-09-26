@@ -152,7 +152,10 @@
     
     if (_isRealName) {
         if (_nameTextFiel.text.length>0 && _idCardTextField.text.length>0) {
-            _cmsBtn.enabled = YES;
+            if (![_timer isValid]) {
+                _cmsBtn.enabled = YES;
+            }
+            
             if (_cmsNumTextField.text.length>0) {
                 _nextBtn.enabled = YES;
             }else{
@@ -185,12 +188,17 @@
     if (_isRealName) {
         dic = [NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum",_idCardTextField.text,@"idcardNo", _nameTextFiel.text, @"realName", nil];
     }else{
-        [NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum", nil];
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:_phoneNum,@"phoneNum", nil];
     }
+
     [daiDaiTongTestApi getApiWithParam:dic withApiType:@"getVerCode" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
             [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
         }else{
+            if (![ManagerUser shareInstance].isLogin) {
+                [ManagerUser shareInstance].token = [jsonRes objectForKeyWithoutNull:@"token"];
+                [ManagerUser shareInstance].userId = [jsonRes objectForKeyWithoutNull:@"userid"];
+            }
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [_cmsNumTextField becomeFirstResponder];
             _nameTextFiel.enabled = NO;
@@ -211,11 +219,12 @@
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
     DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
 
-    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_cmsNumTextField.text,@"verCode", nil] withApiType:@"getVerCode" completionBlock:^(id jsonRes) {
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_cmsNumTextField.text,@"verCode", nil] withApiType:@"changePswCheck" completionBlock:^(id jsonRes) {
         if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
-            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
         }else{
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            
             if (_type == 0) {
                 SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
                 [self.navigationController pushViewController:setPassWordViewController animated:YES];

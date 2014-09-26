@@ -17,6 +17,7 @@
 
 +(void)presentLoginView
 {
+    [ManagerUser shareInstance].isLogin = NO;
     LoginViewController *login = [[LoginViewController alloc] init];
     UINavigationController *nav =[[UINavigationController alloc]initWithRootViewController:login];
     

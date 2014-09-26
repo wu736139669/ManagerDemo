@@ -236,8 +236,8 @@
             break;
         case 2:
         {
-            _myTotalProfitCellView.totalMoneyLabel.text = [_myInfoDic  objectForKeyWithoutNull:@"totalAssets"] ;
-            _myTotalProfitCellView.profitMoneyLabel.text = [_myInfoDic  objectForKeyWithoutNull:@"totalProfit"];
+            _myTotalProfitCellView.totalMoneyLabel.text = [NSString stringWithFormat:@"%.2f",[[_myInfoDic  objectForKeyWithoutNull:@"totalAssets"] floatValue]];
+            _myTotalProfitCellView.profitMoneyLabel.text = [NSString stringWithFormat:@"%.2f",[[_myInfoDic  objectForKeyWithoutNull:@"totalProfit"] floatValue]];
         }
             break;
         case 4:

@@ -52,13 +52,13 @@
 #pragma mark ImagePlayerDelegate
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
 {
-    [imageView sd_setImageWithURL:[[_bannerInfo objectAtIndex:index]objectForKey:@"url"] placeholderImage:[UIImage imageNamed:@"adview"]];
+    [imageView sd_setImageWithURL:[[_bannerInfo objectAtIndex:index]objectForKey:@"bannerUrl"] placeholderImage:[UIImage imageNamed:@"adview"]];
 }
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
 {
 
     if (_superViewController) {
-        SVWebViewController* webViewController = [[SVWebViewController alloc] initWithURL:[NSURL URLWithString:[[_bannerInfo objectAtIndex:index] objectForKey:@"value"]]];
+        SVWebViewController* webViewController = [[SVWebViewController alloc] initWithURL:[NSURL URLWithString:[[_bannerInfo objectAtIndex:index] objectForKey:@"contUrl"]]];
         webViewController.hidesBottomBarWhenPushed = YES;
         [_superViewController.navigationController pushViewController:webViewController animated:YES];
     }
