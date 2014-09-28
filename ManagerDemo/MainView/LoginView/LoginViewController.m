@@ -154,7 +154,7 @@
                 [self completeVerificate:jsonRes];
             }
         } failedBlock:^(NSError *error) {
-            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:0.5];
+            [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
         }];
 
     }

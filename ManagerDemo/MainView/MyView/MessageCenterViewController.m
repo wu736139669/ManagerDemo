@@ -49,17 +49,30 @@
 #pragma mark UIBarButtonItem
 -(void)rightBarBtnClick:(id)sender
 {
+//    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    [daiDaiTongApi readMsgWithcompletionBlock:^(id jsonRes) {
+//        
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            [MBProgressHUD checkHudWithView:self.view label:@"已全部标记为已读" hidesAfter:0.5];
+//        }else{
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5]; 
+//        }
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+//    }];
+    
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi readMsgWithcompletionBlock:^(id jsonRes) {
-        
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-            [MBProgressHUD checkHudWithView:self.view label:@"已全部标记为已读" hidesAfter:0.5];
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:nil withApiType:@"setAllMsgRead" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
         }else{
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5]; 
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [MBProgressHUD checkHudWithView:self.view label:@"已全部标记为已读" hidesAfter:1.0];
         }
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
     }];
 }
 #pragma mark MJRefreshDelegate
@@ -80,30 +93,61 @@
         _tableView.hidden = YES;
     }
     
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi getMsgwithPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
-            
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    [daiDaiTongApi getMsgwithPageNum:_pageNum withCompletionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            
+//            if (_pageNum == 1) {
+//                [_infoArray removeAllObjects];
+//                [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+//            }
+//            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
+//                [self.tableView removeFooter];
+//            }
+//            [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"infos"]];
+//            _tableView.hidden = NO;
+//        }else{
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+//
+//        }
+//        [self.tableView reloadData];
+//        [self.tableView footerEndRefreshing];
+//        [self.tableView headerEndRefreshing];
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+//        [self.tableView footerEndRefreshing];
+//        [self.tableView headerEndRefreshing];
+//    }];
+    
+    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_pageNum],@"pageNum", nil] withApiType:@"msgList" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:0.5];
+        }else{
+            // 刷新表格
             if (_pageNum == 1) {
                 [_infoArray removeAllObjects];
                 [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
             }
-            if ([[jsonRes objectForKey:@"totalPages"] integerValue] <= [[jsonRes objectForKey:@"pageNum"] integerValue]) {
+            
+            if ([[jsonRes objectForKey:@"totalNum"] integerValue] <= _pageNum*20) {
                 [self.tableView removeFooter];
             }
-            [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"infos"]];
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [_infoArray addObjectsFromArray:[jsonRes objectForKey:@"msgList"]];
             _tableView.hidden = NO;
-        }else{
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+
         }
         [self.tableView reloadData];
         [self.tableView footerEndRefreshing];
         [self.tableView headerEndRefreshing];
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
         [self.tableView footerEndRefreshing];
         [self.tableView headerEndRefreshing];
     }];
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -117,6 +161,10 @@
 {
     return 80;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.5;
+}
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellIdentifier = @"cell";
@@ -126,11 +174,10 @@
         [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
         cell = (MessageCenterTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     }
-    cell.msgId = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"id"];
-    cell.msgState = [[[_infoArray objectAtIndex:indexPath.row] objectForKey:@"state"] integerValue];
-    cell.nameLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.timeLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"date"];
-    cell.infoLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"content"];
+    cell.msgId = [[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgId"];
+    cell.msgState = [[[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"isRead"] integerValue];
+    cell.nameLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgTitle"];
+    cell.timeLabel.text = [ManagerUtil timeFromtimeSp:[NSString stringWithFormat:@"%f",[[[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgTime"] doubleValue]/1000.0]];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
