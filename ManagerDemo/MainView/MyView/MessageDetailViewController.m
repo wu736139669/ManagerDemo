@@ -40,19 +40,54 @@
 }
 -(void)loadData
 {
+//    [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
+//    _tableView.hidden = YES;
+//    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
+//    [daiDaiTongApi getMsgDetailwithPageNum:_msgId withCompletionBlock:^(id jsonRes) {
+//        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+//            _tableView.hidden = NO;
+//            _msgNameLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"title"];
+//            _msgTimeLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"date"];
+//            _msgDetailLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"content"];
+//            CGSize maximumSize = CGSizeMake(280, CGFLOAT_MAX); // 第一个参数是label的宽度，第二个参数是固定的宏定义，CGFLOAT_MAX
+//            CGSize expectedLabelSize = [[[jsonRes objectForKey:@"data"] objectForKey:@"content"] sizeWithFont:_msgDetailLabel.font
+//                                        constrainedToSize:maximumSize
+//                                            lineBreakMode:NSLineBreakByWordWrapping];
+//            
+//            CGRect newFrame = _msgDetailLabel.frame;
+//            newFrame.size.height = expectedLabelSize.height;
+//            
+//            _msgDetailLabel.frame = newFrame;
+//            CGRect frame = _msgTableCell.frame;
+//            frame.size.height = 45 + _msgDetailLabel.frame.size.height;
+//            _msgTableCell.frame = frame;
+//            _msgDetailLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"content"];
+//
+//            [_tableView reloadData];
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        }else{
+//            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
+//        }
+//    } failedBlock:^(NSError *error) {
+//        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+//    }];
+    
     [MBProgressHUD hudWithView:self.view label:@"安全加载中"];
     _tableView.hidden = YES;
-    DaiDaiTongApi* daiDaiTongApi = [DaiDaiTongApi shareInstance];
-    [daiDaiTongApi getMsgDetailwithPageNum:_msgId withCompletionBlock:^(id jsonRes) {
-        if ([[jsonRes objectForKey:@"succ"] integerValue] == 1) {
+    DaiDaiTongTestApi* daiDaiTongTestApi = [DaiDaiTongTestApi shareInstance];
+    [daiDaiTongTestApi getApiWithParam:[NSDictionary dictionaryWithObjectsAndKeys:_msgId, @"msgId", nil] withApiType:@"msgDetail" completionBlock:^(id jsonRes) {
+        if ([[jsonRes objectForKey:@"resultflag"] integerValue] == 1) {
+            [MBProgressHUD errorHudWithView:self.view label:[jsonRes objectForKey:@"resultMsg"] hidesAfter:1.0];
+        }else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             _tableView.hidden = NO;
-            _msgNameLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"title"];
-            _msgTimeLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"date"];
-            _msgDetailLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"content"];
+            _msgNameLabel.text = [[jsonRes objectForKey:@"message"] objectForKeyWithoutNull:@"msgTitle"];
+            _msgTimeLabel.text = [ManagerUtil timeFromtimeSp:[NSString stringWithFormat:@"%f",[[[jsonRes objectForKey:@"message"] objectForKeyWithoutNull:@"msgTime"]doubleValue]/1000.0]];;
+            _msgDetailLabel.text = [[jsonRes objectForKey:@"message"] objectForKeyWithoutNull:@"msgCont"];
             CGSize maximumSize = CGSizeMake(280, CGFLOAT_MAX); // 第一个参数是label的宽度，第二个参数是固定的宏定义，CGFLOAT_MAX
-            CGSize expectedLabelSize = [[[jsonRes objectForKey:@"data"] objectForKey:@"content"] sizeWithFont:_msgDetailLabel.font
-                                        constrainedToSize:maximumSize
-                                            lineBreakMode:NSLineBreakByWordWrapping];
+            CGSize expectedLabelSize = [[[jsonRes objectForKey:@"message"] objectForKeyWithoutNull:@"msgCont"] sizeWithFont:_msgDetailLabel.font
+                                                                                            constrainedToSize:maximumSize
+                                                                                                lineBreakMode:NSLineBreakByWordWrapping];
             
             CGRect newFrame = _msgDetailLabel.frame;
             newFrame.size.height = expectedLabelSize.height;
@@ -61,15 +96,13 @@
             CGRect frame = _msgTableCell.frame;
             frame.size.height = 45 + _msgDetailLabel.frame.size.height;
             _msgTableCell.frame = frame;
-            _msgDetailLabel.text = [[jsonRes objectForKey:@"data"] objectForKey:@"content"];
-
+            _msgDetailLabel.text = [[jsonRes objectForKey:@"message"] objectForKeyWithoutNull:@"msgCont"];
+            
             [_tableView reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }else{
-            [MBProgressHUD errorHudWithView:nil label:[jsonRes objectForKey:@"err_msg"] hidesAfter:0.5];
         }
     } failedBlock:^(NSError *error) {
-        [MBProgressHUD errorHudWithView:self.view label:Net_Error_Str hidesAfter:0.5];
+        [MBProgressHUD errorHudWithView:self.view label:@"网络出错" hidesAfter:1.0];
     }];
 }
 #pragma mark UITableViewDelegate

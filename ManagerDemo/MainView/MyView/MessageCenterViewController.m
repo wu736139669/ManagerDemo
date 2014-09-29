@@ -178,13 +178,14 @@
     cell.msgState = [[[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"isRead"] integerValue];
     cell.nameLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgTitle"];
     cell.timeLabel.text = [ManagerUtil timeFromtimeSp:[NSString stringWithFormat:@"%f",[[[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgTime"] doubleValue]/1000.0]];
+    cell.infoLabel.text = [[_infoArray objectAtIndex:indexPath.row] objectForKeyWithoutNull:@"msgCont"];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     MessageDetailViewController* messageDetailViewController = [[MessageDetailViewController alloc] init];
-    messageDetailViewController.msgId = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"id"];
+    messageDetailViewController.msgId = [[_infoArray objectAtIndex:indexPath.row] objectForKey:@"msgId"];
     [self.navigationController pushViewController:messageDetailViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning
