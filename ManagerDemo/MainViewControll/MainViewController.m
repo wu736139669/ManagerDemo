@@ -34,13 +34,13 @@
         //第四页
         _myMoreNavigationController = [[UINavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]];
         if (IOS7_OR_LATER) {
-            [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"tab_home_bg"] selectedImage:[UIImage imageNamed:@"tab_home_p_bg"]]];
+            [_homeNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"理财精选" image:[UIImage imageNamed:@"tab_home_bg"] selectedImage:[UIImage imageNamed:@"tab_home_p_bg"]]];
             
             [_produciListNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"产品列表" image:[UIImage imageNamed:@"tab_fund_list_bg"] selectedImage:[UIImage imageNamed:@"tab_fund_list_p_bg"]]];
             
-            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"我的贷贷" image:[UIImage imageNamed:@"tab_mine_bg"] selectedImage:[UIImage imageNamed:@"tab_mine_p_bg"]]];
+            [_myNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"我的资产" image:[UIImage imageNamed:@"tab_mine_bg"] selectedImage:[UIImage imageNamed:@"tab_mine_p_bg"]]];
             
-            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"更多" image:[UIImage imageNamed:@"tab_more_bg"] selectedImage:[UIImage imageNamed:@"tab_more_p_bg"]]];
+            [_myMoreNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"更多服务" image:[UIImage imageNamed:@"tab_more_bg"] selectedImage:[UIImage imageNamed:@"tab_more_p_bg"]]];
         }
         
         self.viewControllers = @[_homeNavigationController, _produciListNavigationController, _myNavigationController, _myMoreNavigationController];

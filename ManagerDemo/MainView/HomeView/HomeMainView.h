@@ -17,6 +17,10 @@
 @property (strong, nonatomic)NSString* fundCode;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
+@property (weak, nonatomic) IBOutlet UILabel *baoLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet MRCircularProgressView *percentView;
 - (IBAction)percentBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *percentLabel;

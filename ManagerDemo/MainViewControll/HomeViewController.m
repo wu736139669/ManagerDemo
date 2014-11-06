@@ -132,7 +132,7 @@
     CGFloat height = 0.0;
     switch (indexPath.row) {
         case 0:
-            height = 160.0;
+            height = 148.0;
             break;
             case 1:
             height = 280.0;
@@ -145,7 +145,7 @@
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%d",indexPath.row];
+    NSString* cellIdentifier = [NSString stringWithFormat:@"cell%ld",indexPath.row];
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     
@@ -153,7 +153,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         switch (indexPath.row) {
             case 0:{
-                _homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 140)];
+                _homeAdView = [[HomeAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 128)];
                 _homeAdView.superViewController = self;
                 [cell addSubview:_homeAdView];
             }

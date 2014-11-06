@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -10,12 +10,12 @@
             <rect key="frame" x="0.0" y="0.0" width="280" height="295"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="r0t-sm-d8w" customClass="MRCircularProgressView">
+                <view hidden="YES" contentMode="scaleToFill" id="r0t-sm-d8w" customClass="MRCircularProgressView">
                     <rect key="frame" x="78" y="46" width="125" height="125"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="118" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TJP-Gm-InT">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="118" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TJP-Gm-InT">
                     <rect key="frame" x="81" y="49" width="118" height="118"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="pie_chart_center.png">
@@ -26,7 +26,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" id="bkz-1X-k90" customClass="DTAttributedLabel">
-                    <rect key="frame" x="109" y="84" width="63" height="47"/>
+                    <rect key="frame" x="46" y="39" width="189" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -40,7 +40,7 @@
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
                 <view contentMode="scaleToFill" id="KFi-f6-ETu">
-                    <rect key="frame" x="240" y="0.0" width="40" height="40"/>
+                    <rect key="frame" x="226" y="4" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_blue_icon.png" id="Obj-JA-SBo">
@@ -60,40 +60,41 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="bMf-HX-BVn" customClass="DTAttributedLabel">
-                    <rect key="frame" x="3" y="181" width="130" height="20"/>
+                    <rect key="frame" x="20" y="120" width="113" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="yOO-QQ-AEi" customClass="DTAttributedLabel">
-                    <rect key="frame" x="150" y="181" width="130" height="20"/>
+                    <rect key="frame" x="150" y="120" width="116" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="Igx-ly-iLf">
-                    <rect key="frame" x="141" y="181" width="1" height="20"/>
+                <view alpha="0.29999999999999966" contentMode="scaleToFill" id="Igx-ly-iLf">
+                    <rect key="frame" x="141" y="120" width="1" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkT-GU-Uxk">
-                    <rect key="frame" x="11" y="200" width="260" height="21"/>
+                    <rect key="frame" x="11" y="140" width="260" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="1" green="0.37822147690000002" blue="0.16647340829999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b3g-Qg-i3k">
-                    <rect key="frame" x="0.0" y="238" width="280" height="44"/>
+                    <rect key="frame" x="30" y="188" width="235" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.79962531889999999" green="0.18166188729999999" blue="0.1209349611" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="投标">
+                    <state key="normal" title="立即购买">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="sureBtnClick:" destination="7ik-6g-4aB" eventType="touchUpInside" id="EqN-bW-UPj"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bXv-dI-unZ">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bXv-dI-unZ">
                     <rect key="frame" x="81" y="49" width="118" height="118"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal">
@@ -104,21 +105,47 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G0Z-tK-6d4">
-                    <rect key="frame" x="0.0" y="214" width="280" height="21"/>
+                    <rect key="frame" x="0.0" y="162" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <progressView appearanceType="aqua" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="m9d-s4-tZJ">
+                    <rect key="frame" x="50" y="98" width="180" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="progressTintColor" red="0.85882352939999995" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="trackTintColor" red="0.96470588235294119" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                </progressView>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JfK-aB-Vp0">
+                    <rect key="frame" x="146" y="167" width="12" height="12"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25490196078431371" green="0.63529411764705879" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="1" height="-1"/>
+                </label>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xJV-ZN-Jcr">
+                    <rect key="frame" x="163" y="88" width="67" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.71372549019607845" green="0.14901960784313725" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="baoLabel" destination="JfK-aB-Vp0" id="0zQ-BU-ger"/>
                 <outlet property="expectLabel" destination="bMf-HX-BVn" id="HN2-oi-JmM"/>
                 <outlet property="infoLabel" destination="kkT-GU-Uxk" id="1tG-93-QzH"/>
                 <outlet property="nameLabel" destination="iR9-8X-qqa" id="ket-0J-7Id"/>
                 <outlet property="percentLabel" destination="bkz-1X-k90" id="Kto-ze-01o"/>
                 <outlet property="percentView" destination="r0t-sm-d8w" id="ncm-g1-PfS"/>
+                <outlet property="progressLabel" destination="xJV-ZN-Jcr" id="bLx-pS-Cun"/>
+                <outlet property="progressView" destination="m9d-s4-tZJ" id="vZH-Lf-Rqo"/>
                 <outlet property="securityDescLabel" destination="G0Z-tK-6d4" id="xll-sb-7fY"/>
+                <outlet property="sureBtn" destination="b3g-Qg-i3k" id="KPK-tP-Vri"/>
                 <outlet property="timeLabel" destination="yOO-QQ-AEi" id="hJv-z0-5nv"/>
                 <outlet property="tipImg" destination="Obj-JA-SBo" id="3ik-Ib-qCT"/>
                 <outlet property="typeLabel" destination="1tT-kO-DcP" id="CMf-iF-RqM"/>
