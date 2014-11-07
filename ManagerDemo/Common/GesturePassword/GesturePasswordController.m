@@ -168,6 +168,7 @@
         [ManagerUser shareInstance].isGesturePsw = false;
         [ManagerUser shareInstance].gesturePsw = @"";
         [self dismissViewControllerAnimated:NO completion:^{
+            [[ManagerUtil getCurrentRootViewController].navigationController popToRootViewControllerAnimated:NO];
             [ManagerUtil presentLoginView];
         }];
         
