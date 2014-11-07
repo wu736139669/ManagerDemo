@@ -168,7 +168,7 @@
                     break;
                 case 1:
                 {
-                    cell.textLabel.text = @"关于贷贷";
+                    cell.textLabel.text = @"关于安疆理财";
                     cell.imageView.image = [UIImage imageNamed:@"more_icon_8"];
                     
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

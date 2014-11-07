@@ -35,7 +35,7 @@
     [self.navigationItem setTitle:@"首页"];
     [ManagerUtil SetSubViewExternNone:self];
     //左边按钮
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"贷贷我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
     
     //右边按钮。
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)]];
@@ -58,7 +58,7 @@
     [super viewDidAppear:YES];
     if ([ManagerUser shareInstance].isLogin) {
         //左边按钮
-        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"贷贷我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"我要" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
     }else{
         //左边按钮
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarBtnClick:)]];
