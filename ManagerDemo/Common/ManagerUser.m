@@ -20,6 +20,26 @@
     return shareInstance;
 }
 
+-(void)setIsGesturePsw:(BOOL)isGesturePsw
+{
+    _isGesturePsw = isGesturePsw;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:_isGesturePsw] forKey:@"GesturePswState"];
+}
+-(BOOL)isGesturePsw
+{
+    _isGesturePsw = [[[NSUserDefaults standardUserDefaults] objectForKey:@"GesturePswState"] boolValue];
+    return _isGesturePsw;
+}
+-(void)setGesturePsw:(NSString *)gesturePsw
+{
+    _gesturePsw = gesturePsw;
+    [[NSUserDefaults standardUserDefaults] setObject:_gesturePsw forKey:@"GesturePsw"];
+}
+-(NSString*)gesturePsw
+{
+    _gesturePsw = [[NSUserDefaults standardUserDefaults] objectForKey:@"GesturePsw"] ;
+    return _gesturePsw;
+}
 -(void)setIsLogin:(BOOL)isLogin
 {
     _isLogin = isLogin;

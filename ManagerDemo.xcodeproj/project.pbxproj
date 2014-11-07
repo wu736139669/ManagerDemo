@@ -199,6 +199,11 @@
 		A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */; };
 		A9C0540619ADBCB2002331A5 /* FundProductInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */; };
 		A9C2E4E519B6A0C900C659B3 /* icon_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */; };
+		A9C353A81A0C711000EE8247 /* GesturePasswordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C3539E1A0C711000EE8247 /* GesturePasswordButton.m */; };
+		A9C353A91A0C711000EE8247 /* GesturePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C353A01A0C711000EE8247 /* GesturePasswordController.m */; };
+		A9C353AA1A0C711000EE8247 /* GesturePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C353A21A0C711000EE8247 /* GesturePasswordView.m */; };
+		A9C353AB1A0C711000EE8247 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C353A51A0C711000EE8247 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A9C353AC1A0C711000EE8247 /* TentacleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C353A71A0C711000EE8247 /* TentacleView.m */; };
 		A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */; };
 		A9C69446199BBEB200B2CECE /* MyTotalProfitCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */; };
 		A9C69448199BC1F500B2CECE /* gray_select_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C69447199BC1F500B2CECE /* gray_select_arrow@2x.png */; };
@@ -525,6 +530,16 @@
 		A9C0540319ADBCB2002331A5 /* FundProductInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundProductInfoViewController.m; sourceTree = "<group>"; };
 		A9C0540419ADBCB2002331A5 /* FundProductInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundProductInfoViewController.xib; sourceTree = "<group>"; };
 		A9C2E4E419B6A0C900C659B3 /* icon_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_email@2x.png"; sourceTree = "<group>"; };
+		A9C3539D1A0C711000EE8247 /* GesturePasswordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordButton.h; sourceTree = "<group>"; };
+		A9C3539E1A0C711000EE8247 /* GesturePasswordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordButton.m; sourceTree = "<group>"; };
+		A9C3539F1A0C711000EE8247 /* GesturePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordController.h; sourceTree = "<group>"; };
+		A9C353A01A0C711000EE8247 /* GesturePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordController.m; sourceTree = "<group>"; };
+		A9C353A11A0C711000EE8247 /* GesturePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordView.h; sourceTree = "<group>"; };
+		A9C353A21A0C711000EE8247 /* GesturePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordView.m; sourceTree = "<group>"; };
+		A9C353A41A0C711000EE8247 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		A9C353A51A0C711000EE8247 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		A9C353A61A0C711000EE8247 /* TentacleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TentacleView.h; sourceTree = "<group>"; };
+		A9C353A71A0C711000EE8247 /* TentacleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TentacleView.m; sourceTree = "<group>"; };
 		A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_person_take_image@2x.png"; sourceTree = "<group>"; };
 		A9C69444199BBEB200B2CECE /* MyTotalProfitCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTotalProfitCellView.h; sourceTree = "<group>"; };
 		A9C69445199BBEB200B2CECE /* MyTotalProfitCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTotalProfitCellView.m; sourceTree = "<group>"; };
@@ -890,6 +905,7 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9C3539C1A0C711000EE8247 /* GesturePassword */,
 				A9A6AD3619CB30E400626B48 /* UPPay */,
 				A9354F5819B870B900FDCB52 /* BaseView */,
 				A986268419B40AAC00FF9E2C /* SVWebViewController */,
@@ -1046,6 +1062,31 @@
 				A9AA325B19970304000BE4FB /* HomeView */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		A9C3539C1A0C711000EE8247 /* GesturePassword */ = {
+			isa = PBXGroup;
+			children = (
+				A9C3539D1A0C711000EE8247 /* GesturePasswordButton.h */,
+				A9C3539E1A0C711000EE8247 /* GesturePasswordButton.m */,
+				A9C3539F1A0C711000EE8247 /* GesturePasswordController.h */,
+				A9C353A01A0C711000EE8247 /* GesturePasswordController.m */,
+				A9C353A11A0C711000EE8247 /* GesturePasswordView.h */,
+				A9C353A21A0C711000EE8247 /* GesturePasswordView.m */,
+				A9C353A31A0C711000EE8247 /* KeychainItemWrapper */,
+				A9C353A61A0C711000EE8247 /* TentacleView.h */,
+				A9C353A71A0C711000EE8247 /* TentacleView.m */,
+			);
+			path = GesturePassword;
+			sourceTree = "<group>";
+		};
+		A9C353A31A0C711000EE8247 /* KeychainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				A9C353A41A0C711000EE8247 /* KeychainItemWrapper.h */,
+				A9C353A51A0C711000EE8247 /* KeychainItemWrapper.m */,
+			);
+			path = KeychainItemWrapper;
 			sourceTree = "<group>";
 		};
 		A9C69443199BBE9500B2CECE /* MyView */ = {
@@ -1438,8 +1479,11 @@
 				A99EBEC419CBB47C005E1AA0 /* HelpCenterViewController.m in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
 				A9202B8719C95B97009932C2 /* ProFitCaculateViewController.m in Sources */,
+				A9C353A81A0C711000EE8247 /* GesturePasswordButton.m in Sources */,
 				A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */,
 				A93F8803199A077F00875287 /* LoanListCell.m in Sources */,
+				A9C353A91A0C711000EE8247 /* GesturePasswordController.m in Sources */,
+				A9C353AC1A0C711000EE8247 /* TentacleView.m in Sources */,
 				A9AA326019970335000BE4FB /* HomeAdView.m in Sources */,
 				A988A900199A751500EB10AA /* FundListCell.m in Sources */,
 				A9AF6C3D199486CA0076C0EE /* ProductListViewController.m in Sources */,
@@ -1458,6 +1502,7 @@
 				A9623E2F19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m in Sources */,
 				A9354F5C19B870C700FDCB52 /* BaseListViewController.m in Sources */,
 				A95CEA4019B766F400D4605F /* MessageDetailViewController.m in Sources */,
+				A9C353AA1A0C711000EE8247 /* GesturePasswordView.m in Sources */,
 				A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */,
 				A9EAA035199857F5001A872A /* HomeMainView.m in Sources */,
 				A919055619B02741002575DF /* AccountInfoViewController.m in Sources */,
@@ -1510,6 +1555,7 @@
 				A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */,
+				A9C353AB1A0C711000EE8247 /* KeychainItemWrapper.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

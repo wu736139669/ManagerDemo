@@ -251,6 +251,8 @@
 {
     if (buttonIndex == 1) {
         [ManagerUser shareInstance].isLogin = false;
+        [ManagerUser shareInstance].isGesturePsw = false;
+        [ManagerUser shareInstance].gesturePsw = @"";
         AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
         [app.mainViewController setSelectedIndex:0];
         [_tableView reloadData];

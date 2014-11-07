@@ -13,6 +13,12 @@
 
 
 /**
+ *  跳转到手势页面
+ *
+ *  @param type type description
+ */
++(void)presentGesturePsw;
+/**
  *  跳转到登录页面
  *
  *  @param type type description

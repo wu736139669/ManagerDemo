@@ -10,11 +10,26 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "ModifyPassWordViewController.h"
+#import "GesturePasswordController.h"
 #import "DottedLineView.h"
 #import <CommonCrypto/CommonDigest.h>
 @implementation ManagerUtil
 
 
++(void)presentGesturePsw
+{
+    GesturePasswordController* gesturePasswordController = [[GesturePasswordController alloc] init];
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:gesturePasswordController];
+    navigationController.navigationBar.translucent = YES;
+    navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    [app.mainViewController presentViewController:navigationController animated:YES completion:^{
+        
+    }];
+
+
+}
 +(void)presentLoginView
 {
     [ManagerUser shareInstance].isLogin = NO;

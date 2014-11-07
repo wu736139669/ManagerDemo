@@ -48,6 +48,9 @@
     
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView headerBeginRefreshing];
+    if ([ManagerUser shareInstance].isLogin && [ManagerUser shareInstance].isGesturePsw) {
+        [ManagerUtil presentGesturePsw];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated

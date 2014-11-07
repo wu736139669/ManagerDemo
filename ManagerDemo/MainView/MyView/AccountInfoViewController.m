@@ -10,6 +10,7 @@
 #import "SetPassWordViewController.h"
 #import "ModifyPassWordViewController.h"
 #import "AuthenticationViewController.h"
+#import "GesturePasswordController.h"
 @interface AccountInfoViewController ()
 {
     NSDictionary* _infoDic;
@@ -38,6 +39,11 @@
     [_topBtn addTarget:self action:@selector(modifyLoginPassword:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomBtn addTarget:self action:@selector(modifyTransactionsPassword:) forControlEvents:UIControlEventTouchUpInside];
 //    [self loadData];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_tableView reloadData];
 }
 -(void)loadData
 {
@@ -145,8 +151,8 @@
             cell.imageView.image = [UIImage imageNamed:@"hw_verifycard_info_icon"];
             cell.textLabel.text = @"开启手势";
             UISwitch *switchButton = [[UISwitch alloc] initWithFrame:CGRectMake(50, 100, 20, 10)];
-            [switchButton setOn:YES];
-//            [switchButton addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+            [switchButton setOn:[ManagerUser shareInstance].isGesturePsw];
+            [switchButton addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
             cell.accessoryView = switchButton;
             
         }
@@ -193,6 +199,17 @@
 //    SetPassWordViewController* setPassWordViewController = [[SetPassWordViewController alloc] init];
 //    setPassWordViewController.type = 1;
 //    [self.navigationController pushViewController:setPassWordViewController animated:YES];
+}
+#pragma mark 手势密码开关
+-(void)switchAction:(id)sender
+{
+    UISwitch* switchView = (UISwitch*)sender;
+    [ManagerUser shareInstance].isGesturePsw = switchView.on;
+    if (switchView.isOn) {
+        [ManagerUtil presentGesturePsw];
+    }else{
+        [ManagerUser shareInstance].gesturePsw = @"";
+    }
 }
 - (void)didReceiveMemoryWarning
 {
