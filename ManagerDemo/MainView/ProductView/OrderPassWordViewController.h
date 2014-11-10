@@ -15,7 +15,11 @@
 }
 @property (assign, nonatomic)NSInteger amount;
 @property (strong, nonatomic)NSString* proId;
+@property (strong, nonatomic)NSString* cardNo;
+@property (assign, nonatomic)NSInteger type;
+@property (assign, nonatomic)NSInteger bindid;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *cardNoLabel;
 - (IBAction)completeBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *completeBtn;
 

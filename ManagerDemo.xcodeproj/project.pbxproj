@@ -58,6 +58,10 @@
 		A93F8806199A077F00875287 /* OtherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93F87FF199A077F00875287 /* OtherListViewController.m */; };
 		A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */; };
 		A94FE520199C9C6800626DE5 /* MoveSocialCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */; };
+		A9548ED41A104ED9008B5A3D /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = A9548ED21A104ED9008B5A3D /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A9548ED51A104ED9008B5A3D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A9548ED31A104ED9008B5A3D /* README.md */; };
+		A9548ED91A105DB0008B5A3D /* YiBaoMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9548ED71A105DB0008B5A3D /* YiBaoMessageViewController.m */; };
+		A9548EDA1A105DB0008B5A3D /* YiBaoMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9548ED81A105DB0008B5A3D /* YiBaoMessageViewController.xib */; };
 		A95CEA3419B754A800D4605F /* MessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3219B754A800D4605F /* MessageCenterViewController.m */; };
 		A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95CEA3319B754A800D4605F /* MessageCenterViewController.xib */; };
 		A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95CEA3719B755C000D4605F /* MessageCenterTableViewCell.m */; };
@@ -68,6 +72,13 @@
 		A95EAEE319C9BE2E00D1592B /* FundCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95EAEE119C9BE2E00D1592B /* FundCaculateViewController.m */; };
 		A95EAEE419C9BE2E00D1592B /* FundCaculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */; };
 		A9623E2F19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = A9623E2E19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m */; };
+		A96ACD841A0FD49C00DEFF7B /* CardBindViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A96ACD821A0FD49C00DEFF7B /* CardBindViewController.mm */; };
+		A96ACD851A0FD49C00DEFF7B /* CardBindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96ACD831A0FD49C00DEFF7B /* CardBindViewController.xib */; };
+		A96ACD881A0FE43900DEFF7B /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = A96ACD871A0FE43900DEFF7B /* IPAddress.c */; };
+		A96ACD8C1A0FE65C00DEFF7B /* IPGet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A96ACD8A1A0FE65C00DEFF7B /* IPGet.cpp */; };
+		A96ACD901A0FEDED00DEFF7B /* daidaitong01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96ACD8D1A0FEDED00DEFF7B /* daidaitong01@2x.png */; };
+		A96ACD911A0FEDED00DEFF7B /* daidaitong02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96ACD8E1A0FEDED00DEFF7B /* daidaitong02@2x.png */; };
+		A96ACD921A0FEDED00DEFF7B /* daidaitong03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96ACD8F1A0FEDED00DEFF7B /* daidaitong03@2x.png */; };
 		A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */; };
 		A96F2A7F199D01C000608237 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2A7E199D01C000608237 /* NSString+FontAwesome.m */; };
 		A970886219D273E700F880C1 /* OtherCaculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A970886019D273E700F880C1 /* OtherCaculateViewController.m */; };
@@ -124,6 +135,14 @@
 		A9A59E9119D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8E19D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png */; };
 		A9A59E9219D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E8F19D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png */; };
 		A9A59E9319D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A59E9019D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png */; };
+		A9A5A33C1A0F4C70004AD234 /* CardSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5A33A1A0F4C70004AD234 /* CardSelectViewController.m */; };
+		A9A5A33D1A0F4C70004AD234 /* CardSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A33B1A0F4C70004AD234 /* CardSelectViewController.xib */; };
+		A9A5A3411A0F5D08004AD234 /* daidaitong_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A33E1A0F5D07004AD234 /* daidaitong_03.jpg */; };
+		A9A5A3421A0F5D08004AD234 /* daidaitong_06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A33F1A0F5D07004AD234 /* daidaitong_06.jpg */; };
+		A9A5A3431A0F5D08004AD234 /* daidaitong_13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A3401A0F5D07004AD234 /* daidaitong_13.jpg */; };
+		A9A5A3451A0F5EB8004AD234 /* check_mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A3441A0F5EB8004AD234 /* check_mark@2x.png */; };
+		A9A5A3491A0F603B004AD234 /* CardAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A5A3471A0F603B004AD234 /* CardAddViewController.m */; };
+		A9A5A34A1A0F603B004AD234 /* CardAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A5A3481A0F603B004AD234 /* CardAddViewController.xib */; };
 		A9A6AD2F19CB1C7000626B48 /* MainOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */; };
 		A9A6AD3019CB1C7000626B48 /* MainOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */; };
 		A9A6AD3419CB26FD00626B48 /* OrderPassWordViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9A6AD3219CB26FD00626B48 /* OrderPassWordViewController.mm */; };
@@ -331,6 +350,12 @@
 		A94FE51C199C9C3C00626DE5 /* MoveSocialCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveSocialCellView.h; sourceTree = "<group>"; };
 		A94FE51D199C9C3C00626DE5 /* MoveSocialCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveSocialCellView.m; sourceTree = "<group>"; };
 		A94FE51F199C9C6800626DE5 /* MoveSocialCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveSocialCellView.xib; sourceTree = "<group>"; };
+		A9548ED11A104ED9008B5A3D /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		A9548ED21A104ED9008B5A3D /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		A9548ED31A104ED9008B5A3D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A9548ED61A105DB0008B5A3D /* YiBaoMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiBaoMessageViewController.h; sourceTree = "<group>"; };
+		A9548ED71A105DB0008B5A3D /* YiBaoMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiBaoMessageViewController.m; sourceTree = "<group>"; };
+		A9548ED81A105DB0008B5A3D /* YiBaoMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YiBaoMessageViewController.xib; sourceTree = "<group>"; };
 		A95CEA3119B754A800D4605F /* MessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenterViewController.h; sourceTree = "<group>"; };
 		A95CEA3219B754A800D4605F /* MessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenterViewController.m; sourceTree = "<group>"; };
 		A95CEA3319B754A800D4605F /* MessageCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCenterViewController.xib; sourceTree = "<group>"; };
@@ -346,6 +371,16 @@
 		A95EAEE219C9BE2E00D1592B /* FundCaculateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundCaculateViewController.xib; sourceTree = "<group>"; };
 		A9623E2D19CBEB1A004F7D9D /* NSDictionary+ChangeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ChangeNull.h"; sourceTree = "<group>"; };
 		A9623E2E19CBEB1A004F7D9D /* NSDictionary+ChangeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ChangeNull.m"; sourceTree = "<group>"; };
+		A96ACD811A0FD49C00DEFF7B /* CardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBindViewController.h; sourceTree = "<group>"; };
+		A96ACD821A0FD49C00DEFF7B /* CardBindViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CardBindViewController.mm; sourceTree = "<group>"; };
+		A96ACD831A0FD49C00DEFF7B /* CardBindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardBindViewController.xib; sourceTree = "<group>"; };
+		A96ACD871A0FE43900DEFF7B /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
+		A96ACD891A0FE46C00DEFF7B /* IPAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
+		A96ACD8A1A0FE65C00DEFF7B /* IPGet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPGet.cpp; sourceTree = "<group>"; };
+		A96ACD8B1A0FE65C00DEFF7B /* IPGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPGet.h; sourceTree = "<group>"; };
+		A96ACD8D1A0FEDED00DEFF7B /* daidaitong01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daidaitong01@2x.png"; sourceTree = "<group>"; };
+		A96ACD8E1A0FEDED00DEFF7B /* daidaitong02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daidaitong02@2x.png"; sourceTree = "<group>"; };
+		A96ACD8F1A0FEDED00DEFF7B /* daidaitong03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "daidaitong03@2x.png"; sourceTree = "<group>"; };
 		A96F2A7A199D008200608237 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
 		A96F2A7B199D008200608237 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		A96F2A7D199D01C000608237 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -423,6 +458,16 @@
 		A9A59E8E19D2C4DE00D7DC4F /* fund_abount_icon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_1@2x.png"; sourceTree = "<group>"; };
 		A9A59E8F19D2C4DE00D7DC4F /* fund_abount_icon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_2@2x.png"; sourceTree = "<group>"; };
 		A9A59E9019D2C4DE00D7DC4F /* fund_abount_icon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fund_abount_icon_3@2x.png"; sourceTree = "<group>"; };
+		A9A5A3391A0F4C70004AD234 /* CardSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSelectViewController.h; sourceTree = "<group>"; };
+		A9A5A33A1A0F4C70004AD234 /* CardSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSelectViewController.m; sourceTree = "<group>"; };
+		A9A5A33B1A0F4C70004AD234 /* CardSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSelectViewController.xib; sourceTree = "<group>"; };
+		A9A5A33E1A0F5D07004AD234 /* daidaitong_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daidaitong_03.jpg; sourceTree = "<group>"; };
+		A9A5A33F1A0F5D07004AD234 /* daidaitong_06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daidaitong_06.jpg; sourceTree = "<group>"; };
+		A9A5A3401A0F5D07004AD234 /* daidaitong_13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daidaitong_13.jpg; sourceTree = "<group>"; };
+		A9A5A3441A0F5EB8004AD234 /* check_mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_mark@2x.png"; sourceTree = "<group>"; };
+		A9A5A3461A0F603B004AD234 /* CardAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAddViewController.h; sourceTree = "<group>"; };
+		A9A5A3471A0F603B004AD234 /* CardAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAddViewController.m; sourceTree = "<group>"; };
+		A9A5A3481A0F603B004AD234 /* CardAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardAddViewController.xib; sourceTree = "<group>"; };
 		A9A6AD2C19CB1C7000626B48 /* MainOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainOrderViewController.h; sourceTree = "<group>"; };
 		A9A6AD2D19CB1C7000626B48 /* MainOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainOrderViewController.m; sourceTree = "<group>"; };
 		A9A6AD2E19CB1C7000626B48 /* MainOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainOrderViewController.xib; sourceTree = "<group>"; };
@@ -657,6 +702,18 @@
 				A9A59E8719D2BB2600D7DC4F /* ComPanyAboutViewController.h */,
 				A9A59E8819D2BB2600D7DC4F /* ComPanyAboutViewController.m */,
 				A9A59E8919D2BB2600D7DC4F /* ComPanyAboutViewController.xib */,
+				A9A5A3391A0F4C70004AD234 /* CardSelectViewController.h */,
+				A9A5A33A1A0F4C70004AD234 /* CardSelectViewController.m */,
+				A9A5A33B1A0F4C70004AD234 /* CardSelectViewController.xib */,
+				A9A5A3461A0F603B004AD234 /* CardAddViewController.h */,
+				A9A5A3471A0F603B004AD234 /* CardAddViewController.m */,
+				A9A5A3481A0F603B004AD234 /* CardAddViewController.xib */,
+				A96ACD811A0FD49C00DEFF7B /* CardBindViewController.h */,
+				A96ACD821A0FD49C00DEFF7B /* CardBindViewController.mm */,
+				A96ACD831A0FD49C00DEFF7B /* CardBindViewController.xib */,
+				A9548ED61A105DB0008B5A3D /* YiBaoMessageViewController.h */,
+				A9548ED71A105DB0008B5A3D /* YiBaoMessageViewController.m */,
+				A9548ED81A105DB0008B5A3D /* YiBaoMessageViewController.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -717,6 +774,27 @@
 				A904E4A519BEF11F0014F694 /* AboutViewController.xib */,
 			);
 			path = MoveView;
+			sourceTree = "<group>";
+		};
+		A9548ED01A104ED9008B5A3D /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				A9548ED11A104ED9008B5A3D /* OpenUDID.h */,
+				A9548ED21A104ED9008B5A3D /* OpenUDID.m */,
+				A9548ED31A104ED9008B5A3D /* README.md */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		A96ACD861A0FE42000DEFF7B /* IP */ = {
+			isa = PBXGroup;
+			children = (
+				A96ACD871A0FE43900DEFF7B /* IPAddress.c */,
+				A96ACD891A0FE46C00DEFF7B /* IPAddress.h */,
+				A96ACD8A1A0FE65C00DEFF7B /* IPGet.cpp */,
+				A96ACD8B1A0FE65C00DEFF7B /* IPGet.h */,
+			);
+			path = IP;
 			sourceTree = "<group>";
 		};
 		A96F2A79199D007700608237 /* UIButtonUtil */ = {
@@ -905,6 +983,8 @@
 		A9AF6C4A19949B510076C0EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9548ED01A104ED9008B5A3D /* OpenUDID */,
+				A96ACD861A0FE42000DEFF7B /* IP */,
 				A9C3539C1A0C711000EE8247 /* GesturePassword */,
 				A9A6AD3619CB30E400626B48 /* UPPay */,
 				A9354F5819B870B900FDCB52 /* BaseView */,
@@ -932,6 +1012,12 @@
 		A9AF6C4D19949CAD0076C0EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A96ACD8D1A0FEDED00DEFF7B /* daidaitong01@2x.png */,
+				A96ACD8E1A0FEDED00DEFF7B /* daidaitong02@2x.png */,
+				A96ACD8F1A0FEDED00DEFF7B /* daidaitong03@2x.png */,
+				A9A5A33E1A0F5D07004AD234 /* daidaitong_03.jpg */,
+				A9A5A33F1A0F5D07004AD234 /* daidaitong_06.jpg */,
+				A9A5A3401A0F5D07004AD234 /* daidaitong_13.jpg */,
 				A9A59E7719D299EA00D7DC4F /* tab_fund_list_bg@2x.png */,
 				A9A59E7819D299EA00D7DC4F /* tab_fund_list_p_bg@2x.png */,
 				A9A59E7919D299EA00D7DC4F /* tab_home_bg@2x.png */,
@@ -983,6 +1069,7 @@
 				A9C69441199BB7B100B2CECE /* icon_person_take_image@2x.png */,
 				A93F87811999BB1D00875287 /* red_line_and_shadow@2x.png */,
 				A904E4A819BEF18A0014F694 /* about_copyright@2x.png */,
+				A9A5A3441A0F5EB8004AD234 /* check_mark@2x.png */,
 				A904E4A919BEF18A0014F694 /* about_logo@2x.png */,
 				A9C69449199BD14D00B2CECE /* more_icon_2@2x.png */,
 				A9C6944A199BD14D00B2CECE /* more_icon_3@2x.png */,
@@ -1277,6 +1364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A5A3431A0F5D08004AD234 /* daidaitong_13.jpg in Resources */,
 				A9AF6C43199498C40076C0EE /* MyViewController.xib in Resources */,
 				A919055D19B02A6E002575DF /* icon_color_key@2x.png in Resources */,
 				A9EAA04719986DC3001A872A /* fund_cell_label_bg_green@2x.png in Resources */,
@@ -1316,6 +1404,7 @@
 				A9C6945A199BD16000B2CECE /* more_icon_1@2x.png in Resources */,
 				A9EC95B819B54F6E00681678 /* LoginViewController.xib in Resources */,
 				A99FDB0B19CAC16E00D2B3D3 /* SetPassWordViewController.xib in Resources */,
+				A9A5A3451A0F5EB8004AD234 /* check_mark@2x.png in Resources */,
 				A9A59E8419D299EA00D7DC4F /* tab_mine_p_bg@2x.png in Resources */,
 				A9EAA05F1998BB82001A872A /* about_dot@2x.png in Resources */,
 				A93320C819C0227F0090D640 /* MyHoldAmountViewController.xib in Resources */,
@@ -1327,6 +1416,7 @@
 				A9AF6C6219949CD30076C0EE /* icon_dock_rt_actived@2x.png in Resources */,
 				A98626A019B4241400FF9E2C /* ActivityCenterTableViewCell.xib in Resources */,
 				A9EC95C019B5501B00681678 /* icon_phone@2x.png in Resources */,
+				A9A5A33D1A0F4C70004AD234 /* CardSelectViewController.xib in Resources */,
 				A9AF6C781994B5890076C0EE /* icon_share_default.png in Resources */,
 				A9AF6C741994B5890076C0EE /* icon_indicate_add_module@2x.png in Resources */,
 				A919055F19B02A72002575DF /* icon_color_bank@2x.png in Resources */,
@@ -1351,6 +1441,7 @@
 				A91C6D4019AB8E9C00AEBF4D /* p2c_alert@2x.png in Resources */,
 				A9A59E8D19D2C40100D7DC4F /* hw@2x.png in Resources */,
 				A9A59E8319D299EA00D7DC4F /* tab_mine_bg@2x.png in Resources */,
+				A9548EDA1A105DB0008B5A3D /* YiBaoMessageViewController.xib in Resources */,
 				A904E4AB19BEF18A0014F694 /* about_logo@2x.png in Resources */,
 				A9AF6C6019949CD30076C0EE /* icon_dock_mine_actived@2x.png in Resources */,
 				A95CEA3C19B7667400D4605F /* icon_success@2x.png in Resources */,
@@ -1360,26 +1451,33 @@
 				A97F9D1A19B592FD0073E7E6 /* login_button_s@2x.png in Resources */,
 				A9E76DD619AB378A00C0D232 /* hk_home_icon2@2x.png in Resources */,
 				A9AF6C6419949CD30076C0EE /* icon_dock_service_actived@2x.png in Resources */,
+				A9A5A3421A0F5D08004AD234 /* daidaitong_06.jpg in Resources */,
 				A904E4A719BEF11F0014F694 /* AboutViewController.xib in Resources */,
 				A9A59E7619D299DE00D7DC4F /* sale_red_icon@2x.png in Resources */,
+				A96ACD911A0FEDED00DEFF7B /* daidaitong02@2x.png in Resources */,
 				A9A59E8B19D2BB2600D7DC4F /* ComPanyAboutViewController.xib in Resources */,
 				A9E76DD719AB378A00C0D232 /* hk_home_icon3@2x.png in Resources */,
 				A9AF6C791994B5890076C0EE /* tabbarShadowImage@2x.png in Resources */,
 				A9A59E7519D299DE00D7DC4F /* sale_gray_icon@2x.png in Resources */,
 				A9E76DD519AB378A00C0D232 /* hk_home_icon1@2x.png in Resources */,
 				A9D7A71C19C913A60029911F /* sale_blue_icon@2x.png in Resources */,
+				A9548ED51A104ED9008B5A3D /* README.md in Resources */,
 				A919055B19B02A5F002575DF /* icon_color_idcard@2x.png in Resources */,
 				A9C69453199BD14D00B2CECE /* more_icon_4@2x.png in Resources */,
 				A91C6D4119AB8E9C00AEBF4D /* p2c_datesum@2x.png in Resources */,
 				A9A59E8219D299EA00D7DC4F /* tab_home_p_bg@2x.png in Resources */,
 				A9C69442199BB7B100B2CECE /* icon_person_take_image@2x.png in Resources */,
+				A96ACD851A0FD49C00DEFF7B /* CardBindViewController.xib in Resources */,
 				A9C69457199BD14D00B2CECE /* more_icon_9@2x.png in Resources */,
 				A90BEC07199DDAFB00230242 /* WYDInfoHeadView.xib in Resources */,
 				A97F9D1619B592E90073E7E6 /* get_ver_button_red_s@2x.png in Resources */,
 				A9B2507519B4C796003E8855 /* HelpCenterTableViewCell.xib in Resources */,
 				A95EAEE419C9BE2E00D1592B /* FundCaculateViewController.xib in Resources */,
 				A919056119B02A83002575DF /* icon_color_name@2x.png in Resources */,
+				A9A5A3411A0F5D08004AD234 /* daidaitong_03.jpg in Resources */,
 				A95CEA3519B754A800D4605F /* MessageCenterViewController.xib in Resources */,
+				A9A5A34A1A0F603B004AD234 /* CardAddViewController.xib in Resources */,
+				A96ACD921A0FEDED00DEFF7B /* daidaitong03@2x.png in Resources */,
 				A9AF6BF719947DD00076C0EE /* InfoPlist.strings in Resources */,
 				A9AF6C761994B5890076C0EE /* icon_indicate_more_down@2x.png in Resources */,
 				A904E4AA19BEF18A0014F694 /* about_copyright@2x.png in Resources */,
@@ -1403,6 +1501,7 @@
 				A95CEA4119B766F400D4605F /* MessageDetailViewController.xib in Resources */,
 				A986269619B413D600FF9E2C /* DailyIncomeTableViewCell.xib in Resources */,
 				A9A7948419C8AC4E00516C60 /* FundAmountTableViewCell.xib in Resources */,
+				A96ACD901A0FEDED00DEFF7B /* daidaitong01@2x.png in Resources */,
 				A9AF6C2F199483520076C0EE /* MainViewController.xib in Resources */,
 				A9C69452199BD14D00B2CECE /* more_icon_3@2x.png in Resources */,
 				A9C69455199BD14D00B2CECE /* more_icon_7@2x.png in Resources */,
@@ -1477,9 +1576,11 @@
 				A9AF6C961994C5700076C0EE /* UIView+Extension.m in Sources */,
 				A99FDB0219CAACA400D2B3D3 /* InputVerificationViewController.m in Sources */,
 				A99EBEC419CBB47C005E1AA0 /* HelpCenterViewController.m in Sources */,
+				A96ACD841A0FD49C00DEFF7B /* CardBindViewController.mm in Sources */,
 				A9AF6C921994C5700076C0EE /* MJRefreshFooterView.m in Sources */,
 				A9202B8719C95B97009932C2 /* ProFitCaculateViewController.m in Sources */,
 				A9C353A81A0C711000EE8247 /* GesturePasswordButton.m in Sources */,
+				A96ACD8C1A0FE65C00DEFF7B /* IPGet.cpp in Sources */,
 				A93F87CA1999E62000875287 /* AdjustableUILable.m in Sources */,
 				A93F8803199A077F00875287 /* LoanListCell.m in Sources */,
 				A9C353A91A0C711000EE8247 /* GesturePasswordController.m in Sources */,
@@ -1489,6 +1590,7 @@
 				A9AF6C3D199486CA0076C0EE /* ProductListViewController.m in Sources */,
 				A904E4A619BEF11F0014F694 /* AboutViewController.m in Sources */,
 				A93F87741999AA8300875287 /* ManagerUtil.m in Sources */,
+				A9548ED91A105DB0008B5A3D /* YiBaoMessageViewController.m in Sources */,
 				A9AF6C941994C5700076C0EE /* UIScrollView+Extension.m in Sources */,
 				A9E8589D19AC2AAE001996DF /* DaiDaiTongApi.m in Sources */,
 				A96F2A7C199D008200608237 /* UIButton+Bootstrap.m in Sources */,
@@ -1534,6 +1636,7 @@
 				A95CEA3919B755C000D4605F /* MessageCenterTableViewCell.m in Sources */,
 				A9F1E18619ACB63100B6A441 /* DTCoreTextTableViewCell.m in Sources */,
 				A9AF6BF919947DD00076C0EE /* main.m in Sources */,
+				A96ACD881A0FE43900DEFF7B /* IPAddress.c in Sources */,
 				A970886219D273E700F880C1 /* OtherCaculateViewController.m in Sources */,
 				A99FDAFE19CA683100D2B3D3 /* DaiDaiTongTestApi.m in Sources */,
 				A90BEC05199DDACA00230242 /* WYDInfoHeadView.m in Sources */,
@@ -1548,14 +1651,17 @@
 				A9971D7519B8BC410079F143 /* DailyProfitViewController.m in Sources */,
 				A9AF6C901994C5700076C0EE /* MJRefreshBaseView.m in Sources */,
 				A99EBEA919CB9ABB005E1AA0 /* TransactionRecordsViewController.m in Sources */,
+				A9548ED41A104ED9008B5A3D /* OpenUDID.m in Sources */,
 				A9C0540519ADBCB2002331A5 /* FundProductInfoViewController.m in Sources */,
 				A94FE51E199C9C3C00626DE5 /* MoveSocialCellView.m in Sources */,
 				A93F8806199A077F00875287 /* OtherListViewController.m in Sources */,
 				A9BA324619D338C500B48A8F /* ModifyPassWordViewController.m in Sources */,
+				A9A5A3491A0F603B004AD234 /* CardAddViewController.m in Sources */,
 				A99FDB0A19CAC16E00D2B3D3 /* SetPassWordViewController.m in Sources */,
 				A9AF6C2E199483520076C0EE /* MainViewController.m in Sources */,
 				A9EE5EE719C20CDA004E7A2C /* WYDAmountTableViewCell.m in Sources */,
 				A9C353AB1A0C711000EE8247 /* KeychainItemWrapper.m in Sources */,
+				A9A5A33C1A0F4C70004AD234 /* CardSelectViewController.m in Sources */,
 				A9AF6C42199498C40076C0EE /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
